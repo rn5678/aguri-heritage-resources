@@ -109,7 +109,7 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "0e60f53f1acc0b590b73963768f859455da970f90ded4fb1dcfc23eb8eaf7d86",
+      "fingerprint": "14b6ee53949c0d176545a5ebc947799e9e58c0e97b6967f1d1abe1b2463d94e0",
       "updated": "2026-11-02"
     },
     "bn/book-rajput-o-ugrakshatriya": {
@@ -235,8 +235,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "dcff3580ccb44e3d4b847aac2f88b573d6db0389faa52f15152ae2b3884e91a3",
-      "updated": "2026-10-14"
+      "fingerprint": "d6f29ab4dc9f634dabf8830db369cb4b51c79a8c50ad9158160f31a86a753fdd",
+      "updated": "2026-11-02"
     },
     "bn/people": {
       "baseline": {
@@ -969,8 +969,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "28b22a8d51eec0c15e4782f86268225333b128a498f01ff4856b7392995b14f9",
-      "updated": "2026-10-14"
+      "fingerprint": "7c7acf4143316d1b80ae364fe06dc33f00e8decb94186271ef9db71a297accc1",
+      "updated": "2026-11-02"
     },
     "en/people": {
       "baseline": {
