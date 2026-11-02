@@ -2,7 +2,7 @@
 
 ## GitHub publishing pipeline
 
-A portable source export and checked GitHub Actions publishing workflow are prepared for the existing `rn5678/aguri-heritage-resources` repository and Cloudflare project. See [development and publishing instructions](hosting/PIPELINE.md) for activation status, branch-based editing, verification and recovery. The large journal downloads remain in the existing GitHub Release.
+A portable source export and checked GitHub Actions publishing workflow are active for the existing `rn5678/aguri-heritage-resources` repository and Cloudflare project. See [development and publishing instructions](hosting/PIPELINE.md) for activation status, branch-based editing, verification and recovery. The large journal downloads remain in the existing GitHub Release.
 
 An English and Bengali heritage website for the Aguri / Ugra Kshatriya community of West Bengal. History, culture, places and people form the main visitor experience. Books, periodicals and translations sit within Resources as supporting material.
 
