@@ -22,6 +22,20 @@ def require_unchanged_registries(before, root=ROOT):
                          + '. Build locally, review the dates, and commit the updated registries before pushing.')
 
 
+def require_unchanged_tracked_source(root=ROOT):
+    """Compare working files with the index, allowing a staged initial export."""
+    result = subprocess.run(
+        ['git', 'diff', '--no-ext-diff', '--exit-code', '--name-only'],
+        cwd=root, capture_output=True, text=True, check=False,
+    )
+    if result.returncode == 1:
+        names = ', '.join(result.stdout.splitlines())
+        raise ValueError('Build changed tracked source: ' + names
+                         + '. Build locally, review and stage the generated source updates, then rerun CI before pushing.')
+    if result.returncode:
+        raise ValueError('Could not verify that the build preserved the staged source.')
+
+
 def run(command):
     print('+ ' + ' '.join(command), flush=True)
     env = {**os.environ, 'AGURI_CI_BUILD': '1', 'PYTHONUTF8': '1'}
@@ -42,6 +56,7 @@ def main():
     run([sys.executable, 'build.py'])
     require_unchanged_registries(before)
     run([sys.executable, 'scripts/check_site.py'])
+    require_unchanged_tracked_source()
     run([sys.executable, 'scripts/prepare_cloudflare.py',
          '--repository', 'rn5678/aguri-heritage-resources', '--tag', 'journals-v1',
          '--remote-journals', '--skip-archive', '--upload-method', 'wrangler'])

@@ -30,6 +30,18 @@ NODE = '/opt/homebrew/bin/node'
 class PublishError(ValueError):
     pass
 
+def require_direct_publishing(root):
+    """Activated only after a verified GitHub production release."""
+    marker = Path(root)/'local-editor/github-publishing.json'
+    if not marker.exists():
+        return
+    try:
+        enabled = json.loads(marker.read_text()).get('github_only')
+    except (ValueError, OSError, AttributeError):
+        raise PublishError('The publishing setup needs review. See hosting/PIPELINE.md before publishing.') from None
+    if enabled:
+        raise PublishError('Publishing now runs through GitHub. Save your changes, then follow hosting/PIPELINE.md to submit and publish them.')
+
 def now():
     return datetime.now(ZoneInfo('Asia/Kolkata')).isoformat(timespec='seconds')
 
@@ -198,6 +210,7 @@ class Publisher:
         temp.replace(path)
 
     def start_prepare(self):
+        require_direct_publishing(self.root)
         with self.mutex:
             if self.state['phase'] in ('preparing','publishing'):
                 raise PublishError('A publication is already being checked or uploaded. Please wait.')
@@ -207,6 +220,7 @@ class Publisher:
 
     def prepare(self):
         try:
+            require_direct_publishing(self.root)
             with self.edit_lock:
                 if self.pending:
                     self.reconcile(self.pending)
@@ -221,7 +235,7 @@ class Publisher:
                 for name,args,label in (
                     ('build.py',[],'Checking pages, photographs and links…'),
                     ('scripts/check_site.py',[],'Preparing the upload and preserving download links…'),
-                    ('scripts/prepare_cloudflare.py',['--repository','rn5678/aguri-heritage-resources','--tag','journals-v1'],'Creating your checked publication…')):
+                    ('scripts/prepare_cloudflare.py',['--repository','rn5678/aguri-heritage-resources','--tag','journals-v1','--upload-method','wrangler','--skip-archive'],'Creating your checked publication…')):
                     result = subprocess.run([sys.executable,str(self.root/name),*args],cwd=self.root,
                                             capture_output=True,text=True,timeout=240)
                     if result.returncode:
@@ -252,6 +266,7 @@ class Publisher:
             self.fail(exc)
 
     def start_publish(self, preparation_id):
+        require_direct_publishing(self.root)
         with self.mutex:
             if self.state['phase'] != 'ready' or not self.prepared or preparation_id != self.prepared['summary']['id']:
                 raise PublishError('Check the website again before publishing.')
@@ -262,6 +277,7 @@ class Publisher:
     def publish(self):
         attempted = False
         try:
+            require_direct_publishing(self.root)
             with self.edit_lock:
                 ready = self.prepared
                 if self.inputs() != ready['inputs']:

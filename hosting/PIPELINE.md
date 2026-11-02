@@ -19,7 +19,7 @@ One-time setup:
 3. Push the initial source branch, inspect its passing **Build and verify website** check, and merge it into `main`.
 4. Verify that **Publish website** succeeds for the merged commit and that Cloudflare reports that same commit as canonical production. Check both language homepages, a journal download, and the contact/contribution service.
 5. Require pull requests and the **Build and verify website** status check for `main`. For a solo-maintained repository, no second-person approval is needed. Do not allow force pushes or deletion of `main`.
-6. Switch the local editor away from direct publishing only after the GitHub release is verified. The old publisher remains the migration fallback until then.
+6. After the GitHub release is verified, save `{"github_only": true}` in the original authoring folder's `local-editor/github-publishing.json` and relaunch the content editor. Its Save and Preview remain available; its old Publish action now points to this GitHub flow. The marker is local and never committed. The old publisher remains the migration fallback until activation.
 
 Cloudflare production secrets and the `CONTRIBUTIONS_DB` binding remain configured in Cloudflare. The deployment script reads and fingerprints the configuration before uploading, then checks that it is unchanged afterward. It never writes database records, bindings or secrets. Preview deployments are not enabled by these workflows; local previews and pull-request build checks are the review steps for this initial setup.
 

@@ -3990,8 +3990,8 @@
       "bytes": 7358
     },
     "hosting/PIPELINE.md": {
-      "sha256": "c74a4a8951735bddcc2eae54ba3f2441be5f7ef8eaeaeb2187585c266951e036",
-      "bytes": 7498
+      "sha256": "c61c14243be67034fc1096275f3c7c206c97fb2046726331b9c2dbe0795e3d20",
+      "bytes": 7717
     },
     "local-editor/cloudflare-tools/package-lock.json": {
       "sha256": "b24f07c0be5992139d0cfcf6f465b7560f3a5959397d604fa6efbe3c9cec7356",
@@ -4062,8 +4062,8 @@
       "bytes": 12968
     },
     "scripts/ci_build.py": {
-      "sha256": "3a58fc7f24f212cf97880502d4d1d2ae63e62c59d4c4dd976ecbd06663940668",
-      "bytes": 2235
+      "sha256": "c45122ac5bc8959f0b896069acbb2a20af75c9895a81e34eda605f896f8c98bf",
+      "bytes": 2967
     },
     "scripts/citation_browser_checks.cjs": {
       "sha256": "964120ae8f57eb82014bc47ecdb44969ce0c8b08e48321de910539874e1fc355",
@@ -4094,8 +4094,8 @@
       "bytes": 19740
     },
     "scripts/editor_publish.py": {
-      "sha256": "9eaa18cfa56b6c3487e82d0a266ad7c7b3f7e777da9e9fce7d82b571199c329f",
-      "bytes": 22036
+      "sha256": "ba19ab2ddfc9b9fbbebd40fd72bb6ab243aede66c9fdd72883575c349d69d0f0",
+      "bytes": 22888
     },
     "scripts/editor_translation.py": {
       "sha256": "91bb8a12063de786b2ea7b3bd9a5b09654fc26de3c73ab4839f2be7ff5f71c9b",
@@ -4166,8 +4166,8 @@
       "bytes": 4950
     },
     "scripts/test_ci_build.py": {
-      "sha256": "5a06be3256928edae2ecf7b58132316208f8c15e5a63ff0f80f583ec3608414f",
-      "bytes": 1523
+      "sha256": "7c3584cbfde8ed51fe48d3fe7f3cc0920240009990095288f5b1072e2a9cd3fb",
+      "bytes": 2792
     },
     "scripts/test_contact.mjs": {
       "sha256": "7c5dddd7fdec1a47631be129e3350bec952f64cf83ad791e1674209105b1d3c5",
@@ -4248,6 +4248,10 @@
     "scripts/test_prepare_cloudflare.py": {
       "sha256": "9b2f04ab61c30650dd8c8d546c40aeb08514ada6728d3ceae28507e9a2660152",
       "bytes": 6243
+    },
+    "scripts/test_publishing_mode.py": {
+      "sha256": "8db1682b87fb49b657d23536028fbed57b9e9e5970191f4e7ed178a7ec00b4e4",
+      "bytes": 1176
     },
     "scripts/test_push.mjs": {
       "sha256": "2a7bc9bbaa3f8cb0787aa4c747369b9c1961316a75fce20aa6489911d767c82e",
