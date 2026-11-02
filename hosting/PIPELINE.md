@@ -21,11 +21,21 @@ Setup reference (activation completed; retain for recovery):
 3. Push the initial source branch, inspect its passing **Build and verify website** check, and merge it into `main`.
 4. Verify that **Publish website** succeeds for the merged commit and that Cloudflare reports that same commit as canonical production. Check both language homepages, a journal download, and the contact/contribution service.
 5. Require pull requests and the **Build and verify website** status check for `main`. For a solo-maintained repository, no second-person approval is needed. Do not allow force pushes or deletion of `main`.
-6. After the GitHub release is verified, save `{"github_only": true}` in the original authoring folder's `local-editor/github-publishing.json` and relaunch the content editor. Its Save and Preview remain available; its old Publish action now points to this GitHub flow. The marker is local and never committed. The old publisher remains the migration fallback until activation.
+6. After the GitHub release is verified, save `{"github_only": true}` in the original authoring folder's `local-editor/github-publishing.json` and relaunch the content editor. Its Save and Preview remain available; **Publish via GitHub** now prepares and submits source through this flow. The marker is local and never committed. The retired direct uploader remains blocked by the marker.
 
 Cloudflare production secrets and the `CONTRIBUTIONS_DB` binding remain configured in Cloudflare. The deployment script reads and fingerprints the configuration before uploading, then checks that it is unchanged afterward. It never writes database records, bindings or secrets. Preview deployments are not enabled by these workflows; local previews and pull-request build checks are the review steps for this initial setup.
 
-## Two ways to develop
+## Development and publishing options
+
+### Publish from the local content editor
+
+1. Open `http://127.0.0.1:45873/`, save your edits, and preview both languages. Finish any enabled Bengali updates and required reviews.
+2. Open **Publish via GitHub** and prepare the update. The editor builds the saved website, exports only public source into an isolated Git checkout, and runs the same checks as GitHub.
+3. Review the changed files and choose **Send to GitHub**. This commits and pushes a new `editor/update-*` branch; it does not change the live website.
+4. Open the GitHub review link, choose **Create pull request**, inspect the change and passing checks, then **Merge pull request**. The existing protection rules apply.
+5. Return to the editor's publishing panel. It follows that pull request and the publishing workflow for its exact merged commit. **View live website** is offered once publication succeeds.
+
+The shared `hosting/source-repository` checkout must be clean. Each preparation has its own checked copy and receipt under ignored `local-editor/publishing/github/`; the editor never resets unrelated Git changes or force-pushes. A changed saved source invalidates a prepared submission. Source changed independently on GitHub must be reconciled into the authoring folder before exporting. GitHub review uses your existing browser sign-in; the editor needs no GitHub API token and does not use Cloudflare credentials. If sending is interrupted, it checks the recorded branch and commit before trying again. Local editing can continue while a submitted update waits for review or deployment.
 
 ### Continue using the existing Mac authoring folder
 
