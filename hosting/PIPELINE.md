@@ -10,9 +10,11 @@ This implementation uses GitHub Actions to build and upload to Cloudflare. Cloud
 
 ## Activation status
 
-The workflows and portable source are prepared locally. They become active only after the source is pushed, GitHub receives the deployment secret, and the first production workflow succeeds. Until then, the existing website and editor publisher continue to work.
+Activated on **2 November 2026**. The [first automated production release](https://github.com/rn5678/aguri-heritage-resources/actions/runs/41470798431) passed all checks and deployed commit `d9050c3c664b2487d71eed6febf791bf3a03cf77` as Cloudflare deployment `687b915c-4360-4d93-bc8e-d4b110928a4c`. Both homepages, contribution/contact configuration, page-view reads and the journal redirect passed live checks. The local editor is now marked for GitHub-only publishing; relaunch any already-running editor to load the new publisher code.
 
-One-time setup:
+The production environment accepts only `main`. Branch protection requires an up-to-date pull request and the **Build and verify website** check, including for administrators; force pushes and branch deletion are disabled. A second-person approval is not required. Its account-restricted Pages token expires **2 November 2027** and must be renewed in GitHub before that date. Its value is not stored in the source repository. The first complete source import used a non-forced fast-forward push after local validation; later releases use the pull-request flow below.
+
+Setup reference (activation completed; retain for recovery):
 
 1. Enable authenticated Git pushes from this Mac to this repository. Use a repository-scoped credential with source and workflow write access, or an authenticated GitHub CLI session. Never put a token in a Git remote URL or source file.
 2. Create a Cloudflare API token with **Account → Cloudflare Pages → Edit**, limited to the account holding `aguri-heritage`. Store it in GitHub's `production` environment as `CLOUDFLARE_API_TOKEN`; restrict that environment to `main`. The account ID is public configuration already fixed in the workflow. Do not copy the Mac's renewable Wrangler login token into GitHub.

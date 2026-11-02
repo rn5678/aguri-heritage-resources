@@ -22,8 +22,8 @@
       "bytes": 1373
     },
     "README.md": {
-      "sha256": "b70aef9de4e7412e79c28c2e986f2a8b8c4305f89ee3884a496304e1946362f2",
-      "bytes": 55530
+      "sha256": "8411bcb4a7e55ced2d72d842640e4f822b176983d42cf58ddad9ecfbd4bd33e8",
+      "bytes": 55528
     },
     "asset_paths.py": {
       "sha256": "482d1e0c26756517790ef529eb1798f23c03b7820ea349470f0f752b73a5cb53",
@@ -3990,8 +3990,8 @@
       "bytes": 7358
     },
     "hosting/PIPELINE.md": {
-      "sha256": "c61c14243be67034fc1096275f3c7c206c97fb2046726331b9c2dbe0795e3d20",
-      "bytes": 7717
+      "sha256": "1105d9fe38ff1d04ad0fc105072fdd6e1514733effb4fa452f65748ed3635968",
+      "bytes": 8605
     },
     "local-editor/cloudflare-tools/package-lock.json": {
       "sha256": "b24f07c0be5992139d0cfcf6f465b7560f3a5959397d604fa6efbe3c9cec7356",
