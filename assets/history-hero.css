@@ -1,0 +1,62 @@
+/* History-only story hero; no-JavaScript visitors can follow all four cards. */
+.history-hero { display: grid; grid-template-areas: "label" "track" "controls"; gap: 16px; min-width: 0; }
+.history-hero *, .history-hero *::before, .history-hero *::after { box-sizing: border-box; }
+.history-hero-label { grid-area: label; margin: 0; color: #705d4b; font-size: 11px; line-height: 1.6; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+.history-hero-track { grid-area: track; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; min-width: 0; }
+.history-hero-slide { min-width: 0; margin: 0; background: #294337; border-radius: 3px; overflow: hidden; }
+.history-hero-link { display: flex; flex-direction: column; height: 100%; color: #faf7ed !important; text-decoration: none !important; }
+.history-hero-media { display: flex; flex-direction: column; margin: 0; min-width: 0; background: #e8e0cd; color: #4a493d; }
+.history-hero-media img { display: block; width: 100%; height: 280px; min-height: 0; object-fit: cover; }
+.history-hero-media--contain img { object-fit: contain; padding: 20px; }
+.history-hero-media figcaption { padding: 11px 18px; font-size: 11px; line-height: 1.65; letter-spacing: .01em; }
+.history-hero-copy { display: flex; flex-direction: column; justify-content: center; padding: 32px; min-width: 0; }
+.history-hero-kicker { margin: 0 0 18px; color: #e5b68d; font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; line-height: 1.7; }
+.history-hero-copy h2 { margin: 0 0 22px; color: inherit; font-family: Baskerville, "Palatino Linotype", Palatino, Georgia, serif; font-weight: 400; font-size: clamp(28px, 3vw, 42px); line-height: 1.16; letter-spacing: -.02em; text-wrap: balance; }
+.history-hero-summary { margin: 0; color: #f1eee3; font-size: 15px; line-height: 1.8; }
+.history-hero-read { display: inline-flex; align-self: flex-start; gap: 12px; margin-top: 26px; padding-bottom: 5px; border-bottom: 1px solid #bfb99f; font-size: 12px; letter-spacing: .04em; line-height: 1.6; }
+.history-hero-link:hover .history-hero-read { border-color: #fff; }
+.history-hero.is-enhanced .history-hero-track { grid-template-columns: minmax(0, 1fr); gap: 0; }
+.history-hero.is-enhanced .history-hero-slide { grid-area: 1 / 1; visibility: hidden; opacity: 0; pointer-events: none; transition: opacity .2s ease; }
+.history-hero.is-enhanced .history-hero-slide.is-active { visibility: visible; opacity: 1; pointer-events: auto; }
+.history-hero.is-enhanced .history-hero-link { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); min-height: 440px; }
+.history-hero.is-enhanced .history-hero-media img { height: clamp(300px, 30vw, 420px); flex: 1 1 0; }
+.history-hero.is-enhanced .history-hero-copy { padding: clamp(26px, 3.4vw, 44px); }
+.history-hero-controls { grid-area: controls; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 0 0 12px; border-bottom: 1px solid #dbd7c8; }
+.history-hero-controls[hidden] { display: none; }
+.history-hero-controls button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; min-width: 44px; padding: 8px 12px; border: 1px solid #c4cbbb; border-radius: 2px; background: transparent; color: #294337; font: inherit; font-size: 12px; line-height: 1.5; cursor: pointer; }
+.history-hero-controls button:hover { background: #e9ecdf; }
+.history-hero-controls button:disabled { cursor: default; color: #5d6458; background: #edf0e6; opacity: 1; }
+.history-hero-controls [data-hero-toggle] { margin-right: 6px; }
+.history-hero-controls [data-hero-prev], .history-hero-controls [data-hero-next] { font-size: 21px; padding: 4px; }
+.history-hero-indicators { display: flex; gap: 2px; }
+.history-hero-indicators button { border-color: transparent; border-radius: 50%; padding: 6px; }
+.history-hero-indicators button[aria-current="true"] { color: #fff; background: #a05034; }
+.history-hero-status { flex: 1 1 210px; font-size: 11px; line-height: 1.6; color: #5b6355; }
+.history-hero-all { display: inline-flex; align-items: center; min-height: 44px; font-size: 11px; color: #294337; text-underline-offset: 4px; }
+.history-hero-controls :focus-visible { outline: 3px solid #a05034; outline-offset: 3px; }
+.history-hero-link:focus-visible { outline: 3px solid #e5b68d; outline-offset: -6px; }
+html[lang="bn"] .history-hero-copy h2:not([lang="en"]) { font-family: inherit; font-size: clamp(27px, 2.6vw, 36px); line-height: 1.4; letter-spacing: 0; }
+html[lang="bn"] .history-hero-label, html[lang="bn"] .history-hero-kicker { letter-spacing: 0; }
+@media (max-width: 760px) {
+  .history-hero-track { grid-template-columns: minmax(0, 1fr); }
+  .history-hero.is-enhanced .history-hero-link { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto 1fr; min-height: 0; }
+  .history-hero.is-enhanced .history-hero-media img { height: 240px; flex: 0 0 240px; }
+  .history-hero.is-enhanced .history-hero-copy { padding: 26px 24px 30px; }
+  .history-hero-copy h2 { font-size: 31px; line-height: 1.2; margin-bottom: 18px; }
+  .history-hero-kicker { margin-bottom: 13px; }
+  .history-hero-summary { font-size: 14px; line-height: 1.8; }
+  .history-hero-read { margin-top: 22px; }
+  .history-hero-controls { gap: 6px; }
+  .history-hero-status { flex-basis: calc(100% - 155px); }
+  .history-hero-controls [data-hero-toggle] { margin-right: auto; }
+}
+@media (max-width: 380px) {
+  .history-hero-controls [data-hero-toggle] { flex-basis: calc(100% - 106px); }
+  .history-hero-indicators { flex-basis: 100%; }
+  .history-hero-status { flex-basis: 100%; }
+  .history-hero-copy h2 { font-size: 28px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .history-hero.is-enhanced .history-hero-slide { transition: none; }
+}
+@media print { .history-hero { display: none !important; } }

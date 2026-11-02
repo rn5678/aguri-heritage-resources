@@ -1,0 +1,152 @@
+/* Original scans are displayed complete, without filters or decorative cropping. */
+.page-heading.page-heading-document {
+  max-width: none;
+  display: grid;
+  grid-template-columns: minmax(0, 1.16fr) minmax(0, .84fr);
+  align-items: center;
+  gap: clamp(32px, 5vw, 76px);
+  padding: 42px 0 34px;
+}
+.page-heading-document h1 {
+  font-size: clamp(36px, 3.9vw, 56px);
+  line-height: 1.12;
+  overflow-wrap: break-word;
+}
+.page-heading-document .dek {
+  max-width: 590px;
+  margin-top: 22px;
+  font-size: 20px;
+  line-height: 1.55;
+}
+.document-folio {
+  min-width: 0;
+  margin: 0;
+  padding: 0 0 0 28px;
+  border-left: 1px solid var(--line);
+}
+.document-folio-label {
+  margin: 0 0 14px;
+  color: var(--rust);
+  font-size: 9px;
+  line-height: 1.6;
+  font-weight: 600;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+}
+.document-folio-mount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+  padding: 16px 22px;
+  border: 1px solid var(--line);
+  background: #faf9f4;
+}
+.document-folio-mount img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 302px;
+  object-fit: contain;
+}
+.document-folio-landscape .document-folio-mount {
+  padding: 21px 14px;
+  min-height: 248px;
+}
+.document-folio-landscape .document-folio-mount img { width: 100%; }
+.document-folio figcaption {
+  margin-top: 14px;
+  padding: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.65;
+}
+.document-folio figcaption strong {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--ink);
+  font: 400 21px/1.4 var(--serif);
+}
+.document-folio figcaption strong:lang(bn) {
+  font-family: var(--bn);
+  font-size: 19px;
+  line-height: 1.7;
+}
+.document-folio-detail { display: block; }
+.document-folio-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 18px;
+  margin-top: 8px;
+}
+.document-folio-links a {
+  display: inline-block;
+  padding: 3px 0;
+  color: var(--green);
+  text-underline-offset: 4px;
+}
+.document-folio-links a:hover { color: var(--rust); }
+html[lang=bn] .page-heading-document h1 {
+  font-size: clamp(32px, 3.4vw, 48px);
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+html[lang=bn] .page-heading-document .dek { font-size: 18px; line-height: 1.9; }
+html[lang=bn] .document-folio-label { font-size: 12px; letter-spacing: 0; }
+html[lang=bn] .document-folio figcaption { font-size: 12px; line-height: 1.9; }
+@media (max-width: 850px) {
+  .page-heading.page-heading-document {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 27px;
+    padding: 32px 0 28px;
+  }
+  .page-heading-document h1 { font-size: 39px; }
+  .page-heading-document .dek { font-size: 19px; }
+  .document-folio {
+    display: grid;
+    grid-template-columns: minmax(0, .8fr) minmax(0, 1fr);
+    column-gap: 20px;
+    align-items: center;
+    width: 100%;
+    max-width: 590px;
+    padding: 20px 0 0;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+  .document-folio-label { grid-column: 2; grid-row: 1; align-self: end; margin: 0 0 8px; }
+  .document-folio-mount { grid-column: 1; grid-row: 1 / 3; padding: 12px; }
+  .document-folio-mount img { max-height: 235px; }
+  .document-folio figcaption { grid-column: 2; grid-row: 2; align-self: start; margin-top: 0; }
+  .document-folio-landscape { grid-template-columns: minmax(0, 1fr); }
+  .document-folio-landscape .document-folio-label { grid-column: 1; grid-row: auto; margin-bottom: 12px; }
+  .document-folio-landscape .document-folio-mount { grid-column: 1; grid-row: auto; min-height: 0; padding: 12px; }
+  .document-folio-landscape .document-folio-mount img { max-height: none; }
+  .document-folio-landscape figcaption { grid-column: 1; grid-row: auto; margin-top: 13px; }
+  .document-folio-links { gap: 5px 14px; }
+  .document-folio-links a { padding: 6px 0; }
+}
+@media (max-width: 390px) {
+  .document-folio { column-gap: 15px; }
+  .document-folio-mount { padding: 8px; }
+  .document-folio figcaption strong { font-size: 19px; }
+  .document-folio figcaption strong:lang(bn) { font-size: 17px; }
+}
+@media print {
+  .page-heading.page-heading-document {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 155px;
+    gap: 22px;
+    padding: 15px 0;
+    break-inside: avoid;
+  }
+  .document-folio { display: block; width: 155px; padding: 0; border: 0; }
+  .document-folio-label, .document-folio-links { display: none; }
+  .document-folio .document-folio-mount { min-height: 0; padding: 6px; background: white; }
+  .document-folio .document-folio-mount img { width: auto; max-height: 140px; }
+  .document-folio figcaption { margin-top: 6px; font-size: 8px; }
+  .document-folio figcaption strong, .document-folio figcaption strong:lang(bn) { font-size: 11px; }
+  html[lang=bn] .document-folio figcaption { font-size: 9px; }
+}

@@ -1,0 +1,77 @@
+/* Documentary photographs lead biographies; paintings remain quiet endpieces. */
+.page-heading.page-heading-portraits{max-width:none;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.65fr);gap:60px;align-items:center;padding:44px 0 38px}
+.page-heading-portraits .page-heading-copy{min-width:0}
+.page-heading-portraits h1{font-size:clamp(38px,4.3vw,62px);line-height:1.12;overflow-wrap:break-word}
+.page-heading-portraits .dek{font-size:20px;line-height:1.6;max-width:620px}
+.profile-heading-document{max-width:350px;width:100%;justify-self:end}
+.profile-heading-document .person-photo{width:100%;max-width:none}
+.profile-heading-document :is(.family-photo,.portrait-mount){display:flex;align-items:center;justify-content:center;min-height:0;padding:18px;background:var(--surface);border:1px solid var(--line)}
+.profile-heading-document :is(.family-photo,.portrait-mount) img{width:auto;height:auto;max-width:100%;max-height:340px;object-fit:contain;border:0;box-shadow:none}
+.profile-heading-document .portrait-mount{min-height:260px}
+.profile-heading-document .person-photo figcaption{font-size:11px;line-height:1.75;margin-top:13px}
+.page-heading.page-heading-profile-text{max-width:900px;padding:48px 0 36px}
+.profile-portrait-status{font-size:12px;line-height:1.7;color:var(--muted);border-top:1px solid var(--line);margin-top:26px;padding-top:14px;max-width:580px}
+.person-profiles.person-biography{max-width:800px}
+.person-biography .person-profile{display:block;padding-top:30px}
+.profile-secondary-artwork{width:min(100%,360px);margin:24px 0 36px;padding-top:24px;border-top:1px solid var(--line)}
+.profile-secondary-artwork img{width:100%;height:auto}
+.profile-secondary-artwork figcaption{padding-top:10px;line-height:1.5}
+.profile-secondary-artwork figcaption strong{display:block;font:19px/1.4 var(--serif);font-weight:400}
+.profile-secondary-artwork figcaption span{display:block;font-size:11px;color:var(--muted);margin-top:3px}
+.page-heading.page-heading-people{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:44px}
+.people-heading-gallery{min-width:0}
+.people-heading-portraits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.people-heading-portrait{min-width:0}
+.people-heading-portrait>a{text-decoration:none;display:block}
+.people-heading-mount{display:flex;align-items:center;justify-content:center;min-height:190px;padding:10px;background:var(--surface);border:1px solid var(--line)}
+.people-heading-mount img{width:auto;height:auto;max-width:100%;max-height:165px;object-fit:contain}
+.people-heading-portrait figcaption{font:17px/1.35 var(--serif);padding-top:12px}
+.people-heading-credits{font-size:11px;line-height:1.8;color:var(--muted);margin-top:20px}
+.people-heading-credits summary{cursor:pointer;display:list-item;width:fit-content;text-underline-offset:4px}
+.people-heading-credits summary:hover{color:var(--rust)}
+.people-heading-credits summary:focus-visible{outline:3px solid var(--rust);outline-offset:4px}
+.people-heading-credits p{margin-top:12px;overflow-wrap:anywhere}
+html[lang=bn] .page-heading-portraits h1{font-size:clamp(33px,3.4vw,49px);line-height:1.5;letter-spacing:0}
+html[lang=bn] .page-heading-portraits .dek{font-size:19px;line-height:1.85}
+html[lang=bn] :is(.profile-heading-document .person-photo figcaption,.profile-portrait-status,.people-heading-credits,.profile-secondary-artwork figcaption span){font-size:12px;line-height:1.9}
+html[lang=bn] .people-heading-portrait figcaption{font-size:17px;line-height:1.7}
+@media(max-width:900px){
+  .page-heading.page-heading-portraits{gap:30px;grid-template-columns:minmax(0,1.2fr) minmax(230px,.8fr)}
+  .page-heading.page-heading-people{grid-template-columns:minmax(0,1fr);gap:26px}
+  .people-heading-gallery{max-width:510px}
+}
+@media(max-width:700px){
+  .page-heading.page-heading-portraits{grid-template-columns:minmax(0,1fr);gap:26px;padding:32px 0 28px}
+  .page-heading-portraits h1{font-size:39px}
+  .page-heading-portraits .dek{font-size:19px}
+  .profile-heading-document{justify-self:start;max-width:330px}
+  .profile-heading-document :is(.family-photo,.portrait-mount) img{max-height:300px}
+  .profile-heading-document .portrait-mount{min-height:230px}
+  .people-heading-portraits{gap:10px}
+  .people-heading-mount{min-height:145px;padding:8px}
+  .people-heading-mount img{max-height:130px}
+  .people-heading-portrait figcaption{font-size:15px}
+  html[lang=bn] .people-heading-portrait figcaption{font-size:15px}
+  .page-heading.page-heading-profile-text{padding:34px 0 28px}
+}
+@media print{
+  .page-heading.page-heading-portraits,.page-heading.page-heading-profile-text{display:block;padding:0 0 16pt;max-width:none}
+  .page-heading.page-heading-profile{display:grid;grid-template-columns:minmax(0,1fr) 45mm;gap:20pt;align-items:start}
+  .profile-heading-document{width:45mm;max-width:100%;margin:0;justify-self:start;break-inside:avoid}
+  .profile-heading-document :is(.family-photo,.portrait-mount){padding:6pt;min-height:0;background:white}
+  .profile-heading-document :is(.family-photo,.portrait-mount) img{max-height:60mm}
+  .profile-heading-document .person-photo figcaption,html[lang=bn] .profile-heading-document .person-photo figcaption{font-size:8pt;line-height:1.65}
+  .person-profiles.person-biography{max-width:none}
+  .people-heading-gallery,.profile-secondary-artwork{display:none!important}
+  .profile-portrait-status,html[lang=bn] .profile-portrait-status{font-size:9pt}
+}
+
+/* An explicitly imagined scene within the Sahana biography. */
+.profile-scene-illustration{width:100%;max-width:800px;margin:28px 0;break-inside:avoid}
+.profile-scene-illustration picture{display:block}
+.profile-scene-illustration img{display:block;width:100%;height:auto}
+.profile-scene-illustration figcaption{margin-top:12px;line-height:1.6}
+.profile-scene-caption{display:block;font:19px/1.5 var(--serif);font-weight:400}
+.profile-scene-provenance{display:block;margin-top:6px;font-size:12px;line-height:1.75;color:var(--muted)}
+html[lang=bn] .profile-scene-caption{font-family:var(--bn);line-height:1.8}
+html[lang=bn] .profile-scene-provenance{font-size:13px;line-height:1.9}

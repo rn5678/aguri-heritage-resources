@@ -1,0 +1,27 @@
+/* Article layout, scoped to the supplied military-settler history. */
+body[data-page="military-settlers-bengal"] .prose { max-width: 980px; }
+.military-settlers-article > p { max-width: 800px; }
+.military-settlers-article h2 { max-width: 900px; }
+.military-settlers-article h2 strong { font-weight: 400; }
+.military-settlers-table { max-width: 100%; overscroll-behavior-inline: contain; margin: 28px 0 36px; }
+.military-settlers-table table { min-width: 760px; table-layout: fixed; }
+.military-settlers-table th, .military-settlers-table td { overflow-wrap: break-word; line-height: 1.75; }
+.military-settlers-table th[scope="row"] { font-size: inherit; font-weight: 600; letter-spacing: 0; }
+.military-settlers-table th[scope="col"] { font-size: 12px; letter-spacing: 0; }
+.military-settlers-table caption { font-size: 14px; font-weight: 500; color: var(--ink); line-height: 1.7; padding: 0 0 16px; }
+.military-settlers-table:focus-visible { outline: 3px solid var(--rust); outline-offset: 3px; }
+.military-settlers-figure { margin: 36px 0; }
+.military-settlers-figure img { width: 100%; height: auto; }
+.military-settlers-figure figcaption { margin-top: 12px; font-size: 13px; line-height: 1.8; color: var(--muted); }
+.military-settlers-figure a { display: block; }
+.military-settlers-sources p { margin-top: 20px; font-size: 14px; line-height: 1.8; }
+.military-settlers-sources li { overflow-wrap: anywhere; }
+.military-settlers-sources .reference-backlinks { display: inline; }
+.military-settlers-sources .reference-backlinks a { display: inline-block; min-width: 24px; padding: 2px; }
+@media print {
+  .military-settlers-table { overflow: visible; }
+  .military-settlers-table table { min-width: 0; }
+  .military-settlers-table th, .military-settlers-table td { padding: 6px; font-size: 10px; }
+  .military-settlers-figure { break-inside: avoid; }
+  .military-settlers-sources .reference-backlinks { display: none; }
+}

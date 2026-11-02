@@ -1,0 +1,45 @@
+{
+  "title": "Bardhaman regional orientation",
+  "created": "2026-10-09",
+  "files": [
+    "bardhaman-orientation-en.svg",
+    "bardhaman-orientation-bn.svg"
+  ],
+  "type": "Original editorial SVG schematic; no generated raster geography",
+  "geographical_scope": "Bardhaman and the adjacent districts of Birbhum, Bankura and Hooghly in West Bengal, India",
+  "method": "River courses are deliberately simplified and smoothed from sparse visual reference points on the official district administrative map, cross-checked against the official river map. Town markers preserve the relative positions shown on the administrative map. The diagram has no geographic projection, scale, administrative polygons or settlement boundaries. Background colour washes are decorative, not thematic data.",
+  "accessed": "2026-10-09",
+  "sources": [
+    {
+      "title": "Purba Bardhaman District Administration — Geography",
+      "url": "https://purbabardhaman.nic.in/geography/",
+      "supports": "Surrounding district relationships and the Ajay, Bhagirathi-Hooghly and Damodar river system."
+    },
+    {
+      "title": "Purba Bardhaman District Administration — Maps of District",
+      "url": "https://purbabardhaman.nic.in/map-of-district/",
+      "supports": "Index hosting the administrative map and the river map."
+    },
+    {
+      "title": "Administrative Map of Purba Bardhaman District",
+      "url": "https://cdn.s3waas.gov.in/s3cf67355a3333e6e143439161adc2d82e/uploads/2021/03/2021031256.jpg",
+      "supports": "Relative positions of Bardhaman, Katwa, Kalna and the three rivers; source for sparse visual river-course reference points."
+    },
+    {
+      "title": "River Map — District: Purba Bardhaman",
+      "url": "https://cdn.s3waas.gov.in/s3cf67355a3333e6e143439161adc2d82e/uploads/2021/03/2021031221.jpg",
+      "supports": "Cross-check of broad Ajay, Bhagirathi and Damodar river courses and their connections."
+    },
+    {
+      "title": "Purba Bardhaman District Administration — Places of Interest",
+      "url": "https://purbabardhaman.nic.in/places-of-interest/",
+      "supports": "Kalna on the west bank of the Bhagirathi, and Bardhaman near the Damodar."
+    }
+  ],
+  "limitations": [
+    "Not to scale or suitable for navigation.",
+    "Names of surrounding districts indicate broad relationships, not boundaries.",
+    "Not a map of Aguri settlements, population or territorial claims.",
+    "Only three principal rivers and three reference towns are shown; this is not an exhaustive hydrographic map."
+  ]
+}

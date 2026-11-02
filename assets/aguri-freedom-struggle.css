@@ -1,0 +1,28 @@
+/* The selected cover leads the article in both language editions. */
+body[data-page="aguris-freedom-struggle"] .page-heading-illustrated {
+  display: block;
+  max-width: 960px;
+}
+body[data-page="aguris-freedom-struggle"] .page-heading-illustrated h1 {
+  max-width: 930px;
+  font-size: clamp(34px, 4.2vw, 56px);
+  line-height: 1.14;
+}
+body[data-page="aguris-freedom-struggle"] .page-artwork {
+  margin-top: 28px;
+  max-width: none;
+}
+body[data-page="aguris-freedom-struggle"] .page-artwork img {
+  width: 100%;
+  height: auto;
+}
+html[lang="bn"] body[data-page="aguris-freedom-struggle"] .page-heading-illustrated h1 {
+  line-height: 1.55;
+}
+.freedom-struggle-article > h2:first-child { margin-top: 12px; }
+.freedom-struggle-notes li { overflow-wrap: anywhere; }
+.freedom-struggle-notes .reference-backlinks a { display: inline-block; padding: 2px 5px; }
+@media print {
+  body[data-page="aguris-freedom-struggle"] .page-artwork { display: block !important; break-inside: avoid; max-width: 155mm; }
+  .freedom-struggle-notes .reference-backlinks { display: none; }
+}

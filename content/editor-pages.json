@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "types": [],
+  "pages": [
+    {
+      "id": "military-settlers-bengal",
+      "type": "article",
+      "section": "history",
+      "en": {
+        "label": "Military settlers",
+        "title": "Military settlers and community formation in Bengal",
+        "description": "From Mughal expansion to the colonial period: military service, migration, households and the making of local communities."
+      },
+      "bn": {
+        "label": "সৈনিকদের বসতি",
+        "title": "বাংলায় সামরিক বসতি ও সম্প্রদায়ের গঠন",
+        "description": "মুঘল সাম্রাজ্যের বিস্তার থেকে ঔপনিবেশিক যুগ: সামরিক চাকরি, অভিবাসন, পরিবার ও স্থানীয় সম্প্রদায় গড়ে ওঠার ইতিহাস।"
+      }
+    },
+    {
+      "id": "aguris-freedom-struggle",
+      "type": "article",
+      "section": "history",
+      "en": {
+        "label": "Freedom struggle",
+        "title": "Aguris in the Freedom Struggle and Its Impact on Aguri Society",
+        "description": "Burdwan and Bengal from the nationalist movement to the 1950s"
+      },
+      "bn": {
+        "label": "স্বাধীনতা সংগ্রাম",
+        "title": "স্বাধীনতা সংগ্রামে আগুরীরা ও আগুরী সমাজে তার প্রভাব",
+        "description": "জাতীয়তাবাদী আন্দোলন থেকে পঞ্চাশের দশক: বর্ধমান ও বাংলা"
+      }
+    },
+    {
+      "id": "ugra-kshatriya-patrika",
+      "type": "article",
+      "section": "history",
+      "en": {
+        "label": "Ugra Kshatriya Patrika",
+        "title": "The people around Ugra Kshatriya Patrika",
+        "description": "Aguri public life in the early 1930s"
+      },
+      "bn": {
+        "label": "উগ্রক্ষত্রিয় পত্রিকা",
+        "title": "উগ্রক্ষত্রিয় পত্রিকাকে ঘিরে যাঁরা",
+        "description": "১৯৩০-এর দশকের গোড়ায় আগুরী জনজীবন"
+      }
+    }
+  ]
+}

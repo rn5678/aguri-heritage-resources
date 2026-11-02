@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="editor-token" content="__EDITOR_TOKEN__">
+  <title>Aguri Heritage · Content editor</title>
+  <link rel="stylesheet" href="/editor.css">
+  <script src="/editor.js" defer></script>
+</head>
+<body>
+  <div class="editor-shell">
+    <aside class="sidebar" aria-label="Website content">
+      <a class="brand" href="/" aria-label="Aguri Heritage content editor"><span class="brand-mark" aria-hidden="true">অ</span><span>Aguri Heritage<small>CONTENT EDITOR</small></span></a>
+      <div class="language-picker" role="group" aria-label="Editing language">
+        <button type="button" class="language active" data-lang="en" aria-pressed="true">English</button>
+        <button type="button" class="language" data-lang="bn" aria-pressed="false" lang="bn">বাংলা</button>
+      </div>
+      <div class="content-actions"><button id="add-page" class="button button-primary" type="button" disabled><span aria-hidden="true">+</span> Add page</button><button id="manage-page-types" class="button button-secondary" type="button" disabled>Page types</button></div>
+      <label class="search-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 4 4"></path></svg><input id="page-search" type="search" placeholder="Find a page or person…" aria-label="Find a page or person" autocomplete="off"></label>
+      <nav id="page-list" class="page-list" aria-label="Choose content"><p class="sidebar-message">Loading your content…</p></nav>
+      <div class="sidebar-footer"><span class="local-dot" aria-hidden="true"></span><div>On your computer<small>Your website files stay here.</small></div></div>
+    </aside>
+
+    <main class="workspace">
+      <header class="topbar">
+        <div class="workspace-label"><span>YOUR WEBSITE</span><strong>Write. Refine. Make it yours.</strong></div>
+        <div class="topbar-actions"><span id="publication-status" class="local-chip" role="status" aria-live="polite">Saved locally</span><button id="preview-button" class="button button-secondary" type="button" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6m0-6-9 9"></path><path d="M10 4H4v16h16v-6"></path></svg>Preview</button><button id="save-button" class="button button-primary" type="button" disabled>Save changes <span class="shortcut" aria-hidden="true">⌘S</span></button><button id="publish-button" class="button button-secondary" type="button" disabled>Publish…</button></div>
+      </header>
+
+      <div class="document-area">
+        <div id="document-heading" class="document-heading" hidden><div><div id="document-eyebrow" class="eyebrow">PROFILE · ENGLISH</div><h1 id="document-title"></h1><p>Click text to edit. Add a text block, remove a block, or replace a photo.</p><details class="editing-help"><summary>Editing tips</summary><p>Choose “Add text block” to write a new paragraph beside the selected block, or use Add above / Add below on a block. Delete block removes a complete paragraph; Restore brings it back before saving. “Undo block change” reverses block additions or removals, while normal Undo also works for text edits. Required headings and captions stay in place, but their text can be edited. Use Jump to text to move around the page.</p><p>Select words to make them bold, italic, or add a link. You can delete text together with its numbered source references. Click a reference’s × to remove just that reference, or focus it and press Delete. Save automatically renumbers the remaining references and removes unused notes from the page. Hover over a reference to see its source. Photos can be JPEG, PNG or WebP, up to 10 MB. Save, then Preview to see your page. Choose Publish when you’re ready to update the public website.</p></details></div><button id="reset-button" class="text-button" type="button" hidden>Discard changes</button></div>
+        <div id="status" class="status" role="status" aria-live="polite">Opening your content editor…</div>
+        <section id="translation-card" class="translation-card" aria-label="English to Bengali updates">
+          <div class="translation-heading"><div><label class="translation-toggle"><input id="translation-enabled" type="checkbox" checked disabled><span>Update Bengali when I save English</span></label><p>Uses your existing ChatGPT subscription. Only changed text is translated, starting with future English saves.</p></div><button id="translation-retry" class="button button-secondary" type="button" hidden>Retry update</button></div>
+          <p id="translation-status" class="translation-status" role="status" aria-live="polite">Checking Bengali updates…</p>
+          <p id="translation-publish-note" class="translation-note" hidden></p>
+          <div id="translation-review-documents" class="translation-review-documents" hidden></div>
+          <button id="translation-accept" class="text-button translation-accept" type="button" hidden>Use saved Bengali for this page</button>
+          <div id="translation-reload-note" class="translation-reload-note" hidden><p id="translation-reload-message"></p><button id="translation-reload" class="button button-secondary" type="button">Reload saved Bengali</button></div>
+          <details id="translation-usage" class="translation-usage" hidden><summary>Translation usage</summary><p id="translation-usage-total"></p><p id="translation-usage-last"></p><p id="translation-usage-model"></p></details>
+        </section>
+        <section id="editor-panel" class="editor-panel" hidden aria-label="Content editing area">
+          <div class="format-toolbar" role="toolbar" aria-label="Text formatting">
+            <span class="toolbar-label">TEXT</span>
+            <button type="button" data-command="bold" aria-label="Bold" title="Bold (Command or Control B)"><strong>B</strong></button>
+            <button type="button" data-command="italic" aria-label="Italic" title="Italic (Command or Control I)"><em>I</em></button>
+            <button id="link-button" type="button" aria-label="Add or edit link" title="Add a link"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 15 6-6m-6 9-1 1a4.3 4.3 0 0 1-6-6l4-4a4.3 4.3 0 0 1 6 0m0-3 1-1a4.3 4.3 0 0 1 6 6l-4 4a4.3 4.3 0 0 1-6 0"></path></svg></button>
+            <span class="toolbar-divider" aria-hidden="true"></span><button id="undo-button" type="button" aria-label="Undo last text edit" title="Undo last text edit"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4 3 9l5 5M3 9h11a6 6 0 0 1 0 12"></path></svg></button>
+            <span class="toolbar-hint">Select words to format them</span><button id="add-text-block" class="toolbar-add-block" type="button" disabled>+ Add text block</button>
+          </div>
+          <div class="block-navigation"><label for="block-select">Jump to text</label><select id="block-select" aria-label="Jump to a text block"><option value="">Choose a block…</option></select><button id="undo-block-change" class="text-button" type="button" hidden>Undo block change</button></div>
+          <article id="document-content" class="document-content"></article>
+          <footer class="document-footer"><span>Changes are saved to the local website project.</span><span id="change-count">No unsaved changes</span></footer>
+        </section>
+        <div id="empty-state" class="empty-state" hidden><span aria-hidden="true">✦</span><h2>A space for your stories</h2><p>Choose a page or a person from the list to begin.</p></div>
+      </div>
+    </main>
+  </div>
+
+  <dialog id="create-page-dialog" class="content-dialog" aria-labelledby="create-page-title" aria-describedby="create-page-intro">
+    <form id="create-page-form">
+      <div class="eyebrow">AGURI HERITAGE · NEW CONTENT</div>
+      <h2 id="create-page-title">Add a page</h2>
+      <p id="create-page-intro">Start with a page type and add the details for both languages. Your new page is saved on this computer. Use Preview to review it, then Publish when it is ready for the public website.</p>
+      <fieldset id="create-page-fields" class="content-fields">
+        <div class="field-heading"><label for="new-page-type">Page type</label><button id="create-page-add-type" class="text-button" type="button">Add a page type</button></div>
+        <select id="new-page-type" name="type" required><option value="">Loading page types…</option></select>
+        <p id="new-page-type-description" class="field-help"></p>
+        <label for="new-page-section">Website section</label><select id="new-page-section" name="section" required><option value="">Loading sections…</option></select>
+        <p class="field-help">The page appears in this section of the website.</p>
+        <div class="language-fields"><h3>English</h3>
+          <label for="new-page-title">Page title</label><input id="new-page-title" name="title" type="text" maxlength="180" required autocomplete="off" placeholder="For example, Village traditions">
+          <label for="new-page-slug">Page address</label><div class="address-field"><span aria-hidden="true">/</span><input id="new-page-slug" name="slug" type="text" maxlength="80" required autocomplete="off" autocapitalize="off" spellcheck="false" pattern="[a-z0-9]+(-[a-z0-9]+)*" aria-describedby="new-page-slug-help" placeholder="village-traditions"></div>
+          <p id="new-page-slug-help" class="field-help">Use lowercase English letters, numbers and hyphens. For example, /village-traditions in English and /bn/village-traditions in Bengali.</p>
+          <label for="new-page-description">Short description</label><textarea id="new-page-description" name="description" rows="2" maxlength="500" required placeholder="A short introduction to this page"></textarea>
+        </div>
+        <div class="language-fields" lang="bn"><h3 lang="en">বাংলা · Bengali</h3>
+          <label for="new-page-title-bn" lang="en">Bengali page title</label><input id="new-page-title-bn" name="titleBn" type="text" maxlength="180" required autocomplete="off" placeholder="বাংলা শিরোনাম">
+          <label for="new-page-description-bn" lang="en">Bengali short description</label><textarea id="new-page-description-bn" name="descriptionBn" rows="2" maxlength="500" required placeholder="পাতাটির সংক্ষিপ্ত পরিচিতি"></textarea>
+        </div>
+      </fieldset>
+      <p id="create-page-status" class="dialog-status" role="status" aria-live="polite" hidden></p>
+      <div class="dialog-actions"><button id="create-page-retry" class="button button-secondary" type="button" hidden>Reload options</button><button id="create-page-cancel" class="button button-secondary" type="button">Cancel</button><button id="create-page-submit" class="button button-primary" type="submit" disabled>Create page</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="page-types-dialog" class="content-dialog page-types-dialog" aria-labelledby="page-types-title" aria-describedby="page-types-intro">
+    <form id="page-types-form">
+      <div class="eyebrow">AGURI HERITAGE · PAGE TYPES</div>
+      <h2 id="page-types-title">Page types</h2>
+      <p id="page-types-intro">Page types give new pages a starting layout. Add a reusable type for stories, places, traditions or other content.</p>
+      <div id="page-types-list" class="page-types-list" aria-label="Available page types"></div>
+      <fieldset id="page-types-fields" class="content-fields">
+        <h3>Add a page type</h3>
+        <label for="new-type-name">Type name</label><input id="new-type-name" name="name" type="text" maxlength="80" required autocomplete="off" placeholder="For example, Village story">
+        <label for="new-type-template">Starting layout</label><select id="new-type-template" name="template" required><option value="article">Article — a story with sections</option><option value="general">General page — a flexible introduction</option><option value="biography">Biography — a person's life and work</option></select>
+        <label for="new-type-description">Short description</label><textarea id="new-type-description" name="description" rows="2" maxlength="240" required placeholder="Explain when to use this page type"></textarea>
+      </fieldset>
+      <p class="field-help">New pages use this starting layout. You can edit their text and add text blocks after creating them.</p>
+      <p id="page-types-status" class="dialog-status" role="status" aria-live="polite" hidden></p>
+      <div class="dialog-actions"><button id="page-types-retry" class="button button-secondary" type="button" hidden>Reload options</button><button id="page-types-cancel" class="button button-secondary" type="button">Close</button><button id="page-types-submit" class="button button-primary" type="submit" disabled>Add page type</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="link-dialog" class="link-dialog">
+    <form id="link-form">
+      <h2>Add a link</h2><p>The selected words will link to this address.</p>
+      <label for="link-url">Web address or email</label><input id="link-url" name="url" type="text" placeholder="https://example.com" autocomplete="off" required>
+      <p id="link-error" class="field-error" role="alert" hidden></p>
+      <div class="dialog-actions"><button id="link-cancel" class="button button-secondary" type="button">Cancel</button><button class="button button-primary" type="submit">Apply link</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="publish-dialog" class="publish-dialog" aria-labelledby="publish-title" aria-describedby="publish-message">
+    <div class="eyebrow">AGURI HERITAGE · CLOUDFLARE</div>
+    <h2 id="publish-title">Prepare to publish</h2>
+    <p id="publish-message" class="publish-message" role="status" aria-live="polite">Checking your saved website…</p>
+    <div id="publish-review" class="publish-review" hidden>
+      <p>Publish all saved website changes, including text and photos, in both English and Bengali.</p>
+      <dl>
+        <div><dt>Public website</dt><dd><a href="https://aguri-heritage.in" target="_blank" rel="noopener noreferrer">aguri-heritage.in</a></dd></div>
+        <div><dt>Included</dt><dd id="publish-counts"></dd></div>
+        <div><dt>Prepared</dt><dd id="publish-prepared"></dd></div>
+      </dl>
+      <p class="publish-note">These saved changes will become visible to everyone who visits the website.</p>
+    </div>
+    <p id="publish-detail" class="publish-detail"></p>
+    <div class="dialog-actions">
+      <button id="publish-close" class="button button-secondary" type="button">Close</button>
+      <button id="publish-retry" class="button button-primary" type="button" hidden>Check again</button>
+      <button id="publish-confirm" class="button button-primary" type="button" hidden>Publish now</button>
+      <a id="publish-live" class="button button-primary" href="https://aguri-heritage.in" target="_blank" rel="noopener noreferrer" hidden>View live website</a>
+    </div>
+  </dialog>
+</body>
+</html>

@@ -1,0 +1,56 @@
+/* The existing featured biographies use History's carousel and controls. */
+@media screen {
+  body[data-page="people"] .page-heading.page-heading-people {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+    align-items: start;
+  }
+  body[data-page="people"] .people-heading-gallery {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+  }
+  body[data-page="people"] .history-hero {
+    min-width: 0;
+    overflow-wrap: break-word;
+  }
+  /* Preserve each complete photograph and avoid enlarging the small original
+     parliamentary portrait beyond its native 141 × 162 pixels. */
+  body[data-page="people"] .history-hero-media {
+    justify-content: center;
+  }
+  body[data-page="people"] .history-hero .history-hero-media img {
+    align-self: center;
+    width: auto;
+    height: auto;
+    max-width: calc(100% - 40px);
+    max-height: 320px;
+    flex: 0 1 auto;
+    padding: 0;
+    margin: 24px 20px;
+    object-fit: contain;
+  }
+  body[data-page="people"] .history-hero-media figcaption {
+    margin-top: auto;
+  }
+  /* A pause-label change on pointerdown must not move the arrow buttons
+     before pointerup, especially with the longer Bengali resume label. */
+  body[data-page="people"] .history-hero-controls [data-hero-toggle] {
+    width: 13em;
+  }
+  /* Keep all seven 44px targets inside the narrow mobile content width. */
+  body[data-page="people"] .history-hero-indicators {
+    flex-wrap: wrap;
+    min-width: 0;
+    max-width: 100%;
+  }
+  body[data-page="people"] #people-biographies {
+    scroll-margin-top: 24px;
+  }
+}
+@media screen and (max-width: 760px) {
+  body[data-page="people"] .history-hero .history-hero-media img {
+    max-height: 240px;
+    margin-block: 20px;
+  }
+}

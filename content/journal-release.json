@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "repository": "rn5678/aguri-heritage-resources",
+  "tag": "journals-v1",
+  "assets": [
+    {
+      "path": "assets/documents/Ugrakshatriya_Pratinidhi_Vol_01.pdf",
+      "bytes": 87595843,
+      "sha256": "82186755528e8022dedec84d3de9b1947265f843e5679bff782060bd5f1d376e",
+      "download_url": "https://github.com/rn5678/aguri-heritage-resources/releases/download/journals-v1/Ugrakshatriya_Pratinidhi_Vol_01.pdf"
+    },
+    {
+      "path": "assets/documents/Ugrakshatriya_Pratinidhi_Vol_02.pdf",
+      "bytes": 254873593,
+      "sha256": "cdda60fc79a7d33ddeca89700772a892905bbfaf55b679209becaf70e3f519d8",
+      "download_url": "https://github.com/rn5678/aguri-heritage-resources/releases/download/journals-v1/Ugrakshatriya_Pratinidhi_Vol_02.pdf"
+    }
+  ]
+}

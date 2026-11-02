@@ -1,0 +1,63 @@
+/* Scoped additions for the supplied historical essays. Shared site styling remains authoritative. */
+.prose.lineage-article { max-width: 960px; }
+.lineage-article > p { max-width: 800px; }
+.lineage-article .lineage-table { max-width: 100%; overscroll-behavior-inline: contain; }
+.lineage-article .lineage-table:focus-visible { outline: 3px solid var(--rust); outline-offset: 3px; }
+.lineage-article .lineage-table table { min-width: 720px; table-layout: fixed; }
+.lineage-article .lineage-table th,
+.lineage-article .lineage-table td { overflow-wrap: break-word; line-height: 1.75; }
+.lineage-article .lineage-table th[scope="row"] { font-size: inherit; font-weight: 600; letter-spacing: 0; }
+.lineage-article .lineage-table caption { font-size: 14px; font-weight: 600; color: var(--ink); }
+.lineage-article .lineage-table-note { margin-top: -12px; font-size: 13px; line-height: 1.8; color: var(--muted); }
+.lineage-article .lineage-figure { margin: 32px 0; }
+.lineage-article .lineage-figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); }
+.lineage-article .lineage-figure figcaption { margin-top: 12px; font-size: 13px; line-height: 1.8; color: var(--muted); }
+.lineage-sources li { overflow-wrap: anywhere; }
+.lineage-sources .lineage-source-links { display: block; }
+@media print {
+  .lineage-article .lineage-table { overflow: visible; }
+  .lineage-article .lineage-table table { min-width: 0; }
+  .lineage-article .lineage-table th,
+  .lineage-article .lineage-table td { padding: 7px; }
+  .lineage-article .lineage-figure { break-inside: avoid; }
+}
+body[data-page="aguri-jotedars-dar-patnidars"] .tenure-sources > p {
+  margin: 16px 0;
+  font-size: 14px;
+  line-height: 1.85;
+  overflow-wrap: anywhere;
+}
+body[data-page="aguri-jotedars-dar-patnidars"] .tenure-table {
+  max-width: 100%;
+  overscroll-behavior-inline: contain;
+}
+body[data-page="aguri-jotedars-dar-patnidars"] .tenure-table:focus-visible {
+  outline: 3px solid var(--rust);
+  outline-offset: 3px;
+}
+body[data-page="aguri-jotedars-dar-patnidars"] .tenure-table table {
+  min-width: 620px;
+  table-layout: fixed;
+}
+body[data-page="aguri-jotedars-dar-patnidars"] .tenure-table th[scope="row"] {
+  font-size: inherit;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+}
+body[data-page="aguri-jotedars-dar-patnidars"] .tenure-table th,
+body[data-page="aguri-jotedars-dar-patnidars"] .tenure-table td {
+  overflow-wrap: break-word;
+}
+body[data-page="aguri-jotedars-dar-patnidars"] .tenure-table-2 th:first-child { width: 32%; }
+body[data-page="aguri-jotedars-dar-patnidars"] .tenure-table-3 th:first-child { width: 25%; }
+body[data-page="aguri-jotedars-dar-patnidars"] .tenure-table-3 th:nth-child(2) { width: 29%; }
+body[data-page="aguris-recognition"] .recognition-sources { margin-top: 42px; }
+body[data-page="aguris-recognition"] .recognition-sources li { overflow-wrap: anywhere; }
+@media print {
+  body[data-page="aguri-jotedars-dar-patnidars"] .tenure-table { overflow: visible; }
+  body[data-page="aguri-jotedars-dar-patnidars"] .tenure-table table { min-width: 0; }
+  body[data-page="aguri-jotedars-dar-patnidars"] .tenure-table th,
+  body[data-page="aguri-jotedars-dar-patnidars"] .tenure-table td { padding: 7px; }
+  body[data-page="aguris-recognition"] .recognition-sources { display: block; }
+}

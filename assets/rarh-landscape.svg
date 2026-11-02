@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 640">
+ <title>An illustrated Bengal landscape</title>
+ <desc>A decorative view of fields, a winding river, trees and village roofs. Not a map or a depiction of a particular village.</desc>
+ <rect width="700" height="640" fill="#e5e6d8"/>
+ <circle cx="522" cy="194" r="76" fill="#d6b680"/>
+ <circle cx="522" cy="194" r="95" fill="none" stroke="#c8cbbb"/>
+ <path d="M0 322Q105 277 203 309T410 294T700 303V640H0Z" fill="#aebaa0"/>
+ <path d="M0 372Q150 321 331 349T700 330V640H0Z" fill="#8c9f7c"/>
+ <path d="M0 426L212 364 415 397 156 514 0 503Z" fill="#c6cba4"/>
+ <path d="M0 527L159 534 429 420 527 433 261 640H0Z" fill="#b1b88e"/>
+ <path d="M409 371Q536 397 423 448T421 525T481 640H607Q510 546 484 525T489 456T487 399T409 371Z" fill="#dbe0d1"/>
+ <path d="M530 382L700 362V444L552 460 525 432Z" fill="#bac19a"/>
+ <path d="M551 483L700 468V640H630Q538 548 521 530Z" fill="#a7b090"/>
+ <g fill="none" stroke="#e5e6cf" stroke-width="2" opacity=".7">
+  <path d="M0 444L212 384 350 406M0 464L206 406 312 424M0 484L206 429 267 445"/>
+  <path d="M16 550L161 557 394 457M23 577L163 580 354 498M29 605L168 610 308 550"/>
+  <path d="M583 397L700 389M575 420L700 414M564 506L700 496M590 532L700 525M613 560L700 554M638 590L700 585"/>
+ </g>
+ <g fill="#60785f">
+  <path d="M55 332V284H61V332Z"/><ellipse cx="57" cy="275" rx="23" ry="33"/>
+  <path d="M100 327V288H106V327Z"/><ellipse cx="103" cy="281" rx="26" ry="28"/>
+  <path d="M602 325V281H608V325Z"/><ellipse cx="605" cy="267" rx="30" ry="37"/>
+  <path d="M650 328V294H656V328Z"/><ellipse cx="653" cy="283" rx="24" ry="30"/>
+ </g>
+ <g stroke="#52694f" stroke-width="2">
+  <path d="M156 325V299H207V325Z" fill="#e2d4b4"/><path d="M146 300L181 277 217 300Z" fill="#916e50"/>
+  <path d="M231 330V309H274V330Z" fill="#ddd0aa"/><path d="M222 310L252 289 283 310Z" fill="#9e805c"/>
+ </g>
+ <g fill="none" stroke="#52694f" stroke-width="2" opacity=".7"><path d="M295 229q9-9 18 0q9-9 18 0M363 203q7-7 14 0q7-7 14 0"/></g>
+</svg>

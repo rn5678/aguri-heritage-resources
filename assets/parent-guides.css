@@ -1,0 +1,62 @@
+/* Public-history guides. Loaded only on the six collection pages. */
+.parent-guide { margin: 12px 0 48px; }
+.parent-guide > section, .parent-guide > .guide-section { margin-block: 42px; }
+.guide-intro { max-width: 800px; margin-bottom: 34px; }
+.guide-intro p { margin: 16px 0; line-height: 1.9; }
+.guide-intro .lead { font-size: clamp(22px,2.2vw,29px) !important; }
+.parent-guide h2 { margin: 0 0 22px; max-width: 28ch; }
+.guide-kicker { display: block; margin: 0 0 12px; font-size: 10px; font-weight: 600; line-height: 1.6; letter-spacing: .12em; text-transform: uppercase; color: var(--rust); }
+.guide-description { max-width: 65ch; margin: 12px 0 25px; color: var(--muted); line-height: 1.85; }
+.guide-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; margin: 24px 0; }
+.guide-card { min-width: 0; padding: 28px; border: 1px solid var(--line); background: #fbfaf4; }
+a.guide-card { display: block; text-decoration: none; }
+.guide-card h3 { margin: 0 0 14px; font-size: clamp(25px,2.2vw,32px); line-height: 1.2; }
+.guide-card h3 a { text-decoration-thickness: 1px; text-underline-offset: 5px; }
+.guide-card p { font-size: 14px; line-height: 1.85; margin: 10px 0; }
+.guide-card .guide-kicker { font-size: 10px; }
+.guide-card .text-link, .guide-card .button { margin-top: 12px; }
+.guide-card:focus-within { border-color: var(--rust); }
+.guide-card img { width: 100%; height: auto; margin-bottom: 22px; }
+.guide-timeline { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 0 24px; }
+.guide-timeline > li { padding: 23px 0; border-top: 2px solid var(--line); min-width: 0; }
+.guide-timeline h3 { margin: 9px 0 12px; font-size: 26px; }
+.guide-timeline p { font-size: 14px; line-height: 1.85; margin: 9px 0; }
+.guide-timeline time { font: 21px/1.5 var(--serif); color: var(--rust); }
+.guide-depth { margin: 35px 0; max-width: 100%; }
+.guide-depth > summary { padding: 22px 0; cursor: pointer; border-top: 1px solid var(--line); }
+.guide-depth > summary h2 { display: inline; font-size: 28px; }
+.guide-depth > .prose { padding-top: 8px; }
+.surname-browser { margin-top: 28px; }
+.surname-browser label { display: block; margin-bottom: 9px; font-weight: 600; }
+.surname-browser input { width: min(100%,640px); padding: 14px 16px; background: #fffef8; border: 1px solid #9aa485; border-radius: 0; }
+.surname-browser [data-surname-count], [data-guide-count] { font-size: 13px; margin: 12px 0; color: var(--muted); }
+.surname-browser [data-surname-entry] { scroll-margin-top: 24px; }
+.guide-filters { display: flex; flex-wrap: wrap; gap: 9px; margin: 20px 0; }
+[data-guide-filter] button[data-topic] { padding: 10px 15px; min-height: 44px; background: transparent; border: 1px solid #aab19f; font-size: 13px; }
+[data-guide-filter] button[data-topic][aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.parent-guide :is(p,li,a,h2,h3), .surname-browser { overflow-wrap: break-word; }
+.parent-guide :lang(bn) { letter-spacing: normal; }
+@media (max-width: 900px) { .guide-timeline { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (max-width: 700px) {
+ .parent-guide { margin-bottom: 32px; }
+ .parent-guide > section { margin-block: 32px; }
+ .guide-grid, .guide-timeline { grid-template-columns: minmax(0,1fr); gap: 15px; }
+ .guide-card { padding: 23px 20px; }
+ .guide-timeline > li { padding: 20px 0 10px; }
+ .guide-depth > summary h2 { font-size: 25px; }
+ .guide-filters { gap: 8px; }
+}
+@media print {
+ .guide-grid, .guide-timeline { display: block; }
+ .guide-card, .guide-timeline > li { background: none; break-inside: avoid; margin-bottom: 16px; }
+ .guide-filters, .surname-browser label, .surname-browser input, [data-surname-count], [data-guide-count], [data-guide-empty], [data-surname-empty] { display: none !important; }
+ [data-guide-entry][hidden], [data-surname-entry][hidden] { display: block !important; }
+}
+.surname-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; align-items: start; margin: 20px 0 32px; }
+.surname-entry { border: 1px solid var(--line); background: #fbfaf4; padding: 0 20px; min-width: 0; }
+.surname-entry > summary { cursor: pointer; padding: 18px 0; line-height: 1.6; font-size: 17px; }
+.surname-entry > summary span + span { color: var(--muted); margin-inline-start: 10px; }
+.surname-entry p { font-size: 14px; line-height: 1.85; margin: 14px 0; }
+.surname-entry[open] { border-color: #aab19f; padding-bottom: 8px; }
+@media (max-width: 700px) { .surname-list { grid-template-columns: minmax(0,1fr); } }
+@media print { .surname-list { display: block; } .surname-entry { break-inside: avoid; } }

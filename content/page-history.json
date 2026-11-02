@@ -1,0 +1,1446 @@
+{
+  "pages": {
+    "bn/about": {
+      "baseline": {
+        "date": "2026-10-08",
+        "sources": [
+          {
+            "modified": "2026-10-08T12:40:31.154711+05:30",
+            "path": "content/bn/about.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "5fd39595c61dd7bf32dfe0d1eaf38be506e9cd5045c8c5e41a2a9e2c7e765c03",
+      "updated": "2026-10-13"
+    },
+    "bn/aguri-jotedars-dar-patnidars": {
+      "baseline": {
+        "date": "2026-10-13",
+        "sources": [
+          {
+            "modified": "2026-10-13T12:10:49.403650+05:30",
+            "path": "content/bn/aguri-jotedars-dar-patnidars.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "e23700af0afdc22b4888788c35dbebf91d3090f5213ffa4eecb3dae5d1eaf603",
+      "updated": "2026-10-30"
+    },
+    "bn/aguris-freedom-struggle": {
+      "baseline": {
+        "date": "2026-10-23",
+        "sources": [
+          {
+            "modified": "2026-10-23T23:15:27.630686+05:30",
+            "path": "content/bn/aguris-freedom-struggle.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "db011f582dda536572c5ddb471abb4e5eba039b70f42389a210678d3d0573a6e",
+      "updated": "2026-10-30"
+    },
+    "bn/aguris-recognition": {
+      "baseline": {
+        "date": "2026-10-13",
+        "sources": [
+          {
+            "modified": "2026-10-13T15:35:14.673635+05:30",
+            "path": "content/bn/aguris-recognition.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "13ce2f8eee3f9eb1dc05e4d1b73416d1f6372218c9a979d85be3c442616ebbcb",
+      "updated": "2026-10-24"
+    },
+    "bn/aguris-today": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T18:29:57.248176+05:30",
+            "path": "content/bn/aguris-today.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "db07fbaaa9c0221601f77acf51171ddb40424f9bfc90c642cfa9a0036d6c8aeb",
+      "updated": "2026-10-13"
+    },
+    "bn/archives": {
+      "baseline": {
+        "date": "2026-10-04",
+        "sources": [
+          {
+            "modified": "2026-10-04T01:12:44.533681+05:30",
+            "path": "content/bn/archives.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "73dca9c32eb3abbe101ce1d1ff9cd6be53af4c2013c91c0f42f1b01b9f163d42",
+      "updated": "2026-10-11"
+    },
+    "bn/bangsha-parichay-aguri-origins": {
+      "baseline": {
+        "date": "2026-10-24",
+        "sources": [
+          {
+            "modified": "2026-10-24T15:58:48.325076+05:30",
+            "path": "content/bn/bangsha-parichay-aguri-origins.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "d9fab4f8be716cc6a28077af20f7ba0738a6b7bc68025e75fcbd2340156210f4",
+      "updated": "2026-10-28"
+    },
+    "bn/bibliography": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T18:31:04.790590+05:30",
+            "path": "content/bn/bibliography.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "0e60f53f1acc0b590b73963768f859455da970f90ded4fb1dcfc23eb8eaf7d86",
+      "updated": "2026-11-02"
+    },
+    "bn/book-rajput-o-ugrakshatriya": {
+      "baseline": {
+        "date": "2026-10-04",
+        "sources": [
+          {
+            "modified": "2026-10-04T01:12:44.534432+05:30",
+            "path": "content/bn/book-rajput-o-ugrakshatriya.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "65f7b96f0e416a676550f78a888c7bf078b7a7255a6cea02cdf69f5b0aea09b6",
+      "updated": "2026-10-13"
+    },
+    "bn/contributor-terms": {
+      "baseline": {
+        "date": "2026-10-04",
+        "sources": [
+          {
+            "modified": "2026-10-04T08:22:32.060088+05:30",
+            "path": "content/bn/contributor-terms.html"
+          }
+        ]
+      },
+      "date_basis": "source-mtime-baseline",
+      "fingerprint": "8af171fe04ac7dd59053fc6dd4fe933c87ae8186edc5e87bd2cee9caff929bd0",
+      "updated": "2026-10-04"
+    },
+    "bn/culture": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T18:29:39.953032+05:30",
+            "path": "content/bn/culture.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "5c848bae7802b5e1bfbe0c0e2d6943df8b772e99fa6f0c411fad11adc2be3e1d",
+      "updated": "2026-10-28"
+    },
+    "bn/food-and-village-life": {
+      "baseline": {
+        "date": "2026-10-11",
+        "sources": [
+          {
+            "modified": "2026-10-11T14:11:34.857040+05:30",
+            "path": "content/bn/food-and-village-life.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "8fa5f53aa952e2a0db2a39593da855cc2cc735d7c551d3c62a7b754471657015",
+      "updated": "2026-10-11"
+    },
+    "bn/geography": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T14:23:33.482253+05:30",
+            "path": "content/bn/geography.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "2ef67ed29ddbaeff7bc26f0ff04eff5448e25f1bba93fe1eaa934e390b267eaa",
+      "updated": "2026-10-13"
+    },
+    "bn/history": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.448343+05:30",
+            "path": "content/bn/history.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "fa243efc19d10ea2eca4b66074e33094af2bc06cdadd9d44c440ea2328b2787f",
+      "updated": "2026-11-02"
+    },
+    "bn/index": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T14:14:12.568609+05:30",
+            "path": "content/bn/index.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "55c219a20083ad59b9ef797747146026b4ecf18e7c31ff7d2ce20ae3380b90e9",
+      "updated": "2026-11-02"
+    },
+    "bn/military-settlers-bengal": {
+      "baseline": {
+        "date": "2026-10-21",
+        "sources": [
+          {
+            "modified": "2026-10-21T16:27:42.153318+05:30",
+            "path": "content/bn/military-settlers-bengal.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "077994127ae22e3c2534ffd830681fca406d4cef16c8b13549f19aec3cbcf283",
+      "updated": "2026-10-28"
+    },
+    "bn/origins": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.478044+05:30",
+            "path": "content/bn/origins.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "dcff3580ccb44e3d4b847aac2f88b573d6db0389faa52f15152ae2b3884e91a3",
+      "updated": "2026-10-14"
+    },
+    "bn/people": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.447706+05:30",
+            "path": "content/bn/people.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "3183d1e97263c362470dde134dc1b147b0c20f727ec17eb708799fd69919dec9",
+      "updated": "2026-11-02"
+    },
+    "bn/person-ajit-kumar-panja": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.447706+05:30",
+            "path": "content/bn/people.html"
+          }
+        ]
+      },
+      "date_basis": "source-mtime-baseline",
+      "fingerprint": "0d4ac06103850cf2866d0fa57ebfac559b13f05f6854fc3ec5657792e1edd8f4",
+      "updated": "2026-10-09"
+    },
+    "bn/person-benoy-choudhury": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.447706+05:30",
+            "path": "content/bn/people.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "63a5794122c9e182b94a154fbcd9396d883ae5633380bcb43a7b9831c5541169",
+      "updated": "2026-10-13"
+    },
+    "bn/person-benoy-krishna-konar": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.447706+05:30",
+            "path": "content/bn/people.html"
+          }
+        ]
+      },
+      "date_basis": "source-mtime-baseline",
+      "fingerprint": "d13e767157871475d04b70e71ff5a5b0a7e16f3ac9853e894be2a6672c401bd9",
+      "updated": "2026-10-09"
+    },
+    "bn/person-dasarathi-tah": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.447706+05:30",
+            "path": "content/bn/people.html"
+          }
+        ]
+      },
+      "date_basis": "source-mtime-baseline",
+      "fingerprint": "a7547ea048850ef010781362506e19924894c17ce138fe54a889f0415d986442",
+      "updated": "2026-10-09"
+    },
+    "bn/person-dhanapati-panja": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.447706+05:30",
+            "path": "content/bn/people.html"
+          }
+        ]
+      },
+      "date_basis": "source-mtime-baseline",
+      "fingerprint": "0d29115dba4c4c5882216dcc01c12ce61e02393c1d9fedc7a71593920c54ed9f",
+      "updated": "2026-10-09"
+    },
+    "bn/person-ganapati-panja": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.447706+05:30",
+            "path": "content/bn/people.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "25fe1c53669ccbb37320ba39095950eb458e9aefde5c2ef915d2c0cd85b8aa5c",
+      "updated": "2026-10-22"
+    },
+    "bn/person-hare-krishna-konar": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.447706+05:30",
+            "path": "content/bn/people.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "9ebc345a93424c88e900f8a4677b4376ec58185d1eefb2607c6fc8a9cf7c131e",
+      "updated": "2026-10-13"
+    },
+    "bn/person-haricharan-bandhu": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.447706+05:30",
+            "path": "content/bn/people.html"
+          }
+        ]
+      },
+      "date_basis": "source-mtime-baseline",
+      "fingerprint": "c0529caab40fdcc77b533d29a8a4131c27444f9e0b9fd8bc4e16bae08c348bc0",
+      "updated": "2026-10-09"
+    },
+    "bn/person-jadabendra-nath-panja": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.447706+05:30",
+            "path": "content/bn/people.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "d3958f28ce8a2b6f04030e8ef35b94f7b0a26fc7f7465661268ec39c31e07a85",
+      "updated": "2026-10-30"
+    },
+    "bn/person-k-d-paul": {
+      "baseline": {
+        "date": "2026-10-30",
+        "sources": [
+          {
+            "modified": "2026-10-30T02:02:36.554703+05:30",
+            "path": "content/profiles/k-d-paul.bn.json"
+          }
+        ]
+      },
+      "date_basis": "source-mtime-baseline",
+      "fingerprint": "010ce52c3767dce21e76db1d2efcb0223e4f2139f4860474d5e198167f9bcf10",
+      "updated": "2026-10-30"
+    },
+    "bn/person-manohar-ray": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.447706+05:30",
+            "path": "content/bn/people.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "04a51aa674bad8332740b579cd7c1947e50e2887c8d5d05e9b5363b2eff3a38c",
+      "updated": "2026-10-13"
+    },
+    "bn/person-nikhilananda-sar": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.447706+05:30",
+            "path": "content/bn/people.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "5ce04f9a4ea214b19a01201c4c115c516ffb9d3a359ae5687bd1722d28e61982",
+      "updated": "2026-10-13"
+    },
+    "bn/person-pratap-chandra-ray": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.447706+05:30",
+            "path": "content/bn/people.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "709f6d33d59ef1b1abf0e12228bc5df7ee9649d9f8287740c796a0d8e64b38ea",
+      "updated": "2026-10-21"
+    },
+    "bn/person-ramapada-chowdhury": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.447706+05:30",
+            "path": "content/bn/people.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "37efd314aefab0865be4cb3532a2c4aee991a610349eee63be2aae4fd1e20008",
+      "updated": "2026-10-30"
+    },
+    "bn/person-ranjit-kumar-panja": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.447706+05:30",
+            "path": "content/bn/people.html"
+          }
+        ]
+      },
+      "date_basis": "source-mtime-baseline",
+      "fingerprint": "782acfbc41064a1d77940f8d8f7674fde2c0e3f8e2041cf94428907d14f06200",
+      "updated": "2026-10-09"
+    },
+    "bn/person-satya-kinkar-sahana": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.447706+05:30",
+            "path": "content/bn/people.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "eaca471245fafa4f8098506e6a8f1d37d5117d20c675a242dcf924bd25a69536",
+      "updated": "2026-10-21"
+    },
+    "bn/person-shakti-samanta": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.447706+05:30",
+            "path": "content/bn/people.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "659129ecbad07072bf02f6302d8a192cb6d238dafb31d18dfbc9225afc6e9578",
+      "updated": "2026-10-11"
+    },
+    "bn/person-shib-shankar-chowdhury": {
+      "baseline": {
+        "date": "2026-10-23",
+        "sources": [
+          {
+            "modified": "2026-10-23T09:49:25.601919+05:30",
+            "path": "content/bn/people.html"
+          }
+        ]
+      },
+      "date_basis": "source-mtime-baseline",
+      "fingerprint": "da0f295480c9b1ea8a4ac989ca3bc7f28c39af4c4342c26f61ae65a7f7c4e840",
+      "updated": "2026-10-23"
+    },
+    "bn/person-tuhin-kumar-roy": {
+      "baseline": {
+        "date": "2026-11-02",
+        "sources": [
+          {
+            "modified": "2026-11-02T00:00:09.139827+05:30",
+            "path": "content/bn/people.html"
+          }
+        ]
+      },
+      "date_basis": "source-mtime-baseline",
+      "fingerprint": "ae1849c11c4975c728ed2542803a7b558a156002f407aba5ccc339b2a52fb69c",
+      "updated": "2026-11-02"
+    },
+    "bn/research": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.450401+05:30",
+            "path": "content/bn/research.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "ad3f248873590e9cf7e8928c520fceca0049ddecbc89b07024ca87b3ee44d6ba",
+      "updated": "2026-10-28"
+    },
+    "bn/rights": {
+      "baseline": {
+        "date": "2026-10-04",
+        "sources": [
+          {
+            "modified": "2026-10-04T08:23:27.067768+05:30",
+            "path": "content/bn/rights.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "ce96cd5dcec7a3e95fe0c8d1ecdcbd5d3655305227f48a4e9397159cb9f49dfd",
+      "updated": "2026-10-21"
+    },
+    "bn/surnames": {
+      "baseline": {
+        "date": "2026-10-07",
+        "sources": [
+          {
+            "modified": "2026-10-07T14:13:17.722064+05:30",
+            "path": "content/bn/surnames.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "c80f3833f5d21e79638c8dc504b90d838505245b77c6649ab373d2a98ad88772",
+      "updated": "2026-10-16"
+    },
+    "bn/translation-editors-address-opening": {
+      "baseline": {
+        "date": "2026-09-15",
+        "sources": [
+          {
+            "modified": "2026-09-13T14:31:16.857078+05:30",
+            "path": "content/translations/editors-address-opening.json"
+          },
+          {
+            "modified": "2026-09-15T09:04:07.717347+05:30",
+            "path": "content/bn/readings.json"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "46faabe9e86edf584e63fb56716194c1b63c45ddd6497131176a08e78e0a607c",
+      "updated": "2026-10-13"
+    },
+    "bn/translation-electricity": {
+      "baseline": {
+        "date": "2026-09-15",
+        "sources": [
+          {
+            "modified": "2026-09-13T14:44:56.144974+05:30",
+            "path": "content/translations/electricity.json"
+          },
+          {
+            "modified": "2026-09-15T09:04:07.717347+05:30",
+            "path": "content/bn/readings.json"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "6d0ac7b1dae5322e13f1e4224a12b38d948c4d4620ccbf11f5e190710bf67214",
+      "updated": "2026-10-13"
+    },
+    "bn/translation-journal-autobiography": {
+      "baseline": {
+        "date": "2026-09-15",
+        "sources": [
+          {
+            "modified": "2026-09-13T14:31:16.856837+05:30",
+            "path": "content/translations/journal-autobiography.json"
+          },
+          {
+            "modified": "2026-09-15T09:04:07.717347+05:30",
+            "path": "content/bn/readings.json"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "6d8c049524570d23b9dda2e8e3cca3767888d614d12e01ccb0caab943102a601",
+      "updated": "2026-10-13"
+    },
+    "bn/translation-prabasi-book-review": {
+      "baseline": {
+        "date": "2026-09-15",
+        "sources": [
+          {
+            "modified": "2026-09-15T09:04:07.716750+05:30",
+            "path": "content/translations/prabasi-book-review.json"
+          },
+          {
+            "modified": "2026-09-15T09:04:07.717347+05:30",
+            "path": "content/bn/readings.json"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "d818a0641bfdb2dee3fd5e4c42338a0384722903730fc6863197a21fb85127cf",
+      "updated": "2026-10-13"
+    },
+    "bn/translation-rajput-authors-foreword": {
+      "baseline": {
+        "date": "2026-09-15",
+        "sources": [
+          {
+            "modified": "2026-09-13T14:39:12.136425+05:30",
+            "path": "content/translations/rajput-authors-foreword.json"
+          },
+          {
+            "modified": "2026-09-15T09:04:07.717347+05:30",
+            "path": "content/bn/readings.json"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "4c3e0fe7024adbde0e5227f00032c2885d1ca3d0f83d3bd40f1b46e4dd1b08a5",
+      "updated": "2026-10-13"
+    },
+    "bn/translation-rajput-publishers-note": {
+      "baseline": {
+        "date": "2026-09-15",
+        "sources": [
+          {
+            "modified": "2026-09-13T14:39:12.136144+05:30",
+            "path": "content/translations/rajput-publishers-note.json"
+          },
+          {
+            "modified": "2026-09-15T09:04:07.717347+05:30",
+            "path": "content/bn/readings.json"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "ba16dbccd7467c8901477069e5b94c04b54d18a957dcd8d88b516e767edce7bf",
+      "updated": "2026-10-13"
+    },
+    "bn/translations": {
+      "baseline": {
+        "date": "2026-09-15",
+        "sources": [
+          {
+            "modified": "2026-09-13T14:31:16.857078+05:30",
+            "path": "content/translations/editors-address-opening.json"
+          },
+          {
+            "modified": "2026-09-13T14:44:56.144974+05:30",
+            "path": "content/translations/electricity.json"
+          },
+          {
+            "modified": "2026-09-13T14:31:16.856837+05:30",
+            "path": "content/translations/journal-autobiography.json"
+          },
+          {
+            "modified": "2026-09-15T09:04:07.716750+05:30",
+            "path": "content/translations/prabasi-book-review.json"
+          },
+          {
+            "modified": "2026-09-13T14:39:12.136425+05:30",
+            "path": "content/translations/rajput-authors-foreword.json"
+          },
+          {
+            "modified": "2026-09-13T14:39:12.136144+05:30",
+            "path": "content/translations/rajput-publishers-note.json"
+          },
+          {
+            "modified": "2026-09-15T09:04:07.717347+05:30",
+            "path": "content/bn/readings.json"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "e4c45da654c6af7216418cb8fca7c329703917fd0a605ed653cf126fe1e958a3",
+      "updated": "2026-10-13"
+    },
+    "bn/ugra-kshatriya-patrika": {
+      "baseline": {
+        "date": "2026-11-02",
+        "sources": [
+          {
+            "modified": "2026-11-02T04:06:22.514457+05:30",
+            "path": "content/bn/ugra-kshatriya-patrika.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "a15107ecb4b7efa1af1b7519a2d2191f7ddac57f5344c82ffae61992d0101898",
+      "updated": "2026-11-02"
+    },
+    "bn/water-landscape": {
+      "baseline": {
+        "date": "2026-10-11",
+        "sources": [
+          {
+            "modified": "2026-10-11T19:38:29.678022+05:30",
+            "path": "content/bn/water-landscape.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "08dc4922b914ac713e90e930525fb1ca101b6e8d8baeaf23a0991cadc1fadc15",
+      "updated": "2026-10-11"
+    },
+    "en/about": {
+      "baseline": {
+        "date": "2026-10-08",
+        "sources": [
+          {
+            "modified": "2026-10-08T12:40:31.153038+05:30",
+            "path": "content/about.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "b4d747bf341543016a9294c9b2eec1df06b48c1326cf7cff4917178648c61b08",
+      "updated": "2026-10-13"
+    },
+    "en/aguri-jotedars-dar-patnidars": {
+      "baseline": {
+        "date": "2026-10-13",
+        "sources": [
+          {
+            "modified": "2026-10-13T12:10:49.399792+05:30",
+            "path": "content/aguri-jotedars-dar-patnidars.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "555fee36a75f523cedc7b8a0e05d397c12b0edc266ae5fd51d9ee5b99fb45460",
+      "updated": "2026-10-30"
+    },
+    "en/aguris-freedom-struggle": {
+      "baseline": {
+        "date": "2026-10-23",
+        "sources": [
+          {
+            "modified": "2026-10-23T23:15:27.630304+05:30",
+            "path": "content/aguris-freedom-struggle.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "37025c2b1905c6bd4786af3f3761619f6bd6b3f3a1ae6dac0dafb7de2695aa8a",
+      "updated": "2026-10-30"
+    },
+    "en/aguris-recognition": {
+      "baseline": {
+        "date": "2026-10-13",
+        "sources": [
+          {
+            "modified": "2026-10-13T12:27:07.524666+05:30",
+            "path": "content/aguris-recognition.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "df9cf026a33b586800def2bd5fad6034798966a354eebe1a1878354b1cef539b",
+      "updated": "2026-10-24"
+    },
+    "en/aguris-today": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T18:26:05.073933+05:30",
+            "path": "content/aguris-today.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "1ad64f21cc5485d1b0a28292b74e09fe2c82ea12b4133213b8bf1b4af99dd2d6",
+      "updated": "2026-10-11"
+    },
+    "en/archives": {
+      "baseline": {
+        "date": "2026-10-04",
+        "sources": [
+          {
+            "modified": "2026-10-04T01:12:44.518306+05:30",
+            "path": "content/archives.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "f1c39ae5d3c27478a56f000cb6b054c903906b165d245adc3f85b75da703305f",
+      "updated": "2026-10-09"
+    },
+    "en/bangsha-parichay-aguri-origins": {
+      "baseline": {
+        "date": "2026-10-16",
+        "sources": [
+          {
+            "modified": "2026-10-16T00:13:03.254821+05:30",
+            "path": "content/bangsha-parichay-aguri-origins.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "312bd7be13c90927116bb82fd041e46ab8f7db345a98f1e0bf65a8e1c4cb45e7",
+      "updated": "2026-10-28"
+    },
+    "en/bibliography": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T18:31:04.788332+05:30",
+            "path": "content/bibliography.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "38c45a9a3f0e166458a8bfef8347b19dd79ca713e78e26223df55f0f8949dd64",
+      "updated": "2026-11-02"
+    },
+    "en/book-rajput-o-ugrakshatriya": {
+      "baseline": {
+        "date": "2026-10-04",
+        "sources": [
+          {
+            "modified": "2026-10-04T01:12:44.518939+05:30",
+            "path": "content/book-rajput-o-ugrakshatriya.html"
+          }
+        ]
+      },
+      "date_basis": "source-mtime-baseline",
+      "fingerprint": "2a6d9be5f7d1c7aa8e44a55f9a30f0d98383e2a4237371c3b9b3b7adfd92da3a",
+      "updated": "2026-10-04"
+    },
+    "en/contributor-terms": {
+      "baseline": {
+        "date": "2026-10-04",
+        "sources": [
+          {
+            "modified": "2026-10-04T08:22:32.002245+05:30",
+            "path": "content/contributor-terms.html"
+          }
+        ]
+      },
+      "date_basis": "source-mtime-baseline",
+      "fingerprint": "ac1fdbbdfa8b1bfdc0906dfb380282f3c30fb2a665a3cedbb039ff5f82dbf0d3",
+      "updated": "2026-10-04"
+    },
+    "en/culture": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T18:29:39.952611+05:30",
+            "path": "content/culture.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "c7b92ed70d1d68cfbd40ba6d072a6f25d0115453e37c7cc4064583d62c4da85f",
+      "updated": "2026-10-21"
+    },
+    "en/food-and-village-life": {
+      "baseline": {
+        "date": "2026-10-11",
+        "sources": [
+          {
+            "modified": "2026-10-11T14:11:34.856427+05:30",
+            "path": "content/food-and-village-life.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "5c55064c3f7f56d673d26a0203186d6fc16d5b147dd4bcad7464803464482ea0",
+      "updated": "2026-10-11"
+    },
+    "en/geography": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T14:23:33.481730+05:30",
+            "path": "content/geography.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "05b2c4e5372d67c89dcd4df16da76ffd59ad84bb67d9030fd83e3730fa1a43f1",
+      "updated": "2026-10-13"
+    },
+    "en/history": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.446195+05:30",
+            "path": "content/history.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "5f411b3121bdd6093fb8ca7a9cb79844d6f7d400128ff00a01530384c0e42c7f",
+      "updated": "2026-11-02"
+    },
+    "en/index": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T14:14:12.568137+05:30",
+            "path": "content/index.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "4339b53f2b817df890ebb4a883416985c6448f32289c6380fefff54da74f16e2",
+      "updated": "2026-11-02"
+    },
+    "en/military-settlers-bengal": {
+      "baseline": {
+        "date": "2026-10-21",
+        "sources": [
+          {
+            "modified": "2026-10-21T16:27:42.151719+05:30",
+            "path": "content/military-settlers-bengal.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "724209d998d3ad17bfb88c25b0918c0c31eb924df123b3fa0cc58d0ba20aa19b",
+      "updated": "2026-10-22"
+    },
+    "en/origins": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.471474+05:30",
+            "path": "content/origins.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "28b22a8d51eec0c15e4782f86268225333b128a498f01ff4856b7392995b14f9",
+      "updated": "2026-10-14"
+    },
+    "en/people": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.445455+05:30",
+            "path": "content/people.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "bf3e3c2390da4624d89fb0f7a0796e1c5a62147d33d79a7240b582b3e8cecf7a",
+      "updated": "2026-11-02"
+    },
+    "en/person-ajit-kumar-panja": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.445455+05:30",
+            "path": "content/people.html"
+          }
+        ]
+      },
+      "date_basis": "source-mtime-baseline",
+      "fingerprint": "8548f1f4a894b8bca13ba9533e1f19662f5a57c55cbd701b9e25c66deeba7d38",
+      "updated": "2026-10-09"
+    },
+    "en/person-benoy-choudhury": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.445455+05:30",
+            "path": "content/people.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "fe2a79ad93fb687d2ef770abb3592c165578b9268f3a74cf5cdb7d0f451d3368",
+      "updated": "2026-10-11"
+    },
+    "en/person-benoy-krishna-konar": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.445455+05:30",
+            "path": "content/people.html"
+          }
+        ]
+      },
+      "date_basis": "source-mtime-baseline",
+      "fingerprint": "02070ad142acc4f22e0b46f891be95078f8402730bc22ab8c72a69bf2018e8ef",
+      "updated": "2026-10-09"
+    },
+    "en/person-dasarathi-tah": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.445455+05:30",
+            "path": "content/people.html"
+          }
+        ]
+      },
+      "date_basis": "source-mtime-baseline",
+      "fingerprint": "b1f3f65bb7b5d97e7d31b9a4c7e1d257b133a0ef433ff0d4c515b28baaa487df",
+      "updated": "2026-10-09"
+    },
+    "en/person-dhanapati-panja": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.445455+05:30",
+            "path": "content/people.html"
+          }
+        ]
+      },
+      "date_basis": "source-mtime-baseline",
+      "fingerprint": "f56b3f72c3969fe1a77efe4bdae0775d5345abb0400e35b034f9259ff0094e9f",
+      "updated": "2026-10-09"
+    },
+    "en/person-ganapati-panja": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.445455+05:30",
+            "path": "content/people.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "377702372c50c331b6d7b6fa9d798f97ce4a28f2f9d9e68c54eaec93e8d02522",
+      "updated": "2026-10-22"
+    },
+    "en/person-hare-krishna-konar": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.445455+05:30",
+            "path": "content/people.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "c3dba8e390e7a3665bc447245ea1d016b4852047255dfb4ca32ceab90d8bc13b",
+      "updated": "2026-10-13"
+    },
+    "en/person-haricharan-bandhu": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.445455+05:30",
+            "path": "content/people.html"
+          }
+        ]
+      },
+      "date_basis": "source-mtime-baseline",
+      "fingerprint": "a255a0e7368de9ceee9df3b9a361f737671dfb163b2d29ab4ce20bf2a4c73100",
+      "updated": "2026-10-09"
+    },
+    "en/person-jadabendra-nath-panja": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.445455+05:30",
+            "path": "content/people.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "b437e45b3eaab6e610857b7e1a0bed52c37853baf249853ecab1f6be6b93248e",
+      "updated": "2026-10-30"
+    },
+    "en/person-k-d-paul": {
+      "baseline": {
+        "date": "2026-10-30",
+        "sources": [
+          {
+            "modified": "2026-10-30T00:15:05.962051+05:30",
+            "path": "content/profiles/k-d-paul.en.json"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "8d6f35ddf01792b41b0a78e38cea359b80e3abd3a7ccf447b003719715a04190",
+      "updated": "2026-10-30"
+    },
+    "en/person-manohar-ray": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.445455+05:30",
+            "path": "content/people.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "5d20cdae62c5082387aef5924bcd81e685f18b48314edc414f39ff97ca261963",
+      "updated": "2026-10-13"
+    },
+    "en/person-nikhilananda-sar": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.445455+05:30",
+            "path": "content/people.html"
+          }
+        ]
+      },
+      "date_basis": "source-mtime-baseline",
+      "fingerprint": "c8da3b9289831cc89bbaa04da6a82a52d69e06710f91317aeb09138276f40ae4",
+      "updated": "2026-10-09"
+    },
+    "en/person-pratap-chandra-ray": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.445455+05:30",
+            "path": "content/people.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "089109433ed680a18c88a04df2378e11548a6ffbae08e2ac9fe2dc5eb75d5555",
+      "updated": "2026-10-21"
+    },
+    "en/person-ramapada-chowdhury": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.445455+05:30",
+            "path": "content/people.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "0d4a52ff3a553a29122c4c19cbcbad47ea178542923a50881194a181ac96a788",
+      "updated": "2026-10-30"
+    },
+    "en/person-ranjit-kumar-panja": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.445455+05:30",
+            "path": "content/people.html"
+          }
+        ]
+      },
+      "date_basis": "source-mtime-baseline",
+      "fingerprint": "71df481369d78547abfa578b7dca074441f53492ce78c44b91321ab3b6b9a84b",
+      "updated": "2026-10-09"
+    },
+    "en/person-satya-kinkar-sahana": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.445455+05:30",
+            "path": "content/people.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "193926cb763a3facd6175619c86455795fa25e4f96b91293d69af64e78fb10f8",
+      "updated": "2026-10-21"
+    },
+    "en/person-shakti-samanta": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.445455+05:30",
+            "path": "content/people.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "14f7cd8a4fdc7ca778f685594f6be213aeed8f3e91bb545c5a3f4e09f0fb5c83",
+      "updated": "2026-10-11"
+    },
+    "en/person-shib-shankar-chowdhury": {
+      "baseline": {
+        "date": "2026-10-23",
+        "sources": [
+          {
+            "modified": "2026-10-23T09:49:25.600341+05:30",
+            "path": "content/people.html"
+          }
+        ]
+      },
+      "date_basis": "source-mtime-baseline",
+      "fingerprint": "a89cf5328fc1288528eebe95e232e6fa55c75ecb57806d7675599fa66204a532",
+      "updated": "2026-10-23"
+    },
+    "en/person-tuhin-kumar-roy": {
+      "baseline": {
+        "date": "2026-11-02",
+        "sources": [
+          {
+            "modified": "2026-11-02T00:00:09.134202+05:30",
+            "path": "content/people.html"
+          }
+        ]
+      },
+      "date_basis": "source-mtime-baseline",
+      "fingerprint": "bb8b24232b85fcfe799e297f4f34d23b671fbb62703cd968ddc612d0d5e0a2b8",
+      "updated": "2026-11-02"
+    },
+    "en/research": {
+      "baseline": {
+        "date": "2026-10-09",
+        "sources": [
+          {
+            "modified": "2026-10-09T13:48:37.449761+05:30",
+            "path": "content/research.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "d58aaa78b75f96479248bea1a27e5ed50c2da8e06cb3bdf3a352474525310ac3",
+      "updated": "2026-10-28"
+    },
+    "en/rights": {
+      "baseline": {
+        "date": "2026-10-04",
+        "sources": [
+          {
+            "modified": "2026-10-04T08:22:31.974037+05:30",
+            "path": "content/rights.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "0aa66ce4b40eb01827700f98fec2cb3f0d7f089dbf6b32dd1d012ab4169b5aeb",
+      "updated": "2026-10-21"
+    },
+    "en/surnames": {
+      "baseline": {
+        "date": "2026-10-07",
+        "sources": [
+          {
+            "modified": "2026-10-07T14:12:52.243442+05:30",
+            "path": "content/surnames.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "db087424d668373f543ed82446032b5f44694bd3b76f400e47600daa9e6f8a88",
+      "updated": "2026-10-16"
+    },
+    "en/translation-editors-address-opening": {
+      "baseline": {
+        "date": "2026-09-13",
+        "sources": [
+          {
+            "modified": "2026-09-13T14:31:16.857078+05:30",
+            "path": "content/translations/editors-address-opening.json"
+          }
+        ]
+      },
+      "date_basis": "source-mtime-baseline",
+      "fingerprint": "b4efc8f219f38bc30623692837d937c3d71452d1a34f06e7d930d62b52687900",
+      "updated": "2026-09-13"
+    },
+    "en/translation-electricity": {
+      "baseline": {
+        "date": "2026-09-13",
+        "sources": [
+          {
+            "modified": "2026-09-13T14:44:56.144974+05:30",
+            "path": "content/translations/electricity.json"
+          }
+        ]
+      },
+      "date_basis": "source-mtime-baseline",
+      "fingerprint": "477426715cb32f4ca19a64dfa297fa06643de969e956aff9fca0e940ed1de4e4",
+      "updated": "2026-09-13"
+    },
+    "en/translation-journal-autobiography": {
+      "baseline": {
+        "date": "2026-09-13",
+        "sources": [
+          {
+            "modified": "2026-09-13T14:31:16.856837+05:30",
+            "path": "content/translations/journal-autobiography.json"
+          }
+        ]
+      },
+      "date_basis": "source-mtime-baseline",
+      "fingerprint": "84b76efd74b9c5644eeed96c206beb1b51e54c8311d0759659f89b6e9ef5d131",
+      "updated": "2026-09-13"
+    },
+    "en/translation-prabasi-book-review": {
+      "baseline": {
+        "date": "2026-09-15",
+        "sources": [
+          {
+            "modified": "2026-09-15T09:04:07.716750+05:30",
+            "path": "content/translations/prabasi-book-review.json"
+          }
+        ]
+      },
+      "date_basis": "source-mtime-baseline",
+      "fingerprint": "7b7a384e5612c6a7a90d4efcc3c4cefb37aabb89e2b3ac5210f0eb5bc1493744",
+      "updated": "2026-09-15"
+    },
+    "en/translation-rajput-authors-foreword": {
+      "baseline": {
+        "date": "2026-09-13",
+        "sources": [
+          {
+            "modified": "2026-09-13T14:39:12.136425+05:30",
+            "path": "content/translations/rajput-authors-foreword.json"
+          }
+        ]
+      },
+      "date_basis": "source-mtime-baseline",
+      "fingerprint": "dbf4e04de93debad6161183380566fe6cd48f1c6465c2a2443d1a712d87c8374",
+      "updated": "2026-09-13"
+    },
+    "en/translation-rajput-publishers-note": {
+      "baseline": {
+        "date": "2026-09-13",
+        "sources": [
+          {
+            "modified": "2026-09-13T14:39:12.136144+05:30",
+            "path": "content/translations/rajput-publishers-note.json"
+          }
+        ]
+      },
+      "date_basis": "source-mtime-baseline",
+      "fingerprint": "93144a61aeec5a83612beef364ff76e13e85f3080686a9a895402fbaf2b73a58",
+      "updated": "2026-09-13"
+    },
+    "en/translations": {
+      "baseline": {
+        "date": "2026-09-15",
+        "sources": [
+          {
+            "modified": "2026-09-13T14:31:16.857078+05:30",
+            "path": "content/translations/editors-address-opening.json"
+          },
+          {
+            "modified": "2026-09-13T14:44:56.144974+05:30",
+            "path": "content/translations/electricity.json"
+          },
+          {
+            "modified": "2026-09-13T14:31:16.856837+05:30",
+            "path": "content/translations/journal-autobiography.json"
+          },
+          {
+            "modified": "2026-09-15T09:04:07.716750+05:30",
+            "path": "content/translations/prabasi-book-review.json"
+          },
+          {
+            "modified": "2026-09-13T14:39:12.136425+05:30",
+            "path": "content/translations/rajput-authors-foreword.json"
+          },
+          {
+            "modified": "2026-09-13T14:39:12.136144+05:30",
+            "path": "content/translations/rajput-publishers-note.json"
+          }
+        ]
+      },
+      "date_basis": "source-mtime-baseline",
+      "fingerprint": "221b1293bdf3d47b7c5a9b610389342391727a45d4ce64b0bed7c9c315831171",
+      "updated": "2026-09-15"
+    },
+    "en/ugra-kshatriya-patrika": {
+      "baseline": {
+        "date": "2026-11-02",
+        "sources": [
+          {
+            "modified": "2026-11-02T04:06:22.513665+05:30",
+            "path": "content/ugra-kshatriya-patrika.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "34621cea2b8e0d0316eba82d84631fb54c7d235153c4ff76907610fa237228fc",
+      "updated": "2026-11-02"
+    },
+    "en/water-landscape": {
+      "baseline": {
+        "date": "2026-10-11",
+        "sources": [
+          {
+            "modified": "2026-10-11T19:36:08.492590+05:30",
+            "path": "content/water-landscape.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "08d0932f2b08e9ea2235d15bf0d53f141979d9f609023fd644f995acb0534f57",
+      "updated": "2026-10-11"
+    }
+  },
+  "policy": "Editorial update dates, not original publication dates. Initial dates use the latest modification time of the listed authored sources in Asia/Kolkata. Later editorial changes use the date detected by a build; unchanged content and shared template or style changes retain the date.",
+  "version": 1
+}

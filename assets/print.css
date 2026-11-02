@@ -1,0 +1,93 @@
+/* Article-only PDF/print layout. Loaded after screen styles, in print media only. */
+@page{size:A4;margin:16mm}
+:root{background:#fff;--paper:#fff;--surface:#fff;--ink:#111;--green:#111;--rust:#333;--muted:#333;--line:#bbb}
+body,html[lang=bn] body{background:#fff;color:#111;font-size:11pt;line-height:1.65}
+main{display:block;width:auto;max-width:none;margin:0;padding:0}
+
+/* Site furniture, source side panels and interactive viewers are not article text. */
+.edition-bar,.site-header,.site-footer,.skip-link,.page-tools,.page-attribution,.page-citation,.page-views,dialog,
+nav,main aside,main button,main input,main select,main form,
+.page-heading .eyebrow,.page-artwork,.on-this-page,.resource-nav,.translation-toc,
+.actions,.filter-bar,#source-count,.download-row,.source-leaves,
+.reader-controls,.reader-search,.reader-tabs,.reader-fallback,
+.translation-source,.translation-downloads,.translation-transcript,.english-comparison,
+.translation-help,.translation-end,.book-contents,.book-original-viewer,
+iframe,object,embed,.heritage-visual,.hero-visual,.card-art,.topic-card-art,
+.portrait-unavailable,.profile-navigation,.person-copy>p:has(>.text-link){display:none!important}
+.section-heading>.text-link,.reading-card>.text-link,.community-link,
+.notes .text-link,.person-profile .text-link,.people-preview .text-link,
+.origins-timeline figcaption>a,.scan-panel>.small{display:none!important}
+
+.print-source{display:block!important;font:9pt/1.6 var(--sans);color:#444;margin:12pt 0 16pt;padding:0 0 10pt;border-bottom:1px solid #bbb;break-inside:avoid}
+.print-source a{font-family:Georgia,serif;overflow-wrap:anywhere;color:inherit}
+.page-heading{max-width:none;padding:0 0 16pt}
+.page-heading.page-heading-illustrated{display:block;padding:0 0 16pt}
+main h1,html[lang=bn] main h1{font-size:27pt!important;line-height:1.3!important;letter-spacing:0;max-width:none}
+main h2,html[lang=bn] main h2{font-size:19pt;line-height:1.4;break-after:avoid;page-break-after:avoid}
+main h3,html[lang=bn] main h3{font-size:15pt;line-height:1.45;break-after:avoid;page-break-after:avoid}
+.page-heading-illustrated .dek,html[lang=bn] .page-heading-illustrated .dek,.page-heading .dek{font-size:12pt;line-height:1.6;max-width:none;margin:14pt 0 0}
+.page-updated,html[lang=bn] .page-updated{font-size:9pt;line-height:1.6;color:#444;margin-top:10pt;break-inside:avoid}
+.prose,.prose.origins-article,.translation-article,.translation-intro,.notes,.person-profiles,.welcome-article-body{max-width:none}
+.prose>p,.person-copy p,.translation-prose>p,.welcome-article-body>p,
+html[lang=bn] .person-copy p,html[lang=bn] .welcome-article-body>p{font-size:11pt;line-height:1.75}
+.lead,.welcome-article-body>.welcome-article-lead{font-size:13pt!important;line-height:1.7!important}
+p,li{orphans:3;widows:3}
+a{color:inherit;text-decoration:none;overflow-wrap:anywhere}
+.citation a{color:#111}
+
+/* Reflow columns into the printed page and allow long articles to paginate. */
+.hero,.person-profile,.translation-section,.welcome-article,.book-feature,.book-detail,
+.translated-book-feature,.archive-intro,.reader-main,.editorial-line,.community-invitation,
+.reading-grid,.translation-grid,.explore-grid,.people-preview,.home-resource-links,.resource-overview{display:block}
+.hero{padding:0 0 16pt}
+.hero .intro{max-width:none;font-size:11pt;line-height:1.75}
+.person-profile,.translation-section,.source-entry,.reading-card,.theory,.translation-card,.resource-overview{break-inside:auto;page-break-inside:auto}
+.person-profile,.translation-section{padding:16pt 0}
+.reading-card,.translation-card,.theory{margin:12pt 0;padding:12pt}
+.translation-source{position:static}
+.person-photo,.book-feature figure,.book-detail-cover{width:45mm;max-width:100%;margin:0 0 14pt;break-inside:avoid}
+.portrait-mount{min-height:0;padding:6pt;background:#fff}
+.portrait-mount img{max-width:100%;max-height:60mm;border:0;box-shadow:none;object-fit:contain}
+.person-photo figcaption{font-size:8pt}
+.reader-shell,.reader-text,.scan-panel{border:0;background:#fff;padding:0}
+.reader-title{padding:12pt 0}
+.reader-status{display:block}
+.scan-panel img{width:auto;max-width:100%;max-height:190mm;object-fit:contain}
+.ocr-text{max-height:none;overflow:visible;padding:0;border:0;font-size:11pt;white-space:pre-wrap;overflow-wrap:anywhere}
+.notes,details.notes{margin-top:24pt;padding-top:16pt}
+.notes li{font-size:9pt;line-height:1.65}
+.section-space,.home-resources,.book-pdf-section{margin-top:24pt}
+.welcome-article{padding:16pt 0}
+
+/* Print the complete source catalogue even if the screen is filtered. */
+.source-entry[hidden]{display:block!important}
+.data-table,.origins-timeline-visual{overflow:visible;min-width:0;max-width:100%}
+table,.origins-timeline-text table{min-width:0!important;width:100%;table-layout:fixed;font-size:9pt}
+th,td{padding:6pt;overflow-wrap:anywhere}
+.origins-timeline-text th[scope=row]{white-space:normal}
+thead{display:table-header-group}
+tr{break-inside:avoid;page-break-inside:avoid}
+img,.origins-timeline-visual img{min-width:0;max-width:100%;height:auto}
+.origins-timeline-visual img{max-height:225mm;object-fit:contain}
+figure,.origins-timeline{break-inside:avoid;page-break-inside:avoid}
+details.origins-timeline-text,details.translation-notes,details.notes{display:block}
+details.origins-timeline-text>summary,details.translation-notes>summary,details.notes>summary{list-style:none;font-weight:600;text-decoration:none;cursor:default;break-after:avoid}
+details.origins-timeline-text>summary::-webkit-details-marker,details.translation-notes>summary::-webkit-details-marker,details.notes>summary::-webkit-details-marker{display:none}
+details.notes>summary{display:block;width:auto;min-height:0;padding:0;border:0;color:inherit}
+details.notes>summary::before,details.notes>summary::after{display:none}
+details.notes>summary h2{margin:0;font:400 19pt/1.4 var(--serif);color:inherit}
+html[lang=bn] details.notes>summary h2{font-family:var(--bn)}
+/* Print events open notes when scripts run. Modern browsers also expose their
+   closed content to print through this pseudo-element when scripts are off. */
+details.notes::details-content{display:block!important;content-visibility:visible!important;height:auto!important;overflow:visible!important}
+details.notes>ol{display:block!important;visibility:visible!important}
+
+/* Keep the article's contextual illustrations and their interpretation labels together. */
+.origins-battle-artwork{margin:14pt 0;break-inside:avoid;page-break-inside:avoid}
+.origins-battle-artwork img{width:100%;height:auto}
+.origins-battle-artwork figcaption{padding-top:7pt}
+.origins-battle-artwork figcaption strong,html[lang=bn] .origins-battle-artwork figcaption strong{font-size:12pt;line-height:1.5}
+.origins-battle-artwork figcaption span,html[lang=bn] .origins-battle-artwork figcaption span{font-size:9pt;line-height:1.6}
+
+/* Research source criticism and methodology are article content. */
+@media print { main aside.research-note { display: block !important; } }

@@ -1,0 +1,31 @@
+{
+  "order": 6,
+  "title": "The editor’s first address",
+  "bengaliTitle": "সম্পাদকের নিবেদন",
+  "author": "Unsigned editor",
+  "date": "Baishakh 1298 · 1891",
+  "source": "journal-v1",
+  "collection": "Ugrakshatriya-Pratinidhi · Volume I, issue 1",
+  "scope": "Opening-page extract · not the complete editorial",
+  "description": "The devotional opening with which the first volume introduces the publishing project.",
+  "editorial": "A close translation of printed p. 1 only. The editorial continues through later pages and is not presented here as complete. Words obscured by the binding and ink are marked in square brackets. The quoted devotional lyric is translated as part of this historical passage.",
+  "ocr": "editors-address-opening-bengali-ocr.txt",
+  "notes": [
+    "The botanical image is retained as a “small tree”; its exact species is unclear at the damaged edge.",
+    "The final sentence on the page is obscured by a heavy ink mark. It is not reconstructed."
+  ],
+  "blocks": [
+    {
+      "title": "A beginning offered to the reader",
+      "location": "Volume 1 · printed p. 1 · scan 3, right leaf",
+      "image": "assets/scans/v1-003.jpg",
+      "reader": "archives.html?volume=1&scan=3#reader",
+      "paragraphs": [
+        "By whose will the wheel of time turns ceaselessly through winter, summer, the rains and the other seasons; by whose command the sun and moon remain intent on their own tasks in the heavens, day and night; at whose slightest sign the millionaire assumes the beggar’s dress and the poor person that of a king; under whose command the five great elements are engaged in the work of this whole universe; by the mere movement of whose finger the rising and falling of this boundless universe are accomplished; deluded by whose threefold Maya the divine three carry out creation, preservation and dissolution; in whose magician’s hand all living beings dance like playthings—laughing, weeping, being born and dying: by the will and grace of that Mahadeva, God of gods, the Ugrakshatriya-Pratinidhi has come into being like a small tree in the immense forest of literature and now comes before its dear readers. That, through God’s grace, we have been able to fulfil our pledge and carry out the divine command is our greatest joy.",
+        "Readers may ask, “Why express such joy at publishing an insignificant little paper?” Our answer is this: we are not people of great accomplishment, and therefore our joy is not the joy of achievement. Even if we were accomplished, we would make no claim to the credit; we believe no one should. Every human being is God’s servant. In directing the work of the world, the Lord gives each person a task, and that person merely performs it. Our limited understanding cannot see where human credit enters into this. We understand instead: “All is your will, Mother Tara, whose very being is will. You yourself do your work, Mother; people say, ‘I do it.’”",
+        "We are the Mother’s smallest servants. Our joy comes from having been able, by her will and command, to carry out one of her instructions today. [The closing sentence of this page is partly obscured by ink.]"
+      ]
+    }
+  ],
+  "slug": "editors-address-opening"
+}

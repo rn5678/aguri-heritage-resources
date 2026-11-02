@@ -1,0 +1,39 @@
+<section id="review-app" class="review-app" aria-label="ব্যক্তিগত সম্পাদনার কর্মক্ষেত্র">
+  <p class="review-intro">প্রতিটি সহযোগিতা মন দিয়ে পড়ুন। সংগ্রহে উপকরণ যোগ করার আগে উৎস যাচাই করুন, অনিশ্চয়তা স্পষ্ট রাখুন এবং নাম প্রকাশের বিষয়ে সহযোগীর ইচ্ছাকে সম্মান করুন।</p>
+  <p id="review-message" class="review-message" role="status" aria-live="polite" tabindex="-1" hidden></p>
+  <section id="review-access" class="review-access" aria-labelledby="editor-access">
+    <div><p class="eyebrow">সম্পাদকমণ্ডলীর জন্য</p><h2 id="editor-access">সম্পাদকের প্রবেশাধিকার</h2><p>ওয়েবসাইটের প্রশাসকের দেওয়া সম্পাদকের প্রবেশসংকেত লিখুন। এই পাতা খোলা থাকা পর্যন্ত প্রবেশাধিকার থাকবে। কাজ শেষে কর্মক্ষেত্র বন্ধ করুন।</p></div>
+    <form id="review-login" class="review-login" method="post" hidden>
+      <label for="editor-key">সম্পাদকের প্রবেশসংকেত</label><input id="editor-key" name="editor_key" type="password" required autocomplete="off" spellcheck="false" maxlength="500" aria-describedby="editor-key-help">
+      <p id="editor-key-help" class="review-hint">প্রবেশসংকেত এই ব্রাউজারে সংরক্ষণ করা হয় না।</p><button class="button" type="submit">জমা পড়া উপকরণ দেখুন <span aria-hidden="true">→</span></button>
+    </form>
+  </section>
+  <noscript><p class="review-message">সম্পাদকের ব্যক্তিগত কর্মক্ষেত্র নিরাপদে খুলতে জাভাস্ক্রিপ্ট প্রয়োজন। প্রকাশিত নিবন্ধ জাভাস্ক্রিপ্ট ছাড়াও পড়া যায়।</p></noscript>
+  <section id="review-workspace" hidden aria-labelledby="contribution-inbox">
+    <div class="review-heading"><div><p class="eyebrow">সমাজের সমৃদ্ধিশীল সংগ্রহ</p><h2 id="contribution-inbox">জমা পড়া সহযোগিতা</h2></div><button id="review-lock" type="button" class="button secondary">কর্মক্ষেত্র বন্ধ করুন</button></div>
+    <p class="review-privacy">ব্যক্তিগত কর্মক্ষেত্র · যোগাযোগের তথ্য, অপ্রকাশিত উপকরণ ও অভ্যন্তরীণ টীকা কেবল সম্পাদনার কাজে ব্যবহার করুন।</p>
+    <div id="review-counts" class="review-counts" aria-label="সহযোগিতার সংখ্যা"></div>
+    <form id="review-filters" class="review-filters"><div><label for="review-status">অবস্থা</label><select id="review-status" name="status"><option value="">সব অবস্থা</option><option value="received">গৃহীত</option><option value="under_review">পর্যালোচনাধীন</option><option value="needs_information">আরও তথ্য প্রয়োজন</option><option value="approved">অনুমোদিত</option><option value="published">প্রকাশিত</option><option value="declined">গ্রহণ করা হয়নি</option></select></div><div class="review-search"><label for="review-query">সহযোগিতা খুঁজুন</label><input id="review-query" name="q" type="search" maxlength="160" placeholder="শিরোনাম, সহযোগী বা স্থান"></div><button type="submit" class="button">বাছাই করুন</button></form>
+    <div class="review-layout">
+      <section class="review-queue" aria-label="জমা দেওয়া সহযোগিতা"><p id="review-list-status" class="review-hint" role="status"></p><ul id="review-list" class="review-list"></ul><button id="review-more" class="button secondary" type="button" hidden>আরও দেখুন</button></section>
+      <section id="review-detail" class="review-detail" aria-label="নির্বাচিত সহযোগিতা"><div id="review-empty" class="review-empty"><span class="review-empty-mark" aria-hidden="true">অ</span><h3>ইতিহাসের প্রতিটি অংশের জন্য স্থান</h3><p>বিবরণ পড়তে, মূল উপকরণ যাচাই করতে এবং মতামত নথিভুক্ত করতে একটি সহযোগিতা বেছে নিন।</p></div><div id="review-record" hidden>
+        <div class="review-record-header"><p id="review-record-type" class="eyebrow"></p><h3 id="review-record-title" tabindex="-1"></h3><p id="review-record-reference" class="review-hint"></p></div>
+        <div class="review-record-actions"><button id="review-reload" type="button" class="text-link">সহযোগিতাটি আবার লোড করুন</button><button id="review-export" type="button" class="text-link">সম্পাদনার নথি খুলুন</button></div>
+        <p class="review-hint">নথিটি নতুন ট্যাবে খুলবে এবং এতে ব্যক্তিগত যোগাযোগের তথ্য, টীকা ও সংযুক্ত ফাইলের উল্লেখ থাকবে। কপি রাখতে ব্রাউজারের সংরক্ষণ নির্দেশ ব্যবহার করুন; মূল ফাইলগুলি আলাদাভাবে খুলুন।</p>
+        <p id="review-consent-warning" class="review-message" hidden></p>
+        <dl id="review-metadata" class="review-metadata"></dl>
+        <h3 class="review-subheading">সহযোগিতার বিবরণ</h3><div id="review-description" class="review-description"></div>
+        <h3 class="review-subheading">মূল ফাইল</h3><ul id="review-files" class="review-files"></ul>
+        <h3 class="review-subheading">সহযোগীর গোপনীয় উত্তর</h3><ol id="review-replies" class="review-history"></ol>
+        <form id="review-decision" class="review-decision"><h3 class="review-subheading">পর্যালোচনা নথিভুক্ত করুন</h3>
+          <label for="review-decision-status">পর্যালোচনার অবস্থা</label><select id="review-decision-status" name="status" required><option value="received">গৃহীত</option><option value="under_review">পর্যালোচনাধীন</option><option value="needs_information">আরও তথ্য প্রয়োজন</option><option value="approved">অনুমোদিত</option><option value="published">প্রকাশিত</option><option value="declined">গ্রহণ করা হয়নি</option></select>
+          <label for="review-public-note">সহযোগীর জন্য বার্তা</label><textarea id="review-public-note" name="public_note" rows="4" maxlength="5000" aria-describedby="review-note-help"></textarea><p id="review-note-help" class="review-hint">সহযোগীর ব্যক্তিগত অগ্রগতির পাতায় দেখা যাবে। সিদ্ধান্তের কারণ বা প্রয়োজনীয় তথ্যের অনুরোধ লিখুন। স্বয়ংক্রিয়ভাবে ইমেল পাঠানো হয় না।</p>
+          <label for="review-internal-note">সম্পাদকের অভ্যন্তরীণ টীকা</label><textarea id="review-internal-note" name="internal_note" rows="3" maxlength="5000" aria-describedby="review-internal-help"></textarea><p id="review-internal-help" class="review-hint">শুধু সম্পাদকদের জন্য। প্রকাশ্য নিবন্ধে যোগাযোগের তথ্য অনুলিপি করবেন না।</p>
+          <div id="review-publication-controls"><label for="review-published-url">প্রকাশিত নিবন্ধের লিঙ্ক</label><input id="review-published-url" name="published_url" type="text" inputmode="url" maxlength="2000" placeholder="/bn/history.html" aria-describedby="review-publish-help"><p id="review-publish-help" class="review-hint">“প্রকাশিত” অবস্থার জন্য এই ওয়েবসাইটে ইতিমধ্যে প্রকাশিত নিবন্ধের লিঙ্ক দিতে হবে। অবস্থা বদলালে নিবন্ধের সম্পাদনা বা প্রকাশ হয় না। নিবন্ধটি আলাদাভাবে তৈরি ও প্রকাশ করে এখানে তার লিঙ্ক দিন।</p></div>
+          <div class="review-save-row"><button id="review-save" type="submit" class="button">পর্যালোচনা সংরক্ষণ করুন</button><span id="review-save-status" class="review-hint" role="status"></span></div>
+        </form>
+        <h3 class="review-subheading">পর্যালোচনার ইতিহাস</h3><ol id="review-history" class="review-history"></ol>
+      </div></section>
+    </div>
+  </section>
+</section>

@@ -1,0 +1,431 @@
+{
+  "history": {
+    "file": "assets/page-artworks/history.webp",
+    "width": 1536,
+    "height": 1024,
+    "title_en": "The Layers of Memory",
+    "title_bn": "স্মৃতির স্তর",
+    "alt_en": "A river winds through fields and old brick arches beside a tree and open book.",
+    "alt_bn": "গাছ ও খোলা বইয়ের পাশে মাঠ ও পুরোনো ইটের খিলান ঘুরে বয়ে চলেছে নদী।",
+    "creation": "Contemporary illustration"
+  },
+  "origins": {
+    "file": "assets/page-artworks/origins-armoured.webp",
+    "width": 1536,
+    "height": 1024,
+    "title_en": "A Rider in the Burdwan Landscape",
+    "title_bn": "বর্ধমানের প্রান্তরে অশ্বারোহী",
+    "alt_en": "Artistic interpretation of a mounted Nagadee warrior in chest armour beside a river and paddy fields in Burdwan.",
+    "alt_bn": "বর্ধমানের নদী ও ধানখেতের পাশে বক্ষবর্ম পরা অশ্বারোহী নগদী যোদ্ধার শিল্পিত চিত্রায়ণ।",
+    "creation": "Contemporary illustration",
+    "caption_en": "A mounted Aguri warrior of the Nagadee army · Artistic interpretation",
+    "caption_bn": "নগদী বাহিনীর অশ্বারোহী আগুরী যোদ্ধা · শিল্পীর কল্পনায়",
+    "latest_revision": "output/page-artworks-2026-10-04/armour-hero.json"
+  },
+  "culture": {
+    "file": "assets/page-artworks/culture.webp",
+    "width": 1536,
+    "height": 1024,
+    "title_en": "Hands That Built New Livelihoods",
+    "title_bn": "যে হাতে গড়া নতুন জীবিকা",
+    "alt_en": "Artistic scene of workers building a Bengal rice mill, with grain fields and a coal mine beyond.",
+    "alt_bn": "ধানখেত ও কয়লাখনির পটভূমিতে বাংলার চালকল গড়ে তোলা শ্রমিকদের শিল্পিত দৃশ্য।",
+    "creation": "Contemporary illustration",
+    "caption_en": "Rice mills, coal mining and the people who built them · An imagined scene",
+    "caption_bn": "চালকল, কয়লাখনি ও সেগুলি গড়ে তোলা মানুষ · কল্পিত দৃশ্য"
+  },
+  "aguris-today": {
+    "file": "assets/page-artworks/culture.webp",
+    "width": 1536,
+    "height": 1024,
+    "title_en": "Hands That Built New Livelihoods",
+    "title_bn": "যে হাতে গড়া নতুন জীবিকা",
+    "alt_en": "Artistic scene of workers building a Bengal rice mill, with grain fields and a coal mine beyond.",
+    "alt_bn": "ধানখেত ও কয়লাখনির পটভূমিতে বাংলার চালকল গড়ে তোলা শ্রমিকদের শিল্পিত দৃশ্য।",
+    "creation": "Contemporary illustration",
+    "caption_en": "Rice mills, coal mining and the people who built them · An imagined scene",
+    "caption_bn": "চালকল, কয়লাখনি ও সেগুলি গড়ে তোলা মানুষ · কল্পিত দৃশ্য"
+  },
+  "geography": {
+    "file": "assets/page-artworks/geography.webp",
+    "width": 1536,
+    "height": 1024,
+    "title_en": "Where the Rivers Meet the Fields",
+    "title_bn": "নদী ও মাঠের মিলন",
+    "alt_en": "An elevated view follows a Bengal river from red-earth groves into a patchwork of fertile fields.",
+    "alt_bn": "উঁচু থেকে দেখা বাংলার নদী লালমাটির বনানী ছেড়ে উর্বর খেতের মাঝে বয়ে চলেছে।",
+    "creation": "Contemporary illustration"
+  },
+  "people": {
+    "file": "assets/page-artworks/people.webp",
+    "width": 1536,
+    "height": 1024,
+    "title_en": "Lives That Illuminate",
+    "title_bn": "আলোকিত জীবন",
+    "alt_en": "An open book, pen, microscope and film reel sit in warm light beside a Bengal window.",
+    "alt_bn": "বাংলার জানালার পাশে উষ্ণ আলোয় রাখা খোলা বই, কলম, অণুবীক্ষণযন্ত্র ও চলচ্চিত্রের রিল।",
+    "creation": "Contemporary illustration"
+  },
+  "surnames": {
+    "file": "assets/page-artworks/surnames.webp",
+    "width": 1536,
+    "height": 1024,
+    "title_en": "Branches of Belonging",
+    "title_bn": "পরিচয়ের শাখাপ্রশাখা",
+    "alt_en": "Loose family papers and empty photograph mounts lie under the branching shadow of a leafy tree.",
+    "alt_bn": "পাতাভরা গাছের শাখার ছায়ায় ছড়ানো পারিবারিক কাগজপত্র ও খালি ছবির মাউন্ট।",
+    "creation": "Contemporary illustration"
+  },
+  "archives": {
+    "file": "assets/page-artworks/archives.webp",
+    "width": 1536,
+    "height": 1024,
+    "title_en": "The Quiet Reading Room",
+    "title_bn": "নিরিবিলি পাঠকক্ষ",
+    "alt_en": "Bound periodicals and blank pages rest on a reading table in a shaded Bengal library.",
+    "alt_bn": "বাংলার ছায়াঘেরা গ্রন্থাগারের পাঠের টেবিলে বাঁধানো পত্রিকা ও সাদা পাতা রাখা।",
+    "creation": "Contemporary illustration"
+  },
+  "translations": {
+    "file": "assets/page-artworks/translations.webp",
+    "width": 1536,
+    "height": 1024,
+    "title_en": "Across the Pages",
+    "title_bn": "পাতা পেরিয়ে",
+    "alt_en": "Two open blank books face one another across a ribbon shaped like a flowing river.",
+    "alt_bn": "নদীর মতো বয়ে যাওয়া ফিতার দুপাশে মুখোমুখি দুটি সাদা পাতার খোলা বই।",
+    "creation": "Contemporary illustration"
+  },
+  "bibliography": {
+    "file": "assets/page-artworks/bibliography.webp",
+    "width": 1536,
+    "height": 1024,
+    "title_en": "A Shelf of Many Voices",
+    "title_bn": "নানা কণ্ঠের বইয়ের তাক",
+    "alt_en": "Books of varied sizes, a notebook and a leaf form a sunlit still life on a wooden shelf.",
+    "alt_bn": "কাঠের তাকে নানা মাপের বই, একটি খাতা ও একটি পাতা নিয়ে রোদেলা স্থিরচিত্র।",
+    "creation": "Contemporary illustration"
+  },
+  "about": {
+    "file": "assets/page-artworks/about.webp",
+    "width": 1536,
+    "height": 1024,
+    "title_en": "Keeping the Story Together",
+    "title_bn": "একসঙ্গে গল্প ধরে রাখা",
+    "alt_en": "Several generations gather around a table with blank albums, books and a young plant.",
+    "alt_bn": "সাদা পাতার অ্যালবাম, বই ও চারাগাছ রাখা টেবিল ঘিরে কয়েক প্রজন্মের মানুষ।",
+    "creation": "Contemporary illustration"
+  },
+  "book-rajput-o-ugrakshatriya": {
+    "file": "assets/page-artworks/book-rajput-o-ugrakshatriya.webp",
+    "width": 1536,
+    "height": 1024,
+    "title_en": "A Book and Its Horizons",
+    "title_bn": "একটি বই ও তার দিগন্ত",
+    "alt_en": "An unmarked old book opens beside an earthen lamp, with Bengal fields beyond an arched window.",
+    "alt_bn": "মাটির প্রদীপের পাশে খোলা নামহীন পুরোনো বই; খিলান জানালার ওপারে বাংলার মাঠ।",
+    "creation": "Contemporary illustration"
+  },
+  "person-hare-krishna-konar": {
+    "file": "assets/page-artworks/person-hare-krishna-konar.webp",
+    "width": 1536,
+    "height": 1024,
+    "title_en": "Water and the Land",
+    "title_bn": "জল ও জমি",
+    "alt_en": "A sweeping irrigation canal through golden rice fields, with a small earthen embankment and distant village.",
+    "alt_bn": "সোনালি ধানখেতের মাঝখান দিয়ে বয়ে যাওয়া সেচখাল, মাটির বাঁধ ও দূরের গ্রাম।",
+    "creation": "Contemporary illustration"
+  },
+  "person-benoy-choudhury": {
+    "file": "assets/page-artworks/person-benoy-choudhury.webp",
+    "width": 1536,
+    "height": 1024,
+    "title_en": "The Shared Harvest",
+    "title_bn": "ফসলের অধিকার",
+    "alt_en": "A blank land-record book and harvested rice beside a window overlooking carefully divided green fields.",
+    "alt_bn": "ভাগ করা সবুজ খেতের দিকে খোলা জানালার পাশে লেখাহীন জমির খাতা ও কাটা ধানের আঁটি।",
+    "creation": "Contemporary illustration"
+  },
+  "person-ajit-kumar-panja": {
+    "file": "assets/page-artworks/person-ajit-kumar-panja.webp",
+    "width": 1536,
+    "height": 1024,
+    "title_en": "The Public Stage",
+    "title_bn": "জনজীবনের মঞ্চ",
+    "alt_en": "An empty theatre stage with terracotta curtains, balanced scales and blank books, opening towards a distant parliamentary colonnade.",
+    "alt_bn": "টেরাকোটা রঙের পর্দা, দাঁড়িপাল্লা ও লেখাহীন বইসহ শূন্য নাট্যমঞ্চ; দূরে সংসদীয় স্থাপত্যের ইঙ্গিত।",
+    "creation": "Contemporary illustration"
+  },
+  "person-jadabendra-nath-panja": {
+    "file": "assets/page-artworks/person-jadabendra-nath-panja.webp",
+    "width": 1536,
+    "height": 1024,
+    "title_en": "Salt and the Spindle",
+    "title_bn": "লবণ ও চরকা",
+    "alt_en": "A bowl of salt crystals, a wooden spinning wheel and blank law books in a sunlit Bengal courtyard.",
+    "alt_bn": "রোদেলা বাংলার উঠোনে লবণের স্ফটিকভরা বাটি, কাঠের চরকা ও লেখাহীন আইনের বই।",
+    "creation": "Contemporary illustration"
+  },
+  "person-benoy-krishna-konar": {
+    "file": "assets/page-artworks/person-benoy-krishna-konar.webp",
+    "width": 1536,
+    "height": 1024,
+    "title_en": "Pages beside the Paddy",
+    "title_bn": "ধানখেতের পাশে পাতা",
+    "alt_en": "An inkpot, pen and blank manuscript on a shaded desk beside a window onto Memari-inspired rice fields.",
+    "alt_bn": "ছায়াঘেরা টেবিলে দোয়াত, কলম ও লেখাহীন পাণ্ডুলিপি; জানালার বাইরে মেমারি-প্রেরিত ধানখেত।",
+    "creation": "Contemporary illustration"
+  },
+  "person-dasarathi-tah": {
+    "file": "assets/page-artworks/person-dasarathi-tah.webp",
+    "width": 1536,
+    "height": 1024,
+    "title_en": "The River and the Press",
+    "title_bn": "নদী ও ছাপাখানা",
+    "alt_en": "A small printing press and flowing blank sheets beside an open window overlooking a Bengal river.",
+    "alt_bn": "খোলা জানালার পাশে ছোট ছাপাখানার যন্ত্র ও সাদা কাগজের ঢেউ; বাইরে বাংলার নদী।",
+    "creation": "Contemporary illustration"
+  },
+  "person-nikhilananda-sar": {
+    "file": "assets/page-artworks/person-nikhilananda-sar.webp",
+    "width": 1536,
+    "height": 1024,
+    "title_en": "Threads of Learning",
+    "title_bn": "শিক্ষার বুনন",
+    "alt_en": "A wooden handloom with a blank schoolbook nearby, looking out across a green rural landscape.",
+    "alt_bn": "কাঠের তাঁতের পাশে লেখাহীন পাঠ্যবই; বাইরে সবুজ গ্রামীণ প্রান্তর।",
+    "creation": "Contemporary illustration"
+  },
+  "person-ranjit-kumar-panja": {
+    "file": "assets/page-artworks/person-ranjit-kumar-panja.webp",
+    "width": 1536,
+    "height": 1024,
+    "title_en": "Knowledge in Care",
+    "title_bn": "জ্ঞান ও সেবা",
+    "alt_en": "A doctor's case, stethoscope, microscope and blank teaching book on a verandah beside green Bengal fields.",
+    "alt_bn": "বাংলার সবুজ খেতের ধারে বারান্দায় চিকিৎসকের ব্যাগ, স্টেথোস্কোপ, অণুবীক্ষণযন্ত্র ও লেখাহীন পাঠ্যবই।",
+    "creation": "Contemporary illustration"
+  },
+  "person-ganapati-panja": {
+    "file": "assets/page-artworks/person-ganapati-panja.webp",
+    "width": 1536,
+    "height": 1024,
+    "title_en": "The Light of Medical Discovery",
+    "title_bn": "চিকিৎসাবিজ্ঞানের আলোকধারা",
+    "alt_en": "Watercolor of a brass microscope, glass culture dishes and blank medical journals beside a Bengal garden window.",
+    "alt_bn": "বাংলার বাগানমুখী জানালার পাশে পিতলের অণুবীক্ষণযন্ত্র, কাচের কালচার পাত্র ও লেখাহীন চিকিৎসা পত্রিকার জলরঙের চিত্র।",
+    "creation": "Contemporary illustration"
+  },
+  "person-manohar-ray": {
+    "file": "assets/page-artworks/person-manohar-ray.webp",
+    "width": 1536,
+    "height": 1024,
+    "title_en": "The Geometry of Flow",
+    "title_bn": "প্রবাহের জ্যামিতি",
+    "alt_en": "Watercolor joining a mathematician’s compass and blank notebook with river currents curving around a smooth oval form.",
+    "alt_bn": "কম্পাস ও লেখাহীন খাতার সঙ্গে মসৃণ ডিম্বাকার গড়নের চারপাশে নদীর বাঁকানো স্রোত মিলিয়ে আঁকা জলরঙের চিত্র।",
+    "creation": "Contemporary illustration"
+  },
+  "person-shakti-samanta": {
+    "file": "assets/page-artworks/person-shakti-samanta.webp",
+    "width": 1536,
+    "height": 1024,
+    "title_en": "Rivers of Cinema",
+    "title_bn": "চলচ্চিত্রের স্রোত",
+    "alt_en": "Watercolor of a vintage film camera and curling filmstrip overlooking a luminous Bengal river and distant bridge.",
+    "alt_bn": "বাংলার আলোভরা নদী ও দূরের সেতুর সামনে পুরোনো চলচ্চিত্র ক্যামেরা এবং বেঁকে যাওয়া ফিল্মের জলরঙের চিত্র।",
+    "creation": "Contemporary illustration"
+  },
+  "person-ramapada-chowdhury": {
+    "file": "assets/page-artworks/person-ramapada-chowdhury.webp",
+    "width": 1536,
+    "height": 1024,
+    "title_en": "Stories Behind the Windows",
+    "title_bn": "জানালার আড়ালে গল্প",
+    "alt_en": "Watercolor of blank writing pages beside an open window overlooking a modest Bengali neighborhood in the rain.",
+    "alt_bn": "খোলা জানালার ধারে লেখাহীন কাগজ, বাইরে বর্ষার সাধারণ বাঙালি পাড়ার জলরঙের চিত্র।",
+    "creation": "Contemporary illustration"
+  },
+  "person-pratap-chandra-ray": {
+    "file": "assets/page-artworks/person-pratap-chandra-ray.webp",
+    "width": 1536,
+    "height": 1024,
+    "title_en": "Books Across the River",
+    "title_bn": "নদী পেরিয়ে বই",
+    "alt_en": "Watercolor of a small printing press and unmarked books opening toward a Bengal river, symbolizing the sharing of literature.",
+    "alt_bn": "ছোট ছাপাখানা ও নামহীন বইয়ের পাশ থেকে বাংলার নদীমুখী দৃশ্য; সাহিত্য ছড়িয়ে দেওয়ার প্রতীকী জলরঙের চিত্র।",
+    "creation": "Contemporary illustration"
+  },
+  "person-satya-kinkar-sahana": {
+    "file": "assets/page-artworks/person-satya-kinkar-sahana.webp",
+    "width": 1536,
+    "height": 1024,
+    "title_en": "Poetry in the Red Earth",
+    "title_bn": "রাঙামাটির কাব্য",
+    "alt_en": "Watercolor of blank poetry books, jasmine and an inkpot beside Bankura’s red earth and sal trees.",
+    "alt_bn": "বাঁকুড়ার রাঙামাটি ও শালবনের পাশে লেখাহীন কাব্যগ্রন্থ, জুঁইফুল ও দোয়াতের জলরঙের চিত্র।",
+    "creation": "Contemporary illustration"
+  },
+  "translation-editors-address-opening": {
+    "file": "assets/page-artworks/translation-editors-address-opening.webp",
+    "width": 1536,
+    "height": 1024,
+    "title_en": "A Small Tree of Words",
+    "title_bn": "সাহিত্যের অরণ্যে একটি চারাগাছ",
+    "alt_en": "An imagined young tree growing beside an open journal in a sunlit Bengal grove.",
+    "alt_bn": "বাংলার রৌদ্রস্নাত বনে খোলা সাময়িকপত্রের পাশে বেড়ে ওঠা একটি চারাগাছের কল্পচিত্র।",
+    "creation": "Contemporary illustration"
+  },
+  "translation-journal-autobiography": {
+    "file": "assets/page-artworks/translation-journal-autobiography.webp",
+    "width": 1536,
+    "height": 1024,
+    "title_en": "The Little Raft",
+    "title_bn": "ছোট্ট ভেলা",
+    "alt_en": "An imagined raft carrying bound journals along a flowing river, inspired by the periodical’s own metaphor.",
+    "alt_bn": "সাময়িকপত্রের নিজস্ব রূপক অবলম্বনে নদী বেয়ে বাঁধানো পত্রিকা বহনকারী ছোট্ট ভেলার কল্পচিত্র।",
+    "creation": "Contemporary illustration"
+  },
+  "translation-electricity": {
+    "file": "assets/page-artworks/translation-electricity.webp",
+    "width": 1536,
+    "height": 1024,
+    "title_en": "The Light of Discovery",
+    "title_bn": "আবিষ্কারের আলো",
+    "alt_en": "A symbolic nineteenth-century study with electrical instruments and books overlooking Bengal’s evening landscape.",
+    "alt_bn": "বাংলার সন্ধ্যার ভূদৃশ্যের সামনে বৈদ্যুতিক যন্ত্র ও বইসহ উনিশ শতকের পাঠকক্ষের প্রতীকী চিত্র।",
+    "creation": "Contemporary illustration"
+  },
+  "translation-prabasi-book-review": {
+    "file": "assets/page-artworks/translation-prabasi-book-review.webp",
+    "width": 1536,
+    "height": 1024,
+    "title_en": "A Reader’s Eye",
+    "title_bn": "পাঠকের দৃষ্টি",
+    "alt_en": "An imagined Bengali literary reading desk with an open book, journal and spectacles.",
+    "alt_bn": "খোলা বই, সাময়িকপত্র ও চশমাসহ বাংলা সাহিত্যপাঠের টেবিলের কল্পচিত্র।",
+    "creation": "Contemporary illustration"
+  },
+  "translation-rajput-authors-foreword": {
+    "file": "assets/page-artworks/translation-rajput-authors-foreword.webp",
+    "width": 1536,
+    "height": 1024,
+    "title_en": "Reading the Traces",
+    "title_bn": "সাক্ষ্য পাঠের পথে",
+    "alt_en": "A symbolic scholar’s desk with books, an unlettered copper plate and a view of Bengal.",
+    "alt_bn": "বই ও অক্ষরহীন তাম্রফলকসহ বাংলার ভূদৃশ্যের সামনে গবেষকের টেবিলের প্রতীকী চিত্র।",
+    "creation": "Contemporary illustration"
+  },
+  "translation-rajput-publishers-note": {
+    "file": "assets/page-artworks/translation-rajput-publishers-note.webp",
+    "width": 1536,
+    "height": 1024,
+    "title_en": "Bound Together",
+    "title_bn": "এক সূত্রে বাঁধা",
+    "alt_en": "A symbolic bookbinding workshop where separate pages become a shared volume.",
+    "alt_bn": "বিচ্ছিন্ন পৃষ্ঠা একত্রে বাঁধাই হয়ে বই হয়ে ওঠার প্রতীকী কর্মশালার চিত্র।",
+    "creation": "Contemporary illustration"
+  },
+  "index": {
+    "file": "assets/burdwan-river-of-memory.webp",
+    "width": 1354,
+    "height": 1161,
+    "title_en": "River of Memory",
+    "title_bn": "স্মৃতির নদী",
+    "alt_en": "Watercolor imagining Burdwan through a winding river, golden paddy fields, village life and Bijoy Toron, also known as Curzon Gate",
+    "alt_bn": "বর্ধমানের কল্পিত জলরঙের চিত্র: আঁকাবাঁকা নদী, সোনালি ধানখেত, গ্রামজীবন ও বিজয় তোরণ, যা কার্জন গেট নামেও পরিচিত",
+    "creation": "Contemporary illustration"
+  },
+  "404": {
+    "file": "assets/burdwan-river-of-memory.webp",
+    "width": 1354,
+    "height": 1161,
+    "title_en": "River of Memory",
+    "title_bn": "স্মৃতির নদী",
+    "alt_en": "Watercolor imagining Burdwan through a winding river, golden paddy fields, village life and Bijoy Toron, also known as Curzon Gate",
+    "alt_bn": "বর্ধমানের কল্পিত জলরঙের চিত্র: আঁকাবাঁকা নদী, সোনালি ধানখেত, গ্রামজীবন ও বিজয় তোরণ, যা কার্জন গেট নামেও পরিচিত",
+    "creation": "Contemporary illustration",
+    "caption_en": "Find your way back to the stories of Burdwan",
+    "caption_bn": "ফিরে আসুন বর্ধমানের গল্পের কাছে"
+  },
+  "research": {
+    "file": "assets/page-artworks/archives.webp",
+    "width": 1536,
+    "height": 1024,
+    "title_en": "Questions in the Reading Room",
+    "title_bn": "পাঠকক্ষের নতুন প্রশ্ন",
+    "alt_en": "Bound periodicals and blank pages rest on a reading table in a shaded Bengal library.",
+    "alt_bn": "বাংলার ছায়াঘেরা গ্রন্থাগারের পাঠের টেবিলে বাঁধানো পত্রিকা ও সাদা পাতা রাখা।",
+    "creation": "Contemporary illustration",
+    "caption_en": "Archives, memory and new research · A contemporary illustration",
+    "caption_bn": "নথি, স্মৃতি ও নতুন গবেষণা · সমকালীন কল্পচিত্র"
+  },
+  "food-and-village-life": {
+    "file": "assets/page-artworks/geography.webp",
+    "width": 1536,
+    "height": 1024,
+    "title_en": "Where the Rivers Meet the Fields",
+    "title_bn": "নদী ও মাঠের মিলন",
+    "alt_en": "An elevated view follows a Bengal river from red-earth groves into a patchwork of fertile fields.",
+    "alt_bn": "উঁচু থেকে দেখা বাংলার নদী লালমাটির বনানী ছেড়ে উর্বর খেতের মাঝে বয়ে চলেছে।",
+    "creation": "Contemporary illustration"
+  },
+  "water-landscape": {
+    "file": "assets/page-artworks/geography.webp",
+    "width": 1536,
+    "height": 1024,
+    "title_en": "Where the Rivers Meet the Fields",
+    "title_bn": "নদী ও মাঠের মিলন",
+    "alt_en": "An elevated view follows a Bengal river from red-earth groves into a patchwork of fertile fields.",
+    "alt_bn": "উঁচু থেকে দেখা বাংলার নদী লালমাটির বনানী ছেড়ে উর্বর খেতের মাঝে বয়ে চলেছে।",
+    "creation": "Contemporary illustration",
+    "caption_en": "A contemporary illustration of Bengal’s rivers and fields; not a historical reconstruction or geographic map.",
+    "caption_bn": "বাংলার নদী ও খেতের সমকালীন কল্পচিত্র; ঐতিহাসিক পুনর্নির্মাণ বা ভৌগোলিক মানচিত্র নয়।"
+  },
+  "military-settlers-bengal": {
+    "file": "assets/military-settlers/header.webp",
+    "width": 1536,
+    "height": 1024,
+    "title_en": "A household puts down roots",
+    "title_bn": "নতুন বসতিতে এক পরিবার",
+    "alt_en": "Imagined military household resting beside a thatched home, with a shield, river boats and cultivated fields in early modern Bengal.",
+    "alt_bn": "আদি আধুনিক বাংলায় খড়ের চালের বাড়ির পাশে বিশ্রামরত এক সামরিক পরিবারের কল্পচিত্র; পাশে ঢাল, নদীতে নৌকা ও চাষের জমি।",
+    "caption_en": "Interpretive illustration; not a depiction of a specific documented event.",
+    "caption_bn": "ঐতিহাসিক বিষয়ের কল্পচিত্র; কোনও নির্দিষ্ট নথিভুক্ত ঘটনার চিত্র নয়।",
+    "creation": "Contemporary illustration, 21 October 2026"
+  },
+  "aguris-freedom-struggle": {
+    "file": "assets/aguri-freedom-struggle/cover.webp",
+    "width": 1536,
+    "height": 1024,
+    "title_en": "Resistance, leadership and rural reform",
+    "title_bn": "প্রতিরোধ, নেতৃত্ব ও কৃষিসমাজের সংস্কার",
+    "alt_en": "Aguris in the freedom struggle and its impact on Aguri society through the 1950s, illustrated with marchers, a political assembly, cultivated fields and a lending ledger.",
+    "alt_bn": "পঞ্চাশের দশক পর্যন্ত স্বাধীনতা সংগ্রামে আগুরীদের ভূমিকা ও আগুরী সমাজে তার প্রভাব: মিছিল, রাজনৈতিক সমাবেশ, কৃষিজমি ও ঋণদানের খাতার প্রতীকী চিত্র।",
+    "caption_en": "Contemporary illustration · Burdwan and Bengal through the 1950s.",
+    "caption_bn": "আধুনিক অলংকরণ · পঞ্চাশের দশক পর্যন্ত বর্ধমান ও বাংলা।",
+    "creation": "Contemporary illustration"
+  },
+  "person-k-d-paul": {
+    "file": "assets/people/k-d-paul-watercolour.png",
+    "title_en": "AI-generated artistic interpretation",
+    "title_bn": "এআই-নির্মিত শৈল্পিক রূপায়ণ",
+    "alt_en": "AI-generated watercolour-style artistic interpretation of K. D. Paul seated with folded hands, wearing cream-coloured clothing and glasses; not an archival photograph.",
+    "alt_bn": "জলরঙের শৈলীতে এআই-নির্মিত কে. ডি. পালের শৈল্পিক রূপায়ণ; চশমা ও ক্রিম রঙের পোশাক পরে দুই হাত একসঙ্গে রেখে বসে আছেন; এটি ঐতিহাসিক আলোকচিত্র নয়।",
+    "caption_en": "K. D. Paul, founder of Bisk Farm. A watercolour-style interpretation, not an archival photograph.",
+    "caption_bn": "বিস্ক ফার্মের প্রতিষ্ঠাতা কে. ডি. পাল। জলরঙের শৈলীতে করা একটি শৈল্পিক রূপায়ণ; এটি ঐতিহাসিক আলোকচিত্র নয়।",
+    "width": 1024,
+    "height": 1536
+  },
+  "ugra-kshatriya-patrika": {
+    "file": "assets/page-artworks/ugra-kshatriya-patrika.webp",
+    "title_en": "AI-created illustration",
+    "title_bn": "কৃত্রিম বুদ্ধিমত্তায় তৈরি চিত্র",
+    "alt_en": "Illustration of an open periodical, letters and an ink pen on a wooden desk overlooking a Bengal river landscape.",
+    "alt_bn": "বাংলার নদীতীরবর্তী দৃশ্যের সামনে কাঠের টেবিলে খোলা সাময়িকপত্র, চিঠি ও কালির কলমের একটি কল্পিত চিত্র।",
+    "caption_en": "Illustration inspired by Bengal’s periodical culture in the early 1930s; not a historical photograph.",
+    "caption_bn": "১৯৩০-এর দশকের গোড়ার বাংলার সাময়িকপত্র-সংস্কৃতি থেকে অনুপ্রাণিত কল্পিত চিত্র; এটি কোনো ঐতিহাসিক আলোকচিত্র নয়।",
+    "width": 1672,
+    "height": 940
+  }
+}

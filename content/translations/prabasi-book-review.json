@@ -1,0 +1,48 @@
+{
+  "order": 5,
+  "title": "A Bengali review of Rajput O Ugrakshatriya",
+  "bengaliTitle": "রাজপুত ও উগ্রক্ষত্রিয় — পুস্তক-পরিচয়",
+  "author": "Unsigned review in Prabasi",
+  "date": "Magh 1321 · 1915",
+  "source": "prabasi-review",
+  "collection": "Prabasi · fourteenth year, second volume",
+  "scope": "Complete book review",
+  "description": "How an earlier edition was presented to Bengali literary readers.",
+  "editorial": "This translation covers the complete review at the foot of printed p. 470 and the top of p. 471, excluding the unrelated reviews around it. The reviewer is describing the book’s origin theory; that description is not proof of the theory. It concerns an earlier edition, not the 1940 revision.",
+  "notes": [
+    "The compiler’s surname in this review is read as Basu (বসু); the 1940 book’s title leaf names Haricharan Bandhu (বন্ধু). This discrepancy is preserved rather than silently harmonised.",
+    "A short lineage description following Agnikula Rajput on p. 470 is unclear in the scan and is marked in the translation.",
+    "The Sanskrit quotation is attributed in the review to the Brihaddharma Purana. Its use here belongs to the reviewer’s historical argument about caste status.",
+    "The review’s puzzled comment on an English foreword belongs to the earlier edition.",
+    "The Bengali transcription was checked against the two scans. Printed line breaks are joined; square brackets mark an unreadable phrase, and the dash marks the sentence continuing onto the next page."
+  ],
+  "blocks": [
+    {
+      "title": "The book and its argument",
+      "location": "Printed p. 470 · scan 498 · lower right column",
+      "image": "assets/books/prabasi-498.jpg",
+      "paragraphs": [
+        "Rajput O Ugrakshatriya. Compiled and edited by Sri Haricharan Basu [surname as read in this review]. Publisher: Sri Ashutosh Chowdhury, Burdwan. No price is stated. The origins, customs, practices, observances, lineage conventions and social standing of the Ugra Kshatriya community have been collected in this book from various scriptures and from regional literature and history.",
+        "The author has sought to show that the Vedic Agnikula Rajputs [a following lineage description is unclear in the scan] came to Bengal as soldiers of the Muslim conquerors, established settlements in Burdwan district, and came to be known as Ugra Kshatriyas. Later, during Akbar’s reign, Raja Man Singh’s Kshatriya—"
+      ],
+      "bengali": [
+        "রাজপুত ও উগ্রক্ষত্রিয়—শ্রীহরিচরণ বসু সঙ্কলিত ও সম্পাদিত। প্রকাশক শ্রীআশুতোষ চৌধুরী, বর্দ্ধমান। মূল্যের উল্লেখ নাই। উগ্রক্ষত্রিয় জাতির উৎপত্তি, আচার, ব্যবহার, সংস্কার, কুলপ্রথা ও সামাজিক মর্য্যাদা নানা শাস্ত্র এবং প্রাদেশিক সাহিত্য ও ইতিহাস হইতে এই পুস্তকে সঙ্কলিত হইয়াছে।",
+        "গ্রন্থকার দেখাইতে চাহিয়াছেন যে বৈদিক অগ্নিকুল রাজপুত [পরবর্তী কয়েকটি শব্দ অস্পষ্ট] মুসলমান বিজেতাদের সৈনিকরূপে বঙ্গে আসিয়া বর্দ্ধমান জেলায় উপনিবেশ স্থাপন করেন এবং তাঁহারাই উগ্রক্ষত্রিয় নামে পরিচিত হন; তৎপরে আকবরের রাজত্বকালে রাজা মানসিংহের ক্ষত্রিয়—"
+      ]
+    },
+    {
+      "title": "The reviewer’s assessment",
+      "location": "Printed p. 471 · scan 499 · upper left column",
+      "image": "assets/books/prabasi-499.jpg",
+      "paragraphs": [
+        "—soldiers also came to live in that part to assist the governor of Burdwan. The lineage born of the union of these two groups of Kshatriya settlers is identified through the Brihaddharma Purana’s statement: “Ugra and Rajputra were born of a Kshatriya by her (a Vaishya woman).” Therefore, they are Kshatriyas.",
+        "Although this book deals with the history of one particular community, it seems likely to be enjoyable reading for readers interested in the study of communities. We do not understand why the introduction to this book was written in English."
+      ],
+      "bengali": [
+        "—সৈন্যও বর্দ্ধমানের শাসনকর্ত্তার সাহায্যের জন্য সেই অংশে বাস করিতে থাকে; এই দুই উপনিবেশী ক্ষত্রিয়ের মিলনোৎপন্ন বংশই বৃহদ্ধর্ম্মপুরাণের মতে “উগ্রশ্চ রাজপুত্রশ্চ তস্যাং (বৈশ্যায়াং) ক্ষত্রাৎ বভূবতুঃ।” সুতরাং ইঁহারা ক্ষত্রিয়ই।",
+        "এই গ্রন্থখানি বিশেষ একজাতির বিবরণ হইলেও জাতিতত্ত্ব-কৌতূহলিষ্ণু পাঠকের নিকট সুখপাঠ্য বলিয়া বোধ হইতেছে। এই গ্রন্থের ভূমিকাটি ইংরেজিতে কেন লেখা হইয়াছে বুঝিতে পারিলাম না।"
+      ]
+    }
+  ],
+  "slug": "prabasi-book-review"
+}

@@ -1,0 +1,88 @@
+{
+  "version": 1,
+  "override": {
+    "key": "person-shakti-samanta",
+    "through": "2026-10-11"
+  },
+  "excluded_keys": [],
+  "articles": {
+    "person-shakti-samanta": {
+      "en": {
+        "category": "People · Bengali & Hindi cinema",
+        "intro_html": "From Bokra in Bengal to the studios of Bombay, Shakti Samanta built a career connecting Bengali and Hindi cinema. Discover the filmmaker behind <em>Aradhana</em>, <em>Amar Prem</em> and <em>Amanush</em>, and the people, music and stories that shaped his work.",
+        "link_label": "Read his story",
+        "image_credit": "Photo: Aradhana Films"
+      },
+      "bn": {
+        "category": "ব্যক্তিত্ব · বাংলা ও হিন্দি চলচ্চিত্র",
+        "intro_html": "বাংলার বোকরা থেকে বোম্বের স্টুডিয়ো—শক্তি সামন্তের কর্মজীবন বাংলা ও হিন্দি চলচ্চিত্রকে যুক্ত করেছে। <em>আরাধনা</em>, <em>অমর প্রেম</em> ও <em>অমানুষ</em>-এর পরিচালকের জীবন জানুন; ফিরে দেখুন তাঁর কাজকে গড়ে তোলা মানুষ, সুর ও গল্পের জগৎ।",
+        "link_label": "তাঁর জীবনকথা পড়ুন",
+        "image_credit": "ছবি: আরাধনা ফিল্মস"
+      }
+    },
+    "origins": {
+      "en": {
+        "category": "History · The Nagadee connection",
+        "intro_html": "How did soldiers of the Burdwan Raj become cultivators and landholders? Explore the case linking the Aguris to the cash-paid Nagadee forces, through historical research and an illustrated timeline.",
+        "link_label": "Explore their origins",
+        "title": "From Nagadee to Jotedar"
+      },
+      "bn": {
+        "category": "ইতিহাস · নগদী যোগসূত্র",
+        "intro_html": "বর্ধমান রাজের সৈন্যরা কীভাবে কৃষক ও ভূস্বামী হয়ে উঠলেন? ঐতিহাসিক গবেষণা ও সচিত্র কালপঞ্জির সাহায্যে আগুরীদের সঙ্গে নগদ বেতনভোগী নগদী বাহিনীর সম্পর্কের যুক্তি অনুসরণ করুন।",
+        "link_label": "উৎপত্তির ইতিহাস পড়ুন",
+        "title": "নগদী থেকে জোতদার"
+      }
+    },
+    "aguris-today": {
+      "en": {
+        "category": "Society · A changing community",
+        "intro_html": "Land, work, migration and marriage are reshaping Aguri lives. This essay examines the community’s varied experiences today, from political participation and enterprise to the ways families preserve and rethink belonging.",
+        "link_label": "Read the essay"
+      },
+      "bn": {
+        "category": "সমাজ · পরিবর্তনশীল সম্প্রদায়",
+        "intro_html": "জমি, কাজ, অভিবাসন ও বিবাহ আগুরী জীবনে নতুন পরিবর্তন আনছে। রাজনৈতিক অংশগ্রহণ ও উদ্যোগ থেকে পারিবারিক পরিচয় ও অন্তর্ভুক্তির ভাবনা—এই প্রবন্ধে আজকের সম্প্রদায়ের নানা অভিজ্ঞতা অনুসন্ধান করা হয়েছে।",
+        "link_label": "প্রবন্ধটি পড়ুন"
+      }
+    },
+    "person-hare-krishna-konar": {
+      "en": {
+        "category": "People · Peasant movements & land reform",
+        "intro_html": "From a young revolutionary imprisoned in the Andamans to a peasant organiser and land minister, Hare Krishna Konar’s life connects the independence struggle with Bengal’s rural movements. Read about his family, political education and work over land.",
+        "link_label": "Read his story",
+        "image_credit": "Photo: West Bengal State Archives · via Wikimedia Commons"
+      },
+      "bn": {
+        "category": "ব্যক্তিত্ব · কৃষক আন্দোলন ও ভূমিসংস্কার",
+        "intro_html": "আন্দামানে বন্দি তরুণ বিপ্লবী থেকে কৃষক সংগঠক ও ভূমিমন্ত্রী—হরেকৃষ্ণ কোঙারের জীবন স্বাধীনতার সংগ্রামকে বাংলার গ্রামীণ আন্দোলনের সঙ্গে যুক্ত করে। জানুন তাঁর পরিবার, রাজনৈতিক শিক্ষা ও জমির অধিকার নিয়ে কাজের কথা।",
+        "link_label": "তাঁর জীবনকথা পড়ুন",
+        "image_credit": "ছবি: পশ্চিমবঙ্গ রাজ্য মহাফেজখানা · উইকিমিডিয়া কমন্স সূত্রে"
+      }
+    },
+    "person-satya-kinkar-sahana": {
+      "en": {
+        "category": "People · Business, literature & public life",
+        "intro_html": "Satya Kinkar Sahana’s world stretched from the family business and landed estate to Bengali literature and the legislature. Discover a Bankura life shaped by scholarship, wealth and public service, and the tensions within that legacy.",
+        "link_label": "Read his story",
+        "image_credit": "Portrait based on Bangsha-Parichay, volume XII (1932)"
+      },
+      "bn": {
+        "category": "ব্যক্তিত্ব · ব্যবসা, সাহিত্য ও জনজীবন",
+        "intro_html": "পারিবারিক ব্যবসা ও জমিদারি থেকে বাংলা সাহিত্য ও আইনসভা—সত্যকিঙ্কর সাহানার কর্মজগৎ ছিল বহুমুখী। বাঁকুড়ার এই জীবনে বিদ্যাচর্চা, সম্পদ ও জনসেবার সম্পর্ক এবং সেই উত্তরাধিকারের টানাপোড়েন জানুন।",
+        "link_label": "তাঁর জীবনকথা পড়ুন",
+        "image_credit": "বংশ-পরিচয়, দ্বাদশ খণ্ড (১৯৩২)-এর প্রতিকৃতি অবলম্বনে"
+      }
+    }
+  },
+  "carousel": {
+    "limit": 5,
+    "interval_ms": 7000,
+    "additional_keys": [
+      "origins",
+      "aguris-today",
+      "person-hare-krishna-konar",
+      "person-satya-kinkar-sahana"
+    ]
+  }
+}

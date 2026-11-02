@@ -1,0 +1,30 @@
+{
+  "work": "Haricharan Bandhu, Rajput O Ugrakshatriya, second edition, 1940",
+  "source": "https://archive.org/details/in.ernet.dli.2015.354015",
+  "holding_library": "Bangiya Sahitya Parishad, Kolkata, according to the Digital Library of India catalogue",
+  "rights": "Internet Archive / Digital Library of India metadata identifies the work as In Public Domain.",
+  "notes": "Unaltered page renderings from PDF scans 4, 7, 8 and 9; title leaf, publisher’s note and author’s foreword. No completed translation of the whole book is claimed.",
+  "retrieved": "2026-09-13",
+  "additional_images": [
+    {
+      "files": [
+        "prabasi-498.jpg",
+        "prabasi-499.jpg"
+      ],
+      "work": "Prabasi, fourteenth year, second volume, Magh 1321 (1915), printed pp. 470–471",
+      "source": "https://bn.wikisource.org/wiki/পাতা:প্রবাসী_(চতুর্দশ_ভাগ,_দ্বিতীয়_খণ্ড).djvu/৪৯৮",
+      "continuation": "https://bn.wikisource.org/wiki/পাতা:প্রবাসী_(চতুর্দশ_ভাগ,_দ্বিতীয়_খণ্ড).djvu/৪৯৯",
+      "notes": "Unaltered scans of the public-domain 1915 periodical. Only the Rajput O Ugrakshatriya review is translated; surrounding reviews are not included.",
+      "retrieved": "2026-09-13"
+    },
+    {
+      "files": [
+        "day-bengal-peasant-life-p31.jpg"
+      ],
+      "work": "Lal Behari Day, Bengal Peasant Life (1916 reprint), chapter V, printed p. 31",
+      "source": "https://archive.org/details/in.ernet.dli.2015.190046/page/n41/mode/1up",
+      "notes": "Digital Library of India scan (archive scan n41), reduced to 700 px wide for the Culture page. The work was first published in 1874 and its author died in 1894.",
+      "retrieved": "2026-09-21"
+    }
+  ]
+}

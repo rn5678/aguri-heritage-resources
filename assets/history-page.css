@@ -1,0 +1,291 @@
+/* History page: chronology-first public-history design (approved "Option B", 13 October 2026).
+   Loaded only on history.html in both editions, after style.css and parent-guides.css, by
+   history_page.py. The header, footer and tokens follow the homepage
+   (homepage-public-history.css and homepage-services.css); the editorial body is authored in
+   content/history.html and content/bn/history.html. Layout rules are screen-only: printing keeps
+   the existing print.css treatment, with the additions at the end of this file. */
+
+/* ---------- Tokens shared with the homepage ---------- */
+body[data-page=history]{--paper:#f8f6ee;--white:#fffdf7;--surface:#eeeee3;--ink:#294337;--green:#294337;--muted:#646b60;--line:#d9dace;--rust:#a05034;--sage:#e9ece0;background:var(--paper);color:var(--ink)}
+html[lang=en] body[data-page=history]{--serif:Baskerville,'Palatino Linotype',Georgia,serif}
+
+/* ---------- Homepage header and footer ---------- */
+body[data-page=history] .skip{position:fixed;left:15px;top:-80px;z-index:20;padding:12px;background:var(--ink);color:#fff;text-decoration:none}
+body[data-page=history] .skip:focus{top:12px}
+body[data-page=history] .wrap{width:min(1200px,calc(100% - 96px));margin-inline:auto}
+body[data-page=history] .edition{border-bottom:1px solid var(--line);font-size:10px;letter-spacing:.045em}
+body[data-page=history] .edition>.wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:36px}
+body[data-page=history] .languages{display:flex;align-items:center;gap:8px}
+body[data-page=history] .languages a{display:flex;align-items:center;min-height:30px;padding:3px 8px;color:inherit;text-decoration:none}
+body[data-page=history] .languages [aria-current=page]{font-weight:600;border-bottom:1px solid var(--ink)}
+body[data-page=history] .languages [lang=bn]{font-family:var(--bn);font-size:12px}
+body[data-page=history] .header{border-bottom:1px solid var(--line)}
+body[data-page=history] .header .header-inner{display:flex;flex-wrap:nowrap;align-items:center;justify-content:space-between;gap:24px;max-width:none;min-height:100px;margin-inline:auto;padding:0}
+body[data-page=history] .header .brand{display:flex;flex-shrink:0;align-items:center;gap:13px;font:inherit;letter-spacing:normal;color:var(--ink);text-decoration:none}
+body[data-page=history] .header .brand-mark{display:grid;place-items:center;box-sizing:border-box;width:45px;height:51px;padding-top:3px;border:1px solid #9ea88f;border-radius:22px 22px 2px 2px;font:31px/1 var(--bn)}
+body[data-page=history] .header .brand-name{display:block;font:27px/1.12 var(--serif);letter-spacing:-.5px}
+body[data-page=history] .header .brand small{display:block;margin-top:7px;font:8px/1.5 var(--sans);letter-spacing:.17em;text-transform:uppercase}
+body[data-page=history] .header .nav{order:1;display:flex;align-items:center;gap:24px;font-size:13px}
+body[data-page=history] .header .nav a{position:relative;padding:10px 0;color:var(--ink);text-decoration:none}
+body[data-page=history] .header .nav a:hover,body[data-page=history] .header .nav a[aria-current=page]{color:var(--rust)}
+body[data-page=history] .header .nav a[aria-current=page]::after{content:"";position:absolute;left:0;right:0;bottom:4px;height:1px;background:currentColor}
+body[data-page=history] .header .nav .contribute-nav{padding:8px 14px;border:1px solid #aab09e}
+body[data-page=history] .home-header-actions{order:2;display:flex;align-items:center;gap:12px}
+body[data-page=history] .header .search-open{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:44px;padding:7px 0;background:transparent;border:0;color:var(--ink);font-size:12px;cursor:pointer}
+body[data-page=history] .header .search-open svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round}
+body[data-page=history] .header .search-open span{display:inline}
+body[data-page=history] .header .search-open:hover{color:var(--rust)}
+body[data-page=history] .header .menu{display:none;min-height:44px;padding:8px 12px;background:transparent;border:1px solid var(--line);color:var(--ink);font:13px var(--sans);cursor:pointer}
+body[data-page=history] .footer{padding:34px 0 20px;background:var(--ink);color:#eceee1;font:16px/1.65 var(--sans)}
+body[data-page=history] .footer a{color:inherit;text-decoration:none}
+body[data-page=history] .footer .footer-top{display:flex;align-items:center;justify-content:space-between;gap:25px;max-width:none;margin:0;padding-bottom:26px}
+body[data-page=history] .footer .footer-brand{font:27px var(--serif)}
+body[data-page=history] .footer .footer-top p{margin:10px 0 0;font:18px var(--serif);color:#c0cdb6}
+body[data-page=history] .footer .footer-links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:24px;font-size:11px}
+body[data-page=history] .footer .footer-links a:hover,body[data-page=history] .footer-bottom a:hover{text-decoration:underline}
+body[data-page=history] .footer .footer-bottom{display:flex;justify-content:space-between;gap:20px;max-width:none;margin:0;padding-top:17px;border-top:1px solid #607260;font-size:9px;letter-spacing:normal;color:#c3cdb9}
+body[data-page=history] .footer .notify{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;max-width:none;margin:0 0 26px;padding:22px 0;border-top:1px solid #607260;border-bottom:1px solid #607260}
+body[data-page=history] .footer .notify[hidden]{display:none}
+body[data-page=history] .footer .notify h2{margin:0 0 8px;font-size:22px;color:#f1f3e8}
+body[data-page=history] .footer .notify p{max-width:610px;font-size:12px;line-height:1.8;color:#c8d0bc}
+body[data-page=history] .footer .notify a{color:#e6e9db;text-decoration:underline;text-underline-offset:3px}
+body[data-page=history] .footer .notify .notify-status{flex-basis:100%;color:#d7dccb}
+body[data-page=history] .footer .notify .notify-status:empty{display:none}
+body[data-page=history] .footer .notify .button.secondary{background:transparent;border-color:#8d9a88;color:#e6e9db}
+body[data-page=history] .footer .notify+.footer-bottom{border-top:0}
+body[data-page=history] .footer .notify[hidden]+.footer-bottom{border-top:1px solid #607260}
+html[lang=bn] body[data-page=history] .header .brand-name{font-size:23px}
+html[lang=bn] body[data-page=history] .header .brand small{letter-spacing:.04em}
+html[lang=bn] body[data-page=history] .header .nav{gap:18px}
+html[lang=bn] body[data-page=history] .header .search-open{font-size:12px}
+
+@media screen{
+/* ---------- Page frame: the homepage's 1200-pixel column ---------- */
+body[data-page=history] main{width:min(1200px,calc(100% - 96px));max-width:none;margin-inline:auto;padding:0 0 72px}
+body[data-page=history] .guide-kicker{margin:0 0 12px;font:600 11px/1.5 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--rust)}
+html[lang=bn] body[data-page=history] .guide-kicker{font-size:13px;letter-spacing:0;text-transform:none}
+
+/* ---------- Opening: title, summary and a wide illustration ---------- */
+body[data-page=history] .page-heading.page-heading-illustrated{display:grid;grid-template-columns:minmax(0,1fr);gap:30px;max-width:none;padding:44px 0 0}
+body[data-page=history] .page-heading-copy{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);grid-template-areas:"crumb crumb" "title dek" "title updated";column-gap:64px;align-items:end}
+body[data-page=history] .page-heading-copy>.eyebrow{grid-area:crumb;margin-bottom:22px}
+body[data-page=history] .page-heading-copy>h1{grid-area:title;margin:0;font-size:76px;line-height:1.02;letter-spacing:-2.6px}
+body[data-page=history] .page-heading-copy>h1>*{display:block}
+body[data-page=history] .page-heading-copy>h1 em{font-weight:400;color:var(--rust)}
+body[data-page=history] .page-heading-copy>.dek{grid-area:dek;max-width:520px;margin:0;font:23px/1.45 var(--serif);color:var(--ink)}
+body[data-page=history] .page-heading-copy>.page-updated{grid-area:updated;margin:14px 0 8px}
+body[data-page=history] .page-artwork img{aspect-ratio:3/1;object-fit:cover;object-position:50% 58%}
+body[data-page=history] .page-artwork figcaption{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px;padding-top:10px}
+body[data-page=history] .page-artwork figcaption strong{display:inline;font:15px/1.4 var(--serif)}
+body[data-page=history] .page-artwork figcaption span{display:inline;margin:0;font-size:11px}
+html[lang=bn] body[data-page=history] .page-heading-copy>h1{font-size:56px;line-height:1.3;letter-spacing:0}
+html[lang=bn] body[data-page=history] .page-heading-copy>h1 em{font-style:normal}
+html[lang=bn] body[data-page=history] .page-heading-copy>.dek{font-size:20px;line-height:1.8}
+body[data-page=history] .page-tools{max-width:none;margin:22px 0 0}
+body[data-page=history] .on-this-page{margin:26px 0 0}
+
+/* ---------- The story in brief, beside the evidence key ---------- */
+body[data-page=history] .history-overview{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:40px 72px;align-items:start;margin:56px 0 0}
+body[data-page=history] .history-overview h2,body[data-page=history] .history-chronicle h2,body[data-page=history] .history-origins h2,body[data-page=history] .history-stories h2{max-width:none;margin:0 0 20px;font-size:38px;line-height:1.12;letter-spacing:-.6px}
+body[data-page=history] .history-overview-story p:not(.guide-kicker){max-width:680px;margin:0 0 18px;font-size:17px;line-height:1.8}
+body[data-page=history] .history-evidence{padding-top:16px;border-top:1px solid var(--ink)}
+body[data-page=history] .history-evidence>p:not(.guide-kicker){margin:6px 0 10px;font-size:13.5px;line-height:1.7;color:var(--muted)}
+body[data-page=history] .history-evidence .evidence-key{margin:0;padding:0;list-style:none}
+body[data-page=history] .history-evidence .evidence-key li{position:relative;margin:0;padding:12px 0 12px 24px;border-bottom:1px solid var(--line);font-size:13px;line-height:1.6;color:var(--muted)}
+body[data-page=history] .history-evidence .evidence-key strong{font-weight:600;color:var(--ink)}
+
+/* Evidence marks: shape, not colour alone, tells the four kinds apart. */
+body[data-page=history] :is(.evidence-key li,.evidence-tag)::before{content:"";flex:none;box-sizing:border-box;width:9px;height:9px}
+body[data-page=history] .evidence-key li::before{position:absolute;left:0;top:18px;width:10px;height:10px}
+body[data-page=history] .evidence-documented::before{background:var(--ink)}
+body[data-page=history] .evidence-reported::before{border:1.5px solid var(--ink);background:linear-gradient(90deg,var(--ink) 50%,transparent 50%)}
+body[data-page=history] .evidence-tradition::before{border:1.5px solid var(--rust)}
+body[data-page=history] .evidence-interpretation::before{border:1.5px solid var(--ink);transform:rotate(45deg) scale(.8)}
+body[data-page=history] .evidence-record::before{border:1.5px solid #9aa189;border-radius:50%}
+body[data-page=history] .evidence-tag{display:inline-flex;align-items:center;gap:7px;margin:0 0 10px;padding:0;background:none;border:0;font:600 10px/1.5 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+html[lang=bn] body[data-page=history] .evidence-tag{font-size:12.5px;letter-spacing:0;text-transform:none}
+
+/* ---------- Chronology: four eras on one time line ---------- */
+body[data-page=history] .history-chronicle{margin:96px 0 0}
+body[data-page=history] .chronicle-heading{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 32px;padding-top:28px;border-top:1px solid var(--ink)}
+body[data-page=history] .chronicle-heading h2{margin:0}
+body[data-page=history] .chronicle-summary{margin:0 0 6px;font-size:12px;color:var(--muted)}
+body[data-page=history] .chronicle-eras{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 24px;margin:30px 0 0}
+body[data-page=history] .chronicle-eras a{display:flex;flex-direction:column;gap:6px;padding:16px 0 18px;border-top:2px solid var(--ink);color:var(--ink);text-decoration:none}
+body[data-page=history] .chronicle-eras a:hover .era-name{color:var(--rust)}
+body[data-page=history] :is(.chronicle-eras,.chronicle-era-heading) .era-dates{font:600 11px/1.5 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--rust)}
+body[data-page=history] .chronicle-eras .era-name{font:20px/1.25 var(--serif)}
+body[data-page=history] .chronicle-era{padding-top:64px}
+body[data-page=history] .chronicle-era-heading{display:grid;grid-template-columns:190px minmax(0,1fr);align-items:end;margin:0 0 26px}
+body[data-page=history] .chronicle-era-heading h3{display:grid;grid-column:1/-1;grid-template-columns:190px minmax(0,1fr);grid-template-areas:"numeral dates" "numeral name";align-items:end;margin:0;font-weight:400}
+body[data-page=history] .chronicle-era-heading .era-numeral{grid-area:numeral;font:italic 84px/.85 var(--serif);color:var(--rust)}
+body[data-page=history] .chronicle-era-heading .era-dates{grid-area:dates;padding-left:37px}
+body[data-page=history] .chronicle-era-heading .era-name{grid-area:name;padding:8px 0 0 37px;font:38px/1.12 var(--serif);letter-spacing:-.6px}
+body[data-page=history] .chronicle-era-link{grid-column:2;justify-self:start;display:inline-flex;align-items:center;gap:8px;min-height:40px;margin:6px 0 0 37px;font-size:13px;color:var(--ink)}
+body[data-page=history] .chronicle{margin:0;padding:0;list-style:none}
+body[data-page=history] .chronicle-entry{display:grid;grid-template-columns:190px minmax(0,1fr);margin:0;padding:0;border:0}
+body[data-page=history] .chronicle-date{margin:0;padding:22px 24px 6px 0;font:30px/1 var(--serif);letter-spacing:-.4px;color:var(--ink)}
+body[data-page=history] .chronicle-body{position:relative;min-width:0;padding:22px 0 36px 36px;border-left:1px solid #b4bca5}
+body[data-page=history] .chronicle-body::before{content:"";position:absolute;left:-6px;top:31px;box-sizing:border-box;width:11px;height:11px;border:1.5px solid var(--ink);border-radius:50%;background:var(--paper)}
+body[data-page=history] .chronicle-body>.evidence-tag{margin:0}
+body[data-page=history] .chronicle-body h4{margin:8px 0 8px;font:400 24px/1.2 var(--serif)}
+body[data-page=history] .chronicle-body h4 a{color:inherit;text-decoration-color:#9ea88f;text-underline-offset:4px}
+body[data-page=history] .chronicle-body h4 a:hover{color:var(--rust)}
+body[data-page=history] .chronicle-body p:not(.chronicle-tags){max-width:680px;margin:0;font-size:15px;line-height:1.7}
+body[data-page=history] .is-turning-point .chronicle-date{padding-top:17px;font-size:46px;letter-spacing:-1px;color:var(--rust)}
+body[data-page=history] .is-turning-point .chronicle-body{padding-bottom:48px}
+body[data-page=history] .is-turning-point .chronicle-body::before{left:-9px;top:27px;width:17px;height:17px;border:3px solid var(--paper);background:var(--rust);box-shadow:0 0 0 1px var(--rust)}
+body[data-page=history] .chronicle-tags{display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px;margin:0}
+body[data-page=history] .chronicle-tags .evidence-tag{margin:0}
+body[data-page=history] .turning-point-tag{font:600 10px/1.5 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--rust)}
+html[lang=bn] body[data-page=history] .turning-point-tag{font-size:12.5px;letter-spacing:0;text-transform:none}
+body[data-page=history] .chronicle-feature{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px 36px}
+body[data-page=history] .chronicle-text{flex:999 1 340px;min-width:0}
+body[data-page=history] .is-turning-point h4{margin:12px 0 10px;font-size:32px;line-height:1.15;letter-spacing:-.4px}
+body[data-page=history] .is-turning-point .chronicle-text>p:not(.chronicle-record){font-size:16px;line-height:1.7}
+body[data-page=history] .chronicle-body .chronicle-record{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:13.5px;line-height:1.7;color:var(--muted)}
+body[data-page=history] .chronicle-record-label{margin-right:4px;color:var(--ink)}
+body[data-page=history] .chronicle-record-label time{font-variant-numeric:tabular-nums}
+body[data-page=history] .chronicle-figure{flex:0 1 340px;max-width:380px;margin:4px 0 0}
+body[data-page=history] .chronicle-figure.is-portrait{flex-basis:220px;max-width:230px}
+body[data-page=history] .chronicle-figure img{display:block;width:100%;height:auto}
+body[data-page=history] .chronicle-figure.is-portrait img{border:1px solid var(--line)}
+body[data-page=history] .chronicle-figure figcaption{margin-top:8px;font-size:11px;line-height:1.55;color:var(--muted)}
+body[data-page=history] .chronicle-figure figcaption strong{display:block;font-weight:600;color:var(--ink)}
+body[data-page=history] .chronicle-figure figcaption span{display:block}
+body[data-page=history] .chronicle-figure figcaption a{color:var(--ink)}
+html[lang=bn] body[data-page=history] .chronicle-figure figcaption{font-size:12.5px;line-height:1.75}
+
+/* ---------- Origins: the five accounts side by side ---------- */
+body[data-page=history] .history-origins{margin:96px 0 0;padding-top:30px;border-top:1px solid var(--ink)}
+body[data-page=history] .history-origins-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:16px 64px;align-items:start}
+body[data-page=history] .history-origins-intro h2{margin:0}
+body[data-page=history] .history-origins-intro p{margin:0;font-size:16px;line-height:1.8}
+body[data-page=history] .history-theories{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:32px}
+body[data-page=history] .history-theories .theory{display:flex;flex-direction:column;gap:6px;margin:0;padding:24px 26px;background:var(--white);border:1px solid var(--line)}
+body[data-page=history] .history-theories .theory:first-child{border-top:2px solid var(--rust)}
+body[data-page=history] .history-theories .theory h3{margin:4px 0 6px;font-size:24px;line-height:1.2}
+body[data-page=history] .history-theories .theory p{margin:0;font-size:14.5px;line-height:1.75}
+body[data-page=history] .history-theories .callout{display:flex;flex-direction:column;justify-content:center;gap:12px;margin:0;padding:26px 28px;background:var(--sage);border:1px solid #d9dfcc;font:italic 21px/1.45 var(--serif);color:var(--ink)}
+body[data-page=history] .history-theories .callout strong{display:block;margin:0;font:600 11px/1.5 var(--sans);font-style:normal;letter-spacing:.14em;text-transform:uppercase;color:var(--rust)}
+html[lang=bn] body[data-page=history] .history-theories .callout{font-style:normal;font-size:18px;line-height:1.9}
+
+/* ---------- Stories to follow ---------- */
+body[data-page=history] .history-stories{margin:96px 0 0}
+body[data-page=history] .history-stories .guide-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px;margin:0}
+body[data-page=history] .history-stories .guide-card{position:relative;padding:22px 40px 26px 0;background:none;border:0;border-top:1px solid var(--ink)}
+body[data-page=history] .history-stories .guide-card:focus-within{border-color:var(--ink)}
+body[data-page=history] .history-stories .guide-card .guide-kicker{margin-bottom:6px}
+body[data-page=history] .history-stories .guide-card h3{margin:0 0 8px;font-size:25px;line-height:1.2}
+body[data-page=history] .history-stories .guide-card h3 a{color:var(--ink);text-decoration:none}
+body[data-page=history] .history-stories .guide-card h3 a::before{content:"";position:absolute;inset:0}
+body[data-page=history] .history-stories .guide-card h3 a::after{content:"↗";position:absolute;top:22px;right:0;font:20px/1 var(--sans);color:var(--rust)}
+body[data-page=history] .history-stories .guide-card:hover h3 a{color:var(--rust)}
+body[data-page=history] .history-stories .guide-description{margin:0;font-size:14.5px;line-height:1.7;color:var(--muted)}
+
+/* ---------- The full account: a visible chapter list and the existing disclosure ---------- */
+body[data-page=history] .history-full-account{margin:96px 0 0;padding-top:30px;border-top:1px solid var(--ink)}
+body[data-page=history] .history-chapters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:48px;margin:14px 0 0;padding:0;list-style:none;counter-reset:chapter}
+body[data-page=history] .history-chapters li{margin:0;counter-increment:chapter}
+body[data-page=history] .history-chapters a{display:grid;grid-template-columns:38px minmax(0,1fr) 18px;align-items:baseline;gap:12px;padding:15px 0;border-bottom:1px solid var(--line);font:20px/1.3 var(--serif);color:var(--ink);text-decoration:none}
+body[data-page=history] .history-chapters a::before{content:counter(chapter,decimal-leading-zero);font:600 12px/1.5 var(--sans);color:var(--rust)}
+html[lang=bn] body[data-page=history] .history-chapters a::before{content:counter(chapter,bengali)}
+body[data-page=history] .history-chapters a::after{content:"↓";font:16px var(--sans);color:var(--rust)}
+body[data-page=history] .history-chapters a:hover{color:var(--rust)}
+body[data-page=history] .history-full-account>details.guide-depth{max-width:none;margin:26px 0 0;padding:0;border:0}
+body[data-page=history] .history-full-account>details.guide-depth>.prose{max-width:800px}
+
+/* ---------- Bengali headings need taller lines ---------- */
+html[lang=bn] body[data-page=history] :is(.history-overview,.history-chronicle,.history-origins,.history-stories) h2{font-size:32px;line-height:1.45;letter-spacing:0}
+html[lang=bn] body[data-page=history] :is(.chronicle-body h4,.history-theories h3,.history-stories h3,.chronicle-eras .era-name,.history-chapters a){line-height:1.55;letter-spacing:0}
+html[lang=bn] body[data-page=history] .chronicle-era-heading .era-name{font-size:30px;line-height:1.45;letter-spacing:0}
+html[lang=bn] body[data-page=history] .chronicle-era-heading .era-numeral{font-style:normal;font-size:64px}
+html[lang=bn] body[data-page=history] :is(.chronicle-eras,.chronicle-era-heading) .era-dates{font-size:13px;letter-spacing:0;text-transform:none}
+html[lang=bn] body[data-page=history] .is-turning-point h4{font-size:27px}
+html[lang=bn] body[data-page=history] .is-turning-point .chronicle-date{font-size:38px}
+html[lang=bn] body[data-page=history] .chronicle-date{font-size:26px}
+html[lang=bn] body[data-page=history] .chronicle-body p:not(.chronicle-tags){font-size:16px;line-height:1.95}
+html[lang=bn] body[data-page=history] .history-overview-story p:not(.guide-kicker){line-height:1.95}
+}
+
+/* ---------- Narrower screens, following the homepage breakpoints ---------- */
+@media screen and (max-width:1100px){
+ body[data-page=history] .wrap,body[data-page=history] main{width:calc(100% - 64px)}
+ body[data-page=history] .header .header-inner{gap:15px}
+ body[data-page=history] .header .nav{gap:15px;font-size:11px}
+ body[data-page=history] .home-header-actions{gap:8px}
+ body[data-page=history] .header .search-open span{display:none}
+ body[data-page=history] .page-heading-copy>h1{font-size:63px}
+ body[data-page=history] .history-theories{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media screen and (max-width:900px){
+ body[data-page=history] .chronicle-eras{grid-template-columns:repeat(2,minmax(0,1fr))}
+ body[data-page=history] .history-overview,body[data-page=history] .history-origins-intro{grid-template-columns:minmax(0,1fr)}
+ body[data-page=history] .chronicle-entry,body[data-page=history] .chronicle-era-heading,body[data-page=history] .chronicle-era-heading h3{grid-template-columns:120px minmax(0,1fr)}
+}
+@media screen and (max-width:860px){
+ body[data-page=history] .header .header-inner{flex-wrap:wrap;gap:0 18px;min-height:87px}
+ body[data-page=history] .header .menu{display:block}
+ body[data-page=history] .home-header-actions{order:1;margin-left:auto}
+ body[data-page=history] .header .nav{order:2;display:none;flex-basis:100%;flex-wrap:wrap;gap:10px 25px;padding:15px 0 22px;font-size:14px}
+ body[data-page=history] .header .nav.is-open,html:not(.js) body[data-page=history] .header .nav{display:flex}
+ body[data-page=history] .header .search-open{padding:8px}
+ body[data-page=history] .header .brand-name{font-size:26px}
+ body[data-page=history] .page-heading-copy{grid-template-columns:minmax(0,1fr);grid-template-areas:"crumb" "title" "dek" "updated"}
+ body[data-page=history] .page-heading-copy>h1{margin-bottom:20px;font-size:52px}
+ html[lang=bn] body[data-page=history] .page-heading-copy>h1{font-size:40px}
+ body[data-page=history] .page-artwork img{aspect-ratio:16/9}
+ body[data-page=history] .history-stories .guide-grid,body[data-page=history] .history-chapters{grid-template-columns:minmax(0,1fr)}
+}
+@media screen and (max-width:640px){
+ body[data-page=history] .wrap,body[data-page=history] main{width:calc(100% - 38px)}
+ body[data-page=history] .edition .edition-text{max-width:150px;font-size:8px;line-height:1.5}
+ body[data-page=history] .edition>.wrap{min-height:40px}
+ body[data-page=history] .header .header-inner{gap:0 8px;min-height:80px}
+ body[data-page=history] .header .brand-mark{width:38px;height:44px;font-size:26px}
+ body[data-page=history] .header .brand-name{font-size:24px}
+ body[data-page=history] .header .brand small{font-size:7px;letter-spacing:.13em}
+ body[data-page=history] .home-header-actions{gap:5px}
+ body[data-page=history] .header .search-open{min-width:40px}
+ body[data-page=history] .footer{padding-top:29px}
+ body[data-page=history] .footer .footer-top{flex-direction:column;align-items:flex-start;gap:25px}
+ body[data-page=history] .footer .footer-links{justify-content:flex-start;gap:19px}
+ body[data-page=history] .footer .footer-bottom{flex-direction:column;gap:8px;font-size:8px}
+ body[data-page=history] .page-heading-copy>h1{font-size:46px;letter-spacing:-1.6px}
+ body[data-page=history] :is(.history-overview,.history-chronicle,.history-origins,.history-stories) h2{font-size:31px}
+ body[data-page=history] .chronicle-eras{grid-template-columns:minmax(0,1fr)}
+ body[data-page=history] .chronicle-eras a{padding:12px 0 14px}
+ body[data-page=history] .chronicle-era{padding-top:48px}
+ body[data-page=history] .chronicle-entry,body[data-page=history] .chronicle-era-heading,body[data-page=history] .chronicle-era-heading h3{grid-template-columns:minmax(0,1fr)}
+ body[data-page=history] .chronicle-era-heading h3{grid-template-areas:"numeral" "dates" "name"}
+ body[data-page=history] .chronicle-era-heading .era-numeral{font-size:56px}
+ body[data-page=history] .chronicle-era-heading :is(.era-dates,.era-name),body[data-page=history] .chronicle-era-link{padding-left:0;margin-left:0}
+ body[data-page=history] .chronicle-era-heading .era-name{font-size:30px}
+ body[data-page=history] .chronicle-era-link{grid-column:1}
+ body[data-page=history] .chronicle-date{padding:18px 0 6px 24px;border-left:1px solid #b4bca5}
+ body[data-page=history] .is-turning-point .chronicle-date{font-size:36px}
+ body[data-page=history] .chronicle-body{padding:8px 0 30px 24px}
+ body[data-page=history] .chronicle-body::before{top:-21px}
+ body[data-page=history] .is-turning-point .chronicle-body::before{top:-27px}
+ body[data-page=history] .is-turning-point h4{font-size:26px}
+ body[data-page=history] .chronicle-figure,body[data-page=history] .chronicle-figure.is-portrait{flex-basis:100%;max-width:100%}
+ body[data-page=history] .chronicle-figure.is-portrait img{max-width:240px}
+ body[data-page=history] .history-theories{grid-template-columns:minmax(0,1fr)}
+}
+
+/* ---------- Printing and PDF export ---------- */
+@media print{
+ body[data-page=history] :is(.edition,.header,.footer,.skip,.chronicle-eras,.chronicle-era-link,.history-chapters){display:none!important}
+ body[data-page=history] .chronicle{padding:0;list-style:none}
+ body[data-page=history] .chronicle-entry{break-inside:avoid;margin:0 0 10pt}
+ body[data-page=history] .chronicle-date{display:block;font-weight:600}
+ body[data-page=history] .chronicle-figure{width:45mm;max-width:100%;margin:6pt 0}
+ body[data-page=history] .chronicle-era-heading h3 span:not(.era-numeral){display:block}
+ body[data-page=history] .chronicle-era-heading .era-numeral{display:none}
+ body[data-page=history] .chronicle-era-heading{break-inside:avoid;break-after:avoid;margin-top:16pt}
+ body[data-page=history] .chronicle-era-heading .era-name{font-size:17pt}
+ body[data-page=history] .chronicle-body h4{break-after:avoid}
+}
+
+/* Keep all eight story controls reachable on narrow History pages. */
+body[data-page=history] .history-hero-indicators{min-width:0;max-width:100%;flex-wrap:wrap}

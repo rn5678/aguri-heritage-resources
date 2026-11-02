@@ -1,0 +1,2270 @@
+{
+  "journal-v1": {
+    "title": "Ugrakshatriya-Pratinidhi, Volume I (1298 Bangabda)",
+    "kind": "primary",
+    "label": "Original Bengali journal",
+    "detail": "Owner-supplied scan: Ugrakshatriya_Pratinidhi_Vol_01.pdf. 175 PDF images, mostly two-page spreads. The cover and opening contents leaves were inspected directly. The year 1298 spans 1891–92; Baishakh 1298 falls in April–May 1891.",
+    "status": "Owner-supplied PDF. Complete electricity essay (printed pp. 12–23) and first editorial’s opening-page extract translated against the scans; selected reading notes also available. Bengali OCR remains unreviewed. The contents leaves (scans 2–3) were re-read against the images on 8 October 2026 for the titles and authors cited on the Culture page.",
+    "url": "archives.html?volume=1&scan=1#reader",
+    "linkLabel": "Read Volume I"
+  },
+  "journal-v2": {
+    "title": "Ugrakshatriya-Pratinidhi, Volume II (1299 Bangabda)",
+    "kind": "primary",
+    "label": "Original Bengali journal",
+    "detail": "Owner-supplied scan: Ugrakshatriya_Pratinidhi_Vol_02.pdf. 167 PDF images, mostly spreads. The first image bears the second-volume label and year 1299 (1892–93), and begins Pratinidhir Atmakatha, the periodical’s account of itself. The report of the Ugrakshatriya Samiti’s sixth session, held on 17–18 Shraban 1299 (printed pp. 104–105, scan 53), lists the thirteen members present, the Samiti’s five aims, the transfer of the journal from its editor and proprietor, Srishchandra Ta, and a resolution against Risley’s account of the caste.",
+    "status": "Owner-supplied PDF. Complete Pratinidhir Atmakatha (printed pp. 1–5) translated against the scans. Bengali OCR remains unreviewed; most of the volume is not translated. The Samiti report was read against the scan image on 8 October 2026; it has not been translated in full.",
+    "url": "archives.html?volume=2&scan=1#reader",
+    "linkLabel": "Read Volume II"
+  },
+  "risley": {
+    "title": "H. H. Risley, The Tribes and Castes of Bengal, Vol. I (1891), pp. 12–13",
+    "kind": "historical",
+    "label": "Colonial ethnography",
+    "detail": "The Aguri entry in the original digitised volume: cultivation and trade, seven named subdivisions, marriage sections, ritual practices and a historical distribution table. Internet Archive item TheTribesAndCastesOfBengal. The item’s OCR was consulted directly; census figures were not transcribed from its broken table.",
+    "status": "Evidence of what a colonial author recorded in 1891. The text’s caste hierarchy, origin speculation and character stereotypes are not descriptions this project endorses.",
+    "url": "https://archive.org/details/TheTribesAndCastesOfBengal"
+  },
+  "mclane": {
+    "title": "John R. McLane, Land and Local Kingship in Eighteenth-Century Bengal (1993)",
+    "kind": "scholarship",
+    "label": "Historical scholarship",
+    "detail": "Cambridge University Press, Cambridge South Asian Studies 53. Village “oligarchies” of dominant peasants, “typically Aguris, Kaibartas, or Sadgops” (pp. 54–55); “the raja of Burdwan’s naqdi or cash-paid army”, whose salaries fell from about Rs 4 lakh to just over Rs 1 lakh in 1761–67, and the 1760s table of 32,032 land-paid servants (pp. 117–118); chapter 6, “Mughal Burdwan and the rise of the Burdwan raj” (pp. 125–138): Burdwan as a Mughal garrison town, the Khatri origins of the Raj family, Abu Rai’s appointment (p. 134), Krishnaram Rai’s farman of 1695–96 (p. 137) and the revolt of 1696–97 (p. 129); Gopbhum, Oldham’s Khatri–Sadgop theory and the Aguris (pp. 157–160); the Raja’s unpaid troops and the battle of 29 December 1760 (pp. 183–185); Johnstone’s payroll cut and the 1767 reduction of the “naqdi or household guard” from 1,487 to 839 (p. 192); Kinloch’s 1787 halving of the zamindari troops to 1,000 (p. 263); 17,384 village paiks in 1794 (p. 271). Printed pp. 125–126 describe Burdwan’s embankments, flood damage and cultivators cutting banks for irrigation.",
+    "status": "Read directly from the full Cambridge PDF (October 2026): pp. 54–55, 117–118, 125–138, 157–160, 183–185, 192, 263 and 271. McLane uses the Chandimangal, dated 1589 and quoted through Dimock and Inden’s translation, to treat the Aguris as older than the Khatris in Burdwan; this website records that reading and its limits on the Origins page. McLane does not connect the Aguris with the Raj’s naqdi (cash-paid) army or any other troops.",
+    "url": "https://doi.org/10.1017/CBO9780511563348"
+  },
+  "chakravarti-1970": {
+    "title": "Santosh Kumar Chakravarti, The History of the Relations of the Rajas of Burdwan and the East India Company during 1760–1832 (1970)",
+    "kind": "scholarship",
+    "label": "Doctoral thesis · read in full",
+    "detail": "PhD thesis, Department of History, University of Burdwan, 1970; supervisor S. B. Chaudhuri. Shodhganga, CC BY-NC 4.0. Historical background, including the 1696 revolt (pp. 4–16); the action at the pass of the Banka river on 29 December 1760, from Captain White’s letter (pp. 22–24); the Raja’s 32,031 land-paid servants in 1766 (p. 162); the monthly allowance for the “Nugdean” or household troops, 1761–67, from the diwan’s representation of 1 October 1777 (p. 163); the 1767 establishment of 1,487 men, with those dismissed and retained (pp. 164–165); the abolition of the corps in March 1787 (p. 177); and the patni system on the Burdwan estate (chapter 4, pp. 123–154). McLane (1993) cites it as Chakrabarti, “History”.",
+    "status": "Read in full through the text layer of the Shodhganga PDFs in October 2026; figures and page numbers checked against that text. The thesis does not record the caste or origin of any of the Raja’s troops.",
+    "url": "https://shodhganga.inflibnet.ac.in/handle/10603/68813",
+    "linkLabel": "Thesis on Shodhganga"
+  },
+  "mukhopadhyay-2026": {
+    "title": "Kanchan Mukhopadhyay, Uneven Terrain: Society and Foodways in Rarh Bengal (2026)",
+    "kind": "scholarship",
+    "label": "Anthropology · preview consulted",
+    "detail": "Routledge, 2026 (© Anthropological Survey of India). ISBN 9781041033073; DOI 10.4324/9781003625667. An ethnography of food and social relations in four Rarh villages in Paschim Medinipur, Jhargram, Bankura and Birbhum. The introduction, citing Porter’s 1931 census report (pp. 230–242), places agriculturist castes “such as Sadgop, Goala, and Aguri” in undivided Bardhaman and parts of Birbhum (p. 7).",
+    "status": "Only the publisher’s preview (front matter, chapter 1 and references) was read. The single Aguri mention is a regional census observation; none of the four study villages is in Bardhaman.",
+    "url": "https://doi.org/10.4324/9781003625667",
+    "linkLabel": "Publisher’s DOI record"
+  },
+  "dutta": {
+    "title": "Achintya Kumar Dutta, “Rice trade in the ‘rice bowl of Bengal’: Burdwan 1880–1947” (2012)",
+    "kind": "scholarship",
+    "label": "Historical scholarship",
+    "detail": "The Indian Economic & Social History Review 49(1), pp. 73–104. The abstract discusses transport, expanding markets, rice merchants and millers. Its reference list independently names Ugra Kshatriya Pratinidhi, first year, Vol. I, 1298 BY, and a separate Ugra Kshatriya Patrika, 1337 BY.",
+    "status": "Publisher’s abstract and references consulted. Full article requires access; no caste-specific conclusions are attributed to unread passages.",
+    "url": "https://doi.org/10.1177/001946461104900103"
+  },
+  "dutta-2023": {
+    "title": "Achintya Kumar Dutta, “Prosperity, Dominance, and Social Mobility: Emergence of a Mobile Caste in Colonial Southwest Bengal” (2023), pp. 297–324",
+    "kind": "scholarship",
+    "label": "Historical scholarship · chapter consulted",
+    "detail": "Chapter 13 in Achintya Kumar Dutta (ed.), Explorations in Colonial Bengal: Essays on Religion, Society, and Culture. Hyderabad: Orient BlackSwan, 2023. ISBN 9789354425134. Origins and military service: pp. 299–303; population tables: pp. 305–306; enterprise and landholding: pp. 306–311; Hazras of Anguna: pp. 308–309; associations and public figures: pp. 311–314; identity and status: pp. 314–319. The opening footnote identifies an earlier version published in 2011.",
+    "status": "Complete chapter, including endnotes and references, read directly in the supplied book. Page references use its printed pagination. Origin hypotheses remain attributed to the author. Link opens the publisher’s book record.",
+    "url": "https://www.orientblackswan.com/details?obsin=1028",
+    "linkLabel": "Publisher’s book record"
+  },
+  "bhaumik-2023": {
+    "title": "Sudarshana Bhaumik, The Changing World of Caste and Hierarchy in Bengal: Depiction from the Mangalkavyas c. 1700–1931 (2023)",
+    "kind": "scholarship",
+    "label": "Historical scholarship · selected passages consulted",
+    "detail": "Routledge, first published 2023 (imprint page). ISBN 9780367557553; DOI 10.4324/9781003146186. Aguri literary references, settlement traditions, Gopbhum and Jana/Sutto divisions: pp. 48–49, with note 134 on p. 65; dominant cultivating castes and the Burdwan zamindari: pp. 166, 178; landholding and patni tenures: p. 198; the 1872 census description: p. 232; identity, sacred thread, Kulinism, census claims and subdivision reform: pp. 242, 244, 247, 252. Manasa, Dharma Thakur and Gajan: pp. 52, 74, 80, 82.",
+    "status": "Every Aguri and Ugra Kshatriya passage in the supplied book was located by full-text search and read in context; the rest of the book has not been reviewed. The Rajasthan–Man Singh migration account is presented as an attributed tradition alongside Dutta’s uncertainty about origins. Link opens the publisher’s book record. Its passages on Manasa and Dharma Thakur were read in context on 9 October 2026.",
+    "url": "https://www.routledge.com/The-Changing-World-of-Caste-and-Hierarchy-in-Bengal-Depiction-from-the-Mangalkavyas-c-1700-1931/Bhaumik/p/book/9780367704186",
+    "linkLabel": "Publisher’s book record"
+  },
+  "purba-history": {
+    "title": "Purba Bardhaman district: History and Background",
+    "kind": "institutional",
+    "label": "District administration",
+    "detail": "Government of West Bengal district history. Used narrowly for Abu Rai’s 1657 appointment and the Burdwan Raj context, rather than as evidence for Aguri genealogy.",
+    "status": "Web page consulted 13 September 2026. Regional history and community history are kept distinct.",
+    "url": "https://purbabardhaman.nic.in/history/"
+  },
+  "purba-geography": {
+    "title": "Purba Bardhaman district: Geography",
+    "kind": "institutional",
+    "label": "District administration",
+    "detail": "Official account of the district’s neighbouring districts, rivers and physical landscape. Describes alluvial plains as well as lateritic areas; the region should not be reduced to red-soil uplands alone.",
+    "status": "Official page rechecked 11 October 2026. Used for physical geography and present-day orientation, not for caste-specific settlement chronology.",
+    "url": "https://purbabardhaman.nic.in/geography/"
+  },
+  "paschim-history": {
+    "title": "Paschim Bardhaman district: History",
+    "kind": "institutional",
+    "label": "District administration",
+    "detail": "Official district account, including the creation of Purba and Paschim Bardhaman on 7 April 2017 and the association of Gopbhum with the area between the Ajay and Damodar.",
+    "status": "Web page consulted 13 September 2026. Historical district boundaries must not be equated with current ones.",
+    "url": "https://paschimbardhaman.gov.in/history/"
+  },
+  "konar": {
+    "title": "Biman Basu, “The Birth Centenary of Comrade HareKrishna Konar” (2014)",
+    "kind": "historical",
+    "label": "Attributed political remembrance",
+    "detail": "People’s Democracy, 10 August 2014; organising and offices.",
+    "status": "Partisan remembrance, read directly; conflicting prison dates and age excluded.",
+    "url": "https://peoplesdemocracy.in/2014/0810_pd/birth-centenary-comrade-harekrishna-konar-0"
+  },
+  "aguri-reference": {
+    "title": "“Aguri (caste)” — reference article and bibliography",
+    "kind": "secondary",
+    "label": "Secondary research gateway",
+    "detail": "Wikipedia’s Aguri article, consulted 13 September 2026. Its seven-person notable list supplies the original seven profiles in this website’s biographical collection. Also a gateway to Kundu (2008), McLane, Sen, and Liyiyu and Dasgupta (2021).",
+    "status": "The listed community connections are attributed to this article. Life and career accounts are separately sourced; the underlying books have not all been checked.",
+    "url": "https://en.wikipedia.org/wiki/Aguri_(caste)"
+  },
+  "dutta-lead": {
+    "title": "Achintya Kumar Dutta, “Vertical mobility of an entrepreneurial caste: the Ugra Kshatriyas of Burdwan” (1999)",
+    "kind": "scholarship",
+    "label": "Bibliographic reference",
+    "detail": "The Journal of the Anthropological Survey of India 48(2), June 1999, pp. 1–21. Listed in the author’s University of Burdwan bibliography, pp. 16–17.",
+    "status": "Bibliographic record verified in the author’s university bibliography. Full article not consulted; no findings from this article are presented as having been read.",
+    "url": "https://www.buruniv.ac.in/Downloads/Biodata/EMP_1972_AchintyaKumarDutta.pdf"
+  },
+  "ajit-bio": {
+    "title": "Ajit Kumar Panja — Eleventh Lok Sabha biographical sketch",
+    "kind": "historical",
+    "label": "Parliamentary biography · mirror",
+    "detail": "IndiaPress reproduction of the Lok Sabha biography. Supports legal education, state and Union service, listed publications and the June 1992 parliamentary-broadcasting delegation.",
+    "status": "The reproduced biography was read directly; it describes the career as recorded during the Eleventh Lok Sabha.",
+    "url": "https://www.indiapress.org/election/archives/lok11/biodata/11wb13.php"
+  },
+  "ajit-obituary": {
+    "title": "Lok Sabha, obituary references, 10 December 2008 — Ajit Kumar Panja",
+    "kind": "institutional",
+    "label": "Parliamentary record",
+    "detail": "Speaker’s obituary reference for Ajit Kumar Panja: Eighth to Thirteenth Lok Sabha membership, Union portfolios, writing and theatre. Parliament Digital Library, item 722032, document 10463.pdf.",
+    "status": "Indexed text of the parliamentary record consulted. The archive’s PDF endpoint was intermittently unavailable during this review.",
+    "url": "https://eparlib.sansad.in/bitstream/123456789/722032/1/10463.pdf"
+  },
+  "ranjit-bio": {
+    "title": "Dr Ranjit Kumar Panja — Twelfth Lok Sabha biographical sketch",
+    "kind": "historical",
+    "label": "Parliamentary biography · mirror",
+    "detail": "IndiaPress reproduction of the parliamentary biography: education, 1974–90 professorship, research, textbook, honorary appointment, 1998 election, committee work and rural medical camps.",
+    "status": "The reproduced biography was read directly. It is a period account, not a complete retrospective biography.",
+    "url": "https://www.indiapress.org/election/archives/lok12/biodata/12wb13.php"
+  },
+  "ranjit-obituary": {
+    "title": "“Ranjit Panja dead” — The Telegraph",
+    "kind": "secondary",
+    "label": "Contemporary obituary",
+    "detail": "April 2006.",
+    "status": "Death year corroboration only.",
+    "url": "https://www.telegraphindia.com/west-bengal/ranjit-panja-dead/cid/808776"
+  },
+  "shakti-studio": {
+    "title": "Shakti Samanta — Shakti Films / Aradhana Films biography",
+    "kind": "institutional",
+    "label": "Film studio account",
+    "detail": "Studio account of Shakti Films, established in 1957, the Samanta family businesses, directing career, and Aradhana Films’ dubbing and localisation work beginning with Jurassic Park in 1993. Its Shakti Samanta portrait is reproduced unchanged with attribution.",
+    "status": "Studio biography and portrait consulted on 11 October 2026. The studio gives a 1925 birth year, whereas the supplied profile and Cinemaazi header give 13 January 1926; the profile follows the latter. The precise language/category of the studio’s claimed Amanush Best Film award remains unresolved and is not used. The portrait source identifies no photographer, date or open licence.",
+    "url": "https://aradhanafilms.com/about/"
+  },
+  "benoy-wikipedia": {
+    "title": "Benoy Krishna Konar — Wikipedia",
+    "kind": "secondary",
+    "label": "Wikipedia biography",
+    "detail": "Used for life years, his relationship to Hare Krishna Konar and Memari elections. Bengali reporting was also consulted for his public life.",
+    "status": "Article read 13 September 2026.",
+    "url": "https://en.wikipedia.org/wiki/Benoy_Krishna_Konar"
+  },
+  "benoy-bengali": {
+    "title": "“হরেকৃষ্ণ শতবর্ষেই প্রয়াত বিনয় কোঙার” — Anandabazar Patrika (15 September 2014)",
+    "kind": "secondary",
+    "label": "Bengali newspaper obituary",
+    "detail": "Contemporary account of Benoy Konar’s work in the peasant movement, state and national Kisan Sabha leadership, Assembly service and the controversy over his Singur and Nandigram remarks.",
+    "status": "Bengali article read directly; used in an original English paraphrase.",
+    "url": "https://www.anandabazar.com/amp/west-bengal/cpm-leader-binay-konar-dies-at-84-1.69182"
+  },
+  "benoy-book": {
+    "title": "বিনয় কোঙার, নির্বাচিত রাজনৈতিক প্রবন্ধ, স্মৃতি ও স্মরণ — National Book Agency",
+    "kind": "institutional",
+    "label": "Bengali book · publisher’s record",
+    "detail": "Publisher’s listing for Benoy Konar’s Bengali collection of political essays and recollections. Used to identify further reading.",
+    "status": "Title, author, language and publisher checked. Full book not consulted; no passage is quoted or summarised.",
+    "url": "https://nbabooks.in/books/Binoy-Konar-Nirbachita-Rajnoitik-Probondho-Smriti-O/485",
+    "linkLabel": "View publisher’s record"
+  },
+  "dasarathi-wikipedia": {
+    "title": "Dasarathi Tah — Wikipedia",
+    "kind": "secondary",
+    "label": "Wikipedia biography",
+    "detail": "Used for life years, freedom-movement participation, Raina elections and the Damodar newspaper. The article cites Samsad Bangali Charitabhidhan, Volume II, p. 128.",
+    "status": "Article read directly; the cited biographical dictionary passage has not been independently checked.",
+    "url": "https://en.wikipedia.org/wiki/Dasarathi_Tah"
+  },
+  "dasarathi-bengali": {
+    "title": "Krishna Saha, Bengali account of freedom fighter Dasarathi Tah — Krishak Setu",
+    "kind": "secondary",
+    "label": "Bengali local-history reporting",
+    "detail": "Used narrowly for the account of Roma Tah continuing the Damodar newspaper during her husband’s underground years.",
+    "status": "Bengali article consulted 13 September 2026. This local-history account is explicitly attributed; dramatic wartime claims are not repeated without corroboration.",
+    "url": "https://krishaksetu.in/freedom-fighter-dasharathi-seized-the-jamalpur-and-raina-police-stationswhich-were-manned-by-british-sepoysand-the-jamalpur-police-station-was-set-on-fire/"
+  },
+  "nikhilananda-parliament": {
+    "title": "Nikhilananda Sar — Twelfth Lok Sabha biographical sketch",
+    "kind": "historical",
+    "label": "Parliamentary biography · mirror",
+    "detail": "IndiaPress mirror: education, posts, other information.",
+    "status": "Read directly; historical roles.",
+    "url": "https://www.indiapress.org/election/archives/lok12/biodata/12wb39.php"
+  },
+  "nikhilananda-bengali": {
+    "title": "Nikhilananda Sar obituary — Anandabazar Patrika (2020)",
+    "kind": "secondary",
+    "label": "Bengali newspaper obituary",
+    "detail": "Bengali account of his teaching at Amarun and Jabagram, peasant organising, Mangalkot Assembly service, Zila Parishad work and Lok Sabha elections in 1998, 1999 and 2004.",
+    "status": "Article read directly. The profile gives life years only: this obituary and Wikipedia differ on the precise July 2020 death date.",
+    "url": "https://www.anandabazar.com/west-bengal/nikhilananda-sar-cpm-leader-from-burdwan-passed-away-1.1183763"
+  },
+  "rajput-1940": {
+    "title": "হরিচরণ বন্ধু, রাজপুত ও উগ্রক্ষত্রিয় — Rajput O Ugrakshatriya, second edition (1940)",
+    "kind": "historical",
+    "label": "Bengali community history",
+    "detail": "Compiled by Haricharan Bandhu; published in Calcutta by Dwijendra Chandra Ray. Digital Library of India scan, from Bangiya Sahitya Parishad, Kolkata. The publisher’s note is dated 27 Baishakh 1347. The book’s proposed origins are treated as historical arguments.",
+    "status": "English reading translation of the dedication, prefaces, all nine chapters and surviving conclusion available as a 98-page PDF, with original errata sheets and a translator’s note. Printed pages 142–143 are missing from the digitised original. Uncertain readings are marked; this is not a fully verified scholarly edition. Separate preface readings include Bengali transcriptions and source images.",
+    "url": "https://archive.org/details/in.ernet.dli.2015.354015",
+    "linkLabel": "Read the digitised Bengali book"
+  },
+  "vidyanidhi-1896": {
+    "title": "Lalmohan Vidyanidhi, Sambandha Nirnaya, Samanya-kanda, second edition (1896)",
+    "kind": "historical",
+    "label": "Bengali caste handbook",
+    "detail": "Calcutta, 1896. Digital Library of India scan. The Ugra Kshatriya entry (pp. 187–188, footnote) records the Suta and Jana divisions, the Janas’ thread at marriage, Hazra and Chaudhuri as mostly Kulin, and eight renowned houses in eight parganas of Burdwan, quoting a verse from the kulagrantha of Shashthidas Bhattacharya.",
+    "status": "Aguri passage located in the archive.org text and read in context; the OCR is unreviewed. The genealogist’s source text has not been found. A later printing (1898) is also on archive.org.",
+    "url": "https://archive.org/details/dli.bengal.10689.8058",
+    "linkLabel": "Read the digitised Bengali book"
+  },
+  "prabasi-review": {
+    "title": "“রাজপুত ও উগ্রক্ষত্রিয়” — Prabasi, Magh 1321 (1915), pp. 470–471",
+    "kind": "historical",
+    "label": "Bengali literary book review",
+    "detail": "Review in Prabasi, fourteenth year, second volume. The scan is hosted with a Bengali transcription on Wikisource, images 498–499. It discusses an earlier edition of the book, not the 1940 second edition.",
+    "status": "Complete review translated from printed pp. 470–471 (scans 498–499), checked against the images. A surname discrepancy and one unclear phrase are marked. This reviews an earlier edition, not the 1940 revision.",
+    "url": "https://bn.wikisource.org/wiki/পাতা:প্রবাসী_(চতুর্দশ_ভাগ,_দ্বিতীয়_খণ্ড).djvu/৪৯৮",
+    "linkLabel": "Read the review and scan"
+  },
+  "yogadya-bengali": {
+    "title": "তরুণ চক্রবর্তী, “শরতের দুর্গোৎসবেও জলমগ্ন থাকেন ক্ষীরগ্রামের দশভুজা” — Anandabazar Patrika (24 September 2023)",
+    "kind": "secondary",
+    "label": "Bengali account of local ritual",
+    "detail": "Tarun Chakrabarti describes Yogadya worship at Khirgram, including gua daka and the naming of Aguri villages. Used for this specific account of participation in a shared regional tradition.",
+    "status": "Bengali article read directly. Its inconsistent royal chronology is not used as historical evidence.",
+    "url": "https://www.anandabazar.com/rabibashoriyo/myths-regarding-durga-idol-of-khirgram/cid/1462245"
+  },
+  "basu-surnames": {
+    "title": "লোকেশ্বর বসু, আমাদের পদবীর ইতিহাস — Amader Padabir Itihas",
+    "kind": "secondary",
+    "label": "Bengali book · online transcription",
+    "detail": "Lokeshwar Basu’s discussion of Bengali surnames, available through eBanglaLibrary. The introductory discussion of names shared across communities is used as context for family research.",
+    "status": "Online introduction read directly. The printed edition, date and page numbering have not been verified; no modern legal classification is taken from this text.",
+    "url": "https://www.ebanglalibrary.com/books/আমাদের-পদবীর-ইতিহাস-লোক/",
+    "linkLabel": "Read the Bengali introduction"
+  },
+  "ramapada-biography": {
+    "title": "Ramapada Chowdhury — biographical reference",
+    "kind": "secondary",
+    "label": "Biographical overview",
+    "detail": "Wikipedia biography, consulted 14 September 2026. Used for lifespan, Kharagpur birthplace, early novels, the Rabindra Puraskar for Ekhoni, and the Kharij and Ek Doctor Ki Maut adaptations.",
+    "status": "Life and literary career only; this biography does not establish an Aguri community connection.",
+    "url": "https://en.wikipedia.org/wiki/Ramapada_Chowdhury"
+  },
+  "ramapada-publisher": {
+    "title": "Niyogi Books — Ramapada Chowdhury",
+    "kind": "secondary",
+    "label": "Publisher’s author biography",
+    "detail": "Author profile confirming decades of editorial work on the Sunday Anandabazar Patrika, novels and short stories, and film adaptations.",
+    "status": "Publisher’s profile read directly. Its apparent typographical error in the Ananda Puraskar year is not repeated.",
+    "url": "https://niyogibooksindia.com/author/ramapada-chowdhury/"
+  },
+  "ramapada-bengali": {
+    "title": "তিলোত্তমা মজুমদার, “কলমের দেখানেপনা ছিল না” — Anandabazar Patrika (28 December 2022)",
+    "kind": "secondary",
+    "label": "Bengali centenary essay",
+    "detail": "Novelist Tilottama Majumdar’s assessment of Chowdhury’s spare prose, social observation and encouragement of younger writers.",
+    "status": "Bengali text read directly and paraphrased in English. Literary assessment is attributed to its author; no community affiliation is inferred.",
+    "url": "https://www.anandabazar.com/editorial/essays/essay-ramapada-chowdhury-bengali-novelist-and-short-story-writer/cid/1395003"
+  },
+  "ramapada-akademi": {
+    "title": "Sahitya Akademi — Bengali award winners: 1988",
+    "kind": "institutional",
+    "label": "Official literary award record",
+    "detail": "The Bengali list records Ramapada Choudhuri and the novel Bari Badle Jai for the 1988 Sahitya Akademi Award. The official listing uses these transliterations of the author and title.",
+    "status": "Used to verify the award, year and work.",
+    "url": "https://sahitya-akademi.gov.in/awards/akademi%20samman_suchi.jsp"
+  },
+  "benoy-choudhury-party": {
+    "title": "CPI(M) Polit Bureau — memorial statement for Benoy Krishna Chaudhury",
+    "kind": "historical",
+    "label": "Attributed party remembrance",
+    "detail": "CPI(M) Polit Bureau memorial: party membership, election and reform work.",
+    "status": "Partisan tribute, read directly. Web date and birth-day discrepancies are not adopted.",
+    "url": "https://cpim.org/beony-chaudhury-no-more/"
+  },
+  "benoy-choudhury-interview": {
+    "title": "Andrew Whitehead, “Communist Voices: Benoy Choudhury” — interview, June 1992",
+    "kind": "historical",
+    "label": "Recorded oral-history interview",
+    "detail": "The interviewer’s introduction identifies Choudhury (1911–2000) as a CPI(M) Polit Bureau member and outlines the recorded discussion of Jugantar, prison, peasant politics and land reform.",
+    "status": "The interviewer’s written introduction was read. Audio is linked for further exploration; no transcript or direct quotation is claimed.",
+    "url": "https://www.andrewwhitehead.net/communist-voices-benoy-choudhury.html"
+  },
+  "benoy-choudhury-university": {
+    "title": "University of Burdwan — Benoy Krishna Choudhury Rural Technology Centre",
+    "kind": "institutional",
+    "label": "University institutional history",
+    "detail": "The university records that its Rural Technology Centre was renamed in his memory in 2000, and describes vocational training intended to support rural livelihoods.",
+    "status": "Official university page read directly. Used for his institutional commemoration, not as evidence of community affiliation.",
+    "url": "https://www.buruniv.ac.in/Demo/Template.php?menu=OADEP&submenu=BKCRTC"
+  },
+  "bhattacharya-1896": {
+    "title": "Jogendra Nath Bhattacharya, Hindu Castes and Sects (1896), contents p. x and pp. 156–158",
+    "kind": "historical",
+    "label": "Original historical book",
+    "detail": "Calcutta: Thacker, Spink & Co. Part VII is headed “The Military Castes”; Chapter IX, “The Aguris of Bengal,” occupies pp. 156–158. Describes livelihoods and origin debates; p. 158 identifies Pratap Chandra Roy as a Suta Aguri. Gokhale Institute of Politics and Economics scan, GIPE-000880. All four relevant pages were visually checked and are reproduced beside the history article.",
+    "status": "Evidence of Bhattacharya’s classification and account, not official army recruitment or a regiment. His caste hierarchy, scriptural genealogy and character stereotypes are historical claims, not present-day facts. The chapter prints the translator’s name as “Kishori Mohan Ganguli”; the profile uses Kisari Mohan Ganguli, as credited in the Mahabharata edition’s publisher’s preface.",
+    "url": "https://dspace.gipe.ac.in/xmlui/bitstream/handle/10973/26668/GIPE-000880.pdf?isAllowed=y&sequence=3#page=105",
+    "linkLabel": "Consult the original library scan"
+  },
+  "mahabharata-publisher": {
+    "title": "The Complete Mahabharata in English: publisher’s preface",
+    "kind": "primary",
+    "label": "Publisher’s account of the edition",
+    "detail": "Preface to the Munshiram Manoharlal edition, reproduced on Motilal Banarsidass’s catalogue page. Credits Kisari Mohan Ganguli as translator, distinguishes Pratap Chandra Roy’s publishing role, and records completion by Sundari Bala Roy. Gives serial publication as 1883–1896.",
+    "status": "Publisher’s preface consulted 14 September 2026. Used for the publication history and division of roles; the website does not follow later misattributions of the translation to Roy.",
+    "url": "https://www.motilalbanarsidass.com/products/the-complete-mahabharata-in-english-12-volumes-kisari-mohan-ganguli",
+    "linkLabel": "Read the publisher’s preface"
+  },
+  "pratap-authority": {
+    "title": "Pratap Chandra Roy, Wikidata authority record",
+    "kind": "reference",
+    "label": "Biographical reference",
+    "detail": "Wikidata item Q94636898 records 1842–1895, citing the OCLC FAST authority record 286863 for both years. It identifies him as an Indian bookseller and publisher.",
+    "status": "Consulted 14 September 2026. Used narrowly for the lifespan, not for community identity or attribution of the Mahabharata translation.",
+    "url": "https://www.wikidata.org/wiki/Q94636898"
+  },
+  "chatterji-odbl": {
+    "title": "Suniti Kumar Chatterji, The Origin and Development of the Bengali Language (1926)",
+    "kind": "scholarship",
+    "label": "Historical linguistics · sections consulted",
+    "detail": "Calcutta University Press, 1926, in two volumes. Surname derivations are cited by the author's own numbered sections: Dalui or Dalai from dalavai, dalapati, a commander of troops (§172); Bhar from bhata, bhrta, glossed “soldier, servant” (§173 and §683); Satra from samanta-raja and Maiti from mahanta (§273); Kongar or Koar from kumara (§284); the lineage affix -ja from jata (§435); Pakrasi from a village name (§455); Chaudhuri described as “a title or surname” (§514–515); Sasmal from sahasra-malla (§532). Also consulted: Bose from vasu (vol. I, p. 431, §233); Koṅgar / Kõar from kumāra and Sā̃tṛā from sāmanta-rāja / sāmanta-rāya (vol. I, p. 520). Ray from raja: vol. I, p. 590, §323.",
+    "status": "Section numbers taken from the digitised volumes held by this project; the machine-read text drops §515, so the Chaudhuri passage is cited as §514–515. These are the author's word histories, not histories of any family, and they do not establish the ancestry of anyone bearing a name.",
+    "url": "https://archive.org/details/OriginDevelopmentOfBengali",
+    "linkLabel": "Read the digitised volumes"
+  },
+  "risley-vol2": {
+    "title": "H. H. Risley, The Tribes and Castes of Bengal, Ethnographic Glossary, vol. II (1891)",
+    "kind": "historical",
+    "label": "Colonial ethnographic glossary",
+    "detail": "The second volume of the glossary, covering headwords from L to Z, with Appendix I. Entries naming the Aguris directly: Samanta, “a chief … a title of Aguris, Brahmans, Khandaits, Rajputs, Sadgops, Telis, and some other castes”; Malla, “wrestler, a title of Khandaits in Orissa and of the Aguri or Ugrakshatri caste in Western Bengal”; Pan, “a title of Telis and Aguris in Western Bengal”; Rana, “a title of Aguris and Sutradhars”; Shahi Ugrakhatri, “a sub-caste of Aguris in Western Bengal bearing the title Shah”; Sandilya, a gotra of “the Aguri, Baidya, Brahman, Kamar, and Subarnabanik castes”; and the sub-castes Satsaikiya and Suta. Internet Archive identifier TheTribesAndCastesOfBengal_201509. Appendix I carries its own pagination.",
+    "status": "Evidence of what a colonial writer recorded in 1891, read from the machine-read text held by this project. Its caste ordering, origin theories and character stereotypes are not endorsed here. An entry records that a name was used; it does not establish descent, an ancestor's office, or that any community used the name first.",
+    "url": "https://archive.org/details/TheTribesAndCastesOfBengal_201509",
+    "linkLabel": "Consult the second volume"
+  },
+  "bhattacharya-hati": {
+    "title": "Jogendra Nath Bhattacharya, Hindu Castes and Sects (1896), pp. 148, 158, 582",
+    "kind": "historical",
+    "label": "Historical surname evidence · scans checked",
+    "detail": "Hati occurs in the Khandait title list (p. 148) and Suta Aguri surname list (p. 158). The index (p. 582) explicitly names both communities and derives Hati from Sanskrit hasti, elephant. PDF pages 172, 182 and 606 in this scan.",
+    "status": "All three pages inspected as images on 21 September 2026. A lexical derivation and shared usage do not establish an individual ancestor’s occupation.",
+    "url": "https://rarebooksocietyofindia.org/book_archive/HIndu%20Castes%20JB.pdf#page=606"
+  },
+  "bhowmik-table-web": {
+    "title": "“বিভ্রান্তিকর পদবি” — comparative surname tables on eBanglaLibrary",
+    "kind": "secondary",
+    "label": "Online compilation · original book unchecked",
+    "detail": "The chapter attributes its tables to Khagendranath Bhowmik, Padabir Utpatti O Kramabikasher Itihas (Sanchayan, Calcutta, 1997). Nandi is explicitly listed under Ugra Kshatriya and several other communities.",
+    "status": "Online table read on 21 September 2026. Original printed pages not inspected. Counts concern compiled surnames, not community population; the chapter’s wider origin theories are not adopted.",
+    "url": "https://www.ebanglalibrary.com/lessons/বিভ্রান্তিকর-পদবি/"
+  },
+  "ancestry-nandi": {
+    "title": "Ancestry.com, “Nandi Surname Meaning”",
+    "kind": "secondary",
+    "label": "Dictionary explanation reproduced online",
+    "detail": "Credits Dictionary of American Family Names, second edition (2022). Describes the West Bengali surname through a personal name derived from Sanskrit nanda, joy, with Shiva-related associations.",
+    "status": "Public entry read on 21 September 2026. Word history only; no Aguri family pedigree verified. Nandy’s separately retrieved page exposed no substantive meaning text.",
+    "url": "https://www.ancestry.com/last-name-meaning/nandi?geo-lang=en"
+  },
+  "ancestry-hati": {
+    "title": "Ancestry.com, “Hati Surname Meaning”",
+    "kind": "secondary",
+    "label": "Web explanation · attribution absent",
+    "detail": "Suggests an elephant-related word origin and possible occupational connections, without a named supporting source in the retrieved explanation.",
+    "status": "Read on 21 September 2026 to assess the source. Occupational suggestions are not treated as established; Bhattacharya’s original index provides stronger lexical evidence.",
+    "url": "https://www.ancestry.com/last-name-meaning/hati"
+  },
+  "ancestry-dey": {
+    "title": "Ancestry.com, “Dey Surname Meaning”",
+    "kind": "secondary",
+    "label": "Dictionary explanation · competing derivation",
+    "detail": "Credits Dictionary of American Family Names, second edition (2022). Its South Asian entry tentatively proposes Sanskrit deya; other entries concern European names.",
+    "status": "Read on 21 September 2026. The deya proposal differs from Chatterji’s deva derivation. The Kayastha label is not an exhaustive distribution and cannot override documented use in other communities.",
+    "url": "https://www.ancestry.com/last-name-meaning/dey"
+  },
+  "day-peasant-life": {
+    "title": "Lal Behari Day, Bengal Peasant Life (1916 reprint), preface and pp. 10, 31, 59, 82, 149, 204–207, 278–280",
+    "kind": "historical",
+    "label": "Literary primary source · page images checked",
+    "detail": "First published as Govinda Sámanta (1874); new title Bengal Peasant Life (1878). The preface records the 1871 prize offered by Joy Kissen Mookerjea of Uttarpara and its award in 1874. The inspected 1916 reprint places Kanchanpur near Burdwan (chapter III, p. 10), identifies the Samanta brothers as Aguri (chapter V, p. 31), Natavara Samanta and Madhu Sinha through dialogue (IX, p. 59) and a Sen family through a matchmaker’s proposal (XIII, p. 82). Chapters XXIII (p. 149), XXX (pp. 204–207) and XLII (pp. 278–280) describe friendship across castes, the Navanna festival and the Aguri tenants’ protest against the zamindar. Archive scans n41, n69 and n92.",
+    "status": "Pages 31, 59 and 82 read as page images on 21 September 2026. The preface and pp. 10, 149, 204–207 and 278–280 were read on 8 October 2026 in the item’s OCR text, using its running heads for page numbers; their page images have not been checked. Literary representation, not a verified pedigree or ethnography. Wording has not been collated against the 1874 edition.",
+    "url": "https://archive.org/details/in.ernet.dli.2015.190046/page/n41/mode/1up"
+  },
+  "moitra-2020": {
+    "title": "Swati Moitra, “Those Backward Hordes: Representing the Indian Peasant as a ‘Rebel’ in Early Indian Fiction in English” (2020)",
+    "kind": "scholarship",
+    "label": "Literary criticism · Bengal Peasant Life",
+    "detail": "Postgraduate English (Durham University), issue 40, Summer 2020. Discusses the 1871 Uttarpara prize (p. 2) and Lal Behari Day’s portrayal of Aguri peasants confronting the zamindar, which presents their fierceness and other castes’ passivity as natural caste qualities (pp. 18–19).",
+    "status": "Passages on Day’s novel consulted online on 8 October 2026. Used for its reading of the novel, not as evidence of Aguri history.",
+    "url": "https://postgradenglishjournal.awh.durham.ac.uk/ojs/index.php/pgenglish/article/view/251",
+    "linkLabel": "Journal article"
+  },
+  "banaphul-review": {
+    "title": "Sourav Dutta, review of Banaphuler Shreshtha Galpa, Ganashakti (19 July 2024)",
+    "kind": "secondary",
+    "label": "Literary review · surname occurrence only",
+    "detail": "Identifies Banaphul’s short story Sripati Samanta (শ্রীপতি সামন্ত); also mentions Arjun Mandal (অর্জুন মণ্ডল). These provide surname comparisons, without an established Aguri identity for either character.",
+    "status": "Review read on 21 September 2026. Original stories not inspected in this research pass; no caste identification inferred from their titles.",
+    "url": "https://www.ganashakti.com/news/BOOK-REVIEW--SOURAV-DUTTA--BANOFUL--MUKTADHARA--FRIDAY-19-JULY-2024"
+  },
+  "ganapati-journal": {
+    "kind": "scholarship",
+    "label": "Medical journal history",
+    "title": "Saumya Panda, “Sixty Years of the Indian Journal of Dermatology: An Interpretation of the Journey” (2015)",
+    "detail": "Indian Journal of Dermatology 60(6), pp. 527–536. Ganapati Panja’s dermatology and bacteriology work, founding editorship (1955–1959), lifespan (1891–1959), and captioned portrait in Figure 2.",
+    "status": "Article and Figure 2 consulted. Portrait reproduced unchanged under the article’s CC BY-NC-SA 3.0 licence; original photographer not identified.",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4681188/"
+  },
+  "panja-family": {
+    "kind": "secondary",
+    "label": "Bengali medical biography",
+    "title": "Baridbaran Ghosh, Ganapati Panja biography — Anandabazar Patrika (2 January 2017)",
+    "detail": "Biographical essay identifying Dhanapati as Ganapati’s younger brother; also records Ganapati’s 1921 appointment, 1932 Rockefeller scholarship and schools at Majigram.",
+    "status": "Used for the brothers’ relationship and the specified career and educational work. Ganapati’s achievements are not transferred to Dhanapati.",
+    "url": "https://www.anandabazar.com/editorial/ganapati-panja-an-inspiring-journey-of-life-1.541827"
+  },
+  "salil-obituary": {
+    "kind": "secondary",
+    "label": "Bengali medical obituary",
+    "title": "Ei Samay, obituary of dermatologist Salil Kumar Panja (1 September 2023)",
+    "detail": "Identifies Salil as Ganapati Panja’s son and Dhanapati Panja’s nephew, with both older physicians remembered in the development of dermatology.",
+    "status": "Family and medical context. The obituary’s subject and photograph are Salil, not Dhanapati.",
+    "url": "https://eisamay.com/west-bengal-news/kolkata-news/dermatologist-salilkumar-panja-breathed-his-last-at-a-private-hospital-in-salt-lake/articleshow/103275137.cms"
+  },
+  "jadabendra-archive": {
+    "kind": "historical",
+    "label": "Archival biography",
+    "title": "The Nehru Archive — Jadabendra Nath Panja (1886–1961)",
+    "detail": "Biographical note: Non-Cooperation, imprisonment, Cottage and Small-scale Industries portfolio, and PCC presidency, 1958–61.",
+    "status": "Biographical note read directly. Community identification separately supported by Dutta, pp. 310 and 314.",
+    "url": "https://nehruarchive.in/people/jadabendra-nath"
+  },
+  "sahana-catalogue": {
+    "kind": "institutional",
+    "label": "Library catalogue",
+    "title": "Ramakrishna Mission Vidyamandira — Bengali library catalogue, printed p. 51",
+    "detail": "Entries under Satya Kinkar Sahana, Bidyabinod, including Kalika, Malika and Juthika.",
+    "status": "Relevant catalogue entries checked in indexed text; the complete PDF exceeded the web reader’s size limit. Bibliographic evidence, with community context separately supplied by Dutta.",
+    "url": "https://vidyamandira.ac.in/pdfs/libDB/beng.pdf"
+  },
+  "manohar-college": {
+    "kind": "institutional",
+    "label": "Official college record",
+    "title": "Agra College — Our Principals",
+    "detail": "Lists Dr Manohar Ray, M.Sc., Ph.D., D.Sc., F.N.I., F.N.A.Sc., as principal from 1960 to 1970.",
+    "status": "College list read directly. Uses the spelling Ray; Dutta identifies the mathematician of Nasigram as Manohar Roy.",
+    "url": "https://fetagracollege.org.in/principal.html"
+  },
+  "manohar-royal-society": {
+    "kind": "historical",
+    "label": "Scientific archive",
+    "title": "Royal Society — referee’s report on Manohar Ray’s fluid-motion paper (1936)",
+    "detail": "RR/58/72: Taylor’s second report recommends publication in Proceedings, in full, without material modifications. Its handwritten assessment is quoted in the biography. The receipt stamp reads 31 August 1936; the linked paper was published 3 February 1937, DOI 10.1098/rspa.1937.0037.",
+    "status": "Official catalogue and both scan images inspected, including the recommendation, short handwritten assessment and receipt stamp. The form uses the earlier title ending “in rotating fluid”. The August date records receipt of the report, not acceptance or publication of the paper.",
+    "url": "https://makingscience.royalsociety.org/items/rr_58_72/second-referees-report-by-geoffrey-ingram-taylor-on-a-paper-motion-of-an-infinite-elliptic-cylinder-in-fluids-with-constant-vorticity-by-manohar-ray"
+  },
+  "benoy-choudhury-vivekananda": {
+    "title": "Benoy Choudhury, “আমার বিপ্লবী জীবনে বিবেকানন্দ”",
+    "kind": "historical",
+    "label": "Interview-based recollection",
+    "detail": "CPI(M) West Bengal reproduction, 12 January 2021; opening paragraphs and 1930 passage.",
+    "status": "Read fully. Original interview/date unidentified; college-entry chronology conflicts with a government summary.",
+    "url": "https://cpimwestbengal.org/role-of-vivekananda-in-my-revolutionary-life-binoy-chowdhury/"
+  },
+  "benoy-local-obituary": {
+    "title": "“মনে রাখবে শুধু মানুষের কথা, বলতেন বিনয়” — Anandabazar Patrika (15 September 2014)",
+    "kind": "secondary",
+    "label": "Contemporary regional obituary",
+    "detail": "Family, early-career and donation paragraphs.",
+    "status": "Article read. Eye donation reported completed; body transfer was prospective. Offices described are historical.",
+    "url": "https://www.anandabazar.com/west-bengal/just-remember-human-speech-said-binay-1.69180"
+  },
+  "burdwan-freedom-feature": {
+    "title": "Pradip Kumar Chattopadhyay — Burdwan freedom-fighters feature (15 August 2026)",
+    "kind": "secondary",
+    "label": "Bengali historical reporting",
+    "detail": "Indian Express Bengali; newspaper paragraph and final two biographical paragraphs.",
+    "status": "Read directly. Conflicting birth year and imprecise legislative terminology omitted.",
+    "url": "https://bengali.indianexpress.com/west-bengal/bardhaman-freedom-fighters-dasharathi-ta-yadabendra-nath-panja-independence-movement-12262344"
+  },
+  "quit-india-burdwan-pramanik": {
+    "title": "Sukanta Pramanik, “Spontaneity, Resistance and Radicalism” (2025)",
+    "kind": "scholarship",
+    "label": "Regional historical research",
+    "detail": "Journal of Historical Studies and Research 5(3), pp. 221–229; here pp. 223–224 (Dasarathi Tah’s leaflet, hartal and the Jamalpur raid; the Kalna crowd after Ananda Prasad Mondal’s arrest) and notes 4–6, p. 229.",
+    "status": "PDF read. Underlying newspaper and archival records not independently inspected.",
+    "url": "https://www.jhsr.in/wp-content/uploads/2025/11/221-229-JHSR-V5-N3-SUKANTA-PRAMANIK.pdf"
+  },
+  "congress-bala-thesis": {
+    "title": "Babulal Bala, Congress in the politics of West Bengal (2017)",
+    "kind": "scholarship",
+    "label": "University history thesis",
+    "detail": "University of North Bengal; chapter V, p. 300, note 124 on p. 350.",
+    "status": "Passage and repository metadata read; cited Saroj Chakrabarty memoir, p. 277, not inspected. The dated event is a ministerial recommendation.",
+    "url": "https://ir.nbu.ac.in/bitstreams/ef151798-1860-4678-841b-f352a427d070/download"
+  },
+  "nikhilananda-offices-profit": {
+    "title": "Joint Committee on Offices of Profit — First Report (2005)",
+    "kind": "primary",
+    "label": "Parliamentary committee record",
+    "detail": "Fourteenth Lok Sabha; Appendix I, pp. 11–12; committee composition, p. iii.",
+    "status": "Official PDF read. Sar chaired one sitting in the permanent chairman’s absence.",
+    "url": "https://eparlib.sansad.in/bitstream/123456789/762397/1/14_Joint_Committee_on_Office_of_Profit_1.pdf"
+  },
+  "sahana-council-1934": {
+    "title": "Bengal Legislative Council proceedings, 22 January 1934 — Bankura Medical School",
+    "kind": "historical",
+    "label": "Legislative proceedings",
+    "detail": "Printed pp. 108–109, starred question 6: Satya Kinkar Sahana asks about government support for Bankura Medical School. West Bengal Legislative Assembly Library scan.",
+    "status": "Question and reply read in the primary record. The question establishes his intervention, not the truth of every premise it asserts.",
+    "url": "https://lalib.wb.gov.in/Elibrary_VirtualPath/2/2_549.pdf"
+  },
+  "sahana-municipal-history": {
+    "title": "Girindra Sekhar Chakraborty, Historical Edifices of Bankura Town — Bankura Municipality",
+    "kind": "institutional",
+    "label": "Municipal historical account",
+    "detail": "Section 28, Edward Memorial Hall: Sahana is named in the famine-relief committee formed on 18 January 1919.",
+    "status": "Municipal account read directly; used for the named committee membership.",
+    "url": "https://bankuramunicipality.org/Default.aspx?PageId=157"
+  },
+  "shakti-cbfc": {
+    "title": "Central Board of Film Certification — List of Chairpersons",
+    "kind": "institutional",
+    "label": "Official film-board register",
+    "detail": "Shakti Samanta entry records service from 1 April 1991 to 25 June 1998.",
+    "status": "Official tenure register read directly.",
+    "url": "https://cbfcindia.gov.in/cbfcAdmin/list-of-chairpersons.php?color=black"
+  },
+  "shakti-retrospective-2009": {
+    "title": "Ambika Soni to inaugurate retrospective of Shakti Samanta Films — PIB, 8 July 2009",
+    "kind": "institutional",
+    "label": "Government retrospective announcement",
+    "detail": "Information and Broadcasting Ministry announcement discusses bilingual filmmaking with Amanush and the planned Siri Fort opening with Amar Prem. Release 49880.",
+    "status": "Used as an announced programme and official appraisal, without claiming that all scheduled events occurred.",
+    "url": "https://www.pib.gov.in/newsite/erelcontent.aspx?lang=2&reg=48&relid=49880"
+  },
+  "ramapada-centenary-family": {
+    "title": "Argha Bandyopadhyay, “Ghorer Manush” — Anandabazar Patrika, 11 December 2022",
+    "kind": "secondary",
+    "label": "Bengali centenary profile",
+    "detail": "Sections on his first story, pen names, early publishing and editorial work; includes family and literary recollections.",
+    "status": "Full article read. Used for career details, not community affiliation.",
+    "url": "https://www.anandabazar.com/rabibashoriyo/bengali-feature-written-by-argha-bandyopadhyay/cid/1390836"
+  },
+  "pratap-datavya-1884": {
+    "title": "Contemporary press notices appended to The Mahabharata of Krishna-Dwaipayana Vyasa (1884), appendix p. 8",
+    "kind": "historical",
+    "label": "Contemporary publishing record",
+    "detail": "Notice describes Pratap Chandra Roy’s Datavya Karyalya and free distribution of translations, including the English Mahabharata. Digitized scan page 722.",
+    "status": "Page-linked transcription read; used for publishing philanthropy, not translator attribution.",
+    "url": "https://en.wikisource.org/wiki/Page:The_Mahabharata_of_Krishna-Dwaipayana_Vyasa_(1884).djvu/722"
+  },
+  "burdwan-settlement-1897": {
+    "title": "S. Haldar, Settlement report on the Burdwan Raj and certain other estates, 1891–96 (1897)",
+    "kind": "institutional",
+    "label": "Archival catalogue · research lead",
+    "detail": "British Library, India Office Records, IOR/V/27/314/34. The catalogue describes a report covering estates in Burdwan, Hooghly and Bankura.",
+    "status": "Catalogue entry consulted in October 2026. The report itself and original Aguri grant deeds have not been inspected for the research-topics page; archival access and coverage need verification.",
+    "url": "https://searcharchives.bl.uk/catalog/040-000150483",
+    "linkLabel": "British Library catalogue"
+  },
+  "inden-marriage-1976": {
+    "title": "Ronald B. Inden, Marriage and Rank in Bengali Culture (1976)",
+    "kind": "scholarship",
+    "label": "Genealogy and marriage · methodological reading",
+    "detail": "University of California Press. A study of caste and clan rank using Brahman and Kayastha genealogical records in Bengal.",
+    "status": "Publisher-hosted introductory and chapter descriptions on JSTOR consulted. A methodological comparison, not evidence that an Aguri kul panjika collection survives or has been inspected.",
+    "url": "https://www.jstor.org/stable/jj.8306082",
+    "linkLabel": "Book record and chapter descriptions"
+  },
+  "caste-bardhaman-saha-2019": {
+    "title": "Atrayee Saha, “Caste Inequality, Land Relations and Agrarian Distress in Contemporary Agrarian Economy of Bardhaman, West Bengal” (2019)",
+    "kind": "scholarship",
+    "label": "Village fieldwork · caste and land",
+    "detail": "Journal of Land and Rural Studies 11(2), first published online in 2019. The study concerns Paarhaati village in Memary II, Purba Bardhaman. DOI: 10.1177/2455328X19866997.",
+    "status": "Publisher abstract consulted. A local field-study reference; its findings are not a statewide description or evidence of present conditions among all Aguris.",
+    "url": "https://journals.sagepub.com/doi/10.1177/2455328X19866997",
+    "linkLabel": "Publisher abstract"
+  },
+  "plfs-2023-24": {
+    "title": "MoSPI, Periodic Labour Force Survey, July 2023–June 2024: data dictionary",
+    "kind": "institutional",
+    "label": "Official survey · data documentation",
+    "detail": "Household data documentation includes state, district, social group, religion and household consumer expenditure.",
+    "status": "Data dictionary consulted. Broad social-group categories are not an Aguri-specific population register; sample size, survey weights and category definitions must be checked before analysis.",
+    "url": "https://microdata.gov.in/nada/index.php/catalog/213/data-dictionary/F1",
+    "linkLabel": "Official data dictionary"
+  },
+  "ncbc-notifications": {
+    "title": "National Commission for Backward Classes: Gazette notifications for Central OBC lists",
+    "kind": "institutional",
+    "label": "Official notifications · classification research",
+    "detail": "An official starting point for tracing dated inclusion and amendment notifications in Central OBC lists. State lists and applicable orders must be examined separately.",
+    "status": "Notification index consulted in October 2026. Linked as a research resource, not a determination of any Aguri household’s current classification or reservation eligibility.",
+    "url": "https://www.ncbc.nic.in/User_Panel/GazetteNotificationList.aspx",
+    "linkLabel": "Official notification index"
+  },
+  "togawa-1996": {
+    "title": "Masahiko Togawa, A Sakta-pitha in Bengal: Kingship, Caste and Sacrificial Organization in a Village Society (1996)",
+    "kind": "scholarship",
+    "label": "Social anthropology · village fieldwork",
+    "detail": "PhD thesis, Social Anthropology, University of North Bengal, November 1996; supervisor Ajit K. Danda. Ethnography of the Jogadya temple at Kshiragram, Bardhaman. Chapter I (pp. 28–30): 1991 Census figures, caste household table, Jana and Suta Aguri households and nine title-defined lineages. Chapter II: temple land and the Raj. Chapter VI (pp. 131–165): Durga Puja of the Ugra Kshatriya localities, including a Caudhuri family document (pp. 157–158). Chapter V, pp. 116–122, also documents Nabanna, shared food, Pousalla and the temple’s pithe-bhumi rice plot.",
+    "status": "The Culture page directly cites Chapter I, p. 32 for Manasa puja as the Bagdis’ biggest festival at Kshiragram, with their own priest; this passage was checked against the thesis scan. Other accounts of lineages, temple land and rituals cite the published 2006 book (see Togawa 2006). The thesis remains a distinct source. Chapter V text independently checked on 11 October 2026 for the Food and Village Life article.",
+    "url": "https://ir.nbu.ac.in/handle/123456789/119",
+    "linkLabel": "University repository record"
+  },
+  "togawa-2006": {
+    "title": "Masahiko Togawa, An Abode of the Goddess: Kingship, Caste and Sacrificial Organization in a Bengal Village (2006)",
+    "kind": "scholarship",
+    "label": "Social anthropology · village fieldwork",
+    "detail": "New Delhi: Manohar, 2006. ISBN 9788173046773. Published version of the author’s 1996 University of North Bengal thesis, based on fieldwork at Kshiragram, Mangalkot block, from January 1994 to April 1995. Introduction (pp. 13–26): the village, the Raj and the temple rebuilt about 1730. Chapter 2 (pp. 49–74): caste table, Jana and Suta Aguri households, the nine Ugra Kshatriya lineages and the Maharaja’s service lands. Chapter 4 (pp. 90–110): the Baishakh festival, including the sacred thread worn by the Datta and Samant representatives (p. 92). Chapter 6 (pp. 130–158): the Durga Pujas of the Ugra Kshatriya lineages and the Raychaudhuri lineage chart (pp. 147–150). Appendix 4 (pp. 194–195): temples founded by the Bardhaman Raj.",
+    "status": "Full book read. The study describes one village in 1994–95 and the author’s reconstruction of earlier practice; it is not a survey of all Aguri settlements.",
+    "url": "https://relbib.de/Record/514871121",
+    "linkLabel": "Library catalogue record"
+  },
+  "saha-2026": {
+    "title": "Salini Saha, “Endangered cobras and conservation politics: Exploring multispecies encounters in agrarian landscapes of West Bengal” (2026)",
+    "kind": "scholarship",
+    "label": "Village ethnography · Bardhaman",
+    "detail": "Journal of Political Ecology 33(1). DOI 10.2458/jpe.6439. Draws on the author’s Presidency University doctoral fieldwork (thesis: Fertility Worship and Monsoon among Agricultural Communities of Bardhaman, awarded 2023), with immersive fieldwork in 2018–2019. Printed p. 7 identifies Ugra Kshatriyas as Musharu’s dominant farming community, alongside Sadgops, Goalas, Namasudras and Bagdis. Printed pp. 6, 7, 11–12 and 14 describe village deities as markers of village identity, Musharu’s goddess Jhankeshwari and the Jhanglai cobras, snake worship in other east Bardhaman villages, and the growing public celebration of Jhankeshwari’s Shravan worship since 2021.",
+    "status": "Original article read; pp. 5 and 7 checked as page images, and pp. 6, 11–12 and 14 in the extracted text. Describes a shared village culture, not practices exclusive to Aguris. The thesis is listed separately (Saha 2023).",
+    "url": "https://journals.librarypublishing.arizona.edu/jpe/article/id/6439/",
+    "linkLabel": "Journal article"
+  },
+  "saha-2023": {
+    "title": "Salini Saha, Fertility Worship and Monsoon among Agricultural Communities of Bardhaman (2023)",
+    "kind": "scholarship",
+    "label": "Doctoral thesis · village fieldwork",
+    "detail": "PhD thesis, Department of Sociology, Presidency University, Kolkata; supervisor Sukanya Sarbadhikary. Title page dated 2023; deposited in the university repository in 2024. Fieldwork in villages around Bhatar and Mangalkot, Purba Bardhaman. Ugra Kshatriyas as more than half of the region’s farmers and agricultural labourers: pp. 13–14. Dharmaraj and Manasa in Bardhaman’s village religion, and household Manasa worship: pp. 87–90. Kal Rudra Shiva and Dharmapal at Bonkapasi, Mangalkot: pp. 119–122, 168–169, 191–198.",
+    "status": "Read on 9 October 2026 by machine OCR of the repository’s chapter files, which are page scans; the cited passages were read in context. The villages studied have mixed populations, and the thesis does not single out any practice as Aguri. The 2026 journal article drawn from it is listed separately (Saha 2026).",
+    "url": "https://presiuniv.ndl.gov.in/items/bdddd632-7d1f-4b78-ac7a-32769a04bd67",
+    "linkLabel": "University repository record"
+  },
+  "klass-1978": {
+    "title": "Morton Klass, From Field to Factory: Community Structure and Industrialization in West Bengal (1978)",
+    "kind": "scholarship",
+    "label": "Social anthropology · Burdwan district",
+    "detail": "Philadelphia: Institute for the Study of Human Issues. Fieldwork 1970–1975 in “Gondogram” (a pseudonym), Asansol subdivision, Burdwan district, studying how a nearby factory changed economic transactions, social relations and religious practice.",
+    "status": "Bibliographic record and abstract consulted through the eHRAF World Cultures catalogue. The book was not read; no Aguri-specific finding is attributed to it.",
+    "url": "https://ehrafworldcultures.yale.edu/cultures/aw69/documents/007",
+    "linkLabel": "Catalogue record"
+  },
+  "ruud-1994": {
+    "title": "Arild Engelsen Ruud, “Land and Power: The Marxist Conquest of Rural Bengal” (1994)",
+    "kind": "scholarship",
+    "label": "Political anthropology · Burdwan villages",
+    "detail": "Modern Asian Studies 28(2), pp. 357–380. DOI 10.1017/S0026749X00012440. Examines how the CPI(M) built rural support in the late 1960s through an alliance across peasant strata. Part of Ruud’s research in Burdwan district, also presented in his LSE PhD thesis “Socio-cultural changes in rural West Bengal” (1995), based on two Burdwan villages, and in Poetics of Village Politics (Oxford University Press, New Delhi, 2003).",
+    "status": "The earlier site review consulted the publisher’s abstract. The Konar profile now follows the historical and field-based discussion cited in the supplied bilingual biography; its linked full text was not independently rechecked during this update. Ruud’s Aguri material elsewhere is cited from his 2003 book.",
+    "url": "https://www.researchgate.net/publication/278862828_LAND_AND_POWER_-_THE_MARXIST_CONQUEST_OF_RURAL_BENGAL",
+    "linkLabel": "Author-uploaded full text"
+  },
+  "ruud-2003": {
+    "title": "Arild Engelsen Ruud, Poetics of Village Politics: The Making of West Bengal’s Rural Communism (2003)",
+    "kind": "scholarship",
+    "label": "Political anthropology · Burdwan villages",
+    "detail": "New Delhi: Oxford University Press, 2003. Fieldwork in 1992–93 in two adjacent villages of Raina I block, Dakshin Damodar, Burdwan, given the fictitious names Udaynala and Gopinathpur. Aguris (“Uggra-Kshatriya”) are Gopinathpur’s dominant caste: population and land table, 1993 (pp. 16–17); the Mandal family and village leadership, 1953–77 (pp. 36–41, 52–53); landownership by caste about 1960 (pp. 115–116); education (p. 86); kin in service and business (pp. 84–85); census shares for Raina and the district (p. 123, n. 21–22 on p. 149); Dasarathi Tah as Raina’s MLA (p. 21).",
+    "status": "Chapters 2–5 read in the supplied scan, with all Aguri passages located by full-text search. Village and personal names in the book are the author’s; the villages are deliberately disguised and should not be identified with real places.",
+    "url": "https://search.ub.tum.de/vufind/Record/DE-604.BV019312961",
+    "linkLabel": "Library catalogue record"
+  },
+  "peterson-1910": {
+    "title": "J. C. K. Peterson, Bengal District Gazetteers: Burdwan (1910)",
+    "kind": "historical",
+    "label": "Colonial district gazetteer",
+    "detail": "Calcutta: Bengal Secretariat Book Depot, 222 pp. Digitised by the Gokhale Institute of Politics and Economics. On p. 22 the gazetteer states that Aguris, “by their own admission”, arose from unions between Burdwan Khatris and Gopbhum Sadgops within the previous two hundred years, repeating Oldham’s explanation. Pages 56–57 describe the worship of Manasa and Dharmaraj in the district, quoting R. C. Dutt on Manasa’s origins.",
+    "status": "Read from the digitised copy in October 2026. The p. 22 passage was checked against the page image; the pages cited on the Origins page (pp. 27, 28, 31 and 32) were read in its text layer. A colonial assertion reported here as a disputed claim, not as established history. The Manasa and Dharmaraj passages (pp. 56–57) were read in its text layer on 9 October 2026.",
+    "url": "https://dspace.gipe.ac.in/xmlui/handle/1/38314",
+    "linkLabel": "Digitised copy"
+  },
+  "bhattacharyya-1953": {
+    "title": "Asutosh Bhattacharyya, “Dharma Worship in West Bengal”, in A. Mitra, The Tribes and Castes of West Bengal (1953), pp. 351–360",
+    "kind": "scholarship",
+    "label": "Folklore study · Census 1951",
+    "detail": "Census 1951, West Bengal. Calcutta: West Bengal Government Press, 1953, pp. 351–360; based on the author’s Bangla Mangal Kavyer Itihas (2nd edn, 1950), chapter IV. The area and spread of the cult (p. 351); a Dharma Thakur kept as the tutelary deity of an Aguri (Ugra Kshatriya) family at Khudkuri, Khandaghosh police station, Burdwan district, worshipped daily by a Brahman with boiled rice and put out in the sun in drought (pp. 352–353, 359); Dom and Brahman priests (pp. 352–353); the season of the annual worship (p. 354); earlier theories of Dharma’s origin and the author’s reading of him as a primitive sun-god (pp. 358–360).",
+    "status": "Read on 9 October 2026 from the North Bengal University repository scan (PDF pp. 359–368) by machine OCR; p. 352 was checked against the page image. The Khudkuri account describes one household around 1950. The argument about origins is the author’s interpretation, including his disputed derivation of the name Dharma from Dom.",
+    "url": "https://ir.nbu.ac.in/handle/123456789/797",
+    "linkLabel": "University repository record"
+  },
+  "konar-marxist-2015": {
+    "title": "Harekrishna Konar, “Present Stage of Peasant Movement” — reprinted speech, The Marxist XXXI(1) (2015)",
+    "kind": "historical",
+    "label": "Party journal · reprinted speech",
+    "detail": "Abridged speech reprinted in The Marxist, January–March 2015, with an editorial introduction, and on the CPI(M) website. Used for Konar’s own account of peasant organisation, dignity and agrarian change. The supplied biography notes that the editorial speech date conflicts with later events mentioned in the text; the exact speech date is not relied upon.",
+    "status": "The earlier site review read the party journal directly. This update follows the supplied biography’s qualified use of the text; the linked original was not independently rechecked.",
+    "url": "https://cpim.org/present-stage-peasant-movement/"
+  },
+  "konar-wikipedia": {
+    "title": "Hare Krishna Konar — Wikipedia",
+    "kind": "secondary",
+    "label": "Wikipedia biography · used selectively",
+    "detail": "Used for the exact dates of his two ministerial terms (1 March–21 November 1967; 25 February 1969–16 March 1970), the reported birth village, which differs from Biman Basu’s account, and the Cellular Jail section on the 1933 and 1937 hunger strikes, his arrival in April 1933 and his release on 27 March 1938.",
+    "status": "Article read 6 October 2026; Cellular Jail section read 8 October 2026. Several claims in the article (languages, foreign party memberships) lack adequate sourcing and are not used; its account of the 1937 hunger strike has no specific references.",
+    "url": "https://en.wikipedia.org/wiki/Hare_Krishna_Konar"
+  },
+  "kalna-results": {
+    "title": "Kalna Assembly constituency — election results, 1957–1972",
+    "kind": "secondary",
+    "label": "Election results compilation",
+    "detail": "Wikipedia’s constituency page, compiled from Election Commission of India statistical reports. Records Konar’s wins in 1957 (two-member seat, with Jamadar Majhi), 1962, 1967, 1969 and 1971, and Nurul Islam Molla’s win in 1972.",
+    "status": "Read 6 October 2026. The underlying Election Commission reports have not been inspected individually.",
+    "url": "https://en.wikipedia.org/wiki/Kalna_Assembly_constituency"
+  },
+  "bandyopadhyay-2000": {
+    "title": "D. Bandyopadhyay, “Land Reform in West Bengal” (2000)",
+    "kind": "historical",
+    "label": "Participant’s account · Economic and Political Weekly",
+    "detail": "Economic and Political Weekly 35(21–22), 27 May 2000, commentary. The author, appointed by Konar as director of land records and surveys, describes the drive to vest ceiling-surplus land held clandestinely or benami, and Konar’s view of the Naxalbari movement.",
+    "status": "Publicly visible opening of the article read; the remainder is behind a paywall. A participant’s retrospective account, not a neutral audit.",
+    "url": "https://www.epw.in/journal/2000/21-22/commentary/land-reform-west-bengal.html"
+  },
+  "bakshi-2014": {
+    "title": "Aparajita Bakshi, “Contextualising Land Reform in West Bengal: An Interview with Benoy Konar” (2014)",
+    "kind": "secondary",
+    "label": "Interview · Review of Agrarian Studies",
+    "detail": "Review of Agrarian Studies 4(2). DOI 10.25003/RAS.04.02.0009. Benoy Konar, Hare Krishna Konar’s younger brother and later Kisan Sabha leader, discusses the 1967–69 land movement, benami land and the limits of land reform.",
+    "status": "Read directly. A family member and party colleague’s recollection; used as his testimony.",
+    "url": "https://doi.org/10.25003/RAS.04.02.0009"
+  },
+  "frontier-2020": {
+    "title": "“Other Voices in Naxalbari Movement”, Frontier 53(22–25) (2020)",
+    "kind": "secondary",
+    "label": "Weekly journal · editorial essay",
+    "detail": "Frontier, 29 November–26 December 2020. Describes Konar’s meeting with Kanu Sanyal near Siliguri in 1967, a ministerial delegation’s appeal to the peasants, and the failure of the understanding before police action.",
+    "status": "Read directly. A later retrospective essay; exact dates of meetings differ between accounts and are not relied on.",
+    "url": "https://frontierweekly.com/articles/vol-53/53-22-25/53-22-25-Other%20Voices%20in%20Naxalbari%20Movement.html"
+  },
+  "appa-1970": {
+    "title": "Gautan Appa, “The Naxalites”, New Left Review I/61 (1970)",
+    "kind": "historical",
+    "label": "Contemporary political analysis",
+    "detail": "New Left Review I/61, May–June 1970. A contemporary analysis sympathetic to the Naxalite movement; reports that Konar tried to appease local cadres and cites a Statesman report of him calling the rebels “bandits”.",
+    "status": "Read directly. A critical, partisan view; the newspaper quotation is reported second-hand.",
+    "url": "https://newleftreview.org/issues/i61/articles/gautan-appa-the-naxalites"
+  },
+  "ghosh-2017": {
+    "title": "Atig Ghosh, Left Front Government in West Bengal (1977–1982): Considerations on “Passive Revolution” and the Question of Caste in Bengal Politics (2017)",
+    "kind": "scholarship",
+    "label": "Policy research paper",
+    "detail": "Policies and Practices 93, Mahanirban Calcutta Research Group, 2017. Pp. 8 and 11 discuss Konar and compare peasant land seizures under the United Front with later Left Front redistribution, arguing that the party later relied on the bureaucracy rather than mobilisation.",
+    "status": "Read directly. The acreage comparison is reproduced from earlier literature and is not independently verified here.",
+    "url": "http://www.mcrg.ac.in/PP93.pdf"
+  },
+  "benoy-choudhury-tribune-2000": {
+    "title": "Chanchal Sarkar, “He was a man of the masses” — The Tribune, Spectrum (25 June 2000)",
+    "kind": "secondary",
+    "label": "Newspaper tribute",
+    "detail": "Column remembering Benoy Choudhury’s land-reform work as Minister of Land and Land Reforms from 1977, including security of tenure for sharecroppers.",
+    "status": "Read directly 8 October 2026. Calls him “the senior most member of the West Bengal cabinet after Jyoti Basu”; a tribute, not an official record of cabinet rank.",
+    "url": "https://www.tribuneindia.com/2000/20000625/spectrum/main8.htm"
+  },
+  "shashi-panja-wikipedia": {
+    "title": "Shashi Panja — Wikipedia",
+    "kind": "secondary",
+    "label": "Wikipedia biography · used selectively",
+    "detail": "Used only for her marriage into Ajit Kumar Panja’s family (her husband is his son) and her terms as a state minister, 2013–2026.",
+    "status": "Article read 8 October 2026. Her connection to the Panja family is by marriage; this website does not infer her own community from the surname.",
+    "url": "https://en.wikipedia.org/wiki/Shashi_Panja"
+  },
+  "wb-population-projection": {
+    "title": "Technical Group on Population Projections, Population Projections for India and States, 2011–2036 (National Commission on Population, Ministry of Health and Family Welfare, 2020)",
+    "kind": "institutional",
+    "label": "Official projection · used as denominator",
+    "detail": "Projects West Bengal’s population at about 10 crore in 2026, the denominator for the share given on the homepage. The Aguri figure of roughly 3.2 lakh is this project’s own estimate: a cohort-component projection from the 1921 census count of 68,816 (Dutta, Table 13.1) that follows West Bengal’s fertility and mortality trends. Other plausible assumptions give about 2.7 to 4.1 lakh.",
+    "status": "Report record consulted via PARI’s library. The Aguri figure is an estimate, not a count: castes other than Scheduled Castes and Tribes have not been enumerated since 1931, and changes in self-identification are not modelled.",
+    "url": "https://ruralindiaonline.org/library/resource/population-projections-for-india-and-states-2011-2036",
+    "linkLabel": "Library record"
+  },
+  "census-a2-west-bengal": {
+    "title": "Census of India 2011, West Bengal, Table A-2: Decadal variation in population since 1901",
+    "kind": "institutional",
+    "label": "Official census table",
+    "detail": "Barddhaman district totals on 2011 boundaries: 15,33,868 in 1911 and 14,34,766 in 1921. Set against Dutta’s Burdwan Aguri counts of 66,551 and 59,949 (Table 13.1), Aguris formed about 4.3 and 4.2 per cent of the district.",
+    "status": "Table read 8 October 2026. The census totals are adjusted to 2011 district boundaries, while Dutta’s counts follow the boundaries of the time, so the shares are approximate.",
+    "url": "https://censusindia.gov.in/nada/index.php/catalog/43352",
+    "linkLabel": "Official census record and downloads"
+  },
+  "agnimitra-paul-constituency-2026": {
+    "title": "Paschim Bardhaman district — current constituencies and elected representatives",
+    "kind": "institutional",
+    "label": "Official constituency directory",
+    "detail": "The district administration lists Agnimitra Paul of the Bharatiya Janata Party as the MLA for 280-Asansol Dakshin.",
+    "status": "Official directory read 9 October 2026. Used for her constituency and party; it is not evidence of community affiliation or a source for vote totals.",
+    "url": "https://paschimbardhaman.gov.in/constituencies/",
+    "linkLabel": "Official constituency directory"
+  },
+  "agnimitra-paul-pib-2026": {
+    "title": "Press Information Bureau — West Bengal ministers take oath (9 May 2026)",
+    "kind": "institutional",
+    "label": "Official announcement",
+    "detail": "The Prime Minister’s Office announcement, published by PIB on 9 May 2026, names Agnimitra Paul among the ministers taking oath in the West Bengal government.",
+    "status": "Official announcement read 9 October 2026. Used for the start of her ministerial service in May 2026, not for portfolio allocations or community affiliation.",
+    "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2259319&lang=1&reg=6",
+    "linkLabel": "Official oath announcement"
+  },
+  "agnimitra-paul-uni": {
+    "title": "Debajyoti Chakraborty, “Burnpur to Brigade - Pupai traverses a long road” — UNI (9 May 2026)",
+    "kind": "secondary",
+    "label": "News profile",
+    "detail": "Profile of Agnimitra Paul’s Asansol upbringing. Names her father, the paediatrician Dr Ashok Roy, and her husband, Partho Paul.",
+    "status": "Profile read 8 October 2026. The publisher’s migrated page, checked 9 October 2026, displays a 9 May 2026 publication date and an opening preview; full access requires sign-in. Her marriage into an Aguri family is stated on the project owner’s information; no published source for the Paul family’s community has yet been found.",
+    "url": "https://www.uniindia.com/east-india/profile-wb-agnimitra/46968"
+  },
+  "aguris-today-bhatar-meeting": {
+    "title": "Aajkaal, Bhatar’s outgoing and newly elected MLAs meet (6 May 2026)",
+    "kind": "secondary",
+    "label": "Reporting and commentary",
+    "detail": "Identifies Soumen Karfa and Man Gobinda Adhikari as Aguri/Ugra Kshatriya and reports their meeting at Eruar.",
+    "status": "Bengali reporting checked through indexed article text; not evidence of a community-wide voting pattern.",
+    "url": "https://www.aajkaal.in/elections/west-bengal-assembly-election/news/ex-and-present-mla-met-in-bhatar-on-east-burdwan-then-this-happened-494794"
+  },
+  "aguris-today-ghosh": {
+    "title": "Biswajit Ghosh, Social Structure in Bardhaman (draft report)",
+    "kind": "scholarship",
+    "label": "Research and scholarship",
+    "detail": "Draft chapter written before Bardhaman’s district division, uploaded in 2021; landholding, commerce, marriage and caste relations.",
+    "status": "Author-uploaded text consulted; not a 2026 survey.",
+    "url": "https://www.researchgate.net/publication/348351748_Chapter_XV_Draft_Report_Social_Structure_in_Bardhaman"
+  },
+  "aguris-today-pramanick": {
+    "title": "Swapan Kumar Pramanick, review of Explorations in Colonial Bengal (2025)",
+    "kind": "scholarship",
+    "label": "Research and scholarship",
+    "detail": "Journal of the Asiatic Society LXVII(3), pp. 95–100, especially p. 99; reviews Dutta’s account of Ugra-Kshatriya social mobility.",
+    "status": "Used as a scholarly review, with attribution to the reviewer.",
+    "url": "https://asiaticsociety.culture.gov.in/sites/default/files/2026-01/Journal%20LXVII%2C%203_2025_compressed.pdf"
+  },
+  "aguris-today-qaiyum": {
+    "title": "Abdul Qaiyum, Education and Social Change: Role of a School in the Transformation of a Village (2017)",
+    "kind": "scholarship",
+    "label": "Research and scholarship",
+    "detail": "International Journal of Applied Research 3(7), pp. 1095–1100; educated Aguris’ departure from Dolan, Manteswar.",
+    "status": "A village study; broader village migration findings are not treated as Aguri-specific statistics.",
+    "url": "https://www.allresearchjournal.com/archives/2017/vol3issue7/PartP/3-7-208-667.pdf"
+  },
+  "aguris-today-diaspora-group": {
+    "title": "Ugra Kshatriya (AGURI) — public Facebook group description",
+    "kind": "community",
+    "label": "Public community account",
+    "detail": "Community description of geographical dispersal and occupations, read on 9 October 2026.",
+    "status": "Community self-representation; not a migration census or independently verified occupational distribution.",
+    "url": "https://www.facebook.com/groups/662391940478677/"
+  },
+  "aguris-today-eisamay": {
+    "title": "Sanjay Dey, profile of Chandrasekhar Bandyopadhyay — Ei Samay (9 April 2026)",
+    "kind": "secondary",
+    "label": "Reporting and commentary",
+    "detail": "Reports the politician’s employment concerns and marriage to Mahua, identified as Aguri; Chandrasekhar is identified as Brahmin.",
+    "status": "A reported personal example and political statements; not proof of migration rates or unemployment causing inter-caste marriage.",
+    "url": "https://eisamay.com/west-bengal-news/bardhaman-news/bjp-candidate-chandrasekhar-banerjee-starts-election-campaign-in-durgapur-purba-constituency-area/200491696.cms"
+  },
+  "aguris-today-migrant-scheme": {
+    "title": "Government of West Bengal — Migrant Worker Welfare Scheme",
+    "kind": "institutional",
+    "label": "Institutional record",
+    "detail": "Official description of welfare for workers employed outside West Bengal, including abroad.",
+    "status": "Used for policy context; supplies no Aguri-specific migration count.",
+    "url": "https://www.egiyebangla.gov.in/government-schemes-details-west-bengal-migrant-worker-welfare-scheme.aspx"
+  },
+  "aguris-today-caste-lists": {
+    "title": "West Bengal Backward Classes Welfare Department — caste lists",
+    "kind": "institutional",
+    "label": "Institutional record",
+    "detail": "Official classification lists consulted for Scheduled Caste status.",
+    "status": "Classification context checked on 9 October 2026; not evidence that reservation guarantees employment.",
+    "url": "https://anagrasarkalyan.gov.in/bcw/ex_page/6"
+  },
+  "aguris-today-obc-2026": {
+    "title": "West Bengal OBC notification (18 May 2026)",
+    "kind": "institutional",
+    "label": "Institutional record",
+    "detail": "Government notification hosted on an admissions portal; list consulted for the article’s statement about Aguri classification.",
+    "status": "Dated legal classification, checked for this essay; later amendments may change eligibility.",
+    "url": "https://wb.onlineadmission.org/upload/News_NEWS1_MIDN_46164.6442353395.PDF"
+  },
+  "aguris-today-ews": {
+    "title": "West Bengal — official EWS certificate application guidance",
+    "kind": "institutional",
+    "label": "Institutional record",
+    "detail": "Official income and asset eligibility guidance for Economically Weaker Sections certification.",
+    "status": "Consulted on 9 October 2026; eligibility is conditional, not automatic for all Aguri households.",
+    "url": "https://castcertificatewb.gov.in/how_to_apply_ews"
+  },
+  "aguris-today-marriage-post": {
+    "title": "Ugra Kshatriya Paribar — public matrimonial discussion (October 2026)",
+    "kind": "community",
+    "label": "Public community account",
+    "detail": "A farming household’s matrimonial notice and a reply about salaried employment; viewed on 9 October 2026.",
+    "status": "Private individuals are not named in the essay. Illustrates expressed preferences, not a representative marriage trend.",
+    "url": "https://www.facebook.com/groups/1891398094488772/posts/3976528409309053/"
+  },
+  "aguris-today-sen": {
+    "title": "Sucharita Sen, Caste No Bar? Non-Resident Indian Grooms Searching for Brides in Kolkata (2025)",
+    "kind": "scholarship",
+    "label": "Research and scholarship",
+    "detail": "Public Humanities; qualitative research on caste and transnational matrimonial preferences.",
+    "status": "Comparative context only; not an Aguri-specific study.",
+    "url": "https://doi.org/10.1017/pub.2025.11"
+  },
+  "aguris-today-bhatar-result": {
+    "title": "Election Commission of India — Bhatar Assembly result (May 2026)",
+    "kind": "institutional",
+    "label": "Institutional record",
+    "detail": "Official result for constituency 267: Karfa Soumen, BJP, 98,820 votes; Shantanu Koner, AITC, 92,292.",
+    "status": "Verifies electoral result and parties, not candidate caste or caste-specific voting.",
+    "url": "https://results.eci.gov.in/ResultAcGenMay2026/candidateswise-S25267.htm"
+  },
+  "aguris-today-konar-reference": {
+    "title": "Hare Krishna Konar — biographical reference and bibliography",
+    "kind": "reference",
+    "label": "Reference source",
+    "detail": "Wikipedia biography cites Liyiyu and Abhijit Dasgupta, Alternatives in Development (2021), p. 156, for Aguri background.",
+    "status": "Reference attribution only: the underlying book passage was not independently inspected for this essay.",
+    "url": "https://en.wikipedia.org/wiki/Hare_Krishna_Konar"
+  },
+  "aguris-today-panja-archive": {
+    "title": "British Library EAP1230 — admission record ADF_E_0138 (15 September 1947)",
+    "kind": "institutional",
+    "label": "Primary source",
+    "detail": "Catalogue entry for Ranajit Kumar Panja, son of physician Dr Dhanapati Panja; religion/caste recorded as Hindu, Ugra Kshatriya.",
+    "status": "Indexed catalogue text consulted. Identity matched through name and father; spelling differs from the parliamentary biography.",
+    "url": "https://eap.bl.uk/sites/default/files/2022-10/EAP1230%20Institutional%20Documents%20Survey_0.pdf"
+  },
+  "aguris-today-barasat": {
+    "title": "Barasat parliamentary constituency — election history",
+    "kind": "reference",
+    "label": "Reference source",
+    "detail": "Historical election results supporting Ranjit Kumar Panja’s 1998 and 1999 victories and the 2004 change.",
+    "status": "Election reference; used for terms, not caste identification.",
+    "url": "https://www.elections.in/west-bengal/parliamentary-constituencies/barasat.html"
+  },
+  "aguris-today-ajit-bio": {
+    "title": "Ajit Kumar Panja — Twelfth Lok Sabha biographical sketch",
+    "kind": "historical",
+    "label": "Historical record",
+    "detail": "IndiaPress reproduction identifying Ajit Panja’s father, constituency and Trinamool affiliation in the Twelfth Lok Sabha.",
+    "status": "Parliamentary biography mirror; does not independently declare caste.",
+    "url": "https://www.indiapress.org/election/archives/lok12/biodata/12wb22.php"
+  },
+  "aguris-today-ajit-interview": {
+    "title": "Rediff interview with Ajit Kumar Panja (25 April 2001)",
+    "kind": "historical",
+    "label": "Primary source",
+    "detail": "Interview confirms his former external-affairs role and relationship to his brother, Barasat MP Ranjit Kumar Panja.",
+    "status": "Interview used for public career and family relationship; political opinions remain the speaker’s.",
+    "url": "https://im.rediff.com/news/2001/apr/25inter.htm"
+  },
+  "aguris-today-mea": {
+    "title": "Ministry of External Affairs — Annual Report 2000–2001",
+    "kind": "institutional",
+    "label": "Institutional record",
+    "detail": "Official report documenting Ajit Kumar Panja’s service as minister of state for external affairs.",
+    "status": "Used for ministerial office, not community identification.",
+    "url": "https://www.mea.gov.in/uploads/publicationdocs/163_annual-report-2000-2001.pdf"
+  },
+  "aguris-today-asansol-shop": {
+    "title": "Anandabazar Patrika — Asansol municipal shop dispute (27 December 2024)",
+    "kind": "secondary",
+    "label": "Reporting and commentary",
+    "detail": "Bengali report of Aguri residents’ mobilisation and municipal/police intervention over an allotted shop.",
+    "status": "Allegations are attributed to the report; no finding of guilt is asserted.",
+    "url": "https://www.anandabazar.com/west-bengal/bardhaman/under-the-initiative-of-asansol-municipality-the-occupant-were-evicted-and-the-eligible-customer-got-shop-dgtld/cid/1570278"
+  },
+  "aguris-today-khirgram": {
+    "title": "Basab Choudhuri — Ugra Kshatriya Mahasabha meeting at Khirgram (27 September 2026)",
+    "kind": "community",
+    "label": "Public community account",
+    "detail": "Public post naming attendees, reported office-bearers and proposed work in education, health, agriculture and small industry.",
+    "status": "Read directly on 9 October 2026. Office-bearers and proposals are attributed to the post, not independently certified.",
+    "url": "https://www.facebook.com/basab.choudhuri/posts/pfbid01DKN3xqsUaCgULRysCAg4ShtL9DNkmcu7ufcHhcm3qD9FspsQF6Ke767zo6jJMRol"
+  },
+  "aguris-today-mahasabha-page": {
+    "title": "History and Culture of Ugra-Khastriya — public Facebook page",
+    "kind": "community",
+    "label": "Public community account",
+    "detail": "Page introduction names Ugrakshatriya Mahasabha; January 2021 post asserts Rajput/Kshatriya ancestry; October 2021 post links an Asansol unit.",
+    "status": "Evidence of public identity claims, not proof of ancestry or formal party affiliation. Private linked group was not inspected.",
+    "url": "https://www.facebook.com/profile.php?id=100063770126849"
+  },
+  "aguris-today-kumar": {
+    "title": "Sajjan Kumar — opinion on Bengal caste politics, Indian Express (20 March 2021)",
+    "kind": "secondary",
+    "label": "Reporting and commentary",
+    "detail": "Political analyst’s assessment that BJP caste outreach brought communities including Aguris towards Hindutva.",
+    "status": "Attributed opinion, not a caste voting survey or evidence of Mahasabha party membership.",
+    "url": "https://indianexpress.com/article/opinion/columns/tmc-bjp-west-bengal-mamata-banerjee-7236400/"
+  },
+  "aguris-today-bisk-community": {
+    "title": "Ugra Kshatriya Paribar — Bisk Farm founder tribute and replies (28 June 2024)",
+    "kind": "community",
+    "label": "Public community account",
+    "detail": "Anonymous public post celebrates Krishnadas Paul under a Ugrakshatriya hashtag; replies express community pride, including one invoking Hindutva.",
+    "status": "Read directly on 9 October 2026. Community attribution is distinct from family self-identification; financial claims checked separately.",
+    "url": "https://www.facebook.com/groups/1891398094488772/posts/3269799276648640/"
+  },
+  "aguris-today-bisk-history": {
+    "title": "Bisk Farm — company history",
+    "kind": "institutional",
+    "label": "Institutional record",
+    "detail": "Company account of founding in 2000 by K. D. Paul and manufacturing expansion, including Nagpur and Bengaluru.",
+    "status": "Company source for business history; does not document caste.",
+    "url": "https://www.biskfarm.com/about-us/"
+  },
+  "aguris-today-bisk-return": {
+    "title": "SAJ Food Products Private Limited — annual return, FY2024–2025",
+    "kind": "institutional",
+    "label": "Institutional record",
+    "detail": "Statutory MGT-7 return for 1 April 2024–31 March 2025; turnover approximately ₹1,666.5 crore.",
+    "status": "Statutory company record; no inference about community-wide prosperity.",
+    "url": "https://www.biskfarm.com/wp-content/uploads/2025/04/MGT7-2425.pdf"
+  },
+  "aguris-today-bisk-leadership": {
+    "title": "Bisk Farm — leadership announcement (31 July 2025)",
+    "kind": "institutional",
+    "label": "Institutional record",
+    "detail": "Company-hosted announcement identifies Arpan Paul as executive chairman.",
+    "status": "Used for the stated business role.",
+    "url": "https://www.biskfarm.com/news/vastab-katha/"
+  },
+  "aguris-today-icra": {
+    "title": "ICRA — SAJ Food Products rating rationale (30 May 2025)",
+    "kind": "institutional",
+    "label": "Institutional record",
+    "detail": "Credit assessment discusses FY2024 income decline, FY2025 recovery, input costs and deferred investment.",
+    "status": "Dated company assessment, used to qualify claims of uninterrupted expansion.",
+    "url": "https://www.icra.in/Rating/GetRationalReportFilePdf?id=135527"
+  },
+  "aguris-today-lahiri-sil": {
+    "title": "Kuntala Lahiri-Dutt and Pallabi Sil, Beyond the Boundary (2004)",
+    "kind": "scholarship",
+    "label": "Research and scholarship",
+    "detail": "Contemporary South Asia 13(3), pp. 257–272; Aguri woman’s insurance/savings and cosmetics work, especially pp. 263–264.",
+    "status": "Historical qualitative case; not a measure of women’s work in 2026.",
+    "url": "https://www.researchgate.net/publication/240528363_Beyond_the_boundary_Middle-class_women_in_income-generating_activities_in_Burdwan_India"
+  },
+  "aguris-today-mitra": {
+    "title": "Amit Mitra, Bhadralok Women Do Not Work Outside the Home (2014)",
+    "kind": "scholarship",
+    "label": "Research and scholarship",
+    "detail": "Journal of the Indian Anthropological Society 49; 2007 fieldwork includes an Aguri widow managing a roadside restaurant.",
+    "status": "Dated ethnographic case; private individual not named in this essay.",
+    "url": "https://www.researchgate.net/publication/280831981_Bhadralok_Women_do_not_Work_Outside_the_Home_Caste_Class_Gender_and_Work_in_Rural_West_Bengal"
+  },
+  "panja-shankha-ghosh-recollection": {
+    "title": "Shankha Ghosh’s recollection of Jadabendra Nath Panja, reproduced in Nagorik (2022)",
+    "kind": "secondary",
+    "label": "Published reminiscence",
+    "detail": "Shankha Ghosh’s recollection of a 1950 visit to Kiran Chandra Mukherjee, as reproduced by Pratik in Nagorik, 31 July 2022. Published reminiscence.",
+    "status": "Referenced in the contributor-supplied revised biography, received 11 October 2026; the underlying source has not been independently rechecked for this update.",
+    "url": "https://nagorik.net/politics/wb-medias-confident-knowledge-of-honesty/",
+    "linkLabel": "Open source"
+  },
+  "panja-family-oral-history": {
+    "title": "Family oral history of Jadabendra Nath Panja’s community representation (10 October 2026)",
+    "kind": "community",
+    "label": "Family oral history",
+    "detail": "Family oral history communicated by the contributor on 10 October 2026, recounting information passed down by his father. Source for the 1930s date and Panja’s successful intervention. “Backward classes” and “Scheduled Castes” retain the alternatives given in that testimony.",
+    "status": "Family testimony, attributed as such. The 1930s date and successful intervention are preserved in the oral account; the census records cited separately do not name Panja’s intervention.",
+    "url": "person-jadabendra-nath-panja.html#jadabendra-standing-beside-aguris",
+    "linkLabel": "Read the attributed account"
+  },
+  "panja-dinabandhu-community-account": {
+    "title": "Dinabandhu Panja, “উগ্রক্ষত্রিয় জাতির সামাজিক সংস্কার” (2020)",
+    "kind": "community",
+    "label": "Bengali community account",
+    "detail": "Dinabandhu Panja, “উগ্রক্ষত্রিয় জাতির সামাজিক সংস্কার”, published by History and Culture of Ugra-Khastriya, Facebook post 119013419839671, displayed date 13 June 2020. The community account is signed with the name দীনবন্ধুপাঁজা and the location Kulnagar, Bhatar, Purba Bardhaman. The supplied biography records the full post as viewed on 10 October 2026. Bengali community account.",
+    "status": "Referenced in the contributor-supplied revised biography, received 11 October 2026; the underlying source has not been independently rechecked for this update.",
+    "url": "https://www.facebook.com/100063770126849/posts/119013419839671/",
+    "linkLabel": "Open source"
+  },
+  "panja-assembly-1946-part-2": {
+    "title": "Bengal Legislative Assembly Proceedings, 1946, vol. LXXI, part II",
+    "kind": "primary",
+    "label": "Official legislative proceedings",
+    "detail": "Bengal Legislative Assembly Proceedings, 1946, vol. LXXI, part II: 13 August, pp. 155–156 and 167; 15 August, pp. 217, 223 and 233. Land acquisition and Damodar bridge debates, including decisions on the cut motions. 1946 proceedings Part II.",
+    "status": "Referenced in the contributor-supplied revised biography, received 11 October 2026; the underlying source has not been independently rechecked for this update.",
+    "url": "https://archive.org/details/in.ernet.dli.2015.180348",
+    "linkLabel": "Open source"
+  },
+  "panja-assembly-1946-part-3": {
+    "title": "Bengal Legislative Assembly Proceedings, 1946, vol. LXXI, part III",
+    "kind": "primary",
+    "label": "Official legislative proceedings",
+    "detail": "Bengal Legislative Assembly Proceedings, 1946, vol. LXXI, part III: 21 September, pp. 181–182, Question 50. Panja’s supplementary questions followed Annadaprasad Mandal’s question on the Damodar Canal levy. 1946 proceedings Part III.",
+    "status": "Referenced in the contributor-supplied revised biography, received 11 October 2026; the underlying source has not been independently rechecked for this update.",
+    "url": "https://archive.org/details/in.ernet.dli.2015.180349",
+    "linkLabel": "Open source"
+  },
+  "panja-assembly-1947-part-2": {
+    "title": "Bengal Legislative Assembly Proceedings, 1947, vol. LXXII, part II",
+    "kind": "primary",
+    "label": "Official legislative proceedings",
+    "detail": "Bengal Legislative Assembly Proceedings, 1947, vol. LXXII, part II: 12 March, p. 127 and pp. 135–136. Panja’s flood-reclamation motion and the government’s reply. 1947 proceedings Part II.",
+    "status": "Referenced in the contributor-supplied revised biography, received 11 October 2026; the underlying source has not been independently rechecked for this update.",
+    "url": "https://archive.org/details/in.ernet.dli.2015.32622",
+    "linkLabel": "Open source"
+  },
+  "panja-bardhaman-parikrama": {
+    "title": "Sudhir Chandra Da, Bardhaman Parikrama (1992)",
+    "kind": "historical",
+    "label": "Local history",
+    "detail": "Sudhir Chandra Da, Bardhaman Parikrama (বর্ধমান পরিক্রমা, 1992), especially pp. 193 and 411 and the account of the nationalist movement. Digitised book.",
+    "status": "Referenced in the contributor-supplied revised biography, received 11 October 2026; the underlying source has not been independently rechecked for this update.",
+    "url": "https://archive.org/details/in.ernet.dli.2015.265323",
+    "linkLabel": "Open source"
+  },
+  "panja-jangipur-obituary-1961": {
+    "title": "Jangipur Sambad, obituary of Jadabendra Nath Panja (27 September 1961)",
+    "kind": "primary",
+    "label": "Contemporary obituary",
+    "detail": "Jangipur Sambad (জঙ্গিপুর সংবাদ), 27 September 1961, p. 4, contemporary obituary of Panja. Source for his father, education, death and family. The birth year 1886 is also used by the Nehru Archive; some later accounts give 1885. Newspaper scan.",
+    "status": "Referenced in the contributor-supplied revised biography, received 11 October 2026; the underlying source has not been independently rechecked for this update.",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/জঙ্গিপুর_সংবাদ_-_২৭_সেপ্টেম্বর_১৯৬১.pdf",
+    "linkLabel": "Open source"
+  },
+  "panja-atulya-ghosh-memoir": {
+    "title": "Atulya Ghosh, Kashtakalpita (1971; 2003 edition)",
+    "kind": "primary",
+    "label": "Political memoir",
+    "detail": "Atulya Ghosh, Kashtakalpita (কষ্টকল্পিত; first published 1971; New Age Publications, Dhaka, 2003 edition), pp. 20–21, 141 and 264. The Radhanath Das episode records resignation letters being written and a temporary compromise, without establishing that the resignations took effect. Digitised memoir.",
+    "status": "Referenced in the contributor-supplied revised biography, received 11 October 2026; the underlying source has not been independently rechecked for this update.",
+    "url": "https://archive.org/details/in.ernet.dli.2015.302411",
+    "linkLabel": "Open source"
+  },
+  "panja-district-history-2000": {
+    "title": "Ekkari Chattopadhyay, Bardhaman Jelar Itihas O Lokosanskriti, vol. 1 (2000)",
+    "kind": "historical",
+    "label": "District history",
+    "detail": "Ekkari Chattopadhyay, Bardhaman Jelar Itihas O Lokosanskriti (বর্ধমান জেলার ইতিহাস ও লোকসংস্কৃতি), vol. 1 (2000), account of the freedom movement and Salt Satyagraha. Digitised district history.",
+    "status": "Referenced in the contributor-supplied revised biography, received 11 October 2026; the underlying source has not been independently rechecked for this update.",
+    "url": "https://archive.org/details/in.ernet.dli.2015.265322",
+    "linkLabel": "Open source"
+  },
+  "panja-high-court-1936": {
+    "title": "Jadabendranath Panja v. Emperor — Calcutta High Court (14 January 1936)",
+    "kind": "primary",
+    "label": "Historical court judgment",
+    "detail": "Jadabendranath Panja v. Emperor, Calcutta High Court, 14 January 1936, AIR 1936 Cal 149. The decision set aside a later recovery warrant, not the original conviction. Panja’s account of serving the full additional term appears as his allegation in the judgment. Judgment.",
+    "status": "Referenced in the contributor-supplied revised biography, received 11 October 2026; the underlying source has not been independently rechecked for this update.",
+    "url": "https://indiankanoon.org/doc/707171/",
+    "linkLabel": "Open source"
+  },
+  "panja-assembly-1947-part-1": {
+    "title": "Bengal Legislative Assembly Proceedings, 1947, vol. LXXII, part I",
+    "kind": "primary",
+    "label": "Official legislative proceedings",
+    "detail": "Bengal Legislative Assembly Proceedings, 1947, vol. LXXII, part I: 25 February, pp. 417–418; finance minister’s reply, 28 February, p. 546. 1947 proceedings Part I.",
+    "status": "Referenced in the contributor-supplied revised biography, received 11 October 2026; the underlying source has not been independently rechecked for this update.",
+    "url": "https://archive.org/details/in.ernet.dli.2015.47089",
+    "linkLabel": "Open source"
+  },
+  "panja-dutta-economy-ecology": {
+    "title": "Achintya Kumar Dutta, Economy and Ecology in a Bengal District",
+    "kind": "scholarship",
+    "label": "Historical scholarship",
+    "detail": "Achintya Kumar Dutta, Economy and Ecology in a Bengal District, pp. 26–27, on the Aguri community and Panja; pp. 133–134, on his family’s substantial landholding. In the discussion of the 1930s canal-tax movement, Dutta records that Panja’s family possessed 1,500 bighas of land in Burdwan. Digitised study.",
+    "status": "Referenced in the contributor-supplied revised biography, received 11 October 2026; the underlying source has not been independently rechecked for this update.",
+    "url": "https://archive.org/details/in.ernet.dli.2015.124496",
+    "linkLabel": "Open source"
+  },
+  "panja-census-1931-name": {
+    "title": "Census of India, 1931, Bengal and Sikkim — community naming",
+    "kind": "primary",
+    "label": "Official census report",
+    "detail": "A. E. Porter, Census of India, 1931, vol. V, Bengal and Sikkim, part I, Report (1933), p. 455, paragraph 486. Records representations over the community’s name. 1931 census report.",
+    "status": "Referenced in the contributor-supplied revised biography, received 11 October 2026; the underlying source has not been independently rechecked for this update.",
+    "url": "https://archive.org/details/in.ernet.dli.2015.56022",
+    "linkLabel": "Open source"
+  },
+  "panja-census-1951-inventory": {
+    "title": "Census of India, 1951 — “Caste Aguri” administrative inventory entry",
+    "kind": "primary",
+    "label": "Official administrative index",
+    "detail": "A. Mitra, Administrative Report—Enumeration, Census of India, 1951 (1952), Collection No. 5-C: inventory entry 108, “Caste Aguri”, file 5C-10. Identified in the official administrative index; the underlying correspondence has not been consulted. Used as supporting context, not as a document naming Panja’s intervention. Official administrative report.",
+    "status": "Referenced in the contributor-supplied revised biography, received 11 October 2026; the underlying source has not been independently rechecked for this update.",
+    "url": "https://censusindia.gov.in/nada/index.php/catalog/27979/download/31161/20862_1951_ADM.pdf",
+    "linkLabel": "Open source"
+  },
+  "panja-census-1951-tables": {
+    "title": "Census of India, 1951, West Bengal, Sikkim and Chandernagore — Tables",
+    "kind": "primary",
+    "label": "Official census tables",
+    "detail": "A. Mitra, Census of India, 1951, vol. VI, West Bengal, Sikkim and Chandernagore, part II, Tables (1953), pp. 449–450, Statement B, item 32. The non-backward classification is expressly for census purposes. The final Bengal 1936 and West Bengal 1950 Scheduled Caste schedules do not name Aguri/Ugra Kshatriya; this does not settle the history of proposals or representations. 1951 census tables. Government reproduction of the schedules.",
+    "status": "Referenced in the contributor-supplied revised biography, received 11 October 2026; the underlying source has not been independently rechecked for this update.",
+    "url": "https://archive.org/details/dli.ernet.285647/page/n461/mode/1up",
+    "linkLabel": "Open source"
+  },
+  "panja-partition-votes-1947": {
+    "title": "Bengal Legislative Assembly, Proceedings on Partition of Bengal (20 June 1947)",
+    "kind": "primary",
+    "label": "Official Partition proceedings",
+    "detail": "Bengal Legislative Assembly, Proceedings on Partition of Bengal, 20 June 1947, Assembly Secretariat reprint (2002), pp. LXXIX–LXXX and Appendix B, p. LXXXVII. Panja voted with the Ayes in both divisions, each carried by 58 votes to 21. Official Partition proceedings.",
+    "status": "Referenced in the contributor-supplied revised biography, received 11 October 2026; the underlying source has not been independently rechecked for this update.",
+    "url": "https://lalib.wb.gov.in/Elibrary_VirtualPath/3/3_273.pdf",
+    "linkLabel": "Open source"
+  },
+  "panja-cabinet-report-1948": {
+    "title": "Hindustan Times, B. C. Roy’s new cabinet (7 May 1948; reprinted 2023)",
+    "kind": "primary",
+    "label": "Contemporary cabinet report",
+    "detail": "Hindustan Times, report of B. C. Roy’s cabinet, 7 May 1948, republished 2023. Cabinet report.",
+    "status": "Referenced in the contributor-supplied revised biography, received 11 October 2026; the underlying source has not been independently rechecked for this update.",
+    "url": "https://www.hindustantimes.com/india-news/dr-b-c-roy-forms-new-cabinet-in-west-bengal-sworn-in-at-government-house-for-his-second-ministry-since-india-s-independence-101683392087511.html",
+    "linkLabel": "Open source"
+  },
+  "panja-election-galsi-1951": {
+    "title": "Election Commission of India, West Bengal Assembly election report, 1951 — Galsi",
+    "kind": "primary",
+    "label": "Election report reproduction",
+    "detail": "Election Commission of India, Statistical Report on General Election, 1951 to the Legislative Assembly of West Bengal, Galsi results; digitised reproduction. Election report reproduction.",
+    "status": "Referenced in the contributor-supplied revised biography, received 11 October 2026; the underlying source has not been independently rechecked for this update.",
+    "url": "https://www.scribd.com/document/879207875/WB1951",
+    "linkLabel": "Open source"
+  },
+  "panja-barefoot-remembrance-2019": {
+    "title": "Indrajit Chowdhury, “বর্ধমান এ বার বটুকেশ্বর?” (28 July 2019)",
+    "kind": "secondary",
+    "label": "Bengali historical reporting",
+    "detail": "Indrajit Chowdhury, “বর্ধমান এ বার বটুকেশ্বর?”, Anandabazar Patrika, 28 July 2019, on Panja’s barefoot habits and the name “Burdwan’s Gandhi”. Bengali newspaper account.",
+    "status": "Referenced in the contributor-supplied revised biography, received 11 October 2026; the underlying source has not been independently rechecked for this update.",
+    "url": "https://www.anandabazar.com/editorial/political-parties-should-not-rename-places-1.1023788",
+    "linkLabel": "Open source"
+  },
+  "sahana-charitabhidhan": {
+    "title": "Bengali Charitabhidhan — Satya Kinkar Sahana Vidyabinod",
+    "kind": "secondary",
+    "label": "Biographical dictionary",
+    "detail": "Bengali Charitabhidhan, “সত্যকিঙ্কর সাহানা, বিদ্যাবিনোদ.” Used for the dates 5 May 1874–7 October 1960, educational milestones and a basic list of writings. Broad priority claims about rice milling have been narrowed to the better-supported Bankura context.",
+    "status": "Source and locator supplied in the public-history biography researched on 10 October 2026; used here with the distinctions between contemporary records, family recollection and later interpretation retained.",
+    "url": "https://www.ebanglalibrary.com/182323/সত্যকিঙ্কর-সাহানা-বিদ্য/",
+    "linkLabel": "Open source"
+  },
+  "sahana-bangsha-parichay-1932": {
+    "title": "Jnanendranath Kumar, Bangsha-Parichay, vol. XII (1932), the Sahana family of Shuripushkarini",
+    "kind": "historical",
+    "label": "Family chronicle",
+    "detail": "Printed pp. 77–106. Family business: scans 113–114, 118–119 and 123–126; mother and harvest meal: 119–122; portrait: 127; education: 130–131; litigation: 132; Ananda Kutir and civic work: 133; wife: 134–135; children and relatives: 136 and 139. A sympathetic contemporary family account. Its 1932 list names six sons and three daughters; Broomfield later gives four daughters, leaving the lifetime total unresolved.",
+    "status": "Source and locator supplied in the public-history biography researched on 10 October 2026; used here with the distinctions between contemporary records, family recollection and later interpretation retained. Wikisource pages are marked uncorrected; the supplied biography attributes their recollections and does not adopt remote royal or military traditions as established genealogy.",
+    "url": "https://bn.wikisource.org/wiki/পাতা:বংশ-পরিচয়_(দ্বাদশ_খণ্ড)_-_জ্ঞানেন্দ্রনাথ_কুমার.pdf/১২৭",
+    "linkLabel": "Open source"
+  },
+  "sahana-privy-council-1927": {
+    "title": "Sunder Mull v. Satya Kinker Sahana — Privy Council, 6 December 1927",
+    "kind": "historical",
+    "label": "Court judgment",
+    "detail": "Sunder Mull v. Satya Kinker Sahana, Privy Council, 6 December 1927, reported at (1928) 30 Bombay Law Reporter 793, especially paragraphs 1–3, 7–9 and 22. The online heading labels the report “Bombay High Court,” but the judgment is an appeal to the Privy Council. The profile follows the judgment’s figures and outcome rather than a later estimate of the total recovery.",
+    "status": "Source and locator supplied in the public-history biography researched on 10 October 2026; used here with the distinctions between contemporary records, family recollection and later interpretation retained.",
+    "url": "https://indiankanoon.org/doc/190969/",
+    "linkLabel": "Open source"
+  },
+  "sahana-broomfield": {
+    "title": "J. H. Broomfield, Mostly About Bengal — essays on the Sahana family",
+    "kind": "scholarship",
+    "label": "Historical scholarship",
+    "detail": "J. H. Broomfield, Mostly About Bengal, “Four Lives: History as Biography,” pp. 173–180, and “The Rural Parvenu: A Report of Research in Progress,” pp. 243–247. These essays draw upon Sahana family papers and diaries. The former points to election in 1929 and defeat in January 1937; the latter gives 1930 and 1936. The profile therefore uses two Council terms in the 1930s rather than silently resolving the discrepancy. Broomfield’s account of Santal dispossession is attributed to him.",
+    "status": "Source and locator supplied in the public-history biography researched on 10 October 2026; used here with the distinctions between contemporary records, family recollection and later interpretation retained.",
+    "url": "https://www.scribd.com/document/799756053/Dokumen-pub-Mostly-About-Bengal-Essays-in-Modern-South-Asian-History",
+    "linkLabel": "Open source"
+  },
+  "sahana-bibidha-prabandha-1959": {
+    "title": "Satya Kinkar Sahana, Bibidha Prabandha (1959)",
+    "kind": "historical",
+    "label": "Author’s collected essays",
+    "detail": "Satya Kinkar Sahana, Bibidha Prabandha (বিবিধ প্রবন্ধ), first edition, Jyaishtha 1366 BS (1959), Calcutta: Jijnasa/Jiggyasa, on behalf of Pareshbijoy Sahana of Sridhar Prakashani. Front matter and original scanned printed pp. 3–5 and 13–15 were examined. Moni Bagchi assisted with the collection. These retrospective and satirical essays establish the author’s literary presentation of events, not a verbatim diary of youth.",
+    "status": "Source and locator supplied in the public-history biography researched on 10 October 2026; used here with the distinctions between contemporary records, family recollection and later interpretation retained. Complete 126-page scan availability checked on 21 October 2026; page images, not a proofread transcription.",
+    "url": "https://archive.org/details/in.ernet.dli.2015.298085",
+    "linkLabel": "Read full scanned book"
+  },
+  "sahana-works-bibliography": {
+    "title": "Satya Kinkar Sahana — surviving editions and library catalogues",
+    "kind": "institutional",
+    "label": "Bibliographic records",
+    "detail": "Bibliographic checks: the digitised Kalika (1931); Ramakrishna Mission Vidyamandira’s Bengali library list for Kalika, Malika and Juthika; the digitised Aryyashatak (1956); Jahangirnagar University’s catalogue record for Mahabharate Anushilantattva, second edition, 1366 BS (1959–60); Cotton University’s Dr Suryya Kumar Bhuyan Library for Sakuntala Rahasya, first edition, Calcutta: Jijnasa, 1959. The Charitabhidhan title Shakuntala Prasanga has not been assumed to identify a separate publication. Titles in the table are attested; a full critical reading of every listed book is not claimed.",
+    "status": "Source and locator supplied in the public-history biography researched on 10 October 2026; used here with the distinctions between contemporary records, family recollection and later interpretation retained.",
+    "url": "https://bn.wikisource.org/wiki/লেখক:সত্যকিঙ্কর_সাহানা",
+    "linkLabel": "Open source"
+  },
+  "sahana-kalika-1931": {
+    "title": "Satya Kinkar Sahana, Kalika (কলিকা, 1931)",
+    "kind": "historical",
+    "label": "Poetry · full scan",
+    "detail": "Kalika, Satya Kinkar Sahana, Calcutta, 1931. Wikisource hosts the complete 144-page PDF scan.",
+    "status": "Title, authorship, year and scan availability checked on 21 October 2026. Page images, not a proofread transcription; a full critical reading is not claimed.",
+    "url": "https://bn.wikisource.org/wiki/চিত্র:কলিকা_-_সত্যকিঙ্কর_সাহানা_(১৯৩১).pdf",
+    "linkLabel": "Read full scanned book"
+  },
+  "sahana-juthika-1932": {
+    "title": "Satya Kinkar Sahana, Juthika (যূথিকা, first edition, 1932)",
+    "kind": "historical",
+    "label": "Poetry · full scan",
+    "detail": "Juthika, first edition, Satya Kinkar Sahana Vidyabinod, Calcutta: Girindranath Mitra, 1932. Internet Archive / Digital Library of India scan, 88 pages.",
+    "status": "Title, authorship, edition, year and scan availability checked on 21 October 2026. Page images, not a proofread transcription; a full critical reading is not claimed.",
+    "url": "https://archive.org/details/in.ernet.dli.2015.302348",
+    "linkLabel": "Read full scanned book"
+  },
+  "sahana-aryyashatak-1956": {
+    "title": "Satya Kinkar Sahana, Aryyashatak (আর্য্যশতক, 1956)",
+    "kind": "historical",
+    "label": "Literary work · full scan",
+    "detail": "Aryyashatak (catalogued as Arjyashatak), Satya Kinkar Sahana Vidyabinod, Calcutta: Sarat Publishing House, 1956. Internet Archive / Digital Library of India scan, 108 pages.",
+    "status": "Title, authorship, year and scan availability checked on 21 October 2026. Page images, not a proofread transcription; a full critical reading is not claimed.",
+    "url": "https://archive.org/details/in.ernet.dli.2015.301727",
+    "linkLabel": "Read full scanned book"
+  },
+  "sahana-mahabharate-catalogue": {
+    "title": "Satya Kinkar Sahana, Mahabharate Anushilantattva (মহাভারতে অনুশীলন-তত্ত্ব), second edition",
+    "kind": "institutional",
+    "label": "Library catalogue only",
+    "detail": "Jahangirnagar University Library record 90826: Satya Kinkar Sahana, Mahabharate Anushilantattva, second edition, Calcutta: Jijnasa, 1366 BS (1959–60). This is a later edition, not the 1930 edition mentioned in the biography.",
+    "status": "Title, authorship and edition checked in the library record on 21 October 2026. Catalogue record only; no full online scan has been verified.",
+    "url": "https://vufind.juniv.edu/Record/90826/Details",
+    "linkLabel": "View catalogue record only"
+  },
+  "sahana-council-august-1932": {
+    "title": "Bengal Legislative Council, 2–3 August 1932 — medical school and linguistic boundaries",
+    "kind": "historical",
+    "label": "Legislative proceedings",
+    "detail": "Bengal Legislative Council, Official Proceedings, vol. XXXIX, no. 1, 1–5 August 1932: 2 August, printed pp. 112–119 (medical school), and 3 August, pp. 138–139 (linguistic boundaries). The relevant original page images were checked. The medical case is Sahana’s account in a speech, not a claim that he witnessed the operation. The resolution’s withdrawal does not establish a disbursed grant.",
+    "status": "Source and locator supplied in the public-history biography researched on 10 October 2026; used here with the distinctions between contemporary records, family recollection and later interpretation retained.",
+    "url": "https://archive.org/download/westbengallegislature.council.555.2_555__1932__vol_XXXIX__no_1/2_555__1932__vol_XXXIX__no_1.pdf",
+    "linkLabel": "Open source"
+  },
+  "sahana-council-january-1934": {
+    "title": "Bengal Legislative Council, 10 and 22 January 1934 — arms bill and medical school",
+    "kind": "historical",
+    "label": "Legislative proceedings",
+    "detail": "Bengal Legislative Council, Official Proceedings, vol. XLIII, no. 1: 10 January 1934, printed pp. 83–84 (Bengal Smuggling of Arms Bill); 22 January, pp. 108–109 (medical-school follow-up). Original scans checked. The latter explicitly refers back to the 2 August 1932 proceedings.",
+    "status": "Source and locator supplied in the public-history biography researched on 10 October 2026; used here with the distinctions between contemporary records, family recollection and later interpretation retained.",
+    "url": "https://archive.org/download/westbengallegislature.council.549.2_549__1934__vol_XLIII__no_1/2_549__1934__vol_XLIII__no_1.pdf",
+    "linkLabel": "Open source"
+  },
+  "sahana-council-quinine-irrigation-1934": {
+    "title": "Bengal Legislative Council, 31 January 1934 — quinine and irrigation",
+    "kind": "historical",
+    "label": "Legislative proceedings",
+    "detail": "Bengal Legislative Council, Official Proceedings, vol. XLIII, no. 2: 31 January 1934, printed pp. 17–19 (quinine) and 21–22 (irrigation). Original scans checked. These questions document advocacy and the replies, without establishing additional expenditure or a completed project.",
+    "status": "Source and locator supplied in the public-history biography researched on 10 October 2026; used here with the distinctions between contemporary records, family recollection and later interpretation retained.",
+    "url": "https://archive.org/download/westbengallegislature.council.559.2_559__1934__vol_XLIII__no_2/2_559__1934__vol_XLIII__no_2.pdf",
+    "linkLabel": "Open source"
+  },
+  "sahana-probasi-chandidas": {
+    "title": "Probasi, vol. 35, part 2 — Chandidas research, scans 930–931",
+    "kind": "historical",
+    "label": "Contemporary periodical",
+    "detail": "Probasi (প্রবাসী), vol. 35, part 2, scans 930–931: Suniti Kumar Chatterji’s account and Jogeshchandra Ray’s reply concerning Chandidas research. The reply dates the joint Chhatna essay to 1333 BS and corrects the Bankura visit to Magh 1339 BS. The profile avoids a precise Gregorian day and uses the source’s account of the unsuccessful manuscript search.",
+    "status": "Source and locator supplied in the public-history biography researched on 10 October 2026; used here with the distinctions between contemporary records, family recollection and later interpretation retained.",
+    "url": "https://bn.wikisource.org/wiki/পাতা:প্রবাসী_(পঞ্চত্রিংশ_ভাগ,_দ্বিতীয়_খণ্ড).djvu/৯৩০",
+    "linkLabel": "Open source"
+  },
+  "sahana-probasi-smritimandir": {
+    "title": "Probasi, vol. 39, part 2 — proposed Chandidas Smritimandir, scan 798",
+    "kind": "historical",
+    "label": "Contemporary periodical",
+    "detail": "Probasi, vol. 39, part 2, scan 798: report of Bankura Sahitya Parishad and the proposed Chandidas Smritimandir, including Sahana’s Rs 1,001 pledge. The report occurs in the 1940 context; no precise issue-month or completed building is claimed here.",
+    "status": "Source and locator supplied in the public-history biography researched on 10 October 2026; used here with the distinctions between contemporary records, family recollection and later interpretation retained.",
+    "url": "https://bn.wikisource.org/wiki/পাতা:প্রবাসী_(ঊনচত্বারিংশ_ভাগ,_দ্বিতীয়_খণ্ড).djvu/৭৯৮",
+    "linkLabel": "Open source"
+  },
+  "sahana-council-september-1932": {
+    "title": "Bengal Legislative Council, 5–6 September 1932 — safeguards and collective fines",
+    "kind": "historical",
+    "label": "Legislative proceedings",
+    "detail": "Bengal Legislative Council, Official Proceedings, vol. XXXIX, no. 6: 6 September 1932, printed pp. 125–127, on clause 14(2) of the Bengal Suppression of Terrorist Outrages Bill. Original scans checked. His amendment concerning exemption from collective fines was lost. On 5 September, pp. 61–62, he also sought protection against compulsory demands incompatible with an individual’s physical fitness, withdrawing his proposal when another member’s broader safeguard was accepted.",
+    "status": "Source and locator supplied in the public-history biography researched on 10 October 2026; used here with the distinctions between contemporary records, family recollection and later interpretation retained.",
+    "url": "https://archive.org/download/westbengallegislature.council.556.2_556__1932__vol_XXXIX__no_6/2_556__1932__vol_XXXIX__no_6.pdf",
+    "linkLabel": "Open source"
+  },
+  "sahana-national-library-diaries": {
+    "title": "National Library, Kolkata — Satya Kinkar Sahana manuscript diaries",
+    "kind": "institutional",
+    "label": "Manuscript catalogue",
+    "detail": "National Library, Kolkata, manuscript catalogue, PDF pp. 257–264: 36 English personal diaries of Satya Kinkar Sahana, selected years 1915–1960; references R 30/1–R 30/36, accession numbers G 24962–G 24997, accessioned 20 December 1973. This is a verified catalogue holding, not a digital edition of the diaries or a holding record for Pareshbijoy’s printed biography.",
+    "status": "Source and locator supplied in the public-history biography researched on 10 October 2026; used here with the distinctions between contemporary records, family recollection and later interpretation retained.",
+    "url": "https://nationallibrary.gov.in/files/contents/manuscripts.pdf#page=257",
+    "linkLabel": "Open source"
+  },
+  "shakti-ashim-rediff-2012": {
+    "title": "Ashim Samanta on growing up around his father’s films. Shaikh Ayaz. Rediff. 26 June 2012.",
+    "kind": "primary",
+    "label": "Interview or named recollection",
+    "detail": "Source 1 in the supplied Shakti Samanta public-history profile. Ashim Samanta on growing up around his father’s films. Shaikh Ayaz. Rediff. 26 June 2012.",
+    "status": "Reference transcribed from the supplied bilingual biography. Except where stated, the linked original was not independently checked for this update; family recollections remain attributed in the article.",
+    "url": "https://www.rediff.com/movies/slide-show/slide-show-1-shakti-samanta-the-director-with-a-keen-ear-for-music/20120626.htm"
+  },
+  "shakti-tuli-profile": {
+    "title": "Shakti Samanta biography and filmography. Tuli Research Centre for India Studies.",
+    "kind": "institutional",
+    "label": "Institutional film record",
+    "detail": "Source 2 in the supplied Shakti Samanta public-history profile. Shakti Samanta biography and filmography. Tuli Research Centre for India Studies.",
+    "status": "Institutional biography consulted on 11 October 2026 for its identification and portrait source context; the supplied profile provides the expanded life narrative.",
+    "url": "https://www.tuliresearchcentre.org/shakti-samanta"
+  },
+  "shakti-bokra-house-2025": {
+    "title": "Bengali local report on the Samanta family house at Bokra. The Wall. 28 August 2025.",
+    "kind": "secondary",
+    "label": "Published historical reporting",
+    "detail": "Source 3 in the supplied Shakti Samanta public-history profile. Bengali local report on the Samanta family house at Bokra. The Wall. 28 August 2025.",
+    "status": "Reference transcribed from the supplied bilingual biography. Except where stated, the linked original was not independently checked for this update; family recollections remain attributed in the article.",
+    "url": "https://www.thewall.in/west-bengal/many-people-still-flock-to-bokra-village-in-burdwan-to-see-the-house-of-shakti-samantar/tid/171193"
+  },
+  "shakti-ashim-amanush-2026": {
+    "title": "Ashim Samanta interview on family origins and Amanush. Fenil Seta. Bollywood Hungama. 27 January 2026.",
+    "kind": "primary",
+    "label": "Interview or named recollection",
+    "detail": "Source 5 in the supplied Shakti Samanta public-history profile. Ashim Samanta interview on family origins and Amanush. Fenil Seta. Bollywood Hungama. 27 January 2026.",
+    "status": "Reference transcribed from the supplied bilingual biography. Except where stated, the linked original was not independently checked for this update; family recollections remain attributed in the article.",
+    "url": "https://www.bollywoodhungama.com/news/features/100-years-shakti-samanta-exclusive-3-generators-deep-freezers-american-style-commodes-ashim-samanta-reveals-premium-mini-town-built-sunderbans-amanush-shoot-al/"
+  },
+  "shakti-centenary-scroll-2026": {
+    "title": "Ashim Samanta remembers his father in his centenary year. Nandini Ramnath. Scroll. 13 January 2026.",
+    "kind": "primary",
+    "label": "Interview or named recollection",
+    "detail": "Source 6 in the supplied Shakti Samanta public-history profile. Ashim Samanta remembers his father in his centenary year. Nandini Ramnath. Scroll. 13 January 2026.",
+    "status": "Reference transcribed from the supplied bilingual biography. Except where stated, the linked original was not independently checked for this update; family recollections remain attributed in the article.",
+    "url": "https://scroll.in/reel/1089952/shakti-samanta-centenary-there-wasnt-a-moment-when-he-wasnt-thinking-of-films"
+  },
+  "shakti-ashim-east-india-2022": {
+    "title": "The Magic of Shakti Samanta. Sid Ghosh. East India Story. January 2022.",
+    "kind": "primary",
+    "label": "Interview or named recollection",
+    "detail": "Source 7 in the supplied Shakti Samanta public-history profile. The Magic of Shakti Samanta. Sid Ghosh. East India Story. January 2022.",
+    "status": "Reference transcribed from the supplied bilingual biography. Except where stated, the linked original was not independently checked for this update; family recollections remain attributed in the article.",
+    "url": "https://eastindiastory.com/the-magic-of-shakti-samanta/"
+  },
+  "shakti-upperstall-2016": {
+    "title": "Shakti Samanta on teaching and his early career. Shoma A Chatterji. Upperstall. 9 April 2016.",
+    "kind": "secondary",
+    "label": "Published historical reporting",
+    "detail": "Source 8 in the supplied Shakti Samanta public-history profile. Shakti Samanta on teaching and his early career. Shoma A Chatterji. Upperstall. 9 April 2016.",
+    "status": "Reference transcribed from the supplied bilingual biography. Except where stated, the linked original was not independently checked for this update; family recollections remain attributed in the article.",
+    "url": "https://upperstall.com/profile/shakti-samanta/"
+  },
+  "shakti-bahu-memory": {
+    "title": "A Chance a Neighbour and a Film. Testimony of Sundeep Pahwa. Cinemaazi Cinema Memory Project.",
+    "kind": "primary",
+    "label": "Interview or named recollection",
+    "detail": "Source 9 in the supplied Shakti Samanta public-history profile. A Chance a Neighbour and a Film. Testimony of Sundeep Pahwa. Cinemaazi Cinema Memory Project.",
+    "status": "Reference transcribed from the supplied bilingual biography. Except where stated, the linked original was not independently checked for this update; family recollections remain attributed in the article.",
+    "url": "https://www.cinemaazi.com/cinema-memory-project/a-chance-a-neighbour-and-a-film-the-story-behind-shakti-samanta-s-debut"
+  },
+  "shakti-silhouette-2016": {
+    "title": "Conversations with Shakti Samanta at IFFI in 1990. Peeyush Sharma. Silhouette. Published 9 April 2016.",
+    "kind": "primary",
+    "label": "Interview or named recollection",
+    "detail": "Source 11 in the supplied Shakti Samanta public-history profile. Conversations with Shakti Samanta at IFFI in 1990. Peeyush Sharma. Silhouette. Published 9 April 2016.",
+    "status": "Reference transcribed from the supplied bilingual biography. Except where stated, the linked original was not independently checked for this update; family recollections remain attributed in the article.",
+    "url": "https://learningandcreativity.com/silhouette/shakti-samanta-interview/"
+  },
+  "shakti-sharmila-aradhana-2025": {
+    "title": "Sharmila Tagore recalls making Aradhana. Subhash K Jha. Rediff. 6 March 2025.",
+    "kind": "primary",
+    "label": "Interview or named recollection",
+    "detail": "Source 12 in the supplied Shakti Samanta public-history profile. Sharmila Tagore recalls making Aradhana. Subhash K Jha. Rediff. 6 March 2025.",
+    "status": "Reference transcribed from the supplied bilingual biography. Except where stated, the linked original was not independently checked for this update; family recollections remain attributed in the article.",
+    "url": "https://www.rediff.com/movies/report/-after-aradhana-people-took-me-seriously/20250306.htm"
+  },
+  "shakti-aradhana-film": {
+    "title": "Aradhana film record. Indiancine.ma.",
+    "kind": "reference",
+    "label": "Biographical or film reference",
+    "detail": "Source 13 in the supplied Shakti Samanta public-history profile. Aradhana film record. Indiancine.ma.",
+    "status": "Reference transcribed from the supplied bilingual biography. Except where stated, the linked original was not independently checked for this update; family recollections remain attributed in the article.",
+    "url": "https://indiancine.ma/NFW/documents"
+  },
+  "shakti-kati-patang-map": {
+    "title": "Kati Patang poster and film credits. Museum of Art and Photography via Google Arts and Culture.",
+    "kind": "institutional",
+    "label": "Institutional film record",
+    "detail": "Source 14 in the supplied Shakti Samanta public-history profile. Kati Patang poster and film credits. Museum of Art and Photography via Google Arts and Culture.",
+    "status": "Reference transcribed from the supplied bilingual biography. Except where stated, the linked original was not independently checked for this update; family recollections remain attributed in the article.",
+    "url": "https://artsandculture.google.com/asset/film-poster-for-kati-patang-unknown/wQEnHwC9dUnCZg"
+  },
+  "shakti-amar-prem-film": {
+    "title": "Amar Prem film record. Indiancine.ma.",
+    "kind": "reference",
+    "label": "Biographical or film reference",
+    "detail": "Source 15 in the supplied Shakti Samanta public-history profile. Amar Prem film record. Indiancine.ma.",
+    "status": "Reference transcribed from the supplied bilingual biography. Except where stated, the linked original was not independently checked for this update; family recollections remain attributed in the article.",
+    "url": "https://indiancine.ma/OFT/info"
+  },
+  "shakti-amanush-bengali": {
+    "title": "Amanush Bengali release record. Bengal Film Archive.",
+    "kind": "institutional",
+    "label": "Institutional film record",
+    "detail": "Source 16 in the supplied Shakti Samanta public-history profile. Amanush Bengali release record. Bengal Film Archive.",
+    "status": "Reference transcribed from the supplied bilingual biography. Except where stated, the linked original was not independently checked for this update; family recollections remain attributed in the article.",
+    "url": "https://www.bengalfilmarchive.com/filmography-details.php?t=MTI4MQ%3D%3D"
+  },
+  "shakti-amanush-robbar-2026": {
+    "title": "Ashim Samanta Bengali memoir of making and releasing Amanush. Ashim Samanta. Robbar Sangbad Pratidin. 9 April 2026.",
+    "kind": "primary",
+    "label": "Interview or named recollection",
+    "detail": "Source 17 in the supplied Shakti Samanta public-history profile. Ashim Samanta Bengali memoir of making and releasing Amanush. Ashim Samanta. Robbar Sangbad Pratidin. 9 April 2026.",
+    "status": "Reference transcribed from the supplied bilingual biography. Except where stated, the linked original was not independently checked for this update; family recollections remain attributed in the article.",
+    "url": "https://robbar.in/mixed-bag/shakti-samanta-and-uttam-kumar-in-amanush-movie/pid/40595/"
+  },
+  "shakti-ananda-ashram-film": {
+    "title": "Ananda Ashram release record and credits. Bengal Film Archive.",
+    "kind": "institutional",
+    "label": "Institutional film record",
+    "detail": "Source 18 in the supplied Shakti Samanta public-history profile. Ananda Ashram release record and credits. Bengal Film Archive.",
+    "status": "Reference transcribed from the supplied bilingual biography. Except where stated, the linked original was not independently checked for this update; family recollections remain attributed in the article.",
+    "url": "https://www.bengalfilmarchive.com/filmography-details.php?t=MTM2NA%3D%3D"
+  },
+  "shakti-anusandhan-film": {
+    "title": "Anusandhan release record and credits. Bengal Film Archive.",
+    "kind": "institutional",
+    "label": "Institutional film record",
+    "detail": "Source 19 in the supplied Shakti Samanta public-history profile. Anusandhan release record and credits. Bengal Film Archive.",
+    "status": "Reference transcribed from the supplied bilingual biography. Except where stated, the linked original was not independently checked for this update; family recollections remain attributed in the article.",
+    "url": "https://www.bengalfilmarchive.com/filmography-details.php?t=MTQ5OQ%3D%3D"
+  },
+  "shakti-anyay-abichar-film": {
+    "title": "Anyay Abichar release record and credits. Bengal Film Archive.",
+    "kind": "institutional",
+    "label": "Institutional film record",
+    "detail": "Source 20 in the supplied Shakti Samanta public-history profile. Anyay Abichar release record and credits. Bengal Film Archive.",
+    "status": "Reference transcribed from the supplied bilingual biography. Except where stated, the linked original was not independently checked for this update; family recollections remain attributed in the article.",
+    "url": "https://www.bengalfilmarchive.com/filmography-details.php?t=MTY0NQ%3D%3D"
+  },
+  "shakti-anyay-coproduction": {
+    "title": "Anyay Abichar and its India Bangladesh co-production. Cinemaazi.",
+    "kind": "reference",
+    "label": "Biographical or film reference",
+    "detail": "Source 21 in the supplied Shakti Samanta public-history profile. Anyay Abichar and its India Bangladesh co-production. Cinemaazi.",
+    "status": "Reference transcribed from the supplied bilingual biography. Except where stated, the linked original was not independently checked for this update; family recollections remain attributed in the article.",
+    "url": "https://www.cinemaazi.com/film/anyay-abichar-1985"
+  },
+  "shakti-cinemaazi-profile": {
+    "title": "Shakti Samanta biographical and family record. Cinemaazi.",
+    "kind": "reference",
+    "label": "Biographical or film reference",
+    "detail": "Source 22 in the supplied Shakti Samanta public-history profile. Shakti Samanta biographical and family record. Cinemaazi.",
+    "status": "Biographical page consulted on 11 October 2026. Header confirms dates, wife Nilima, and sons Ashim and Samir. Film dates follow the dedicated film records cited in the supplied profile, rather than this biography’s inconsistent film years.",
+    "url": "https://cinemaazi.com/people/shakti-samanta"
+  },
+  "shakti-aditya-2012": {
+    "title": "Aditya Samanta remembers his grandfather’s encouragement. Press Trust of India. NDTV. 15 July 2012.",
+    "kind": "primary",
+    "label": "Interview or named recollection",
+    "detail": "Source 23 in the supplied Shakti Samanta public-history profile. Aditya Samanta remembers his grandfather’s encouragement. Press Trust of India. NDTV. 15 July 2012.",
+    "status": "Reference transcribed from the supplied bilingual biography. Except where stated, the linked original was not independently checked for this update; family recollections remain attributed in the article.",
+    "url": "https://www.ndtv.com/entertainment/shakti-samantas-grandson-is-all-set-for-bollywood-626493"
+  },
+  "shakti-notunpalli-2025": {
+    "title": "How Bollywood brought Bengal’s festival spirit to Mumbai. Roshmila Bhattacharya. Free Press Journal. 29 September 2025.",
+    "kind": "secondary",
+    "label": "Published historical reporting",
+    "detail": "Source 24 in the supplied Shakti Samanta public-history profile. How Bollywood brought Bengal’s festival spirit to Mumbai. Roshmila Bhattacharya. Free Press Journal. 29 September 2025.",
+    "status": "Reference transcribed from the supplied bilingual biography. Except where stated, the linked original was not independently checked for this update; family recollections remain attributed in the article.",
+    "url": "https://www.freepressjournal.in/weekend/durga-puja-2025-how-bollywood-brought-bengals-festival-spirit-to-mumbai"
+  },
+  "shakti-notunpalli-2014": {
+    "title": "Boro Pujo Bengali report on Mumbai Durga Pujas. Parmita Mukhopadhyay and Milan Mukhopadhyay. Anandabazar. 28 September 2014.",
+    "kind": "secondary",
+    "label": "Published historical reporting",
+    "detail": "Source 25 in the supplied Shakti Samanta public-history profile. Boro Pujo Bengali report on Mumbai Durga Pujas. Parmita Mukhopadhyay and Milan Mukhopadhyay. Anandabazar. 28 September 2014.",
+    "status": "Reference transcribed from the supplied bilingual biography. Except where stated, the linked original was not independently checked for this update; family recollections remain attributed in the article.",
+    "url": "https://www.anandabazar.com/india/%E0%A6%AC%E0%A7%9C-%E0%A6%AA-%E0%A6%9C-1.72991"
+  },
+  "shakti-notunpalli-2013": {
+    "title": "Suburbs come alive with pujas. Bella Jaisinghani. Times of India. 12 October 2013.",
+    "kind": "secondary",
+    "label": "Published historical reporting",
+    "detail": "Source 26 in the supplied Shakti Samanta public-history profile. Suburbs come alive with pujas. Bella Jaisinghani. Times of India. 12 October 2013.",
+    "status": "Reference transcribed from the supplied bilingual biography. Except where stated, the linked original was not independently checked for this update; family recollections remain attributed in the article.",
+    "url": "https://timesofindia.indiatimes.com/city/mumbai/suburbs-come-alive-with-pujas/articleshow/23997135.cms"
+  },
+  "shakti-prabhat-roy-2025": {
+    "title": "Prabhat Roy Bengali memoir of his teacher Shakti Samanta. Prabhat Roy. Anandabazar. 13 January 2025.",
+    "kind": "primary",
+    "label": "Interview or named recollection",
+    "detail": "Source 27 in the supplied Shakti Samanta public-history profile. Prabhat Roy Bengali memoir of his teacher Shakti Samanta. Prabhat Roy. Anandabazar. 13 January 2025.",
+    "status": "Reference transcribed from the supplied bilingual biography. Except where stated, the linked original was not independently checked for this update; family recollections remain attributed in the article.",
+    "url": "https://www.anandabazar.com/entertainment/bengali-director-prabhat-roy-remembers-shakti-samanta-on-his-98th-birthday-dgtls/cid/1574318"
+  },
+  "shakti-imppa": {
+    "title": "Past presidents. Indian Motion Picture Producers Association.",
+    "kind": "institutional",
+    "label": "Institutional film record",
+    "detail": "Source 28 in the supplied Shakti Samanta public-history profile. Past presidents. Indian Motion Picture Producers Association.",
+    "status": "Reference transcribed from the supplied bilingual biography. Except where stated, the linked original was not independently checked for this update; family recollections remain attributed in the article.",
+    "url": "https://imppa.info/imppaPastPresident.html"
+  },
+  "shakti-srfti": {
+    "title": "Previous chairmen. Satyajit Ray Film and Television Institute.",
+    "kind": "institutional",
+    "label": "Institutional film record",
+    "detail": "Source 30 in the supplied Shakti Samanta public-history profile. Previous chairmen. Satyajit Ray Film and Television Institute.",
+    "status": "Reference transcribed from the supplied bilingual biography. Except where stated, the linked original was not independently checked for this update; family recollections remain attributed in the article.",
+    "url": "https://srfti.ac.in/leadership/"
+  },
+  "shakti-filmfare": {
+    "title": "Historical Best Film award winners. Filmfare.",
+    "kind": "institutional",
+    "label": "Institutional film record",
+    "detail": "Source 31 in the supplied Shakti Samanta public-history profile. Historical Best Film award winners. Filmfare.",
+    "status": "Reference transcribed from the supplied bilingual biography. Except where stated, the linked original was not independently checked for this update; family recollections remain attributed in the article.",
+    "url": "https://www.filmfare.com/awards/filmfare-awards/winners"
+  },
+  "benoy-culture-profile": {
+    "title": "Sujatak Kumar, Benoy Krishna Choudhury, Ministry of Culture.",
+    "kind": "institutional",
+    "label": "Government biographical profile",
+    "detail": "Family, Sutra and Sihi villages, parents, and school education.",
+    "status": "Reference and URL carried over from the supplied bilingual biography. The linked original was not independently rechecked during this update.",
+    "url": "https://cmsadmin.amritmahotsav.nic.in/district-reopsitory-detail.htm?26545="
+  },
+  "benoy-family-commemorative": {
+    "title": "Comrade, biographical tribute to Benoy Krishna Choudhury, Facebook.",
+    "kind": "community",
+    "label": "Commemorative social-media biography",
+    "detail": "A later tribute gives 165 bighas as the joint family holding. The biography explicitly treats that figure as unconfirmed and does not assign it to Benoy personally.",
+    "status": "Reference and URL carried over from the supplied bilingual biography. The linked original was not independently rechecked during this update. The family-holding figure remains unverified.",
+    "url": "https://www.facebook.com/comradevoix/posts/comrade-benoy-krishna-choudhury-the-illustrious-leader-of-the-left-and-democrati/5288252324539053/"
+  },
+  "benoy-saroj-remembrance": {
+    "title": "সৌভিক ঘোষ, যে উত্তরাধিকার আজও অনুসরণযোগ্য, ২০২৫।",
+    "kind": "historical",
+    "label": "Political and personal remembrance",
+    "detail": "Friendship with Saroj Mukherjee, shared poetry, and contact with communist organisers.",
+    "status": "Reference and URL carried over from the supplied bilingual biography. The linked original was not independently rechecked during this update.",
+    "url": "https://cpimwestbengal.org/article/two-comrades-a-memoir/17869"
+  },
+  "benoy-ballavpur-women": {
+    "title": "কাকলী মুখার্জী, ঔপনিবেশিক আমলে শ্রমিক আন্দোলন থেকে নারী মুক্তির পথে বর্ধমান জেলা, ইতিহাস আড্ডা, ২০২২।",
+    "kind": "secondary",
+    "label": "Local labour history",
+    "detail": "Ballavpur paper-mill struggle of 1938–39, the arrest of organisers and women’s volunteer work.",
+    "status": "Reference and URL carried over from the supplied bilingual biography. The linked original was not independently rechecked during this update.",
+    "url": "https://www.itihasadda.in/women-liberation-burdwan-district/"
+  },
+  "benoy-umar-classes": {
+    "title": "বদরুদ্দীন উমর, কমরেড মুজফ্ফর আহমদের কথা, মার্কসবাদী পথ, ২০২৩।",
+    "kind": "historical",
+    "label": "Named participant’s recollection",
+    "detail": "Badruddin Umar’s memory of political classes in Burdwan taught by Benoy Choudhury, Hare Krishna Konar and Syed Shahedullah.",
+    "status": "Reference and URL carried over from the supplied bilingual biography. The linked original was not independently rechecked during this update.",
+    "url": "https://marxbadipath.org/article/Comrade-Muzaffar-Ahmad/219"
+  },
+  "benoy-election-1952": {
+    "title": "Elections.in, West Bengal Assembly results for the 1951–52 election.",
+    "kind": "reference",
+    "label": "Election-results compilation",
+    "detail": "Burdwan result: 11,439 for Choudhury and 9,477 for Uday Chand Mahtab, a margin of 1,962. Secondary compilation rather than the original Election Commission return.",
+    "status": "Reference and URL carried over from the supplied bilingual biography. The linked original was not independently rechecked during this update.",
+    "url": "https://elections.in/west-bengal/assembly-constituencies/1951-election-results.html"
+  },
+  "benoy-barga-economics": {
+    "title": "Banerjee, Gertler and Ghatak, The Economics of Agrarian Reform, 1998.",
+    "kind": "scholarship",
+    "label": "Agrarian-economics research",
+    "detail": "Operation Barga’s 1978 introduction, sharecropper registration, village camps and implementation.",
+    "status": "Reference and URL carried over from the supplied bilingual biography. The linked original was not independently rechecked during this update.",
+    "url": "https://personal.lse.ac.uk/ghatak/barga_old.pdf"
+  },
+  "benoy-kurukshetra-1995": {
+    "title": "Kurukshetra, October 1995, Government of India Publications Division.",
+    "kind": "institutional",
+    "label": "Government rural-development journal",
+    "detail": "Distinction between tenancy registration and ownership through redistribution; land recovery and crop-sharing provisions discussed in connection with Choudhury’s March 1978 budget speech.",
+    "status": "Reference and URL carried over from the supplied bilingual biography. The linked original was not independently rechecked during this update.",
+    "url": "https://www.publicationsdivision.nic.in/journals/Journalarchives/Kurukshetra/Kurukshetra-English/1995/October/Kurukshetra_1995_October_pdf.pdf"
+  },
+  "benoy-land-reform-2004": {
+    "title": "Ajitava Raychaudhuri, Lessons from the Land Reform Movement in West Bengal, India, 2004.",
+    "kind": "scholarship",
+    "label": "Land-reform study",
+    "detail": "Statewide registrations reached about 14.7 lakh by 1995 including earlier registrations; study places reform alongside irrigation, inputs and institutions and discusses unresolved questions.",
+    "status": "Reference and URL carried over from the supplied bilingual biography. The linked original was not independently rechecked during this update.",
+    "url": "https://documents1.worldbank.org/curated/en/794571468752714952/pdf/308250IN0West01rty01see0also0307591.pdf"
+  },
+  "benoy-amal-sarkar-remembrance": {
+    "title": "অমল সরকার, বিনয় চৌধুরীকে নিয়ে স্মৃতিচারণ, দ্য ওয়াল, ২০২৪।",
+    "kind": "secondary",
+    "label": "Journalist’s personal remembrance",
+    "detail": "Amal Sarkar’s memories of punctuality, refusal of an inverter funded by government and the 1977–1996 land-reform ministry.",
+    "status": "Reference and URL carried over from the supplied bilingual biography. The linked original was not independently rechecked during this update.",
+    "url": "https://www.thewall.in/magazine/the-wall-special-series-honest-minister-part-6-binay-chowdhury-minister-of-first-left-front-government/tid/84239"
+  },
+  "benoy-liberation-1997": {
+    "title": "The Results of Land Reforms in West Bengal, Liberation, February 1997.",
+    "kind": "historical",
+    "label": "Contemporary partisan report",
+    "detail": "Liberation’s February 1997 account of Choudhury’s criticism concerning contractors and panchayat leadership. The report’s political viewpoint remains attributed.",
+    "status": "Reference and URL carried over from the supplied bilingual biography. The linked original was not independently rechecked during this update.",
+    "url": "https://www.archive.cpiml.org/liberation/year_1997/february/investigation.htm"
+  },
+  "benoy-body-donation-2024": {
+    "title": "শান্তনু ঘোষ, ১১ বছরের সঙ্গীর দেখানো পথেই এনআরএসে প্রবেশ, আনন্দবাজার পত্রিকা, ১০ আগস্ট ২০২৪।",
+    "kind": "secondary",
+    "label": "Newspaper report on body donation",
+    "detail": "Later report identifies Choudhury among political figures whose bodies were donated to NRS for medical education.",
+    "status": "Reference and URL carried over from the supplied bilingual biography. The linked original was not independently rechecked during this update.",
+    "url": "https://www.anandabazar.com/west-bengal/kolkata/like-other-cpim-leaders-anil-biswas-and-prashant-sur-buddhadeb-bhattacharjees-body-was-donated-to-nrs/cid/1537326"
+  },
+  "benoy-my-life-experiences": {
+    "title": "National Book Agency, My Life & Experiences by Binoy Chowdhury, 1999.",
+    "kind": "institutional",
+    "label": "Publisher’s book catalogue",
+    "detail": "Identifies the English memoir My Life & Experiences and its 1999 publication. A catalogue citation, not a claim to have read the memoir.",
+    "status": "Reference and URL carried over from the supplied bilingual biography. The linked original was not independently rechecked during this update.",
+    "url": "https://nbabooks.in/books/My-Life-amp;-Experiences/845"
+  },
+  "benoy-polit-bureau-register": {
+    "title": "CPI(M), historical membership lists of the Polit Bureau.",
+    "kind": "institutional",
+    "label": "Party membership register",
+    "detail": "Historical CPI(M) Polit Bureau membership lists.",
+    "status": "Reference and URL carried over from the supplied bilingual biography. The linked original was not independently rechecked during this update.",
+    "url": "https://cpim.org/members-pb-7th-19th-congress/"
+  },
+  "konar-shahedullah-remembrance": {
+    "title": "সৈয়দ শাহেদুল্লা — হরেকৃষ্ণ কোঙার",
+    "kind": "historical",
+    "label": "Attributed historical account",
+    "detail": "Nandan memorial issue, শ্রাবণ ১৩৮১ (1974); reprinted in a 2015 essay collection and online by Marxbadi Path, 23 July 2023. Bengali memoir by a political colleague. Source for the childhood scene, Bibha, famine administration and the 1946 campaign.",
+    "status": "Reference and reading note supplied with the bilingual public-history profile. The linked original was not independently rechecked during this website update.",
+    "url": "https://marxbadipath.org/article/horekrishna-kongar/213"
+  },
+  "konar-sukanta-remembrance-2021": {
+    "title": "সুকান্ত কোঙার — কমরেড হরেকৃষ্ণ কোঙার স্মরণে",
+    "kind": "historical",
+    "label": "Attributed historical account",
+    "detail": "Deshhitaishee, 6 August 2021. Bengali party remembrance. Birthplace, father, youth, gold anecdote and the attributed saying about peasants. Its stated age at death is inconsistent with its dates. The landownership and wholesale rice market details were supplied by the profile’s contributor on 10 October 2026.",
+    "status": "Reference and reading note supplied with the bilingual public-history profile. The linked original was not independently rechecked during this website update. The landownership and wholesale-rice-market claims are contributor-supplied details, not independently established by the linked remembrance; the article attributes them accordingly. The dates imply age 58 at death.",
+    "url": "https://www.deshhitaishee.net/deshhitaishee/news-list/details/06_august_writeup04.php"
+  },
+  "konar-ashok-mitra-2014": {
+    "title": "অশোক মিত্র — উত্তরপ্রজন্মের অপরাধেই এই বিস্মৃতি",
+    "kind": "historical",
+    "label": "Attributed historical account",
+    "detail": "Anandabazar Patrika, 24 September 2014. Bengali firsthand reminiscence by a sympathetic acquaintance. Family background, cricket visit and Ladejinsky’s interest. The date of the cricket episode is uncertain in the source.",
+    "status": "Reference and reading note supplied with the bilingual public-history profile. The linked original was not independently rechecked during this website update.",
+    "url": "https://www.anandabazar.com/editorial/%E0%A6%89%E0%A6%A4-%E0%A6%A4%E0%A6%B0%E0%A6%AA-%E0%A6%B0%E0%A6%9C%E0%A6%A8-%E0%A6%AE-%E0%A6%B0-%E0%A6%85%E0%A6%AA%E0%A6%B0-%E0%A6%A7-%E0%A6%87-%E0%A6%8F%E0%A6%87-%E0%A6%AC-%E0%A6%B8-%E0%A6%AE-%E0%A6%A4-1.71903"
+  },
+  "konar-bibha-famine-relief": {
+    "title": "মিঠু ফৌজদার প্রামাণিক — ১৯৪৩ এর মন্বন্তর প্রতিরোধে বাংলার নারী",
+    "kind": "scholarship",
+    "label": "Historical or social research",
+    "detail": "Abhikhhep, 31 July 2024. Referenced Bengali historical essay. The Burdwan relief passage cites Benoy Choudhury’s অতীতের কথা কিছু অভিজ্ঞতা, p. 78, in note 30.",
+    "status": "Reference and reading note supplied with the bilingual public-history profile. The linked original was not independently rechecked during this website update.",
+    "url": "https://abhikhhep.com/2024/07/31/1943-er/"
+  },
+  "konar-maharani-obituary": {
+    "title": "প্রয়াত বাম নেত্রী মহারানি কোঙার তিন বার মেমারির বিধায়ক হয়েছিলেন বিনয় পত্নী",
+    "kind": "secondary",
+    "label": "Newspaper reporting",
+    "detail": "Anandabazar Online, 5 January 2024. Reporting on Maharani Konar’s family relationship, women’s organising and legislative career.",
+    "status": "Reference and reading note supplied with the bilingual public-history profile. The linked original was not independently rechecked during this website update.",
+    "url": "https://www.anandabazar.com/west-bengal/cpm-leader-ex-mla-maharani-kongar-died-dgtl/cid/1486627"
+  },
+  "konar-kalna-election-record": {
+    "title": "Kalna Assembly constituency electoral history",
+    "kind": "reference",
+    "label": "Election-results compilation",
+    "detail": "Elections.in, historical results table, updated 4 June 2020. Secondary electoral compilation recording victories in 1957, 1962, 1967, 1969 and 1971. The 1957 constituency returned two members.",
+    "status": "Reference and reading note supplied with the bilingual public-history profile. The linked original was not independently rechecked during this website update.",
+    "url": "https://www.elections.in/west-bengal/assembly-constituencies/kalna.html"
+  },
+  "konar-guha-acquisition-law": {
+    "title": "Abhijit Guha — The Narrative of Land acquisition in West Bengal Assembly 1948 to 1996",
+    "kind": "scholarship",
+    "label": "Historical or social research",
+    "detail": "Author-posted archival research, 27 July 2017. Cites Assembly Proceedings XVII (1957), XLIV (1967) and 50 (1970), without page numbers. The profile’s three acquisition-law episodes rely on Guha’s reading.",
+    "status": "Reference and reading note supplied with the bilingual public-history profile. The linked original was not independently rechecked during this website update.",
+    "url": "https://www.linkedin.com/pulse/narrative-land-acquisition-west-bengal-assembly-1948-1996-guha"
+  },
+  "konar-new-age-bill-1959": {
+    "title": "W Bengal Kisans in Battle for Land Reforms",
+    "kind": "historical",
+    "label": "Attributed historical account",
+    "detail": "New Age, 22 March 1959, p. 15; Calcutta dateline 16 March. The relevant spread is PDF page 8. Contemporary CPI newspaper; the supplied profile records that its original scan was inspected. Reports notice of Konar’s proposed bill and its interim measures.",
+    "status": "Reference and reading note supplied with the bilingual public-history profile. The linked original was not independently rechecked during this website update.",
+    "url": "https://www.marxists.org/subject/india/cpi/new-age/1959/na-7-12.pdf"
+  },
+  "konar-food-movement-1959": {
+    "title": "Sibaji Pratim Basu — The Chronicle of a Forgotten Movement 1959 Food Movement Revisited",
+    "kind": "scholarship",
+    "label": "Historical or social research",
+    "detail": "Mahanirban Calcutta Research Group, Policies and Practices 56, 2012, especially p. 14. Archival study naming Konar among Assembly critics after the food protests; cites September 1959 proceedings.",
+    "status": "Reference and reading note supplied with the bilingual public-history profile. The linked original was not independently rechecked during this website update.",
+    "url": "https://mcrg.ac.in/pp56.pdf"
+  },
+  "konar-nielsen-land-power": {
+    "title": "Kenneth Bo Nielsen — Not on Our Land",
+    "kind": "scholarship",
+    "label": "Historical or social research",
+    "detail": "‘Peasants’ Struggle against Forced Land Acquisition in India’s West Bengal’, in Rights and Legal Empowerment in Eradicating Poverty (2008), especially pp. 224–226. Scholarly account of Konar’s methods and later land occupations, drawing in part on administrator D. Bandyopadhyay.",
+    "status": "Reference and reading note supplied with the bilingual public-history profile. The linked original was not independently rechecked during this website update.",
+    "url": "https://www.researchgate.net/publication/318984032_'Not_on_Our_Land'_Peasants'_Struggle_against_Forced_Land_Acquisition_in_India's_West_Bengal"
+  },
+  "konar-shantigopal-jatra": {
+    "title": "অর্ঘ্য বন্দ্যোপাধ্যায় — বাঙালির লেনিন",
+    "kind": "secondary",
+    "label": "Newspaper reporting",
+    "detail": "Anandabazar Patrika, 19 April 2020. Retrospective Bengali article reporting the Shantigopal jatra anecdote; it supplies no identifiable eyewitness for the remark.",
+    "status": "Reference and reading note supplied with the bilingual public-history profile. The linked original was not independently rechecked during this website update.",
+    "url": "https://www.anandabazar.com/amp/rabibashoriyo/why-bengalis-are-fond-of-vladimir-lenin-1.1138252"
+  },
+  "konar-muzaffar-tribute": {
+    "title": "হরেকৃষ্ণ কোঙার — কাকাবাবুর কথায় যা মনে আসে",
+    "kind": "primary",
+    "label": "Konar’s own political writing",
+    "detail": "Nandan, January 1974; reprinted by Marxbadi Path, 5 August 2024. Konar’s own Bengali tribute to Muzaffar Ahmad. Evidence of the qualities Konar admired, not a memoir of Konar himself.",
+    "status": "Reference and reading note supplied with the bilingual public-history profile. The linked original was not independently rechecked during this website update.",
+    "url": "https://marxbadipath.org/article/kakababur-kothay-jaa-mone-ase/433"
+  },
+  "konar-zsi-prisoner-list": {
+    "title": "B K Tikader and A K Das — Glimpses of Animal Life of Andaman and Nicobar Islands",
+    "kind": "institutional",
+    "label": "Government historical record",
+    "detail": "Zoological Survey of India, Government of India, 1985, historical appendix, printed p. 127; PDF page 139. Includes Harekrishna Konar in the list of Cellular Jail prisoners. It does not establish the detailed chronology of his imprisonment.",
+    "status": "Reference and reading note supplied with the bilingual public-history profile. The linked original was not independently rechecked during this website update.",
+    "url": "https://zsi.gov.in/public/PDFVolumes/spb/012/index.pdf"
+  },
+  "konar-naxalbari-indian-express": {
+    "title": "Naxalbari The Beginning",
+    "kind": "secondary",
+    "label": "Newspaper reporting",
+    "detail": "The Indian Express, 28 June 2009. Retrospective reporting with participants’ and relatives’ accounts. Describes the May 1967 firing and disillusionment with the CPI(M) leadership.",
+    "status": "Reference and reading note supplied with the bilingual public-history profile. The linked original was not independently rechecked during this website update.",
+    "url": "https://indianexpress.com/article/news-archive/print/naxalbari-the-beginning/"
+  },
+  "manohar-first-review": {
+    "kind": "historical",
+    "label": "Scientific archive",
+    "title": "Royal Society — Taylor’s first report on Manohar Ray’s paper (1936)",
+    "detail": "RR/58/71: first report and three accompanying criticism sheets. Taylor did not recommend publication and required modifications; the receipt stamp reads 24 April 1936. He disputed the treatment of earlier work and the omission of angular acceleration from the couple (turning effect).",
+    "status": "Official catalogue and all five scan images inspected. The earlier title on the referee form ends “in rotating fluid”; the final publication uses “in fluids with constant vorticity”. Readable prose and the receipt stamp were checked; crossed-out formulae were not fully transcribed. The criticism concerns the submitted version.",
+    "url": "https://makingscience.royalsociety.org/items/rr_58_71/referees-report-by-geoffrey-ingram-taylor-on-a-paper-motion-of-an-infinite-elliptic-cylinder-in-fluids-with-constant-vorticity-by-manohar-ray"
+  },
+  "manohar-fcc-folio": {
+    "kind": "historical",
+    "label": "College magazine archive",
+    "title": "Forman Christian College — The Folio, vol. 32, no. 1 (October–November 1940)",
+    "detail": "Ewing Memorial Library’s issue catalogue identifies Ray as mathematics professor and notes an illustration with Professor Mathai before p. 1.",
+    "status": "Institutional catalogue text checked; this establishes his position in 1940, not the dates of joining or departure. No photograph reproduced.",
+    "url": "https://fccdigitalarchives.contentdm.oclc.org/digital/collection/folios/id/12753/"
+  },
+  "manohar-hydrostatics": {
+    "kind": "reference",
+    "label": "Library catalogue",
+    "title": "Manohar Ray — A Text Book of Hydrostatics for B.A. and B.Sc. Students (1966)",
+    "detail": "Open Library OL9893M: fifth revised and enlarged edition, Delhi: Premier Publishing Company, 224 pages; LCCN sa66007468.",
+    "status": "Bibliographic record checked; its listed sources include Library of Congress MARC metadata. Book text and circulation figures not examined.",
+    "url": "https://openlibrary.org/books/OL9893M/A_text_book_of_hydrostatics_for_B.A._and_B.Sc._students"
+  },
+  "manohar-ratan": {
+    "kind": "institutional",
+    "label": "Publisher catalogue",
+    "title": "Ratan Prakashan Mandir — Dr. Manohar Ray, Ganit Grade 10",
+    "detail": "Product and author note; related Class 9 title. Catalogue checked 11 October 2026.",
+    "status": "Publisher’s claims about a Calcutta D.Sc. and Agra University registrarship remain attributed; university records are needed for confirmation and dates. Later editions were not compared.",
+    "url": "https://www.ratanprakashan.com/?product=ganit-grade-10"
+  },
+  "food-posto-2019": {
+    "title": "The Wall, “ধরাছোঁয়ার বাইরে পোস্ত, তাই তিল আঁকড়ে বর্ধমানের মানুষ” (27 August 2019)",
+    "kind": "secondary",
+    "label": "Regional food reporting",
+    "detail": "Reports rural Bardhaman’s posto dishes, explicitly referring to its Ugra Kshatriya or Aguri population; discusses price increases, sesame-paste substitutions and wedding catering.",
+    "status": "Full report checked on 11 October 2026. Local reporting records practices and adaptations; it is not a survey of all Aguri households.",
+    "url": "https://www.thewall.in/west-bengal/north-bengal/27-08-2019-state-news-price-poppy-is-high-so-dependence-on-sesame/tid/17563"
+  },
+  "food-dipanwita-ambal": {
+    "title": "Dipanwita Roy, “ছিষ্টিছাড়া টেস্টি — পর্ব ০৫ — পাকা মাছের অম্বল” (undated)",
+    "kind": "primary",
+    "label": "Family reminiscence",
+    "detail": "The author recalls Shitala Shashthi, arandhan, shared family ponds and her grandmother’s tamarind fish curry in a village near Durgapur. She identifies the family as Ghoti.",
+    "status": "Full author’s reminiscence checked on 11 October 2026. No publication date is displayed. The source does not establish an Aguri identity for the family.",
+    "url": "https://www.dipanwitaroy.in/bn/blog/195-chhistichhara-tasty-parba-05-paka-machher-ambal"
+  },
+  "food-guha-2026": {
+    "title": "Rohitashwa Guha, “ল্যাজা কার, মুড়ো কার?”, Robbar (1 October 2026)",
+    "kind": "primary",
+    "label": "Family reminiscence",
+    "detail": "Recalls the author’s aunt’s marital household in Bardhaman: pond fish, fish tok with mustard tempering and paste, tamarind and cane jaggery, served from a large black stone bowl.",
+    "status": "Full text and byline checked on 11 October 2026; page updated 1 October 2026 at 19:54. Used as regional domestic memory, without inferring the family’s caste.",
+    "url": "https://robbar.in/mini-series/fish-head-vs-tail-the-politics-of-sharing/pid/69091/"
+  },
+  "food-sarbamangala-2025": {
+    "title": "Anandabazar Patrika, “বর্ধমানে দেবীকে নিবেদন করা হয় মাছের টক, আরাধ্যা ৯ কুমারী” (28 September 2025)",
+    "kind": "secondary",
+    "label": "Temple and festival reporting",
+    "detail": "Records fish tok among the Ashtami offerings at Bardhaman’s Sarbamangala temple.",
+    "status": "Full report checked on 11 October 2026; updated 28 September 2025 at 02:31. Used for a regional ritual use of the dish, not an exclusively Aguri practice.",
+    "url": "https://www.anandabazar.com/west-bengal/bardhaman/sarbamangala-puja-of-bardhaman-dgtld/cid/1636430"
+  },
+  "food-banakali-2023": {
+    "title": "Biplab Bhattacharya, “কালীপুজোর পরের দিন রাজকুসুমে পূজিত হন বনকালী”, Anandabazar Patrika (14 November 2023)",
+    "kind": "secondary",
+    "label": "Local reporting · attributed family custom",
+    "detail": "Members of the explicitly identified Ugra Kshatriya Ray family at Rajkusum describe carrying atap rice to the Bhattacharya family’s Barakali Puja at Gopalpur, followed by Banakali worship.",
+    "status": "Full report checked on 11 October 2026. The inherited restriction on the family’s own annabhog is their reported explanation. It is a particular local arrangement, not a general rule for all Aguris.",
+    "url": "https://www.anandabazar.com/west-bengal/bardhaman/banakali-puja-at-rajkusum-village-of-kanksa/cid/1474389"
+  },
+  "food-gua-daka-2023": {
+    "title": "Tarun Chakraborty, “শরতের দুর্গোৎসবেও জলমগ্ন থাকেন ক্ষীরগ্রামের দশভুজা”, Anandabazar Patrika (24 September 2023)",
+    "kind": "secondary",
+    "label": "Local ritual description",
+    "detail": "Describes gua daka at Kshirgram’s Yogadya temple: a Malakar representative welcomes participants with betel leaf and areca nut, explicitly addressing the Aguris of Nasigram among other communities.",
+    "status": "The gua daka passage was checked on 11 October 2026. Used narrowly for the ritual description; unrelated historical and caste claims in the article are not adopted.",
+    "url": "https://www.anandabazar.com/rabibashoriyo/myths-regarding-durga-idol-of-khirgram/cid/1462245"
+  },
+  "food-suhari-2018": {
+    "title": "Jharna Chattopadhyay, “সুহারির ‘কালু রায়’ ও পূজার মন্ত্র” (29 September 2018)",
+    "kind": "primary",
+    "label": "Visitor’s account · village festival",
+    "detail": "Published on Amarbhabnaamarchinta and also reproduced in Rritobak. Describes Suhari’s large Aguri population, Kalu Ray’s palanquin journey and exchanges in verse; identifies the priest Nanda Pandit as Namasudra.",
+    "status": "Full author’s account checked on 11 October 2026. A visitor’s recollection, not a population survey; community identifications and the festival description are attributed to the writer.",
+    "url": "https://amarbhabnaamarchinta.wordpress.com/2018/09/29/সুহারির-কালু-রায়-ও-পূজা/"
+  },
+  "food-balgona-2019": {
+    "title": "Bidhan Ray, “পাল্টে গিয়েছে গ্রামজীবন, হারিয়ে যাচ্ছে চণ্ডীমণ্ডপ”, Anandabazar Patrika (3 March 2019)",
+    "kind": "secondary",
+    "label": "Village social history reporting",
+    "detail": "Describes Balgona in Bhatar, its substantial Ugra Kshatriya population, Hanuman as village deity, and residents’ memories of conversation in domestic Durga shrines beside baithakkhanas.",
+    "status": "Full report checked on 11 October 2026. Reported recollections of particular village spaces; not evidence that every Aguri settlement shared the same pattern.",
+    "url": "https://www.anandabazar.com/editorial/changing-scenario-of-village-life-1.960779"
+  },
+  "food-soumitra-2017": {
+    "title": "Anvesha Bandyopadhyay, profile of Soumitra Ray, reproduced as “নাসিগ্রামের সৌমিত্র স্যার” (20 October 2017)",
+    "kind": "secondary",
+    "label": "Teacher’s profile · village blog reproduction",
+    "detail": "Nasigram village blog reproduction describing Soumitra Ray’s unpaid guidance to students on education, scholarships and opportunities, including afternoon meetings at the neighbourhood Chandimandap.",
+    "status": "Reproduced text checked on 11 October 2026. The article uses the teacher as an example of village educational help; it does not infer caste from his surname.",
+    "url": "https://nasigramblog.wordpress.com/2017/10/20/amader-sir-soumitro-babu/"
+  },
+  "food-junior-club-2021": {
+    "title": "Eidin, “নাসিগ্রামের ৩০ ফুটের সরস্বতী প্রতিমা নজর কেড়েছে এলাকাবাসীর” (16 February 2021)",
+    "kind": "secondary",
+    "label": "Local festival reporting",
+    "detail": "Junior Club members Nirmal Pal, Rajkumar Ray and Soumen Ray describe the Shibtala Schoolpara Saraswati Puja, held since 1990, its four-day programme and the 2021 thirty-foot idol.",
+    "status": "Full report checked on 11 October 2026. Junior Club is kept distinct from Nasigram Shivgosthi, which is covered by a separate 2026 report.",
+    "url": "https://eidin.in/the-30-foot-saraswati-idol-of-nasigram-caught-the-eye-of-the-locals/"
+  },
+  "food-shivgosthi-2026": {
+    "title": "Jyotirmoy Mondal, report on Nasigram Shivgosthi’s 35th Saraswati Puja, Burdwan Today (30 January 2026)",
+    "kind": "secondary",
+    "label": "Local festival reporting",
+    "detail": "Organisers including Subrata Ray and Swarup Hazra describe a four-day celebration with Baul music, a blood donation camp, cultural programmes and visitors from nearby villages and elsewhere in the district.",
+    "status": "Full report checked on 11 October 2026; page last updated 30 January 2026 at 12:21 PM. The report concerns Shivgosthi, a separate organisation from Junior Club.",
+    "url": "https://burdwantoday.com/2026/bajepratapur-ramakrishna-mission-maharaja-inaugurated-the-35th-saraswati-puja-of-nasigram-shivgosthi/district/"
+  },
+  "food-nasigram-caption": {
+    "title": "Srinjana Chatterjee Ash, public Facebook caption about Shivgosthi’s Saraswati Puja (undated)",
+    "kind": "community",
+    "label": "Indexed personal caption",
+    "detail": "The indexed caption includes “আমার গ্রাম নাসিগ্রামে” (“in my village Nasigram”) in connection with a Shivgosthi Saraswati Puja programme.",
+    "status": "Only the indexed caption supplied with the article is used. The full post and its date were not established; no further biographical or caste claim is inferred.",
+    "url": "https://www.facebook.com/srinjana.chatterjee.1/posts/1268465698516088/"
+  },
+  "food-bhajahari-2024": {
+    "title": "Bonoarilal Chowdhury, profile of Bhajahari Das of Belenda, News18 Local18 (11 March 2024)",
+    "kind": "secondary",
+    "label": "Local musician’s profile",
+    "detail": "“Local News: ছোট থেকে সানাই বাজিয়ে আসছেন ভজহরি, বাংলা ছাড়িয়ে পৌঁছে যাচ্ছেন ভিন রাজ্যে.” Identifies Bhajahari Das as a shehnai player from Belenda, Manteswar, playing since childhood.",
+    "status": "Full article text retrieved and checked on 11 October 2026; updated 11 March 2024 at 5:10 PM IST. The musician is included in regional village history without inferring caste.",
+    "url": "https://bengali.news18.com/news/south-bengal/local-news-bhajahari-das-of-monteswar-is-famous-sanai-player-l18-1550760.html"
+  },
+  "food-belenda-football-2016": {
+    "title": "Anandabazar Patrika, “ফুটবলার গড়তে প্রশিক্ষণ স্কুলেই” (17 December 2016)",
+    "kind": "secondary",
+    "label": "School and sport reporting",
+    "detail": "Identifies goalkeeper Sandip Nandy’s village as Belenda, Manteswar, and describes the football training initiative at Rajendra Memorial Institution, with pupils from Belenda and nearby villages and comments from headteacher Subhashis Patra.",
+    "status": "Citation retained from the supplied manuscript; the original page and public AMP version could not be independently retrieved on 11 October 2026 (HTTP 403). The village and school details remain attributed to this report. No caste identity is inferred from the player’s surname.",
+    "url": "https://www.anandabazar.com/sports/school-start-to-make-footballers-1.533061"
+  },
+  "food-nandy-2014": {
+    "title": "Indian Super League, “A peerless goalkeeper travels down memory lane” (4 September 2014)",
+    "kind": "primary",
+    "label": "Player interview",
+    "detail": "Sandip Nandy recalls initially wanting to be a striker and credits mentor Gautam Shankar with guiding him towards goalkeeping and encouraging his ambitions.",
+    "status": "Official interview checked on 11 October 2026 for the player’s sporting formation. It does not independently establish his Belenda connection or any caste identity.",
+    "url": "https://www.indiansuperleague.com/features/a-peerless-goalkeeper-travels-down-memory-lane"
+  },
+  "water-gazetteer": {
+    "title": "J. C. K. Peterson, Bengal District Gazetteers: Burdwan (1910)",
+    "kind": "historical",
+    "label": "District gazetteer · colonial source",
+    "detail": "Printed pp. 5–6: river ports of Katwa, Kalna and Dainhat; p. 8: Kunur joins the Ajay near Mangalkot; p. 11: Eden Canal and its connections with the Banka and Kana Damodar; pp. 140–141: navigation, grain transport and the Eden Canal, opened in 1881. Used for contemporary descriptions of waterways and infrastructure.",
+    "status": "Relevant passages read directly in the digitised gazetteer on 11 October 2026. Sanitary explanations are treated as the colonial administration’s stated intentions, not as modern medical conclusions. The source does not establish caste-specific settlement routes.",
+    "url": "https://dspace.bpatc.org.bd/handle/1200/260",
+    "linkLabel": "Read the digitised gazetteer"
+  },
+  "water-damodar-audit": {
+    "title": "Bengal Appropriation Accounts 1934–35 and the Audit Report 1936",
+    "kind": "historical",
+    "label": "Government audit report",
+    "detail": "Paragraph 23, Damodar Canal Project: work began in 1926–27, the revenue account opened in 1933–34, and the construction estimate closed on 30 September 1935. These are distinct administrative milestones, not interchangeable completion dates.",
+    "status": "Indexed passage from the official audit archive checked on 11 October 2026; the full report was not reviewed. Used narrowly for the project’s start and revenue-account dates.",
+    "url": "https://agwb.cag.gov.in/userfiles/files/agaewb/archive/Appropriation%20Accounts%201934-35%20And%20The%20Audit%20Report%201936.pdf",
+    "linkLabel": "Open the audit report"
+  },
+  "water-dvc": {
+    "title": "West Bengal Irrigation & Waterways Department: Barrage and Irrigation System of DVC",
+    "kind": "institutional",
+    "label": "Government irrigation account",
+    "detail": "Official overview of the Damodar Valley Corporation, established in 1948, the Durgapur Barrage and canal system, and irrigation for kharif, rabi and subsequently summer paddy. Regional infrastructure history, not evidence of benefits to a particular caste or family.",
+    "status": "Search-indexed text from the official page checked on 11 October 2026; direct access timed out during verification. Used only for the institutional chronology and stated irrigation functions.",
+    "url": "https://wbiwd.gov.in/index.php/applications/dvc",
+    "linkLabel": "Official irrigation overview"
+  },
+  "manohar-paper-1937": {
+    "kind": "historical",
+    "label": "Original research · abstract consulted",
+    "title": "Manohar Ray, “Motion of an Infinite Elliptic Cylinder in Fluids with Constant Vorticity” (1937)",
+    "detail": "Proceedings of the Royal Society A 158 (895), pp. 522–535, published 3 February 1937. DOI 10.1098/rspa.1937.0037. The publisher-supplied abstract describes pressure and cylinder motion in an ideal liquid, treating uniform shear around an elliptic cylinder in detail.",
+    "status": "Publisher-supplied abstract and bibliographic metadata read through the Crossref DOI record. The full paper was not accessible during this revision. The explanatory diagram is newly drawn, not a reproduced figure or a computed flow solution.",
+    "url": "https://doi.org/10.1098/rspa.1937.0037",
+    "linkLabel": "Original paper and abstract"
+  },
+  "sahana-title-1932": {
+    "title": "Jnanendranath Kumar, Bangsha-Parichay, vol. XII (1932), pp. 80–83: Konar and Sahana",
+    "kind": "historical",
+    "label": "Family chronicle · title-adoption account",
+    "detail": "Printed p. 80 (scan 108) pairs কোঙার with কুমার. The encounter with the Nawab begins on p. 82; p. 83 (scan 111) explicitly glosses সাহানা as “The Royal”, says it replaced কোঙার in Durlabh’s lineage, and reports a signed and sealed panja patta / sanad. It also connects the name with tanks and settlements.",
+    "status": "Title paragraph checked against the scanned Bengali page on 16 October 2026. The chronicle records the family’s explanation; the grant itself has not been examined. No Nawab’s personal name or grant date is given in this passage.",
+    "url": "https://bn.wikisource.org/wiki/পাতা:বংশ-পরিচয়_(দ্বাদশ_খণ্ড)_-_জ্ঞানেন্দ্রনাথ_কুমার.pdf/১১১",
+    "linkLabel": "Read printed page 83"
+  },
+  "bangla-academy-shahana": {
+    "title": "Bangla Academy dictionaries via Accessible Dictionary: শাহানা ১, সাহানা ১",
+    "kind": "reference",
+    "label": "Bengali dictionary · Persian loanword",
+    "detail": "The Bengali–Bengali entry lists both spellings and gives royal and splendid senses, identifying a Persian source. The separate musical-mode entry is not used as an explanation of the surname.",
+    "status": "Entry read on 16 October 2026. The site identifies its source as three Bangla Academy dictionaries converted to accessible formats by YPSA with a2i support. Lexical evidence establishes a meaning, not a family grant.",
+    "url": "https://accessibledictionary.gov.bd/bengali-to-bengali.php?q=শাহানা",
+    "linkLabel": "Read the Bengali entry"
+  },
+  "dafn-basu": {
+    "title": "Dictionary of American Family Names, 2nd ed. (2022): Basu, reproduced by Ancestry",
+    "kind": "reference",
+    "label": "Surname dictionary · lexical explanation",
+    "detail": "Connects Bengali Basu with Sanskrit vasu and its senses of wealth, gem and radiance.",
+    "status": "Online entry read on 16 October 2026; its Kayastha framing is not treated as an exhaustive account of users. Bhattacharya separately records Bose among Aguris.",
+    "url": "https://www.ancestry.com/last-name-meaning/basu",
+    "linkLabel": "Read the surname entry"
+  },
+  "dafn-ghosh": {
+    "title": "Dictionary of American Family Names, 2nd ed. (2022): Ghosh, reproduced by Ancestry",
+    "kind": "reference",
+    "label": "Surname dictionary · occupational interpretation",
+    "detail": "Explains the surname through Sanskrit ghoṣa in the sense cowherd.",
+    "status": "Online entry read on 16 October 2026. Its occupational reading does not establish any particular household’s occupation; its Kayastha framing does not cover every historically recorded user.",
+    "url": "https://www.ancestry.com/last-name-meaning/ghosh",
+    "linkLabel": "Read the surname entry"
+  },
+  "basu-surname-hypotheses": {
+    "title": "Lokeshwar Basu, Amader Padabir Itihas: “Bichitra padabi, bichitra tar itihas”",
+    "kind": "secondary",
+    "label": "Bengali surname history · qualified proposals",
+    "detail": "Proposed derivations of Panja and Tah.",
+    "status": "Online transcription checked, 16 October 2026. Printed edition and pagination unverified; hypotheses remain attributed.",
+    "url": "https://www.ebanglalibrary.com/lessons/বিচিত্র-পদবী-বিচিত্র-তার/",
+    "linkLabel": "Read the chapter"
+  },
+  "dafn-rana": {
+    "title": "Dictionary of American Family Names, 2nd ed. (2022): Rana, reproduced by Ancestry",
+    "kind": "reference",
+    "label": "Surname dictionary · royal title",
+    "detail": "Records the royal meaning “king”.",
+    "status": "Online entry read on 16 October 2026; used for the title’s meaning, not a genealogy of Bengali users or a settled ancient derivation.",
+    "url": "https://www.ancestry.com/last-name-meaning/rana",
+    "linkLabel": "Read the surname entry"
+  },
+  "das-hazra-1916": {
+    "title": "Jnanendramohan Das, Bangala Bhashar Abhidhan, first edition (1916), p. 1450: হাজরা",
+    "kind": "historical",
+    "label": "Bengali dictionary · command and administrative senses",
+    "detail": "Printed p. 1450, scan 1483. The হাজরা entry refers to হাজার / হাজারি and records a commander of a thousand soldiers, a thousand-village headman, administrative titles and a community surname/title. Adjacent হাজার and হাজারি entries identify Persian derivation.",
+    "status": "Relevant original scan visually checked on 16 October 2026; the Wikisource transcription remains unproofread. Dictionary senses do not establish a named ancestor’s military rank or jurisdiction.",
+    "url": "https://bn.wikisource.org/wiki/পাতা:বাঙ্গালা_ভাষার_অভিধান_(প্রথম_সংস্করণ).djvu/১৪৮৩",
+    "linkLabel": "View the dictionary page"
+  },
+  "pratap-bangsha-1934": {
+    "title": "Jnanendranath Kumar, Bangsha Parichay, XIV (1934), pp. 185–230",
+    "kind": "scholarship",
+    "label": "Later historical account",
+    "detail": "Jnanendranath Kumar, compiler, Bangsha Parichay, vol. XIV (1934), entry on Pratap Chandra Roy, pp. 185–230. Used as a later secondary account, with its family recollections attributed. Childhood: pp. 188–193; shop and Bengali publishing: pp. 193–202; family: pp. 194, 196–197, 206–208; finance: pp. 218–222; memorials: pp. 226–227; Arnold tribute: pp. 228–229. Relevant Bengali scans were compared with the project’s bilingual reading edition.",
+    "status": "Chronology: this source gives 1868–1873 for the first Bengali edition, 2 January 1878 for the office’s foundation, and incompatible ages and dates elsewhere. Roy’s earlier statement instead gives more than seven years for the first edition. His seven-year retrospective in 1883 and Sundari Bala’s twenty-year retrospective in 1896 support approximately 1876 for charitable activity, without proving an exact foundation date. This revision gives contemporary publication evidence priority and does not assign an exact death day or second-marriage date.",
+    "url": "https://archive.org/details/in.ernet.dli.2015.352594",
+    "linkLabel": "Read the source"
+  },
+  "pratap-publishing-preface": {
+    "title": "Pratap Chandra Roy, Preface and history of the Datavya Bharat Karyalaya (1884), pp. 1–9",
+    "kind": "historical",
+    "label": "Contemporary printed evidence",
+    "detail": "Pratap Chandra Roy, ‘Preface’ and ‘A short history of the Datavya Bharat Karyalya, its origin and operations’, The Mahabharata of Krishna-Dwaipayana Vyasa, Adi Parva (Calcutta: Bharata Press, 1884), prefatory pp. 1–9. The introductory material accompanied the undertaking begun in 1883. Project and support: pp. 1–3; proposed allocation and prices: pp. 4–5; Bengali venture and free distribution: pp. 6–9. Planned quantities are distinguished from completed output.",
+    "status": "Pratap Chandra Roy, ‘Preface’ and ‘A short history of the Datavya Bharat Karyalya, its origin and operations’, The Mahabharata of Krishna-Dwaipayana Vyasa, Adi Parva (Calcutta: Bharata Press, 1884), prefatory pp. 1–9. The introductory material accompanied the undertaking begun in 1883. Project and support: pp. 1–3; proposed allocation and prices: pp. 4–5; Bengali venture and free distribution: pp. 6–9. Planned quantities are distinguished from completed output.",
+    "url": "https://en.wikisource.org/wiki/Page:The_Mahabharata_of_Krishna-Dwaipayana_Vyasa_(1884).djvu/23",
+    "linkLabel": "Read the source"
+  },
+  "pratap-sundari-1896": {
+    "title": "Sundari Bala Roy, Post-Script (1896), pp. 1–20",
+    "kind": "historical",
+    "label": "Contemporary printed evidence",
+    "detail": "Sundari Bala Roy, ‘Post-Script’, appended to Swargarohanika Parva (Calcutta: Bharata Press, 1896), separately paginated pp. 1–20. Debt: p. 6; Max Müller and publicity: p. 9; government contributions: p. 13; output and Durgacharan Bandyopadhyay: pp. 16–17; Ganguli, staff and Aghore Nath: pp. 18–20. Her financial and production figures are contemporary declarations, not independently audited totals. The Internet Archive bound volume includes 1896 title pages despite broader catalogue dating.",
+    "status": "Sundari Bala Roy, ‘Post-Script’, appended to Swargarohanika Parva (Calcutta: Bharata Press, 1896), separately paginated pp. 1–20. Debt: p. 6; Max Müller and publicity: p. 9; government contributions: p. 13; output and Durgacharan Bandyopadhyay: pp. 16–17; Ganguli, staff and Aghore Nath: pp. 18–20. Her financial and production figures are contemporary declarations, not independently audited totals. The Internet Archive bound volume includes 1896 title pages despite broader catalogue dating.",
+    "url": "https://archive.org/details/mahabharataofkri09royp/page/n473/mode/1up",
+    "linkLabel": "Read the source"
+  },
+  "pratap-ganguli-postscript": {
+    "title": "Kisari Mohan Ganguli, Translator’s Postscript, 15 July 1896",
+    "kind": "historical",
+    "label": "Contemporary printed evidence",
+    "detail": "Kisari Mohan Ganguli, ‘Translator’s Postscript’, 15 July 1896, separately paginated pp. 1–4, following Sundari Bala Roy’s postscript in the concluding volume. Primary explanation of anonymity, the publisher’s signed preface, assistance received and completion.",
+    "status": "Kisari Mohan Ganguli, ‘Translator’s Postscript’, 15 July 1896, separately paginated pp. 1–4, following Sundari Bala Roy’s postscript in the concluding volume. Primary explanation of anonymity, the publisher’s signed preface, assistance received and completion.",
+    "url": "https://archive.org/details/mahabharataofkri09royp",
+    "linkLabel": "Read the source"
+  },
+  "pratap-times-1885": {
+    "title": "The Times, 9 October 1885, and Times of India, 19 December 1885: contemporary reprints",
+    "kind": "historical",
+    "label": "Contemporary printed evidence",
+    "detail": "‘The Mahabharata’, The Times, London, 9 October 1885, reprinted with the Vana Parva fascicle covering sections CCVIII–CCXXXII (fascicle cover dated 1886), press appendix pp. 1–3. All three reprint pages were inspected. The bound volume begins with an 1884 title page, which does not date its later fascicles. A separate Times of India notice dated 19 December 1885 begins on appendix p. 3. Citations refer to the contemporary reprints, not to original newspaper issues. The London review is unsigned.",
+    "status": "‘The Mahabharata’, The Times, London, 9 October 1885, reprinted with the Vana Parva fascicle covering sections CCVIII–CCXXXII (fascicle cover dated 1886), press appendix pp. 1–3. All three reprint pages were inspected. The bound volume begins with an 1884 title page, which does not date its later fascicles. A separate Times of India notice dated 19 December 1885 begins on appendix p. 3. Citations refer to the contemporary reprints, not to original newspaper issues. The London review is unsigned.",
+    "url": "https://archive.org/details/cu31924071123115/page/n1000/mode/2up",
+    "linkLabel": "Read the source"
+  },
+  "pratap-press-1884": {
+    "title": "Opinions of the Press, Adi Parva appendix (1884)",
+    "kind": "historical",
+    "label": "Contemporary printed evidence",
+    "detail": "‘Opinions of the Press’, appended to the Adi Parva (1884), selected notices on separately paginated pp. 1–2, 4 and 8. Page-linked transcriptions consulted, including the Englishman, Pioneer and other notices. These are selections circulated by the publisher; statements attributing the translation to Roy or Max Müller are not adopted.",
+    "status": "‘Opinions of the Press’, appended to the Adi Parva (1884), selected notices on separately paginated pp. 1–2, 4 and 8. Page-linked transcriptions consulted, including the Englishman, Pioneer and other notices. These are selections circulated by the publisher; statements attributing the translation to Roy or Max Müller are not adopted.",
+    "url": "https://en.wikisource.org/wiki/Page:The_Mahabharata_of_Krishna-Dwaipayana_Vyasa_(1884).djvu/715",
+    "linkLabel": "Read the source"
+  },
+  "pratap-kipling-1886": {
+    "title": "Rudyard Kipling, The Epics of India, Civil and Military Gazette, 24 August 1886",
+    "kind": "historical",
+    "label": "Contemporary printed evidence",
+    "detail": "Rudyard Kipling, ‘The Epics of India’, Civil and Military Gazette, Lahore, 24 August 1886. Historical article transcribed by the Kipling Society, which identifies the first-publication date and Sussex Scrapbooks 28/3, pp. 41–42. Used for the review’s mixed response, with its translator attribution corrected.",
+    "status": "Rudyard Kipling, ‘The Epics of India’, Civil and Military Gazette, Lahore, 24 August 1886. Historical article transcribed by the Kipling Society, which identifies the first-publication date and Sussex Scrapbooks 28/3, pp. 41–42. Used for the review’s mixed response, with its translator attribution corrected.",
+    "url": "https://www.kiplingsociety.co.uk/journalism/rg_sketches_32.htm",
+    "linkLabel": "Read the source"
+  },
+  "pratap-arnold-1897": {
+    "title": "H. C. Muller, Lectures on the Science of Literature (1904), pp. 69–70: Arnold’s June 1897 articles",
+    "kind": "scholarship",
+    "label": "Later historical account",
+    "detail": "Hendrik Clemens Muller, Lectures on the Science of Literature, First Series Comparative Literature (Haarlem: Vincent Loosjes, 1904), pp. 69–70, especially p. 70 n. 1. Cites Sir Edwin Arnold, ‘A dead man’s victory’, Daily Telegraph, June 1897, two articles. Read alongside Bangsha Parichay XIV, pp. 228–229. June 1897 is supported by this bibliographic witness; the original Telegraph issues were not inspected, and no exact day is asserted. Muller’s description of Roy as translator is not adopted.",
+    "status": "Hendrik Clemens Muller, Lectures on the Science of Literature, First Series Comparative Literature (Haarlem: Vincent Loosjes, 1904), pp. 69–70, especially p. 70 n. 1. Cites Sir Edwin Arnold, ‘A dead man’s victory’, Daily Telegraph, June 1897, two articles. Read alongside Bangsha Parichay XIV, pp. 228–229. June 1897 is supported by this bibliographic witness; the original Telegraph issues were not inspected, and no exact day is asserted. Muller’s description of Roy as translator is not adopted.",
+    "url": "https://archive.org/details/scienc00mulllecturesonrich/page/70/mode/2up",
+    "linkLabel": "Read the source"
+  },
+  "tuhin-roy-1": {
+    "title": "Indian National Academy of Engineering, “Dr Tuhin Kumar Roy,” INAE e-Newsletter, January 2020, obituary",
+    "label": "Biography and related records",
+    "detail": "Indian National Academy of Engineering, “Dr Tuhin Kumar Roy,” INAE e-Newsletter, January 2020, obituary.",
+    "status": "",
+    "linkLabel": "Open source",
+    "kind": "biography",
+    "url": "https://www.inae.in/wp-content/uploads/2021/05/1.January-2020.pdf"
+  },
+  "tuhin-roy-2": {
+    "title": "Bhupati Chakrabarti, “Tuhin Kumar Roy A Chemical Engineer of International Repute,” Dream 2047, volume 25, issue 12, December 2022, p. 20",
+    "label": "Biography and related records",
+    "detail": "Bhupati Chakrabarti, “Tuhin Kumar Roy A Chemical Engineer of International Repute,” Dream 2047, volume 25, issue 12, December 2022, p. 20.",
+    "status": "",
+    "linkLabel": "Open source",
+    "kind": "biography",
+    "url": "https://www.indiascienceandtechnology.gov.in/sites/all/themes/vigyan/pdf_file/newsletter_dreams_2047/2022/dream-dec-2022-eng.pdf"
+  },
+  "tuhin-roy-3": {
+    "title": "Sital K. Banerjee, “Tuhin K. Roy (1923–2019),” Current Science 117, no. 7, 10 October 2019, pp. 1222–1223. Photograph on p. 1222",
+    "label": "Biography and related records",
+    "detail": "Sital K. Banerjee, “Tuhin K. Roy (1923–2019),” Current Science 117, no. 7, 10 October 2019, pp. 1222–1223. Photograph on p. 1222.",
+    "status": "",
+    "linkLabel": "Open source",
+    "kind": "biography",
+    "url": "https://www.currentscience.ac.in/Volumes/117/07/1222.pdf"
+  },
+  "tuhin-roy-4": {
+    "title": "Nagendranath Basu’s introductory notice naming Rakhalraj Ray as author of বর্তমান বর্দ্ধমান, Sahitya Parishat Patrika volume 22. The volume record dates it to 1915, or 1322 in the Bengali calendar",
+    "label": "Biography and related records",
+    "detail": "Nagendranath Basu’s introductory notice naming Rakhalraj Ray as author of বর্তমান বর্দ্ধমান, Sahitya Parishat Patrika volume 22. The volume record dates it to 1915, or 1322 in the Bengali calendar.",
+    "status": "",
+    "linkLabel": "Open source",
+    "kind": "primary",
+    "url": "https://commons.wikimedia.org/wiki/File:4990010219537_-_Sahitya_Parishat_Patrika_vol.22,_pt.1-3,_Vidyabhushan,_Satishchandra,_ed.,_340p,_GENERALITIES,_bengali_(1915).pdf"
+  },
+  "tuhin-roy-5": {
+    "title": "Manomohan Ganguly, Handbook to the Sculptures in the Museum of the Bangiya Sahitya Parishad, Calcutta, 1922, pp. 41–42, 68 and 129. The donor entries concern a Patna votive stupa, the jointly presented Burdwan Varaha sculpture, and the Purushottampur moulded brick",
+    "label": "Biography and related records",
+    "detail": "Manomohan Ganguly, Handbook to the Sculptures in the Museum of the Bangiya Sahitya Parishad, Calcutta, 1922, pp. 41–42, 68 and 129. The donor entries concern a Patna votive stupa, the jointly presented Burdwan Varaha sculpture, and the Purushottampur moulded brick.",
+    "status": "",
+    "linkLabel": "Open source",
+    "kind": "primary",
+    "url": "https://archive.org/details/handbooktosculpt00bangrich"
+  },
+  "tuhin-roy-6": {
+    "title": "“The two Estonian-Bengali couples meet,” Saaremaa in the Himalayas, 12 January 2012. A family recollection identifying Tuhin Kumar Roy and Silva Mardiste Roy",
+    "label": "Biography and related records",
+    "detail": "“The two Estonian-Bengali couples meet,” Saaremaa in the Himalayas, 12 January 2012. A family recollection identifying Tuhin Kumar Roy and Silva Mardiste Roy.",
+    "status": "",
+    "linkLabel": "Open source",
+    "kind": "primary",
+    "url": "https://saaremaaindia.blogspot.com/2012/01/normal-0-false-false-false.html"
+  },
+  "tuhin-roy-7": {
+    "title": "Tuhin Kumar Roy and Felix Alfred Schaufelberger, “Selective nucleated precipitation from acidic solutions,” US patent 2,726,953, filed 21 June 1954, granted 13 December 1955",
+    "label": "Biography and related records",
+    "detail": "Tuhin Kumar Roy and Felix Alfred Schaufelberger, “Selective nucleated precipitation from acidic solutions,” US patent 2,726,953, filed 21 June 1954, granted 13 December 1955.",
+    "status": "",
+    "linkLabel": "Open source",
+    "kind": "primary",
+    "url": "https://patents.google.com/patent/US2726953A/en"
+  },
+  "tuhin-roy-8": {
+    "title": "Tuhin Kumar Roy and Felix Alfred Schaufelberger, “Method of separating cobalt-nickel-manganese,” US patent 2,786,751, filed 9 June 1954, granted 26 March 1957",
+    "label": "Biography and related records",
+    "detail": "Tuhin Kumar Roy and Felix Alfred Schaufelberger, “Method of separating cobalt-nickel-manganese,” US patent 2,786,751, filed 9 June 1954, granted 26 March 1957.",
+    "status": "",
+    "linkLabel": "Open source",
+    "kind": "primary",
+    "url": "https://patents.google.com/patent/US2786751A/en"
+  },
+  "tuhin-roy-9": {
+    "title": "Tuhin Roy, “Preparing Nickel and Cobalt Concentrates,” Industrial & Engineering Chemistry 53, no. 7, July 1961, pp. 559–566",
+    "label": "Biography and related records",
+    "detail": "Tuhin Roy, “Preparing Nickel and Cobalt Concentrates,” Industrial & Engineering Chemistry 53, no. 7, July 1961, pp. 559–566.",
+    "status": "",
+    "linkLabel": "Open source",
+    "kind": "primary",
+    "url": "https://pubs.acs.org/doi/10.1021/ie50619a026"
+  },
+  "tuhin-roy-10": {
+    "title": "S. S. Das Gupta, “Lunch & adda with Castro,” The Telegraph, 21 February 2008",
+    "label": "Biography and related records",
+    "detail": "S. S. Das Gupta, “Lunch & adda with Castro,” The Telegraph, 21 February 2008.",
+    "status": "",
+    "linkLabel": "Open source",
+    "kind": "primary",
+    "url": "https://www.telegraphindia.com/india/lunch-adda-with-castro/cid/614932"
+  }
+}

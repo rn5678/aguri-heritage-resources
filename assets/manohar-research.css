@@ -1,0 +1,21 @@
+/* Research explanation scoped to Manohar Ray’s biography. */
+.ray-flow-diagram{margin:28px 0;padding:24px;border:1px solid var(--line);background:var(--surface);max-width:100%}
+.ray-flow-diagram>figcaption{font:24px/1.35 var(--serif);color:var(--ink);margin-bottom:20px}
+.ray-flow-panels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.ray-flow-panel{min-width:0}
+.ray-flow-panel h4{font:600 14px/1.6 var(--sans);margin:0 0 10px;color:var(--ink)}
+.ray-flow-panel svg{display:block;width:100%;max-width:240px;height:auto;color:var(--green);margin:0 auto 12px}
+.ray-flow-panel p{font-size:14px;line-height:1.8;margin:0}
+.ray-flow-diagram .ray-diagram-note{font-size:12px;line-height:1.8;margin:20px 0 0;padding-top:16px;border-top:1px solid var(--line);color:var(--muted)}
+html[lang=bn] .ray-flow-diagram>figcaption{font-family:var(--bn);line-height:1.8}
+html[lang=bn] .ray-flow-panel h4{font-family:var(--bn);line-height:1.9}
+html[lang=bn] .ray-flow-panel p{line-height:1.9}
+html[lang=bn] .ray-flow-diagram .ray-diagram-note{font-size:13px;line-height:1.9}
+@media(max-width:600px){.ray-flow-diagram{padding:20px}.ray-flow-panels{grid-template-columns:minmax(0,1fr);gap:24px}.ray-flow-diagram>figcaption{font-size:22px}}
+@media print{.ray-flow-diagram{break-inside:avoid;background:none;padding:12pt}.ray-flow-panels{grid-template-columns:repeat(2,minmax(0,1fr));gap:12pt}.ray-flow-panel svg{max-width:50mm}}
+
+.ray-review-quote{margin:24px 0;padding:4px 0 4px 22px;border-left:3px solid var(--rust)}
+.ray-review-quote p{font:23px/1.6 var(--serif);margin:0 0 10px}
+.ray-review-quote footer{font:12px/1.8 var(--sans);color:var(--muted)}
+html[lang=bn] .ray-review-quote p{font-family:var(--bn);font-size:21px;line-height:1.9}
+html[lang=bn] .ray-review-quote footer{font-family:var(--bn);font-size:13px;line-height:1.9}

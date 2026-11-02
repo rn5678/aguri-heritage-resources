@@ -1,0 +1,279 @@
+Electricity
+
+তড়িৎ
+
+Kunjabihari Biswas
+
+Ugrakshatriya-Pratinidhi · Volume I, issue 1
+
+Baishakh 1298 · 1891
+
+Complete article · printed pp. 12–23
+
+Original source: archives.html?volume=1&scan=1#reader
+
+
+
+ENGLISH READING TRANSLATION
+
+Prepared for Aguri Heritage. Compared with source scans; independent language review pending.
+
+
+
+EDITORIAL CONTEXT
+
+An English translation of the complete twelve-page essay. Its scientific explanations, discovery stories and religious reflections represent the author’s 1891 account. The translation retains that account, including outdated theories; it is not a modern science or lightning-safety guide. Do not attempt the thunderstorm experiment described in the Franklin story. Section headings are added for navigation.
+
+
+
+TRANSLATOR’S NOTES
+
+1. Tarit and bidyut are both translated as “electricity” where the sense requires it; bidyut also means lightning. The author explicitly discusses his choice of Bengali vocabulary.
+
+2. Pradhan and apradhan are the author’s Bengali labels for positive and negative electricity. The account uses a historical theory of two electricities, retained here rather than silently replaced with modern explanations.
+
+3. The chronology of discoveries, the frog and kite stories, and the words attributed to Franklin are translated as printed, not independently authenticated historical accounts. In particular, the source places Holtz and Armstrong among eighteenth-century developments.
+
+4. The account of bodily injury, lightning conductors, rooftop plants and polar lights contains historical explanations and should not be used as practical guidance. The note at the rooftop-plant passage is editorial.
+
+5. The essay begins below the preceding article on scan 9, left leaf, and ends with the author’s signature before “Satsanga” on scan 14, right leaf. Neither neighbouring article is included.
+
+
+
+Finding words for science
+
+Volume 1 · printed p. 12 · scan 9, left leaf
+
+Source image: assets/scans/v1-009.jpg
+
+
+
+Everyone acknowledges that writing articles on science in Bengali is a very difficult undertaking. We now have no evidence of how far science advanced in our country in ancient times. We know only that the scholars of former times were exceptional in astronomy; we do not even know whether physical science was discussed.
+
+In the present circumstances, therefore, the principal difficulty in writing on science is the lack of words. Through Western education we are now learning many scientific principles, but all the scientific books that have come into our hands are written in foreign languages. To express even a very small part of those principles in Bengali brings the difficulty caused by this shortage of words. Even the terms that occur—
+
+
+
+A history of electrical knowledge
+
+Volume 1 · printed p. 13 · scan 9, right leaf
+
+Source image: assets/scans/v1-009.jpg
+
+
+
+—in every line of scientific books have no Bengali equivalents available to us. A short time ago this deficiency was comparatively more serious. Through the efforts of a few educated people, however, it has been remedied to a very small extent. Faults arising from this lack of vocabulary are therefore unavoidable in this article. For that reason English words have been used here and there alongside Bengali. If any of our readers know Bengali scientific terms of which we are unaware, we would be particularly grateful to be told of them.
+
+Among the natural forces that govern and move the world, accomplishing everything from its greatest and most important operations to its smallest tasks, electricity is a mighty power. There can be no doubt that this mighty electrical power is a portion of Adyashakti, the primordial power that is the source of all powers. Those who, captivated by the effects of these partial powers, deny the existence of that supremely worshipful primordial power are therefore very shortsighted. Today we shall discuss how far human knowledge has advanced concerning electricity, one small portion of that great power.
+
+There is ample evidence that the scholars of our country in ancient times knew the natural phenomenon called lightning or the thunderbolt. They described the thunderbolt as Indra’s irresistible weapon. If Indra is the source of all powers, it is fitting to call the thunderbolt his irresistible weapon, for there is no doubt that the mighty power they recognised in it, and that we recognise, is irresistible and unavoidable. Beyond this, we do not know what further knowledge of electricity they possessed.
+
+Six hundred years before the birth of Christ, the Greek scholar Thales first discovered that rubbing the substance called amber with silk gave the amber the power to attract very light objects. In English, tarit is called “Electricity.” This word too comes from the Greek word “Electron.” About six centuries later the celebrated Roman scholar of science, Pliny, wrote: “When heat is produced by rubbing the finger, that finger acquires the attractive power mentioned above.”
+
+Apart from this, there was no other knowledge of electricity in ancient Europe. Later, towards the end of the sixteenth century of the Christian era, Dr Gilbert, physician to England’s celebrated Queen Elizabeth, discovered that the ability to acquire an attractive power through rubbing was not confined to amber. Glass, sulphur and certain other substances possessed it in greater or smaller degree. The science of electricity originated in this discovery. At first its progress proceeded in very small—
+
+
+
+Experiments and competing explanations
+
+Volume 1 · printed p. 14 · scan 10, left leaf
+
+Source image: assets/scans/v1-010.jpg
+
+
+
+—steps. Throughout the seventeenth century there was no particular advance in electrical science. Its progress first began in the eighteenth century. Initially the discussion concerned electricity produced by friction, and, working on this principle, scientists such as Ramsden and Winkler made various machines for producing electricity in the middle of the eighteenth century. Towards the end of that century scholars such as Holtz and Armstrong also invented different machines, but they had not yet set foot on the principal step towards progress.
+
+At the end of this eighteenth century, Professor Galvani made a remarkable discovery. This discovery must be regarded as the foundation of progress in electrical science. It awakened a new enthusiasm in the minds of scientists. From it they began, with redoubled energy, to search for actual truth, discovering new facts about electricity and using them to benefit humanity in countless ways. On the one hand, electricity’s extraordinary powers gradually became manifest through this discovery; on the other, the story of the discovery is itself very entertaining.
+
+It is said that one day a dead frog was hanging from a copper hook attached to an iron railing on the veranda of a house. Galvani happened to be standing there. He noticed that whenever the dead frog touched the iron railing, it moved vigorously like a living frog. Seeing this, he concluded that the dead frog was moving through electrical action, and afterwards published that view. According to him, friction was the fundamental cause of electricity. But at this time another celebrated scientist, named Volta, discovered that chemical action was the cause of its production. A fierce dispute consequently arose between the two sides, and electrical science advanced considerably through it.
+
+While Europe was engaged in such intense argument about electricity’s true nature, and various machines for producing it were being invented, the celebrated American scholar Franklin was directing his extraordinary mental powers towards determining the relation between electricity and lightning in the clouds. Having established many similarities between them, he reasoned that if electricity from the clouds could accomplish the same effects as electricity produced by a machine, the two must certainly be the same thing.
+
+One effect we observe in machine-produced electricity is this: when electricity is generated and collects at a particular place in the machine, bringing a finger close to that place causes sparks to emerge, accompanied by a sound. We shall explain these effects in detail later—
+
+
+
+Franklin’s story and a changing world
+
+Volume 1 · printed p. 15 · scan 10, right leaf
+
+Source image: assets/scans/v1-010.jpg
+
+
+
+—but if the same sparks could be obtained, it would establish that electricity and lightning were one substance. With this thought, Franklin sent up a kite with an iron tip and attached an iron box-key to one end of its string. The kite flew among the clouds, and he held his finger close to the key attached at the other end. After remaining like this for some time without obtaining a spark, he became disappointed and was about to abandon the experiment. Then, by the grace of the Lord of the world, rain fell and wet the kite’s string. Immediately sparks began to issue from the key at its lower end.
+
+After this experiment, no doubt remained that lightning and electricity were the same substance. The joy Franklin experienced in succeeding is beyond our imagination. In his own letter, he stated: “Success in this experiment gave me such joy that I could not restrain my tears of happiness.” In this way electricity and lightning were demonstrated to be one substance. For this reason we have ventured to translate the English word “Electricity” as bidyut.
+
+This treasury of knowledge, acquired with much effort and carefully accumulated by the scholars of the eighteenth century, passed into the hands of worthy successors in the nineteenth. Through extraordinary perseverance and marvellous intellectual skill, those successors continued to increase and develop the wealth entrusted to them, until they had enlarged it greatly. In this nineteenth century, scholars skilled in experimentation, such as Faraday, discovered new truths through steady perseverance and exceptional mental power. Scholars proficient in science and mathematics, such as Maxwell and Sir William Thomson, brought new powers of those truths to light and demonstrated the validity of the discoveries at every step.
+
+Indeed, one is astonished to contemplate the extraordinary progress of electrical science in this nineteenth century. Seeing the almost superhuman powers of its discoverers, one cannot count them as ordinary people. Electricity, once confined to the clouds, is now seen in every atom. Descending from the heavens, it now confers countless benefits upon humanity and even performs the work of a servant. This remarkable progress makes it easy to believe that, in time, electricity will accomplish things now wholly beyond the limits of our imagination. Here we end this brief history of electricity. Now its—
+
+
+
+Beginning with familiar observations
+
+Volume 1 · printed p. 16 · scan 11, left leaf
+
+Source image: assets/scans/v1-011.jpg
+
+
+
+—science should be discussed. Electrical science is more interesting than its history, so we have stopped after these few historical remarks.
+
+Science has now discovered electricity’s extraordinary powers and is using them for humanity’s many benefits. It has been proved that its operation is very extensive, reaching even into the natural chemical processes constantly taking place. Yet this knowledge remains confined to a few people educated in the Western manner. For ordinary people, or scholars educated only in the languages of this country, electricity is still confined to the clouds. By electricity they still understand only the streak of fire seen and the thunder heard when the sky is covered with clouds. Most people do not understand that messages sent by wire depend on electricity. Very few know that what is called “Electricity” in English is the lightning of the clouds.
+
+Everyone, however, has seen the familiar natural occurrence called lightning or the thunderbolt. In writing about electricity, it is therefore best first to describe its action in this phenomenon known to all. But to describe and explain it, we must first say something about the frictional electricity mentioned earlier.
+
+It has already been stated that lac, glass and certain other substances acquire the power to attract very light objects when rubbed with woollen or silk cloth. This can be shown very clearly by a simple experiment. Suppose a very light piece of cork—a kind of wood—is suspended by a silk thread, and a warmed glass rod is rubbed with silk and brought near it. The cork is attracted towards the glass rod. But after remaining in contact with it for a little while, the cork is repelled. If the glass rod is then brought close again, the cork moves away instead of being attracted.
+
+If, however, a piece of lac is rubbed with woollen cloth, such as flannel, and brought near that cork, the cork is attracted towards the lac rod. We now see that electricity has been produced in both cases, but the two electricities are not the same. It is impossible for the same substance to possess these two opposite powers, attraction and repulsion. Electricity is therefore of two kinds. Various names have been given to them: glass-derived and lac-derived, para and apara, and so on. We shall call the first pradhan, or positive electricity, and the second apradhan, or negative electricity.
+
+Let us now see how these two kinds are related. If a glass rod is rubbed with silk and then suspended by a thread—
+
+
+
+Attraction, repulsion and conductors
+
+Volume 1 · printed p. 17 · scan 11, right leaf
+
+Source image: assets/scans/v1-011.jpg
+
+
+
+—and another glass rod, rubbed as described above, is brought near it, they will repel each other. But if a piece of lac is rubbed with flannel and brought close to the hanging glass rod, they will attract each other. From this very simple and small experiment we determine that positive electricity repels positive electricity but attracts negative electricity.
+
+If a piece of lac is rubbed with flannel and suspended by a thread, and a glass rod and a lac rod rubbed in the same way are brought near it in turn, attraction is seen first and repulsion afterwards. Thus negative electricity attracts positive electricity and repels negative electricity. From this we may state the general rule: like electricities repel one another, and unlike electricities attract one another.
+
+In substances such as glass and lac, electricity communicated to one part is not conducted to another. For this reason they are called non-conductors. Metals and certain other substances possess this conducting power and are therefore called conductors. As soon as electricity is communicated to one part of such a substance, it spreads throughout it.
+
+So far, nothing has been said about electricity’s true nature. In fact, that true nature has not yet been determined. Many opinions have appeared on the subject; they may be discussed later. For our present purpose, a little about one theory will suffice. According to it, the two kinds of electricity described above exist in equal quantities in every substance. Because their qualities are opposite, each cancels the qualities of the other. We therefore do not ordinarily see electrical action in an object.
+
+But if electricity is produced by friction, as described above, and another conducting object is brought near it, this electricity attracts the unlike electricity in that object and repels the like electricity. The separation of both kinds then becomes apparent in the object. If the object is now connected to the earth through a conductor, its like electricity is repelled by the machine’s electricity and carried into the earth through the conductor. Its unlike electricity is attracted and remains in the object.
+
+In this way unlike electricity gradually accumulates in the object, and the mutual attraction steadily increases. Eventually this attraction becomes so strong that the two electricities overcome the resistance of the air and unite. Whenever such a union occurs, a spark is seen and a sound is heard. But if the object is pointed, then—
+
+
+
+Sparks and the forms of lightning
+
+Volume 1 · printed p. 18 · scan 12, left leaf
+
+Source image: assets/scans/v1-012.jpg
+
+
+
+—although unlike electricity is communicated to it, it cannot accumulate. As soon as it arrives, it unites with the electricity produced by the machine, without a visible spark or audible sound. If this takes place in a dark room, only a light may be seen. We therefore find that a pointed object prevents the sudden, violent union of electricity and brings about a gradual union instead.
+
+When electricity is united by either of these methods, some of the machine’s electricity also disappears. If union occurs by the first method, one or a few sparks are followed by the complete disappearance of the object’s electricity, and it returns to its normal state. The machine’s electricity is also considerably reduced. If union occurs by the second method, its disappearance is observed after this action has continued for a while. Complete disappearance by this means takes a long time. These few facts about frictional electricity are enough to make lightning and thunder comprehensible. Let us now turn to them.
+
+We have already briefly described how lightning and electricity are one substance, and the remarkable means by which Franklin demonstrated this truth. On one side there is the minute spark produced by a friction machine; on the other, the line of fire stretching across the heavens that lights the whole earth in an instant and can sometimes split and crush great buildings, enormous trees and even mountains. On one side there is the small sound accompanying that spark; on the other, the deep, ear-splitting thunder that stirs and shakes the whole earth. It is certainly difficult to believe they are the same thing. Yet science has established their likeness so conclusively that it is impossible to deny it.
+
+Everyone knows the flash of lightning and the sound of thunder, but not everyone knows the different forms a lightning flash takes. Four principal forms are observed. First, a very thin line of fire sometimes stretches from one end of the sky to the other at an inconceivably rapid speed. Second, lightning sometimes abandons this form of a fiery line and, without assuming any other definite shape, illuminates the whole sky. Third, lightning sometimes remains hidden beyond the curve of the earth, illuminating only very high clouds. Fourth, and most astonishingly, a round mass of fire is sometimes seen falling from the sky towards the earth at a comparatively slow speed. It may leap upwards again or burst with a deep report like hundreds or thousands of cannon. These are the four principal forms in which electricity is seen.
+
+
+
+Explanations of electricity in clouds
+
+Volume 1 · printed p. 19 · scan 12, right leaf
+
+Source image: assets/scans/v1-012.jpg
+
+
+
+These occurrences take place frequently. Where does this electricity originate, and why does it perform these remarkable actions? In considering these matters, the first question is where the electricity comes from. Many opinions have been advanced, but none seems a wholly satisfactory explanation.
+
+Everyone knows that the sun’s rays continually produce vapour that rises from the earth into the sky. Some scientific scholars say that this evaporation is the cause of electricity in the clouds. Most of the earth’s water contains salt. When vapour is produced from that water, its particles become charged with positive electricity and rise carrying that charge. When these particles join to form clouds, abundant positive electricity is stored in every particle. This is how positively charged clouds are formed.
+
+Compared with the earth, the electricity of these clouds is positive and that of the earth negative. Consequently, when fog forms, its water droplets come into contact with the earth and become charged with the earth’s negative electricity. When this fog rises and takes the form of a cloud, it retains the negative electricity received from the earth. Thus clouds formed from fog carry negative electricity. In this way, clouds charged with positive and negative electricity move through the sky.
+
+Some scientists say that at great heights particles of snow and drops of water are both present. Their friction produces electricity: the snow particles become positively charged and the water droplets negatively charged. Whatever the cause of its origin, it is quite clear that clouds charged with both kinds of electricity—though in most cases positive—move through the sky. When clouds charged with the two kinds approach one another, their electricities attract each other, unite, and produce lightning and thunder.
+
+Lightning and thunder are produced at the same time. But because sound travels much more slowly than light, we hear the thunder a little after seeing the flash. Of the four kinds of lightning described earlier, the second and third occur in the manner just explained. Their action is confined to the sky; they do not descend to the earth.
+
+We have already said that the union of two electricities occurs in two ways. When this union proceeds gradually, neither sound nor a distinct spark appears: only light is seen. Some suppose that the second and third kinds of lightning result from this gradual union. No sound is heard with their light. Others think—
+
+
+
+The thunderbolt and its effects
+
+Volume 1 · printed p. 20 · scan 13, left leaf
+
+Source image: assets/scans/v1-013.jpg
+
+
+
+—that this electrical action takes place so far away that its sound disappears into the air before reaching human ears.
+
+The first kind of lightning operates between the earth and the clouds. It is this kind that sometimes destroys living creatures and trees on earth. Taking the form of a line of fire, it sometimes extends from the sky to the earth, and sometimes from one end of the sky to the other. Its course is seldom straight: sometimes it takes various crooked paths, and sometimes it spreads into countless branches. The resistance of air compressed by the union of electricity has been identified as the cause of this crooked motion.
+
+Let us now see how this first kind of lightning is produced and why it sometimes causes harm. When an electrically charged cloud approaches the earth, the cloud’s electricity attracts the earth’s unlike electricity and repels its like electricity. When the attraction between these unlike electricities in cloud and earth becomes strong enough to overcome the intervening air’s resistance, they unite and produce a flash of lightning and a terrible crash of thunder. This flash and crash are what ordinary speech calls the “fall of the thunderbolt.” A thunderbolt is not really a falling object: it is merely the union of two electricities, with the resulting line of fire and sound.
+
+In many cases this line of lightning is seen descending from above. But sometimes a lightning streak is seen rising from the earth into the sky. Scientists say that when the cloud’s electricity is positive and the earth’s negative, lightning descends from above; when the situation is reversed, it moves from below upwards.
+
+We must now consider how this occurrence brings about the destruction of humans and other living creatures. It can do so in two ways: first, when a creature is at the place struck, and second, when it is nearby. If a creature is at the place where lightning strikes, the unlike electricities of its body and the cloud attract each other. When they unite, the violence of the union deals a terrible blow to the bodily structures, and the fire produced by the union burns the body. Death occurs from these two causes, but chiefly from the first.
+
+If a creature is near the place struck, unlike electricity, opposite to the cloud’s charge, first accumulates in its body. But when the lightning strikes, both the place of the strike and its surroundings suddenly return to their normal state. A nearby creature also acquires this neutral state suddenly. During this change of state, within the body—
+
+
+
+Tall objects and lightning conductors
+
+Volume 1 · printed p. 21 · scan 13, right leaf
+
+Source image: assets/scans/v1-013.jpg
+
+
+
+—and especially in the region of the heart, a shock is felt. If this shock is very severe, death occurs. Otherwise the creature remains unconscious for a time and afterwards revives.
+
+Electrical attraction and repulsion depend upon the distance between the two electricities and the conducting power of the substance. If the distance is doubled, attraction or repulsion becomes one-quarter as great. Their strength decreases or increases according to the square of the increase or decrease in distance. We now see that, during a lightning strike, when attraction takes place between the electricity of the clouds and that of the earth, tall objects stand closer to the clouds. The attraction between a tall object and the cloud’s electricity is therefore stronger. For this reason lightning most often strikes tall buildings, trees or boat masts. Since trees have conducting power, the tallest tree is especially likely to be struck. Therefore one should never go beneath a tree when thunder and lightning are seen. Metals also conduct, so lightning often strikes metal.
+
+Let us now see what means science has devised to protect against the danger of lightning. Many people know that a very tall iron rod runs alongside large buildings. Its tip is very sharp and stands higher than the whole building, while its lower part is buried in the earth. Many perhaps know that this rod protects the building from lightning, but probably not everyone understands how.
+
+Briefly, it performs two functions. First, by gradually uniting the earth’s electricity with that of the cloud, it prevents a lightning strike. Second, when lightning does strike, it falls on the iron rod instead of the building. It has already been explained that when a pointed conductor is brought near electricity produced by a machine, and that conductor is connected to the earth through another conductor, its unlike electricity unites with the machine’s electricity as soon as it is attracted.
+
+Exactly the same thing happens here. Because the iron rod is pointed, as soon as the cloud’s electricity attracts the earth’s electricity, the latter is conducted through the rod’s tip and unites with that in the cloud. The union thus proceeds gradually, producing the cloud’s neutral state and preventing a lightning strike. In this way the rod prevents the accumulation of unlike electricity in the earth and diminishes the cloud’s electricity. If lightning nevertheless strikes, it strikes the rod because it is highest, and the house is saved. One point must be mentioned in this connection: the lower part of the rod must be placed in a well or—
+
+
+
+Science, belief and lights in the sky
+
+Volume 1 · printed p. 22 · scan 14, left leaf
+
+Source image: assets/scans/v1-014.jpg
+
+
+
+—in damp ground. Otherwise, because its connection with the earth is incomplete, its ability to conduct the earth’s electricity quickly is reduced. In most cases the tip of this rod is made of iron and the remainder of copper, because copper is a better conductor than iron.
+
+Thorny plants also accomplish this work to some extent. Many people will probably have seen a thorny plant called manasa placed at the highest point of a house instead of an iron rod. Through this plant, in the manner described above, the cloud’s electricity is neutralised and the accumulation of electricity in the earth is prevented. [Translator’s note: this is the author’s historical claim. Rooftop plants should not be relied upon for lightning protection.]
+
+We now see that a mere particle of the power of the mighty One can take the form of lightning and terrify and destroy humanity. Yet another particle of that same power appears in the human mind as scientific ability and devises such a simple remedy. Reflecting on these things, one must be captivated by the incomparable skill of the creator of the universe. Who says that science is doing away with God’s existence? Through science, his glory is being manifested a hundred thousand times more. Science discovers his endlessly varied new powers and devices and proclaims his glory to the world. It is regrettable only that so few people have eyes to behold it.
+
+We have so far said nothing about thunder. Whenever a flash of lightning is created in the sky, thunder is produced. What causes this thunder? Many people know that agitation of the air is the principal cause of sound. Every sound, from the most enchanting gentle music to ear-splitting thunder, enters our ears through movements of the air. When two unlike electrical powers unite violently in the sky, the surrounding air is set in motion and produces this terrible sound. This sound is called thunder.
+
+The natural electrical phenomena described so far occur everywhere and have been seen by everyone. But there are also other electrical phenomena that occur in particular places. Near both poles, sailors have sometimes seen light taking very varied forms. Its shape is beautiful, and it illuminates the whole polar region. Scientists say that this extraordinary occurrence is caused by the union of positive electricity in the clouds with negative electricity in the earth. Many other views of its true cause are also being advanced.
+
+Sometimes sailors see a light at the tip of a ship’s mast. In very ancient times, this light was considered a sign of future good or ill fortune. Science has now shown that it is caused by the union of the electricity of the sky and the earth. The sky’s electricity attracts the unlike electricity of the earth, which travels through a conductor to the mast’s—
+
+
+
+A promise to return to the subject
+
+Volume 1 · printed p. 23 · scan 14, right leaf
+
+Source image: assets/scans/v1-014.jpg
+
+
+
+—tip. Because the tip is pointed, the electricity unites gradually and produces this light.
+
+Here we end today’s discussion of electricity. Describing the progress that electrical science has now made is no easy matter. How electricity carries our words, travelling from one distant place to another at the speed of thought; how it enables us to converse with friends far away; how it banishes darkness from the houses of the wealthy; how its power brings relief from many kinds of illness and suffering; and how it brings countless improvements to science and industry—to explain all this clearly requires much effort and time, and success in doing so is very difficult.
+
+Nevertheless, as far as we are able, we shall try to write successive articles in this journal and bring these smaller subjects, one by one, to our readers’ attention. For this occasion, the article ends here.
+
+Sri Kunjabihari Biswas.
+
+

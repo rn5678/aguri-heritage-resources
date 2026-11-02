@@ -1,0 +1,53 @@
+name: Publish website
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Do not interrupt an upload. The next run deploys the newest queued release.
+concurrency:
+  group: aguri-heritage-production
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.repository == 'rn5678/aguri-heritage-resources' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    environment:
+      name: production
+      url: https://aguri-heritage.in/
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
+        with:
+          python-version: '3.13'
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Test and build the exact source commit
+        run: python scripts/ci_build.py
+      - name: Install the pinned Cloudflare publisher
+        run: npm ci --prefix local-editor/cloudflare-tools --ignore-scripts
+      - name: Avoid publishing an outdated queued commit
+        shell: bash
+        run: |
+          remote_sha=$(git ls-remote origin refs/heads/main | cut -f1)
+          if [ "$remote_sha" != "$GITHUB_SHA" ]; then
+            echo 'main has advanced; the newer workflow will publish it.'
+            exit 1
+          fi
+      - name: Publish and verify the production deployment
+        env:
+          CLOUDFLARE_ACCOUNT_ID: '5537dfb96b53a21b9f5c9e278b77679c'
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          WRANGLER_SEND_METRICS: 'false'
+          WRANGLER_WRITE_LOGS: 'false'
+        run: python scripts/deploy_from_github.py

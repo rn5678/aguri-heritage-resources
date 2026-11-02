@@ -1,0 +1,27 @@
+/* Source-based orientation: a quiet, useful illustration for the Places page. */
+.page-heading.page-heading-map{max-width:none;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:42px;align-items:center;padding:38px 0 34px}
+.page-heading-map .page-heading-copy{min-width:0}
+.page-heading-map h1{font-size:clamp(38px,4.1vw,58px);line-height:1.12;overflow-wrap:break-word}
+.page-heading-map .dek{font-size:20px;line-height:1.6;max-width:510px}
+.places-map{min-width:0;margin:0}
+.places-map-svg{display:block;width:100%;height:auto}
+.places-map-svg text{font-family:var(--serif)}
+.places-map-svg .map-key,.places-map-svg .map-district{font-family:var(--sans)}
+html[lang=bn] .places-map-svg text{font-family:var(--bn)}
+.places-map figcaption{padding:14px 0 0;border-top:1px solid var(--line);line-height:1.6}
+.places-map figcaption strong{display:block;font:22px/1.4 var(--serif);font-weight:400}
+.places-map figcaption>span{display:block;max-width:600px;margin-top:7px;font-size:11px;color:var(--muted)}
+.places-map-links{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:11px;font-size:11px}
+.places-map-links a{text-decoration-thickness:1px}
+.place-orientation-note{padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:25px 0;font-size:14px;line-height:1.9;color:var(--muted)}
+.place-orientation-note strong{color:var(--ink)}
+html[lang=bn] .page-heading-map h1{font-size:clamp(33px,3.4vw,49px);line-height:1.5;letter-spacing:0}
+html[lang=bn] .page-heading-map .dek{font-size:19px;line-height:1.85}
+html[lang=bn] .places-map figcaption strong{font-family:var(--bn);font-size:21px;line-height:1.75}
+html[lang=bn] .places-map figcaption>span,html[lang=bn] .places-map-links{font-size:13px;line-height:1.8}
+@media(max-width:1000px){.page-heading.page-heading-map{grid-template-columns:minmax(0,1fr);gap:18px;padding:32px 0 28px}.page-heading-map .page-heading-copy{max-width:780px}.page-heading-map .dek{max-width:720px}.places-map{width:100%;max-width:760px}}
+@media(max-width:600px){.page-heading-map h1{font-size:39px}.page-heading-map .dek{font-size:19px}.places-map{margin-top:2px}.places-map figcaption{padding-top:12px}.places-map figcaption strong{font-size:21px}.places-map figcaption>span,.places-map-links{font-size:12px}}
+@media print{.page-heading.page-heading-map{display:block;max-width:none;padding:0 0 16pt}.places-map{max-width:125mm;margin:14pt auto 0;break-inside:avoid}.places-map-links{display:none}.places-map figcaption strong{font-size:13pt}.places-map figcaption>span{font-size:9pt}.place-orientation-note{break-inside:avoid}}
+
+/* Keep the map’s labels legible when the complete schematic fits a phone. */
+@media(max-width:600px){.places-map-svg .map-district{font-size:28px;letter-spacing:1px}.places-map-svg .map-town{font-size:38px}.places-map-svg .map-river-label{font-size:32px}.places-map-svg .map-key{font-size:26px;letter-spacing:0}}

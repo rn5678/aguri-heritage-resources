@@ -1,0 +1,34 @@
+# Generated website and publishing output
+/site/
+/hosting/cloudflare/
+/hosting/source-repository/
+/output/
+/research/
+/tmp/
+/documents/
+/Claude outputs/
+*.app/
+.DS_Store
+__pycache__/
+*.py[cod]
+node_modules/
+.wrangler/
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+*.sqlite*
+*.db
+*.db-*
+*.log
+contributions/.local/
+local-editor/backups/
+local-editor/publishing/
+local-editor/translation/
+local-editor/indexnow/
+local-editor/github-publishing.json
+push/messages/
+# Originals stay in the existing journals-v1 GitHub Release.
+assets/documents/Ugrakshatriya_Pratinidhi_Vol_01.pdf
+assets/documents/Ugrakshatriya_Pratinidhi_Vol_02.pdf

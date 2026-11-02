@@ -1,0 +1,39 @@
+<section id="review-app" class="review-app" aria-label="Private editorial workspace">
+  <p class="review-intro">Every contribution deserves a careful reading. Check the source, preserve uncertainty and honour the contributor’s choice of credit before adding material to the collection.</p>
+  <p id="review-message" class="review-message" role="status" aria-live="polite" tabindex="-1" hidden></p>
+  <section id="review-access" class="review-access" aria-labelledby="editor-access">
+    <div><p class="eyebrow">For the editorial team</p><h2 id="editor-access">Editor access</h2><p>Enter the editor key supplied by the website administrator. Access lasts only while this page is open. Lock the workspace when you finish.</p></div>
+    <form id="review-login" class="review-login" method="post" hidden>
+      <label for="editor-key">Editor key</label><input id="editor-key" name="editor_key" type="password" required autocomplete="off" spellcheck="false" maxlength="500" aria-describedby="editor-key-help">
+      <p id="editor-key-help" class="review-hint">The key is not saved in this browser.</p><button class="button" type="submit">Open the inbox <span aria-hidden="true">→</span></button>
+    </form>
+  </section>
+  <noscript><p class="review-message">JavaScript is needed to securely open the private editor inbox. Public articles remain available without it.</p></noscript>
+  <section id="review-workspace" hidden aria-labelledby="contribution-inbox">
+    <div class="review-heading"><div><p class="eyebrow">A growing community collection</p><h2 id="contribution-inbox">Contribution inbox</h2></div><button id="review-lock" type="button" class="button secondary">Lock workspace</button></div>
+    <p class="review-privacy">Private workspace · Contact details, unpublished contributions and internal notes are for editorial use only.</p>
+    <div id="review-counts" class="review-counts" aria-label="Contribution counts"></div>
+    <form id="review-filters" class="review-filters"><div><label for="review-status">Status</label><select id="review-status" name="status"><option value="">All statuses</option><option value="received">Received</option><option value="under_review">Under review</option><option value="needs_information">Needs more information</option><option value="approved">Approved</option><option value="published">Published</option><option value="declined">Declined</option></select></div><div class="review-search"><label for="review-query">Search contributions</label><input id="review-query" name="q" type="search" maxlength="160" placeholder="Title, contributor or place"></div><button type="submit" class="button">Apply filters</button></form>
+    <div class="review-layout">
+      <section class="review-queue" aria-label="Submitted contributions"><p id="review-list-status" class="review-hint" role="status"></p><ul id="review-list" class="review-list"></ul><button id="review-more" class="button secondary" type="button" hidden>Load more</button></section>
+      <section id="review-detail" class="review-detail" aria-label="Selected contribution"><div id="review-empty" class="review-empty"><span class="review-empty-mark" aria-hidden="true">অ</span><h3>A place for every piece of history</h3><p>Select a contribution to read its story, check the original material and record your review.</p></div><div id="review-record" hidden>
+        <div class="review-record-header"><p id="review-record-type" class="eyebrow"></p><h3 id="review-record-title" tabindex="-1"></h3><p id="review-record-reference" class="review-hint"></p></div>
+        <div class="review-record-actions"><button id="review-reload" type="button" class="text-link">Reload contribution</button><button id="review-export" type="button" class="text-link">Open editorial record</button></div>
+        <p class="review-hint">The record opens in a new tab and contains private contact details, notes and attachment references. Use your browser’s Save command to keep a copy; open original files separately.</p>
+        <p id="review-consent-warning" class="review-message" hidden></p>
+        <dl id="review-metadata" class="review-metadata"></dl>
+        <h3 class="review-subheading">Contribution</h3><div id="review-description" class="review-description"></div>
+        <h3 class="review-subheading">Original files</h3><ul id="review-files" class="review-files"></ul>
+        <h3 class="review-subheading">Private contributor replies</h3><ol id="review-replies" class="review-history"></ol>
+        <form id="review-decision" class="review-decision"><h3 class="review-subheading">Record your review</h3>
+          <label for="review-decision-status">Review status</label><select id="review-decision-status" name="status" required><option value="received">Received</option><option value="under_review">Under review</option><option value="needs_information">Needs more information</option><option value="approved">Approved</option><option value="published">Published</option><option value="declined">Declined</option></select>
+          <label for="review-public-note">Message to the contributor</label><textarea id="review-public-note" name="public_note" rows="4" maxlength="5000" aria-describedby="review-note-help"></textarea><p id="review-note-help" class="review-hint">Shown on the contributor’s private status page. Explain the decision or request the information you need. No email is sent automatically.</p>
+          <label for="review-internal-note">Internal editorial note</label><textarea id="review-internal-note" name="internal_note" rows="3" maxlength="5000" aria-describedby="review-internal-help"></textarea><p id="review-internal-help" class="review-hint">Visible only to editors. Do not copy contact details into public articles.</p>
+          <div id="review-publication-controls"><label for="review-published-url">Published article link</label><input id="review-published-url" name="published_url" type="text" inputmode="url" maxlength="2000" placeholder="/history.html" aria-describedby="review-publish-help"><p id="review-publish-help" class="review-hint">Required for “Published”: link to an article already live on this website. Changing the status does not edit or publish an article. Prepare and publish the article separately, then add its link here.</p></div>
+          <div class="review-save-row"><button id="review-save" type="submit" class="button">Save review</button><span id="review-save-status" class="review-hint" role="status"></span></div>
+        </form>
+        <h3 class="review-subheading">Review history</h3><ol id="review-history" class="review-history"></ol>
+      </div></section>
+    </div>
+  </section>
+</section>

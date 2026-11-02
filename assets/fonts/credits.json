@@ -1,0 +1,25 @@
+{
+  "family": "Noto Serif Bengali",
+  "license": "SIL Open Font License 1.1; see OFL.txt",
+  "source": "https://github.com/google/fonts/tree/main/ofl/notoserifbengali",
+  "files": [
+    {
+      "file": "noto-serif-bengali-400.ttf",
+      "weight": "400",
+      "source": "https://fonts.gstatic.com/s/notoserifbengali/v31/hYkuPvggTvnzO14VSXltirUdnnkt1pwmWrprmO7RjE0a5BtdATYU1crFaM_5JfcAHnqn.ttf",
+      "sha256": "b8db45a820e370a720766e424c2077cd9ec5a7def78a38d01f111b2e5a0a272b"
+    },
+    {
+      "file": "noto-serif-bengali-600.ttf",
+      "weight": "600",
+      "source": "https://fonts.gstatic.com/s/notoserifbengali/v31/hYkuPvggTvnzO14VSXltirUdnnkt1pwmWrprmO7RjE0a5BtdATYU1crFaM_5JffeGXqn.ttf",
+      "sha256": "001257778d27c2763978b2361c6999d7d1b736f943abc2bdeb4fa1a3e79b2d38"
+    },
+    {
+      "file": "noto-serif-bengali-700.ttf",
+      "weight": "700",
+      "source": "https://fonts.gstatic.com/s/notoserifbengali/v31/hYkuPvggTvnzO14VSXltirUdnnkt1pwmWrprmO7RjE0a5BtdATYU1crFaM_5JffnGXqn.ttf",
+      "sha256": "bc639f8c9e6d58fbdfb193f609c1ed27560a092d4c1285e50d3c8cd15baa830b"
+    }
+  ]
+}
