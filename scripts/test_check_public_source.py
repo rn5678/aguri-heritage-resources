@@ -94,6 +94,14 @@ class PublicSourceInventory(unittest.TestCase):
         self.assertIn('private credential', str(caught.exception))
         self.assertNotIn(credential.decode(), str(caught.exception))
 
+    def test_cloudflare_credential_is_rejected_without_echoing_it(self):
+        credential = b'cf' + b'ut_' + b'a' * 48
+        self.add('assets/public.json', b'{"accident": "' + credential + b'"}')
+        with self.assertRaises(check.SourceCheckError) as caught:
+            check.check_source(self.root)
+        self.assertIn('private credential', str(caught.exception))
+        self.assertNotIn(credential.decode(), str(caught.exception))
+
     def test_oversized_tracked_file_is_rejected(self):
         path = self.root / 'assets/translations/example-english.txt'
         with path.open('wb') as stream:

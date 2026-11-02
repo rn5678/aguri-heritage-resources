@@ -27,6 +27,7 @@ PRIVATE_PARTS = {'research', 'output', 'tmp', 'site', '__pycache__', 'node_modul
 CREDENTIAL_PATTERNS = (
     re.compile(rb'gh[pousr]_[A-Za-z0-9]{36,}'),
     re.compile(rb'github_pat_[A-Za-z0-9_]{40,}'),
+    re.compile(rb'cfut_[A-Za-z0-9_-]{40,}'),
     re.compile(rb'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----'),
     re.compile(rb'\bAKIA[A-Z0-9]{16}\b'),
 )

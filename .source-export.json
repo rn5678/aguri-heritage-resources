@@ -4054,8 +4054,8 @@
       "bytes": 5938
     },
     "scripts/check_public_source.py": {
-      "sha256": "c9616b6062670db069b220bf3c7b2c4d98549941614c84fb335a43dd8327bf85",
-      "bytes": 5854
+      "sha256": "d784bc73a1700e464ad1b81f9aa15c1b1f585245097ef99347d385cad28740ff",
+      "bytes": 5899
     },
     "scripts/check_site.py": {
       "sha256": "640d809019e2e132a0afd66fe28e5dabb33b64eb172d687297d6adf30798811d",
@@ -4162,8 +4162,8 @@
       "bytes": 7469
     },
     "scripts/test_check_public_source.py": {
-      "sha256": "bc3c7acc4ab3fb2956f712a494c0c972188f2efce95fb0f6acf916dffb576592",
-      "bytes": 4950
+      "sha256": "35ef1e2e529dd4e4d82b98c77a6bb361023ecd3459f7ac8c97e3d4a7abbad9a4",
+      "bytes": 5395
     },
     "scripts/test_ci_build.py": {
       "sha256": "7c3584cbfde8ed51fe48d3fe7f3cc0920240009990095288f5b1072e2a9cd3fb",
