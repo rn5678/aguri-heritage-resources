@@ -89,7 +89,8 @@ class Translator:
             self.due = time.monotonic() + 4
             self.wake.set()
 
-    def plan_structure(self, doc_id, lang, delete_nodes, insertions, *, capabilities):
+    def plan_structure(self, doc_id, lang, delete_nodes, insertions, *, capabilities,
+                       delete_images=(), image_removal=None, removal_patches=None, insertion_point=None):
         """Prepare paired Bengali structure; called under the editor's save lock.
 
         Text translation still happens after saving. Safe English additions get
@@ -104,9 +105,11 @@ class Translator:
             bn_nodes = {b['key']: node for b, node in zip(before['bn']['blocks'], original['bn'][2])}
             records = {r['en_key']: r for r in state_before['records'] if not r.get('tombstone')}
             bn_patches, paired_new = [], set()
+            image_review = False
             deleted_en = [en_by_start[n.start]['key'] for n in delete_nodes] if lang == 'en' else []
 
             def paired_node(english):
+                if english is None: return None
                 record = records.get(en_by_start[english.start]['key'])
                 if not record or record['status'] in ('conflict', 'needs_pairing'):
                     return None
@@ -114,10 +117,22 @@ class Translator:
 
             if lang == 'en' and self.enabled:
                 bn_text = original['bn'][1]
+                remove_targets=[]
                 for node in delete_nodes:
                     target = paired_node(node)
                     if target and capabilities(bn_text, target)['canDelete']:
-                        bn_patches.append((target.start, target.end, ''))
+                        remove_targets.append(target)
+                if delete_images and image_removal:
+                    source_images=original['en'][3]; target_images=original['bn'][3]
+                    key=lambda image:image.attrs.get('src','').lstrip('./')
+                    for image in delete_images:
+                        matches=[target for target in target_images if key(target)==key(image)]
+                        if len(matches)==1 and sum(key(candidate)==key(image) for candidate in source_images)==1:
+                            remove_targets.append(image_removal(matches[0]))
+                        else:
+                            image_review=True
+                if remove_targets:
+                    bn_patches.extend(removal_patches(bn_text,remove_targets) if removal_patches else [(target.start,target.end,'') for target in remove_targets])
                 for insertion in insertions:
                     identity = insertion['id']
                     if any(n.attrs.get('data-editor-block') == identity for n in original['bn'][2]):
@@ -125,9 +140,12 @@ class Translator:
                     target = paired_node(insertion['anchor'])
                     direction = insertion['position']
                     capability = 'canInsertBefore' if direction == 'before' else 'canInsertAfter'
-                    if target and capabilities(bn_text, target)[capability]:
-                        offset = target.start if direction == 'before' else target.end
-                        bn_patches.append((offset, offset, f'\n<p data-editor-block="{identity}"></p>\n'))
+                    at_end=insertion['anchor'] is None and insertion_point is not None
+                    if at_end or (target and capabilities(bn_text, target)[capability]):
+                        offset = insertion_point(bn_text) if at_end else target.start if direction == 'before' else target.end
+                        align=insertion.get('format',{}).get('align','')
+                        style=f' style="text-align: {align}"' if align else ''
+                        bn_patches.append((offset, offset, f'\n<p data-editor-block="{identity}"{style}></p>\n'))
                         paired_new.add(identity)
 
             def finish(changes_by_lang):
@@ -169,6 +187,8 @@ class Translator:
                     self.states[doc_id] = self.mapping.rebase_structure(
                         state_before, before['en'], before['bn'], after['en'], after['bn'],
                         maps['en'], maps['bn'], deleted_en_keys=deleted_en, new_pairs=new_pairs)
+                    if image_review:
+                        self.states[doc_id]['image_review'] = 'A removed English photograph could not be matched uniquely. Check the Bengali page, then mark it reviewed.'
                     self._store(doc_id)
                     if bn_patches:
                         self.revision += 1
@@ -184,7 +204,7 @@ class Translator:
         pending, reviews = 0, []
         for doc_id, state in self.states.items():
             pending += len(self.mapping.pending_jobs(state))
-            count = sum(r['status'] in ('needs_pairing', 'conflict') for r in state['records'])
+            count = sum(r['status'] in ('needs_pairing', 'conflict') for r in state['records']) + bool(state.get('image_review'))
             if self.error:
                 count += len(self.mapping.pending_jobs(state))
             if count:

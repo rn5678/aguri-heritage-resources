@@ -62,14 +62,14 @@ class StructuralEditing(unittest.TestCase):
     def addition(self,identity,anchor,position='after',html='A new <strong>paragraph</strong>.'):
         return {'id':identity,'anchor':anchor['id'],'position':position,'tag':'p','html':html}
 
-    def test_capabilities_protect_required_and_linked_fields_but_leave_insertion_anchors(self):
+    def test_all_visible_blocks_can_be_deleted_with_safe_insertion_anchors(self):
         _,doc=self.request()
         for needle in ('First body paragraph','Second body paragraph','A remembered quotation'):
             block=self.block(doc,needle)
             self.assertTrue(block['canDelete']);self.assertTrue(block['canInsertBefore']);self.assertTrue(block['canInsertAfter'])
         for needle in ('Test Person','Literature','1900','linked word','Linked body paragraph','source_count','Photo caption','A list item','A table cell','A paragraph in a table'):
             block=self.block(doc,needle)
-            self.assertFalse(block['canDelete'],needle);self.assertTrue(block['deleteReason'],needle)
+            self.assertTrue(block['canDelete'],needle);self.assertEqual(block['deleteReason'],'',needle)
         self.assertTrue(self.block(doc,'Test Person')['canInsertAfter'])
         for needle in ('Photo caption','A list item','A table cell','A paragraph in a table'):
             self.assertFalse(self.block(doc,needle)['canInsertAfter'],needle)
@@ -120,8 +120,9 @@ class StructuralEditing(unittest.TestCase):
         payload,doc=self.request()
         payload['deleteBlocks']=[block['id'] for block in doc['blocks'] if block['canDelete']]
         editor.save(payload)
-        payload,doc=self.request();heading=self.block(doc,'Test Person')
-        payload['insertBlocks']=[self.addition('new-rebuilt',heading,html='A fresh biography paragraph.')]
+        payload,doc=self.request();self.assertEqual(doc['blocks'],[])
+        self.assertEqual(doc['insertionTarget']['id'],'document-end')
+        payload['insertBlocks']=[self.addition('new-rebuilt',{'id':'document-end'},html='A fresh biography paragraph.')]
         editor.save(payload)
         self.assertIn('A fresh biography paragraph.',self.path.read_text())
 
@@ -134,13 +135,23 @@ class StructuralEditing(unittest.TestCase):
         self.assertNotIn('প্রথম অনুচ্ছেদ',self.bn.read_text())
         self.assertIn('নতুন বাংলা অনুচ্ছেদ।',self.bn.read_text())
 
-    def test_protected_deletion_and_unsafe_placement_are_rejected_before_backup(self):
-        _,doc=self.request()
-        for needle in ('Test Person','Literature','1900','linked word','Linked body paragraph','source_count','Photo caption','A list item','A table cell'):
-            payload,_=self.request();payload['deleteBlocks']=[self.block(doc,needle)['id']]
-            with self.subTest(delete=needle),self.assertRaises(editor.EditError):editor.save(payload)
-        payload,_=self.request();payload['insertBlocks']=[self.addition('new-bad',self.block(doc,'A table cell'))]
-        with self.assertRaises(editor.EditError):editor.save(payload)
+    def test_linked_headings_labels_caption_list_and_table_text_can_be_removed(self):
+        payload,doc=self.request()
+        needles=('Test Person','Literature','1900','linked word','Linked body paragraph','source_count','Photo caption','A list item','A table cell')
+        payload['deleteBlocks']=[self.block(doc,needle)['id'] for needle in needles]
+        editor.save(payload)
+        text=self.path.read_text()
+        for needle in needles[1:]: self.assertNotIn(needle,text)
+        self.assertIn('data-editor-title="Test Person"',text)
+        self.assertIn('<span id="test-person" data-editor-anchor="true" data-editor-tag="h2" hidden></span>',text)
+        self.assertIn('<span id="linked-word" data-editor-anchor="true" data-editor-tag="p" hidden></span>',text)
+        self.assertIn('Keep the other biography.',text)
+        self.assertEqual(editor.document('person-test-person','en')['title'],'Test Person')
+
+    def test_unsafe_paragraph_insertion_is_rejected_before_backup(self):
+        payload,doc=self.request()
+        payload['insertBlocks']=[self.addition('new-bad',self.block(doc,'A table cell'))]
+        with self.assertRaises(editor.EditError): editor.save(payload)
         self.assertEqual(self.path.read_text(),PROFILE)
         self.assertFalse((self.root/'local-editor/backups').exists())
 

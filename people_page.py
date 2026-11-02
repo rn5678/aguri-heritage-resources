@@ -51,25 +51,28 @@ def _population_sources_to_notes(body):
     counts = [body.count('id="' + source_id + '"') for source_id in source_ids]
     if counts == [0, 0]:
         return body  # Older authored collections do not have the population note.
-    if counts != [1, 1]:
-        raise ValueError('People population sources: expected one a and one b source')
+    if any(count > 1 for count in counts):
+        raise ValueError('People population sources: duplicate source anchor')
     paragraphs = []
     for source_id in source_ids:
         pattern = r'<p\b[^>]*\bid="' + source_id + r'"[^>]*>.*?</p>'
         matches = list(re.finditer(pattern, body, re.S))
-        if len(matches) != 1:
-            raise ValueError('People population sources: expected a source paragraph')
+        if not matches:
+            continue  # An editor deletion retains an inert anchor, not a paragraph.
         paragraph = matches[0].group()
         classes = re.search(r'\bclass="([^"]*)"', paragraph.split('>', 1)[0])
         if not classes or 'small' not in classes[1].split():
             raise ValueError('People population sources: expected a small source paragraph')
         paragraphs.append(paragraph)
-    for paragraph in paragraphs:
-        body = body.replace(paragraph, '', 1)
     pattern = r'<details class="notes" aria-labelledby="notes-heading">.*?</details>'
     panels = list(re.finditer(pattern, body, re.S))
+    if not paragraphs or not panels:
+        return body
     if len(panels) != 1 or panels[0].group().count('</ol>') != 1:
         raise ValueError('People population sources: expected one existing numbered notes panel')
+    for paragraph in paragraphs:
+        body = body.replace(paragraph, '', 1)
+    panels = list(re.finditer(pattern, body, re.S))
     panel = panels[0]
     replacement = panel.group().replace('</ol>', '</ol>' + ''.join(paragraphs), 1)
     return body[:panel.start()] + replacement + body[panel.end():]
@@ -83,18 +86,20 @@ def render_people(body, lang):
     cards = []
     images = {}
     for slug in COLLECTION_SELECTION:
-        profile = profiles[slug]
-        copy = re.search(r'<div class="person-copy">(.*)</div>\s*$', profile, re.S).group(1)
-        summary = re.search(r'<p>(.*?)</p>', copy, re.S)
-        kicker = re.search(r'<p class="eyebrow">(.*?)</p>', copy, re.S)
-        if not summary or not kicker:
-            raise ValueError('People carousel: missing authored preview for ' + slug)
+        profile = profiles.get(slug)
+        portrait = portraits.get(slug)
+        if not profile or not portrait or not portrait['name'] or not re.search(r'<img\b',portrait['figure']):
+            continue
+        copy = re.search(r'<div\b[^>]*class="person-copy"[^>]*>(.*)</div>\s*$', profile, re.S).group(1)
+        summary = re.search(r'<p\b(?![^>]*\bclass=)[^>]*>(.*?)</p>', copy, re.S)
+        kicker = re.search(r'<p\b[^>]*class="eyebrow"[^>]*>(.*?)</p>', copy, re.S)
         key = 'person-' + slug
-        cards.append({'title': plain(portraits[slug]['name']), 'kicker': plain(kicker.group(1)),
-                      'summary': plain(summary.group(1)), 'link': {'href': key + '.html'}})
+        cards.append({'title': plain(portrait['name']), 'kicker': plain(kicker.group(1)) if kicker else '',
+                      'summary': plain(summary.group(1)) if summary else '', 'link': {'href': key + '.html'}})
         figure = portraits[slug]['figure']
         image = PortraitImage(figure).images[0]
-        caption = re.search(r'<figcaption>(.*?)</figcaption>', figure, re.S).group(1)
+        caption_match = re.search(r'<figcaption\b[^>]*>(.*?)</figcaption>', figure, re.S)
+        caption = caption_match.group(1) if caption_match else ''
         asset = image['src']
         # Some Bengali profiles already use edition-relative asset URLs.
         # The shared carousel validates a project-relative path and adds its

@@ -65,6 +65,84 @@ const EditorPublishing = (() => {
   return { phases, githubLink, siteLink, localBusy, remoteBusy, pollDelay, sourceBlocked, createRequest };
 })();
 
+// Content operations shared by the editor and its isolated regression tests.
+const EditorContent = (() => {
+  const alignments = new Set(["", "left", "center", "right", "justify"]);
+  const formattingTags = new Set(["B", "STRONG", "I", "EM", "U", "S", "STRIKE", "DEL", "SUP", "SUB", "SMALL", "MARK", "FONT"]);
+  function alignment(value) { return alignments.has(value) ? value : ""; }
+  function removedBlocks(state) {
+    const removed = new Set(state.deletedBlocks);
+    for (const id of state.deletedImages) {
+      for (const child of state.imageMeta.get(id)?.deleteBlockIds || []) removed.add(String(child));
+    }
+    return removed;
+  }
+  function dirtyCount(state) {
+    const removed = removedBlocks(state);
+    const edited = new Set([...state.changedBlocks.keys(), ...state.blockFormats.keys()]);
+    return [...edited].filter(id => !removed.has(id) && !state.insertedBlocks.has(id)).length +
+      [...state.imageChanges.keys()].filter(id => !state.deletedImages.has(id)).length +
+      [...state.deletedBlocks].filter(id => ![...state.deletedImages].some(image =>
+        (state.imageMeta.get(image)?.deleteBlockIds || []).map(String).includes(id))).length +
+      state.deletedImages.size + state.insertedBlocks.size;
+  }
+  function saveFields(state, insertions) {
+    const removed = removedBlocks(state);
+    return {
+      blocks: Object.fromEntries([...state.changedBlocks].filter(([id]) => !removed.has(id))),
+      blockFormats: Object.fromEntries([...state.blockFormats].filter(([id]) => !removed.has(id) && !state.insertedBlocks.has(id))),
+      images: Object.fromEntries([...state.imageChanges].filter(([id]) => !state.deletedImages.has(id))),
+      deleteBlocks: [...state.deletedBlocks].filter(id => ![...state.deletedImages].some(image =>
+        (state.imageMeta.get(image)?.deleteBlockIds || []).map(String).includes(id))),
+      deleteImages: [...state.deletedImages], insertBlocks: insertions,
+    };
+  }
+  function validRange(range, block) {
+    return Boolean(range && block?.isConnected && block.contains(range.startContainer) && block.contains(range.endContainer));
+  }
+  function splitsGeneratedField(text, start, end) {
+    return [...text.matchAll(/\{\{[\s\S]*?\}\}/g)].some(match =>
+      (start > match.index && start < match.index + match[0].length) ||
+      (end > match.index && end < match.index + match[0].length));
+  }
+  function semanticAttributes(node) {
+    return [...node.attributes].filter(attr => ["id", "name", "lang", "dir", "title"].includes(attr.name) || attr.name.startsWith("aria-"));
+  }
+  function cleanFragment(node, document, mode) {
+    if (node.nodeType === 3 || node.nodeType === 8) return node.cloneNode(true);
+    if (node.nodeType === 1 && node.classList.contains("editor-citation")) return node.cloneNode(true);
+    const unwrap = node.nodeType === 1 && (mode === "unlink" ? node.tagName === "A" : formattingTags.has(node.tagName));
+    const semantic = unwrap ? semanticAttributes(node) : [];
+    const result = node.nodeType === 11 || (unwrap && !semantic.length) ? document.createDocumentFragment() :
+      unwrap ? document.createElement(mode === "unlink" && node.hasAttribute("name") ? "a" : "span") : node.cloneNode(false);
+    if (unwrap && semantic.length) for (const attr of semantic) result.setAttribute(attr.name, attr.value);
+    if (mode === "clear" && result.nodeType === 1) result.removeAttribute("style");
+    for (const child of node.childNodes) result.append(cleanFragment(child, document, mode));
+    return result;
+  }
+  function clearedSelectionHTML(block, range, mode = "clear") {
+    if (!validRange(range, block) || range.collapsed) return null;
+    const doc = block.ownerDocument;
+    const before = doc.createRange(); before.selectNodeContents(block); before.setEnd(range.startContainer, range.startOffset);
+    const after = doc.createRange(); after.selectNodeContents(block); after.setStart(range.endContainer, range.endOffset);
+    let selected = range.cloneContents();
+    let ancestor = range.commonAncestorContainer.nodeType === 1 ? range.commonAncestorContainer : range.commonAncestorContainer.parentElement;
+    while (ancestor && ancestor !== block) {
+      const shell = ancestor.cloneNode(false); shell.append(selected); selected = shell; ancestor = ancestor.parentElement;
+    }
+    const output = doc.createElement("div");
+    output.append(before.cloneContents(), cleanFragment(selected, doc, mode), after.cloneContents());
+    // Splitting a named wrapper around a selection must not duplicate its target.
+    const ids = new Set(), names = new Set();
+    for (const node of output.querySelectorAll("[id],a[name]")) {
+      if (node.hasAttribute("id")) { const id = node.getAttribute("id"); if (ids.has(id)) node.removeAttribute("id"); else ids.add(id); }
+      if (node.tagName === "A" && node.hasAttribute("name")) { const name = node.getAttribute("name"); if (names.has(name)) node.removeAttribute("name"); else names.add(name); }
+    }
+    return output.innerHTML;
+  }
+  return { alignment, removedBlocks, dirtyCount, saveFields, validRange, splitsGeneratedField, cleanFragment, clearedSelectionHTML };
+})();
+
 // Editor application.
 (() => {
   const $ = (selector) => document.querySelector(selector);
@@ -106,7 +184,8 @@ const EditorPublishing = (() => {
     blocks: new Map(), blockOriginals: new Map(), changedBlocks: new Map(),
     blockMeta: new Map(), blockWrappers: new Map(), deletedBlocks: new Set(), insertedBlocks: new Map(),
     blockHistory: [], structuralUndoPending: false,
-    imageChanges: new Map(), imageOriginals: new Map(), activeBlock: null, selection: null,
+    imageChanges: new Map(), imageOriginals: new Map(), imageMeta: new Map(), imageWrappers: new Map(), deletedImages: new Set(),
+    blockFormats: new Map(), formatOriginals: new Map(), activeBlock: null, selection: null,
     publication: { phase: "idle" }, publishRequest: false, publishTimer: null, publishConnectionError: "",
     publishFetching: false, publishSerial: 0, savedSincePreparation: false,
     translation: { enabled: true, phase: "idle", pending: 0, reviewCount: 0 }, translationLoaded: false,
@@ -119,9 +198,9 @@ const EditorPublishing = (() => {
   $(".shortcut").textContent = isMac ? "⌘S" : "Ctrl S";
 
   function dirtyCount() {
-    return [...state.changedBlocks.keys()].filter((id) => !state.deletedBlocks.has(id)).length +
-      state.imageChanges.size + state.deletedBlocks.size + state.insertedBlocks.size;
+    return EditorContent.dirtyCount(state);
   }
+  function blockRemoved(id) { return EditorContent.removedBlocks(state).has(id); }
   function publishingBusy() { return EditorPublishing.localBusy(state.publication.phase); }
   function sourceActionBlocked() {
     return EditorPublishing.sourceBlocked({ ...state, phase: state.publication.phase,
@@ -207,6 +286,7 @@ const EditorPublishing = (() => {
       button.setAttribute("aria-pressed", String(button.dataset.lang === state.lang));
       button.disabled = busy;
     });
+    updateFormattingControls();
   }
   function markChanged(block) {
     const id = block.dataset.blockId;
@@ -224,7 +304,7 @@ const EditorPublishing = (() => {
     const changed = block.innerHTML !== state.blockOriginals.get(id);
     if (changed) state.changedBlocks.set(id, block.innerHTML);
     else state.changedBlocks.delete(id);
-    block.classList.toggle("dirty", changed);
+    block.classList.toggle("dirty", changed || state.blockFormats.has(id));
     updateBlockOption(id);
     updateControls();
     setStatus(dirtyCount() ? "You have unsaved changes. Save when you’re ready." : "All changes saved on this computer.");
@@ -863,7 +943,7 @@ const EditorPublishing = (() => {
     const block = state.blocks.get(id);
     const meta = state.blockMeta.get(id) || state.insertedBlocks.get(id) || { id, tag: "p" };
     const text = block?.textContent.replace(/\s+/g, " ").trim() || "Empty text";
-    return `${index}. ${state.deletedBlocks.has(id) ? "Removed · " : ""}${blockKind(meta)} — ${text.slice(0, 65)}${text.length > 65 ? "…" : ""}`;
+    return `${index}. ${blockRemoved(id) ? "Removed · " : ""}${blockKind(meta)} — ${text.slice(0, 65)}${text.length > 65 ? "…" : ""}`;
   }
   function updateBlockOption(id) {
     const option = [...ui.blockSelect.options].find((item) => item.value === id);
@@ -872,7 +952,7 @@ const EditorPublishing = (() => {
   function refreshBlockNavigation() {
     const activeId = state.activeBlock?.dataset.blockId || ui.blockSelect.value;
     ui.blockSelect.replaceChildren(new Option("Choose a block…", ""));
-    const wrappers = ui.content.querySelectorAll(".content-block");
+    const wrappers = [...ui.content.querySelectorAll(".content-block")].filter(wrapper => !wrapper.hidden);
     wrappers.forEach((wrapper, index) => {
       const id = wrapper.dataset.blockWrapper;
       ui.blockSelect.add(new Option(optionLabel(id, index + 1), id));
@@ -887,7 +967,7 @@ const EditorPublishing = (() => {
     ui.content.querySelectorAll(".content-block.selected").forEach((item) => item.classList.remove("selected"));
     wrapper.classList.add("selected");
     ui.blockSelect.value = id;
-    if (state.deletedBlocks.has(id)) {
+    if (blockRemoved(id)) {
       state.activeBlock = null;
       state.selection = null;
       if (focus) wrapper.querySelector(".block-restore").focus();
@@ -902,22 +982,24 @@ const EditorPublishing = (() => {
     const addition = state.insertedBlocks.get(activeId);
     if (addition) return { anchor: addition.anchor, position: addition.position, afterNew: activeId };
     const active = state.blockMeta.get(activeId);
-    if (active && !state.deletedBlocks.has(activeId)) {
+    if (active && !blockRemoved(activeId)) {
       if (active.canInsertAfter) return { anchor: activeId, position: "after" };
       if (active.canInsertBefore) return { anchor: activeId, position: "before" };
     }
     for (const [id, meta] of state.blockMeta) {
-      if (state.deletedBlocks.has(id)) continue;
+      if (blockRemoved(id)) continue;
       if (meta.canInsertBefore) return { anchor: id, position: "before" };
       if (meta.canInsertAfter) return { anchor: id, position: "after" };
     }
+    if (state.doc?.insertionTarget) return { anchor: state.doc.insertionTarget.id, position: state.doc.insertionTarget.position };
+    if (state.doc && state.blockMeta.size && [...state.blockMeta.keys()].every(blockRemoved)) return { anchor: "document-end", position: "after" };
     return null;
   }
   function placeInsertedBlock(wrapper, insertion, afterNew = null) {
     const anchor = state.blockWrappers.get(insertion.anchor);
     const after = afterNew && state.blockWrappers.get(afterNew);
     if (after?.isConnected) { after.after(wrapper); return; }
-    if (!anchor) return;
+    if (!anchor) { if (insertion.anchor === "document-end") ui.content.append(wrapper); return; }
     if (insertion.position === "before") { anchor.before(wrapper); return; }
     let last = anchor;
     while (last.nextElementSibling?.dataset.insertionAnchor === insertion.anchor && last.nextElementSibling.dataset.insertionPosition === "after") last = last.nextElementSibling;
@@ -985,6 +1067,7 @@ const EditorPublishing = (() => {
     state.blockWrappers.delete(id);
     state.blockOriginals.delete(id);
     state.changedBlocks.delete(id);
+    state.blockFormats.delete(id);
     return snapshot;
   }
   function restoreNewBlock(snapshot) {
@@ -1007,9 +1090,10 @@ const EditorPublishing = (() => {
   function addTextBlock(target = findInsertionTarget()) {
     if (editingBusy() || !target) return;
     const anchor = state.blockMeta.get(target.anchor);
-    if (!anchor || !(target.position === "before" ? anchor.canInsertBefore : anchor.canInsertAfter)) return;
+    if (target.anchor !== "document-end" && (!anchor || !(target.position === "before" ? anchor.canInsertBefore : anchor.canInsertAfter))) return;
     const id = `new-${crypto.randomUUID()}`;
-    const insertion = { id, anchor: target.anchor, position: target.position, tag: "p", html: "" };
+    const insertion = { id, anchor: target.anchor, position: target.position, tag: "p", html: "", format: { align: "" } };
+    ui.content.querySelector(".empty-content-note")?.remove();
     state.insertedBlocks.set(id, insertion);
     const wrapper = makeBlock(insertion, true);
     wrapper.dataset.newBlock = "true";
@@ -1101,6 +1185,9 @@ const EditorPublishing = (() => {
     element.setAttribute("aria-multiline", "true");
     element.setAttribute("aria-label", `${/^H[1-6]$/.test(requested) ? "Heading" : "Text"}: click to edit`);
     element.innerHTML = block.html || "";
+    const align = EditorContent.alignment(block.format?.align);
+    element.style.textAlign = align;
+    if (!isNew) state.formatOriginals.set(id, align);
     element.querySelectorAll(".editor-citation").forEach((citation) => {
       citation.contentEditable = "false";
       citation.tabIndex = 0;
@@ -1173,10 +1260,42 @@ const EditorPublishing = (() => {
     }
     return wrapper;
   }
+  function setImageDeleted(id, deleted) {
+    const figure = state.imageWrappers.get(id);
+    if (!figure) return;
+    if (deleted) state.deletedImages.add(id); else state.deletedImages.delete(id);
+    figure.classList.toggle("removed", deleted);
+    for (const child of figure.children) child.hidden = child.classList.contains("image-tombstone") ? !deleted : deleted;
+    const automatic = new Set();
+    for (const image of state.deletedImages) for (const child of state.imageMeta.get(image)?.deleteBlockIds || []) automatic.add(String(child));
+    for (const [blockId, wrapper] of state.blockWrappers) {
+      wrapper.hidden = automatic.has(blockId);
+      if (automatic.has(blockId) && state.activeBlock === state.blocks.get(blockId)) {
+        state.activeBlock = null; state.selection = null; window.getSelection()?.removeAllRanges();
+      }
+    }
+    refreshBlockNavigation();
+    updateControls();
+  }
+  function deleteImage(id) {
+    if (editingBusy() || state.deletedImages.has(id) || !state.imageMeta.get(id)?.canDelete) return;
+    setImageDeleted(id, true);
+    structuralChange("Photo removal", () => setImageDeleted(id, false));
+    setStatus("Photo and its attached caption removed. Restore or Undo keeps your unsaved edits.");
+  }
+  function restoreImage(id) {
+    if (editingBusy() || !state.deletedImages.has(id)) return;
+    setImageDeleted(id, false);
+    structuralChange("Photo restoration", () => setImageDeleted(id, true));
+    setStatus("Photo restored with its caption and your unsaved edits.");
+  }
   function makeImage(image) {
     const id = String(image.id);
     const figure = document.createElement("figure");
     figure.className = "image-card";
+    figure.dataset.imageId = id;
+    state.imageMeta.set(id, image);
+    state.imageWrappers.set(id, figure);
     const stage = document.createElement("div");
     stage.className = "image-stage";
     const photo = document.createElement("img");
@@ -1199,7 +1318,7 @@ const EditorPublishing = (() => {
     file.type = "file";
     file.accept = "image/jpeg,image/png,image/webp";
     file.hidden = true;
-    replace.addEventListener("click", () => file.click());
+    replace.addEventListener("click", () => { if (!editingBusy() && !state.deletedImages.has(id)) file.click(); });
     const description = document.createElement("label");
     description.className = "image-description";
     description.textContent = "Image description · for accessibility";
@@ -1258,12 +1377,23 @@ const EditorPublishing = (() => {
       finally { state.readingImage = false; updateControls(); }
     });
     controls.append(photoLabel, replace, file);
+    if (image.canDelete) {
+      const remove = document.createElement("button");
+      remove.type = "button"; remove.className = "block-action block-delete"; remove.textContent = "Delete photo";
+      remove.addEventListener("click", () => deleteImage(id));
+      controls.append(remove);
+    }
     figure.append(stage, controls, description);
     if (image.caption) {
       const caption = document.createElement("figcaption");
       caption.textContent = image.caption;
       figure.append(caption);
     }
+    const tombstone = document.createElement("div");
+    tombstone.className = "block-tombstone image-tombstone"; tombstone.hidden = true;
+    const removed = document.createElement("span"); removed.textContent = "Photo removed";
+    const restore = document.createElement("button"); restore.type = "button"; restore.className = "block-restore"; restore.textContent = "Restore photo";
+    restore.addEventListener("click", () => restoreImage(id)); tombstone.append(removed, restore); figure.append(tombstone);
     return figure;
   }
   function renderDocument(doc) {
@@ -1272,6 +1402,11 @@ const EditorPublishing = (() => {
     if (doc.lang !== "bn" || state.bengaliReloadNeeded?.id !== doc.id || state.bengaliReloadNeeded?.version === doc.version) state.bengaliReloadNeeded = null;
     state.changedBlocks.clear();
     state.imageChanges.clear();
+    state.imageMeta.clear();
+    state.imageWrappers.clear();
+    state.deletedImages.clear();
+    state.blockFormats.clear();
+    state.formatOriginals.clear();
     state.blocks.clear();
     state.blockOriginals.clear();
     state.blockMeta.clear();
@@ -1284,6 +1419,9 @@ const EditorPublishing = (() => {
     state.activeBlock = null;
     state.selection = null;
     ui.title.textContent = doc.title;
+    const editingNotice = $("#editing-notice");
+    editingNotice.textContent = typeof doc.editingNotice === "string" ? doc.editingNotice : "";
+    editingNotice.hidden = !editingNotice.textContent;
     const kind = state.pages.find((page) => page.id === doc.id)?.kind === "profile" ? "PROFILE" : "WEBSITE PAGE";
     const page = state.pages.find((item) => item.id === doc.id);
     const typeName = page?.typeName || state.types.find((type) => type.id === page?.type)?.name;
@@ -1305,7 +1443,8 @@ const EditorPublishing = (() => {
     }
     if (!ui.content.children.length) {
       const note = document.createElement("p");
-      note.textContent = "This page has no editable text or photos.";
+      note.className = "empty-content-note";
+      note.textContent = doc.insertionTarget ? "This page is empty. Choose Add text block to begin." : "This page has no editable text or photos.";
       ui.content.append(note);
     }
     ui.heading.hidden = false;
@@ -1363,9 +1502,7 @@ const EditorPublishing = (() => {
         method: "POST", headers: { "Content-Type": "application/json", "X-Editor-Token": token },
         body: JSON.stringify({
           id: state.doc.id, lang: state.lang, version: state.doc.version,
-          blocks: Object.fromEntries([...state.changedBlocks].filter(([id]) => !state.deletedBlocks.has(id))),
-          images: Object.fromEntries(state.imageChanges),
-          deleteBlocks: [...state.deletedBlocks], insertBlocks: serializedInsertions()
+          ...EditorContent.saveFields(state, serializedInsertions())
         })
       });
       if (!data.document) throw new Error("Your changes were submitted, but the updated content could not be loaded. Reopen this page before editing further.");
@@ -1384,34 +1521,115 @@ const EditorPublishing = (() => {
   }
   function rememberSelection() {
     const selection = window.getSelection();
-    if (!selection?.rangeCount) return;
+    if (!selection?.rangeCount) { state.selection = null; updateFormattingControls(); return; }
     const range = selection.getRangeAt(0);
     const node = range.commonAncestorContainer.nodeType === Node.ELEMENT_NODE ? range.commonAncestorContainer : range.commonAncestorContainer.parentElement;
     const block = node?.closest?.(".editable-block");
-    if (!block || !ui.content.contains(block) || state.deletedBlocks.has(block.dataset.blockId)) {
-      if (node && ui.content.contains(node)) state.selection = null;
+    if (!block || !ui.content.contains(block) || blockRemoved(block.dataset.blockId) || !EditorContent.validRange(range, block)) {
+      if (node && ui.content.contains(node)) { state.selection = null; updateFormattingControls(); }
       return;
     }
     state.activeBlock = block;
     state.selection = range.cloneRange();
+    updateFormattingControls();
   }
   function restoreSelection() {
-    if (!state.selection || !state.activeBlock?.isConnected || state.deletedBlocks.has(state.activeBlock.dataset.blockId)) return false;
+    if (!EditorContent.validRange(state.selection, state.activeBlock) || blockRemoved(state.activeBlock.dataset.blockId)) return false;
     state.activeBlock.focus();
     const selection = window.getSelection();
     selection.removeAllRanges();
     selection.addRange(state.selection);
     return true;
   }
+  function formattingSelection() {
+    if (!restoreSelection() || state.selection.collapsed) {
+      setStatus("Select words within one text block first."); return false;
+    }
+    const range = state.selection, block = state.activeBlock;
+    for (const endpoint of [range.startContainer, range.endContainer]) {
+      const element = endpoint.nodeType === 1 ? endpoint : endpoint.parentElement;
+      if (element?.closest?.(".editor-citation")) { setStatus("Select the words beside a source reference to format them."); return false; }
+    }
+    const before = document.createRange(); before.selectNodeContents(block); before.setEnd(range.startContainer, range.startOffset);
+    const start = before.toString().length, end = start + range.toString().length;
+    if (EditorContent.splitsGeneratedField(block.textContent, start, end)) {
+      setStatus("Keep a generated field together when selecting words to format."); return false;
+    }
+    return true;
+  }
+  function updateFormattingControls() {
+    const block = state.activeBlock, id = block?.dataset.blockId;
+    const available = Boolean(block?.isConnected && !blockRemoved(id) && !editingBusy());
+    const selected = available && EditorContent.validRange(state.selection, block) && !state.selection.collapsed;
+    const standaloneLink = state.blockMeta.get(id)?.tag === "a";
+    document.querySelectorAll("[data-command]").forEach(button => {
+      button.disabled = !selected;
+      let pressed = false;
+      try { pressed = selected && Boolean(document.queryCommandState?.(button.dataset.command)); } catch {}
+      button.setAttribute("aria-pressed", String(pressed));
+    });
+    for (const selector of ["#link-button", "#unlink-button", "#clear-format-button"]) {
+      const button = $(selector);
+      button.disabled = !selected || (selector !== "#clear-format-button" && standaloneLink);
+      if (selector === "#link-button") button.title = standaloneLink ? "This text is already a page link; its destination stays attached to the block." : "Add or edit a link";
+    }
+    document.querySelectorAll("[data-align]").forEach(button => {
+      button.disabled = !available;
+      const current = block?.style?.textAlign || "left";
+      button.setAttribute("aria-pressed", String(available && current === button.dataset.align));
+    });
+  }
+  function setBlockAlignment(id, value) {
+    const block = state.blocks.get(id);
+    if (!block || blockRemoved(id)) return;
+    const align = EditorContent.alignment(value);
+    block.style.textAlign = align;
+    if (state.insertedBlocks.has(id)) state.insertedBlocks.get(id).format = { align };
+    else if (align !== state.formatOriginals.get(id)) state.blockFormats.set(id, { align });
+    else state.blockFormats.delete(id);
+    block.classList.toggle("dirty", state.insertedBlocks.has(id) || state.changedBlocks.has(id) || state.blockFormats.has(id));
+    updateControls();
+  }
+  function clearSelectedFormatting(mode) {
+    if (editingBusy() || !formattingSelection()) return;
+    if (mode === "unlink" && state.blockMeta.get(state.activeBlock.dataset.blockId)?.tag === "a") {
+      setStatus("This whole block is a page link. Its destination stays attached to the block."); return;
+    }
+    const block = state.activeBlock, html = EditorContent.clearedSelectionHTML(block, state.selection, mode);
+    if (html === null) return;
+    const range = document.createRange(); range.selectNodeContents(block);
+    const selection = window.getSelection(); selection.removeAllRanges(); selection.addRange(range);
+    // One native replacement retains the browser's text Undo history.
+    document.execCommand("insertHTML", false, html);
+    markChanged(block); rememberSelection();
+    setStatus(mode === "unlink" ? "Selected link removed. Text and references are kept." : "Selected formatting cleared. Links, references and language are kept.");
+  }
   document.addEventListener("selectionchange", rememberSelection);
   document.querySelectorAll("[data-command]").forEach((button) => {
     button.addEventListener("mousedown", (event) => event.preventDefault());
     button.addEventListener("click", () => {
       if (editingBusy()) return;
-      if (!restoreSelection()) { setStatus("Select some words in the document first."); return; }
+      if (!formattingSelection()) return;
+      document.execCommand("styleWithCSS", false, false);
       document.execCommand(button.dataset.command);
       markChanged(state.activeBlock);
       rememberSelection();
+    });
+  });
+  for (const [selector, mode] of [["#clear-format-button", "clear"], ["#unlink-button", "unlink"]]) {
+    $(selector).addEventListener("mousedown", event => event.preventDefault());
+    $(selector).addEventListener("click", () => clearSelectedFormatting(mode));
+  }
+  document.querySelectorAll("[data-align]").forEach(button => {
+    button.addEventListener("mousedown", event => event.preventDefault());
+    button.addEventListener("click", () => {
+      const block = state.activeBlock;
+      if (editingBusy() || !block?.isConnected || blockRemoved(block.dataset.blockId)) return;
+      const id = block.dataset.blockId, before = block.style.textAlign || "";
+      if (before === button.dataset.align) return;
+      setBlockAlignment(id, button.dataset.align);
+      structuralChange("Alignment change", () => setBlockAlignment(id, before));
+      setStatus("Block alignment updated. Save when you’re ready.");
     });
   });
   $("#undo-button").addEventListener("mousedown", (event) => event.preventDefault());
@@ -1419,13 +1637,16 @@ const EditorPublishing = (() => {
     if (!editingBusy() && state.structuralUndoPending && state.blockHistory.length) { undoBlockChange(); return; }
     if (editingBusy() || !restoreSelection()) return;
     document.execCommand("undo");
-    for (const [id, block] of state.blocks) if (!state.deletedBlocks.has(id)) markChanged(block);
+    for (const [id, block] of state.blocks) if (!blockRemoved(id)) markChanged(block);
     rememberSelection();
   });
   $("#link-button").addEventListener("mousedown", (event) => event.preventDefault());
   $("#link-button").addEventListener("click", () => {
     if (editingBusy()) return;
-    if (!state.selection || state.selection.collapsed) { setStatus("Select the words you would like to turn into a link."); return; }
+    if (!formattingSelection()) return;
+    if (state.blockMeta.get(state.activeBlock.dataset.blockId)?.tag === "a") {
+      setStatus("This whole block is already a page link. Select words in a different text block to add a link."); return;
+    }
     const node = state.selection.startContainer.nodeType === Node.ELEMENT_NODE ? state.selection.startContainer : state.selection.startContainer.parentElement;
     ui.linkUrl.value = node?.closest?.("a")?.getAttribute("href") || "";
     ui.linkError.hidden = true;
@@ -1444,7 +1665,7 @@ const EditorPublishing = (() => {
       return;
     }
     ui.dialog.close();
-    if (restoreSelection()) {
+    if (formattingSelection() && state.blockMeta.get(state.activeBlock.dataset.blockId)?.tag !== "a") {
       document.execCommand("createLink", false, url);
       markChanged(state.activeBlock);
       rememberSelection();

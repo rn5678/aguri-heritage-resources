@@ -104,9 +104,9 @@ class Stories(HTMLParser):
   if tag=='article' and self.current is not None:
    card=self.current
    for key in ('kicker','title','summary'):card[key]=''.join(card[key]).strip()
-   if not all(card[key] for key in ('kicker','title','summary')) or not card['link'].get('href'):
-    raise ValueError('History carousel: a story card is missing its title, summary, kicker or link')
-   self.cards.append(card);self.current=None;self.field=None
+   if card['title'] and card['link'].get('href'):
+    self.cards.append(card)
+   self.current=None;self.field=None
  def handle_data(self,data):
   if self.in_heading:self.heading.append(data)
   if self.current is not None and self.field:self.current[self.field].append(data)
@@ -116,13 +116,14 @@ def render_hero(body,lang):
  match=re.search(r'<section\b[^>]*aria-labelledby="explore-history-stories"[^>]*>.*?</section>',body,re.S)
  if not match:raise ValueError('History carousel: the story collection was not found')
  parsed=Stories();parsed.feed(match.group(0));cards=parsed.cards
- if len(cards)!=8:raise ValueError('History carousel: review the eight-story inventory before changing its size')
- hero=carousel_markup(cards,''.join(parsed.heading).strip(),lang,IMAGES,LABELS[lang],
+ labels=LABELS[lang] if len(cards)==8 else {**LABELS[lang], 'all': 'নিচে সব কাহিনি দেখুন' if lang=='bn' else 'All stories below'}
+ hero=carousel_markup(cards,''.join(parsed.heading).strip(),lang,IMAGES,labels,
                       'history-hero','explore-history-stories')
  return replace_artwork(body,hero)
 
 def carousel_markup(cards,heading,lang,images,label,id_prefix,collection_id):
  """Build the shared carousel from a reviewed, language-specific story inventory."""
+ if not cards:return ''
  number=lambda n:str(n).translate(str.maketrans('0123456789','০১২৩৪৫৬৭৮৯')) if lang=='bn' else str(n)
  slides=[];indicators=[]
  for index,card in enumerate(cards):
@@ -136,14 +137,20 @@ def carousel_markup(cards,heading,lang,images,label,id_prefix,collection_id):
   hreflang=f' hreflang="{escape(card["link"]["hreflang"],quote=True)}"' if card['link'].get('hreflang') else ''
   load='fetchpriority="high" loading="eager"' if index==0 else 'loading="lazy"'
   cta=label['english'] if lang=='bn' and card['link'].get('hreflang')=='en' else label['read']
+  summary_ref=f' aria-describedby="{summary_id}"' if card['summary'] else ''
+  caption=f'<figcaption>{escape(image["caption_"+lang])}</figcaption>' if image.get('caption_'+lang) else ''
+  kicker=f'<p class="history-hero-kicker">{escape(card["kicker"])}</p>' if card['kicker'] else ''
+  summary=f'<p class="history-hero-summary" id="{summary_id}">{escape(card["summary"])}</p>' if card['summary'] else ''
   slides.append(f'''<article class="history-hero-slide" id="{sid}" data-hero-title="{escape(card['title'],quote=True)}" role="group" aria-roledescription="{label['slide']}" aria-label="{number(index+1)} / {number(len(cards))}">
-<a class="history-hero-link" href="{escape(card['link']['href'],quote=True)}"{hreflang} aria-labelledby="{title_id}" aria-describedby="{summary_id}">
-<figure class="history-hero-media history-hero-media--{image['image_fit']}"><img src="{escape(src,quote=True)}" alt="{escape(image['alt_'+lang],quote=True)}" width="{image['width']}" height="{image['height']}" {load} decoding="async"><figcaption>{escape(image['caption_'+lang])}</figcaption></figure>
-<div class="history-hero-copy"><p class="history-hero-kicker">{escape(card['kicker'])}</p><h2 id="{title_id}" lang="{escape(title_lang)}">{escape(card['title'])}</h2><p class="history-hero-summary" id="{summary_id}">{escape(card['summary'])}</p><span class="history-hero-read">{cta} <span aria-hidden="true">↗</span></span></div>
+<a class="history-hero-link" href="{escape(card['link']['href'],quote=True)}"{hreflang} aria-labelledby="{title_id}"{summary_ref}>
+<figure class="history-hero-media history-hero-media--{image['image_fit']}"><img src="{escape(src,quote=True)}" alt="{escape(image['alt_'+lang],quote=True)}" width="{image['width']}" height="{image['height']}" {load} decoding="async">{caption}</figure>
+<div class="history-hero-copy">{kicker}<h2 id="{title_id}" lang="{escape(title_lang)}">{escape(card['title'])}</h2>{summary}<span class="history-hero-read">{cta} <span aria-hidden="true">↗</span></span></div>
 </a></article>''')
   indicators.append(f'<button type="button" data-hero-indicator="{index}" aria-controls="{sid}" aria-label="{escape(label["show"]+" "+number(index+1)+": "+card["title"],quote=True)}">{number(index+1)}</button>')
- hero=(f'<section class="history-hero" data-history-carousel data-interval="12000" data-pause-label="{label["pause"]}" data-resume-label="{label["resume"]}" data-reduced-label="{label["reduced"]}" role="region" aria-roledescription="{label["carousel"]}" aria-labelledby="{id_prefix}-label">'
-       f'<p class="history-hero-label" id="{id_prefix}-label">{escape(heading)}</p>'
+ heading_ref=f' aria-labelledby="{id_prefix}-label"' if heading else f' aria-label="{label["carousel"]}"'
+ heading_markup=f'<p class="history-hero-label" id="{id_prefix}-label">{escape(heading)}</p>' if heading else ''
+ hero=(f'<section class="history-hero" data-history-carousel data-interval="12000" data-pause-label="{label["pause"]}" data-resume-label="{label["resume"]}" data-reduced-label="{label["reduced"]}" role="region" aria-roledescription="{label["carousel"]}"{heading_ref}>'
+       f'{heading_markup}'
        f'<div class="history-hero-controls" role="group" aria-label="{label["controls"]}" hidden>'
        f'<button type="button" data-hero-toggle>{label["pause"]}</button>'
        f'<button type="button" data-hero-prev aria-label="{label["previous"]}" aria-controls="{id_prefix}-track"><span aria-hidden="true">←</span></button>'
