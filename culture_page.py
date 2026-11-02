@@ -33,20 +33,23 @@ class CultureStories(Stories):
 
 def render_culture(body, lang, catalog):
     collection = re.search(
-        r'<h2 id="culture-reading-routes">.*?</h2>\s*<div class="guide-grid">.*?</div>',
+        r'(?:<h2\b[^>]*id="culture-reading-routes"[^>]*>.*?</h2>|<span\b(?=[^>]*id="culture-reading-routes")(?=[^>]*data-editor-anchor="true")[^>]*></span>)\s*<div class="guide-grid">.*?</div>',
         body, re.S)
     if not collection:
         raise ValueError('Culture carousel: the two-article collection was not found')
     parsed = CultureStories()
     parsed.feed(collection.group(0))
-    if tuple(card['link']['href'] for card in parsed.cards) != tuple(key + '.html' for key in STORY_KEYS):
-        raise ValueError('Culture carousel: review the two-article inventory before changing it')
+    links = [card['link']['href'] for card in parsed.cards]
+    if len(set(links)) != len(links) or any(link not in {key+'.html' for key in STORY_KEYS} for link in links):
+        raise ValueError('Culture carousel: unreviewed or duplicate article')
     images = {}
     for key in STORY_KEYS:
         images[key] = {**catalog[key], 'image_fit': 'cover'}
         images[key].setdefault('caption_en', 'A contemporary topic illustration')
         images[key].setdefault('caption_bn', 'বিষয়ভিত্তিক কল্পিত চিত্র')
     labels = {**LABELS[lang], **LABEL_OVERRIDES[lang]}
+    if len(parsed.cards) != 2:
+        labels['all'] = 'নিচে সব প্রবন্ধ দেখুন' if lang == 'bn' else 'All articles below'
     hero = carousel_markup(parsed.cards, ''.join(parsed.heading).strip(), lang,
                            images, labels, 'culture-hero', COLLECTION_ID)
     body = replace_artwork(body, hero)

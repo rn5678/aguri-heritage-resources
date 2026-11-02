@@ -7,13 +7,21 @@ import re
 from localization import STANDALONE_PROFILE_KEYS
 
 ROOT = Path(__file__).resolve().parent
-PROFILE_PATTERN = r'<article class="person-profile" aria-labelledby="([^"]+)">(.*?)</article>'
-PHOTO_PATTERN = r'<figure class="person-photo">.*?</figure>'
+PROFILE_PATTERN = r'<article\b(?=[^>]*\bclass="person-profile")(?=[^>]*\baria-labelledby="([^"]+)")[^>]*>(.*?)</article>'
+PHOTO_PATTERN = r'<figure\b(?=[^>]*\bclass="person-photo")[^>]*>.*?</figure>'
 COLLECTION_SELECTION = (
     'ajit-kumar-panja', 'shakti-samanta', 'ramapada-chowdhury',
     'jadabendra-nath-panja', 'ganapati-panja', 'hare-krishna-konar',
     'satya-kinkar-sahana',
 )
+
+
+def profile_name_heading(slug, body, opening=''):
+    """A remaining section heading cannot replace a deliberately removed name."""
+    explicit = re.search(r'<h2\b(?=[^>]*\bid="' + re.escape(slug) + r'")[^>]*>(.*?)</h2>', body, re.S)
+    if explicit or re.search(r'\bdata-editor-title="[^"]+"', opening):
+        return explicit
+    return re.search(r'<h2\b[^>]*>(.*?)</h2>', body, re.S)
 
 
 @lru_cache(maxsize=2)
@@ -23,12 +31,12 @@ def authored_portraits(lang):
         raise ValueError(f'Unsupported portrait language: {lang}')
     source = ROOT / 'content' / ('bn' if lang == 'bn' else '') / 'people.html'
     entries = {}
-    for slug, body in re.findall(PROFILE_PATTERN, source.read_text(), re.S):
+    for match in re.finditer(PROFILE_PATTERN, source.read_text(), re.S):
+        slug, body = match.group(1, 2)
         photo = re.search(PHOTO_PATTERN, body, re.S)
-        name = re.search(r'<h2[^>]*>(.*?)</h2>', body, re.S)
-        if not photo or not name:
-            raise ValueError(f'Incomplete authored profile: {lang}/{slug}')
-        entries[slug] = {'figure': photo.group(), 'name': name.group(1)}
+        name = profile_name_heading(slug, body, match.group(0).split('>', 1)[0])
+        entries[slug] = {'figure': photo.group() if photo else '',
+                         'name': name.group(1) if name else ''}
     return entries
 
 
@@ -43,21 +51,29 @@ def _collection_heading(copy, lang, entries):
     gallery = []
     credits = []
     for slug in COLLECTION_SELECTION:
-        item = entries[slug]
-        image = re.search(r'<img\b[^>]*>', item['figure']).group()
-        caption = re.search(r'<figcaption>(.*?)</figcaption>', item['figure'], re.S).group(1)
+        item = entries.get(slug)
+        if not item or not item['name']:
+            continue
+        image = re.search(r'<img\b[^>]*>', item['figure'])
+        if not image:
+            continue
+        image = image.group()
+        caption_match = re.search(r'<figcaption\b[^>]*>(.*?)</figcaption>', item['figure'], re.S)
+        caption = caption_match.group(1) if caption_match else ''
         gallery.append(
             f'<figure class="people-heading-portrait"><a href="person-{slug}.html">'
             f'<span class="people-heading-mount">{_eager_image(image)}</span></a>'
             f'<figcaption>{item["name"]}</figcaption></figure>')
-        credits.append(f'<p><strong>{item["name"]}.</strong> {caption}</p>')
+        if caption:
+            credits.append(f'<p><strong>{item["name"]}.</strong> {caption}</p>')
     label = 'ছবির উৎস ও কৃতিত্ব' if lang == 'bn' else 'Photograph sources & credits'
+    disclosure = (f'<details class="people-heading-credits"><summary>{label}</summary>'
+                  f'{"".join(credits)}</details>') if credits else ''
     return (
         '<div class="page-heading page-heading-portraits page-heading-people">'
         f'<div class="page-heading-copy">{copy}</div><div class="people-heading-gallery">'
         f'<div class="people-heading-portraits">{"".join(gallery)}</div>'
-        f'<details class="people-heading-credits"><summary>{label}</summary>'
-        f'{"".join(credits)}</details></div></div>')
+        f'{disclosure}</div></div>')
 
 
 def portrait_heading(key, copy, lang):
@@ -76,8 +92,10 @@ def portrait_heading(key, copy, lang):
         raise ValueError(f'No authored portrait record for {lang}/{key}')
     figure = entries[slug]['figure']
     if '<img ' not in figure:
-        status = re.search(r'<span class="portrait-status">(.*?)</span>', figure, re.S).group(1)
-        caption = re.search(r'<figcaption>(.*?)</figcaption>', figure, re.S).group(1)
+        status_match = re.search(r'<span\b[^>]*class="portrait-status"[^>]*>(.*?)</span>', figure, re.S)
+        caption_match = re.search(r'<figcaption\b[^>]*>(.*?)</figcaption>', figure, re.S)
+        status = status_match.group(1) if status_match else ''
+        caption = caption_match.group(1) if caption_match else ''
         separator = '। ' if lang == 'bn' else '. '
         parts = [part for part in (status, caption)
                  if re.sub(r'<[^>]*>', '', unescape(part)).strip()]

@@ -75,11 +75,23 @@ def anchored(frag):
 def align_headings(frag,english):
  ids=[sid for sid,_ in anchored(english)[1]]
  matches=list(re.finditer(r'<h2([^>]*)>(.*?)</h2>',frag,re.S))
- if len(matches)!=len(ids): raise ValueError(f'Bengali heading count differs: {len(matches)} vs {len(ids)}')
+ explicit=[re.search(r'\bid="([^"]+)"',m.group(1)) for m in matches]
+ if all(explicit):return frag
+ preserved={m.group(1) for m in explicit if m}
+ deleted=set(re.findall(r'<span\b(?=[^>]*\bdata-editor-anchor="true")[^>]*\bid="([^"]+)"',frag))
+ available=[sid for sid in ids if sid not in deleted]
+ if len(matches)==len(available) and all(not m or m.group(1)==available[i] for i,m in enumerate(explicit)):
+  assigned=available
+ else:
+  remaining=[sid for sid in available if sid not in preserved]
+  if len(remaining)!=1 or sum(m is None for m in explicit)!=1:
+   raise ValueError('Bengali headings without IDs cannot be aligned unambiguously; retain explicit section IDs')
+  assigned=[m.group(1) if m else remaining[0] for m in explicit]
+ position=iter(assigned)
  def heading(m):
-  sid=ids.pop(0)
-  attrs=re.sub(r'\s+id="[^"]*"','',m.group(1))
-  return f'<h2{attrs} id="{sid}">{m.group(2)}</h2>'
+  sid=next(position)
+  if re.search(r'\bid="[^"]+"',m.group(1)):return m.group(0)
+  return f'<h2{m.group(1)} id="{sid}">{m.group(2)}</h2>'
  return re.sub(r'<h2([^>]*)>(.*?)</h2>',heading,frag,flags=re.S)
 
 class GuideHeadings(HTMLParser):
@@ -98,6 +110,10 @@ def render_page(key,label,title,desc,frag,lang,sources,page_labels,history,edito
  parent=editor_page['section'] if editor_page else None
  t=lambda x:ui(x,lang)
  assets='../assets/' if lang=='bn' else 'assets/'
+ title_hidden=key.startswith('person-') and 'data-editor-title-hidden="true"' in frag
+ description_hidden=key.startswith('person-') and 'data-editor-description-hidden="true"' in frag
+ if key=='index' and not re.search(r'<h1\b',frag) and re.search(r'<span\b(?=[^>]*data-editor-anchor="true")(?=[^>]*data-editor-tag="h1")[^>]*>',frag):
+  frag='<h1 hidden data-editor-generated="true">'+escape(title)+'</h1>'+frag
  frag,headings=anchored(frag)
  if key in ('history','culture','geography','surnames','about','bibliography'):
   guide_headings=GuideHeadings();guide_headings.feed(frag)
@@ -138,7 +154,9 @@ def render_page(key,label,title,desc,frag,lang,sources,page_labels,history,edito
  if key=='water-landscape':crumb_label=f'<a href="geography.html">{escape(page_labels["geography"])}</a><span aria-hidden="true"> / </span>'+crumb_label
  if is_resource and key!='bibliography':crumb_label=f'<a href="bibliography.html">{t("Resources")}</a><span aria-hidden="true"> / </span>'+crumb_label
  if parent:crumb_label=f'<a href="{parent}.html">{escape(page_labels[parent])}</a><span aria-hidden="true"> / </span>'+crumb_label
- heading_copy=f'<p class="eyebrow"><a href="index.html">{t("The heritage project")}</a><span aria-hidden="true"> / </span>{crumb_label}</p><h1>{escape(title)}</h1><p class="dek">{escape(desc)}</p>{updated_markup}'
+ heading_title=f'<h1 hidden data-editor-generated="true">{escape(title)}</h1>' if title_hidden else f'<h1>{escape(title)}</h1>'
+ heading_description='' if description_hidden else f'<p class="dek">{escape(desc)}</p>'
+ heading_copy=f'<p class="eyebrow"><a href="index.html">{t("The heritage project")}</a><span aria-hidden="true"> / </span>{crumb_label}</p>{heading_title}{heading_description}{updated_markup}'
  crumbs='' if key=='index' else f'<div class="page-heading">{heading_copy}</div>' if (editor_page and key not in ARTWORKS) or key in ('contact','contribute','review','rights','contributor-terms') or key in TEXT_ONLY_ARTICLE_KEYS else page_heading(key,heading_copy,lang,ARTWORKS)
  if is_resource:
   current='translations' if is_translation else 'bibliography' if key.startswith('book-') else key

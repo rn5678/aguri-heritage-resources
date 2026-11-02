@@ -29,7 +29,7 @@
       </header>
 
       <div class="document-area">
-        <div id="document-heading" class="document-heading" hidden><div><div id="document-eyebrow" class="eyebrow">PROFILE · ENGLISH</div><h1 id="document-title"></h1><p>Click text to edit. Add a text block, remove a block, or replace a photo.</p><details class="editing-help"><summary>Editing tips</summary><p>Choose “Add text block” to write a new paragraph beside the selected block, or use Add above / Add below on a block. Delete block removes a complete paragraph; Restore brings it back before saving. “Undo block change” reverses block additions or removals, while normal Undo also works for text edits. Required headings and captions stay in place, but their text can be edited. Use Jump to text to move around the page.</p><p>Select words to make them bold, italic, or add a link. You can delete text together with its numbered source references. Click a reference’s × to remove just that reference, or focus it and press Delete. Save automatically renumbers the remaining references and removes unused notes from the page. Hover over a reference to see its source. Photos can be JPEG, PNG or WebP, up to 10 MB. Save, then Preview to see your page. Choose Publish when you’re ready to update the public website.</p></details></div><button id="reset-button" class="text-button" type="button" hidden>Discard changes</button></div>
+        <div id="document-heading" class="document-heading" hidden><div><div id="document-eyebrow" class="eyebrow">PROFILE · ENGLISH</div><h1 id="document-title"></h1><p>Click text to edit. Format a block, add text, or remove text and photos.</p><p id="editing-notice" class="editing-notice" hidden></p><details class="editing-help"><summary>Editing tips</summary><p>Choose “Add text block” to write a paragraph beside the selected block, or use Add above / Add below. Delete block removes the selected text block, including headings and captions. Delete photo also removes its attached caption. Restore and “Undo block change” bring them back with your unsaved edits before saving. Use Jump to text to move around the page.</p><p>Select words for bold, italic, underline, strikethrough, superscript, subscript, links or Clear format. Click within a block to change its alignment. Clear format keeps links and source references; Unlink removes a selected link. A whole block that is already a page link keeps its destination. Normal Undo works for text and formatting edits.</p><p>Click a reference’s × to remove that reference, or focus it and press Delete. Saving renumbers references and removes unused notes. Photos can be JPEG, PNG or WebP, up to 10 MB. Save, then Preview to review both languages. Publish via GitHub when the update is ready.</p></details></div><button id="reset-button" class="text-button" type="button" hidden>Discard changes</button></div>
         <div id="status" class="status" role="status" aria-live="polite">Opening your content editor…</div>
         <section id="translation-card" class="translation-card" aria-label="English to Bengali updates">
           <div class="translation-heading"><div><label class="translation-toggle"><input id="translation-enabled" type="checkbox" checked disabled><span>Update Bengali when I save English</span></label><p>Uses your existing ChatGPT subscription. Only changed text is translated, starting with future English saves.</p></div><button id="translation-retry" class="button button-secondary" type="button" hidden>Retry update</button></div>
@@ -42,12 +42,27 @@
         </section>
         <section id="editor-panel" class="editor-panel" hidden aria-label="Content editing area">
           <div class="format-toolbar" role="toolbar" aria-label="Text formatting">
-            <span class="toolbar-label">TEXT</span>
-            <button type="button" data-command="bold" aria-label="Bold" title="Bold (Command or Control B)"><strong>B</strong></button>
-            <button type="button" data-command="italic" aria-label="Italic" title="Italic (Command or Control I)"><em>I</em></button>
-            <button id="link-button" type="button" aria-label="Add or edit link" title="Add a link"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 15 6-6m-6 9-1 1a4.3 4.3 0 0 1-6-6l4-4a4.3 4.3 0 0 1 6 0m0-3 1-1a4.3 4.3 0 0 1 6 6l-4 4a4.3 4.3 0 0 1-6 0"></path></svg></button>
-            <span class="toolbar-divider" aria-hidden="true"></span><button id="undo-button" type="button" aria-label="Undo last text edit" title="Undo last text edit"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4 3 9l5 5M3 9h11a6 6 0 0 1 0 12"></path></svg></button>
-            <span class="toolbar-hint">Select words to format them</span><button id="add-text-block" class="toolbar-add-block" type="button" disabled>+ Add text block</button>
+            <div class="format-group" role="group" aria-label="Selected words">
+              <button type="button" data-command="bold" aria-label="Bold" aria-pressed="false" title="Bold"><strong>B</strong></button>
+              <button type="button" data-command="italic" aria-label="Italic" aria-pressed="false" title="Italic"><em>I</em></button>
+              <button type="button" data-command="underline" aria-label="Underline" aria-pressed="false" title="Underline"><u>U</u></button>
+              <button type="button" data-command="strikeThrough" aria-label="Strikethrough" aria-pressed="false" title="Strikethrough"><s>S</s></button>
+              <button type="button" data-command="superscript" aria-label="Superscript" aria-pressed="false" title="Superscript">x<sup>2</sup></button>
+              <button type="button" data-command="subscript" aria-label="Subscript" aria-pressed="false" title="Subscript">x<sub>2</sub></button>
+              <button id="link-button" class="format-text-button" type="button" aria-label="Add or edit link" title="Add or edit a link">Link</button>
+              <button id="unlink-button" class="format-text-button" type="button" title="Remove a link from the selected words">Unlink</button>
+              <button id="clear-format-button" class="format-text-button" type="button" title="Clear text formatting; keep links and references">Clear format</button>
+            </div>
+            <div class="format-group format-alignment" role="group" aria-label="Text block alignment">
+              <span class="toolbar-label">ALIGN</span>
+              <button type="button" data-align="left" aria-label="Align left" aria-pressed="false" title="Align block left"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 4h14M3 8h9M3 12h14M3 16h9"/></svg></button>
+              <button type="button" data-align="center" aria-label="Align center" aria-pressed="false" title="Center block"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 4h14M6 8h8M3 12h14M6 16h8"/></svg></button>
+              <button type="button" data-align="right" aria-label="Align right" aria-pressed="false" title="Align block right"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 4h14M8 8h9M3 12h14M8 16h9"/></svg></button>
+              <button type="button" data-align="justify" aria-label="Justify text" aria-pressed="false" title="Justify block"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 4h14M3 8h14M3 12h14M3 16h14"/></svg></button>
+              <button id="undo-button" type="button" aria-label="Undo last edit" title="Undo last edit"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4 3 9l5 5M3 9h11a6 6 0 0 1 0 12"></path></svg></button>
+            </div>
+            <button id="add-text-block" class="toolbar-add-block" type="button" disabled>+ Add text block</button>
+            <span class="toolbar-hint">Select words to format · click a block to align</span>
           </div>
           <div class="block-navigation"><label for="block-select">Jump to text</label><select id="block-select" aria-label="Jump to a text block"><option value="">Choose a block…</option></select><button id="undo-block-change" class="text-button" type="button" hidden>Undo block change</button></div>
           <article id="document-content" class="document-content"></article>

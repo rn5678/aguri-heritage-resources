@@ -13,6 +13,7 @@ from localization import ENGLISH_ONLY_KEYS, NO_SOCIAL_IMAGE_PROFILE_KEYS, STANDA
 from file_links import JOURNAL_ROUTES
 from authored_pages import page_map as editor_page_map
 from profile_pages import profile_overrides
+from portrait_headers import PROFILE_PATTERN
 ROOT=Path(__file__).resolve().parents[1]/'site'
 INDEPENDENT_ENGLISH_PROFILES=set(profile_overrides(ROOT.parent))
 INDEPENDENT_BENGALI_PROFILES=set(profile_overrides(ROOT.parent,lang='bn'))
@@ -108,7 +109,13 @@ for p,d in docs.items():
   if other not in docs:errors.append(f'{p}: missing Bengali edition')
   else:
    # Navigation sections and sources must survive a language switch.
-   sections={i for i in d.ids if not i.startswith(('ref-','note-','original-'))}
+   # Carousel slide anchors are generated separately from each edition's
+   # surviving authored cards. Editorial deep links still must match.
+   sections={i for i in d.ids if not i.startswith(('ref-','note-','original-')) and
+             not re.fullmatch(r'(?:history|culture|people)-hero-(?:label|track|slide-\d+(?:-title|-summary)?)',i)}
+   # The numbered notes panel exists only while this edition cites sources.
+   # Its links are checked above; it is not an authored bilingual section.
+   if any(re.fullmatch(r'note-\d+',i) for i in d.ids):sections.discard('notes-heading')
    if not sections.issubset(docs[other].ids):errors.append(f'{p.name}: missing Bengali anchors {sections-docs[other].ids}')
 for lang,suffix,folder in [('en','',''),('bn','-bn','bn')]:
  index=json.loads((ROOT/'assets'/f'search-index{suffix}.js').read_text().split('=',1)[1].strip().rstrip(';'))
@@ -173,7 +180,7 @@ for p,d in docs.items():
 for lang in ('en','bn'):
  folder=ROOT/('bn' if lang=='bn' else '')
  source=ROOT.parent/'content'/('bn' if lang=='bn' else '')/'people.html'
- expected_profiles={'person-'+slug+'.html' for slug in re.findall(r'<article class="person-profile" aria-labelledby="([^"]+)"',source.read_text())}
+ expected_profiles={'person-'+slug+'.html' for slug,_ in re.findall(PROFILE_PATTERN,source.read_text(),re.S)}
  standalone=(INDEPENDENT_ENGLISH_PROFILES if lang=='en' else INDEPENDENT_BENGALI_PROFILES) & STANDALONE_PROFILE_KEYS
  expected_profiles.update(key+'.html' for key in standalone)
  for key in standalone:

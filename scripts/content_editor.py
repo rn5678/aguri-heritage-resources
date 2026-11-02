@@ -79,7 +79,7 @@ CITE = re.compile(r'\[cite:([\w-]+)\]')
 VOID = {'img','br','hr','input','meta','link','source','wbr','area','base','embed','param','col'}
 BLOCK = {'p','h1','h2','h3','h4','h5','h6','li','td','th','figcaption','caption','blockquote','summary','dt','dd'}
 INLINE = {'a','span','strong','b','em','i','u','s','small','sup','sub','br','abbr','q','cite','time','mark'}
-ATTRS = {'href','title','lang','dir','class','id','aria-label','aria-hidden','target','rel','download','datetime'}
+ATTRS = {'href','title','lang','dir','class','id','aria-label','aria-hidden','target','rel','download','datetime','name'}
 FLOW_CONTAINERS = {'body','div','article','section','blockquote','aside','main'}
 STRUCTURE_EXCLUDED = {'figure','figcaption','caption','table','thead','tbody','tfoot','tr','td','th',
                       'ul','ol','li','dl','dt','dd','a','p','form','button','nav','script','style'}
@@ -161,9 +161,12 @@ def source_path(doc_id, lang):
 def pages():
     text = source_path('people','en').read_text()
     profiles = []
-    for m in re.finditer(r'<article class="person-profile" aria-labelledby="([^"]+)">(.*?)</article>', text, re.S):
-        heading = re.search(r'<h2[^>]*>(.*?)</h2>', m[2], re.S)
-        profiles.append({'id':'person-'+m[1], 'title':plain(heading[1]), 'kind':'profile'})
+    for article in Tree(text).nodes:
+        if article.tag != 'article' or 'person-profile' not in article.attrs.get('class','').split():
+            continue
+        slug = article.attrs.get('aria-labelledby')
+        if not slug: continue
+        profiles.append({'id':'person-'+slug, 'title':profile_title(text,article), 'kind':'profile'})
     custom = authored_pages.page_map(ROOT)
     types = authored_pages.page_types(ROOT)
     type_names = {entry['id']:entry['name'] for entry in types}
@@ -182,6 +185,15 @@ def descendants(node):
         yield child
         yield from descendants(child)
 
+def profile_title(text, article):
+    slug=article.attrs.get('aria-labelledby','')
+    headings=[node for node in descendants(article) if node.tag=='h2']
+    primary=next((node for node in headings if node.attrs.get('id')==slug),None)
+    if primary: return plain(text[primary.opening:primary.close])
+    if article.attrs.get('data-editor-title'): return article.attrs['data-editor-title']
+    return plain(text[headings[0].opening:headings[0].close]) if headings else slug.replace('-',' ').title()
+
+
 def authored(doc_id, lang):
     path = source_path(doc_id, lang)
     text = path.read_text()
@@ -192,11 +204,11 @@ def authored(doc_id, lang):
         if selected is None:
             raise EditError('This biography is no longer available. Refresh the page list.')
     def eligible(n):
-        if not n.end or (selected and not selected.opening <= n.start < selected.close):
+        if n.attrs.get('data-editor-anchor') == 'true' or not n.end or (selected and not selected.opening <= n.start < selected.close):
             return False
         parent = n.parent
         while parent:
-            if parent.tag in {'script','style','form','button','select','nav'}:
+            if parent.attrs.get('data-editor-anchor') == 'true' or parent.tag in {'script','style','form','button','select','nav'}:
                 return False
             if doc_id == 'people' and parent.tag == 'article' and parent.attrs.get('class') == 'person-profile':
                 return False
@@ -210,7 +222,8 @@ def authored(doc_id, lang):
         if n.tag == 'img' and n.attrs.get('src','').lstrip('./').startswith('assets/'):
             images.append(n)
         if n.tag in BLOCK and all(d.tag in INLINE for d in descendants(n)):
-            candidates.append(n)
+            body=text[n.opening:n.close]
+            if n.tag=='p' or plain(body) or '{{' in body or CITE.search(body): candidates.append(n)
     # Standalone labels and links are also editable without exposing their wrappers.
     occupied = [(n.start,n.end) for n in candidates]
     for n in tree.nodes:
@@ -224,28 +237,99 @@ def authored(doc_id, lang):
     return path, text, sorted(candidates,key=lambda n:n.start), images
 
 def block_capabilities(text, node):
-    """Structural actions that preserve page wrappers and linked/generated fields."""
+    """Every offered content block can be removed; structural wrappers stay managed."""
     flow = node.parent is None or node.parent.tag in FLOW_CONTAINERS
     ancestor = node.parent
     while ancestor:
         if ancestor.tag in STRUCTURE_EXCLUDED: flow = False
         ancestor = ancestor.parent
     insert = bool(flow and node.tag in BLOCK and node.end)
-    reason = ''
-    if not node.end:
-        reason = 'This paragraph has incomplete formatting. Repair it before removing it.'
-    elif node.tag != 'p':
-        reason = 'Keep headings, captions, list items and table cells in place. You can edit their text.'
-    elif not flow:
-        reason = 'This paragraph belongs to a photo, list or table layout. You can edit its text.'
-    elif set(node.attrs.get('class','').split()) & {'eyebrow','person-dates'}:
-        reason = 'Keep this profile label or date field in place. You can edit its text.'
-    elif any('id' in item.attrs or (item.tag == 'a' and 'name' in item.attrs)
-             for item in (node,*descendants(node))):
-        reason = 'Other pages may link to this paragraph. Keep its linked text in place.'
-    elif '{{' in text[node.start:node.end] or '}}' in text[node.start:node.end]:
-        reason = 'This paragraph contains a generated field that the page needs.'
-    return {'canDelete':not reason,'canInsertBefore':insert,'canInsertAfter':insert,'deleteReason':reason}
+    return {'canDelete': bool(node.end), 'canInsertBefore': insert, 'canInsertAfter': insert,
+            'deleteReason': '' if node.end else 'This block has incomplete formatting. Repair it before removing it.'}
+
+
+def block_format(node):
+    align = ''
+    for declaration in node.attrs.get('style','').split(';'):
+        key, separator, value = declaration.partition(':')
+        if separator and key.strip().lower() == 'text-align' and value.strip().lower() in {'left','center','right','justify'}:
+            align = value.strip().lower()
+    return {'align': align}
+
+
+def clean_format(value):
+    if not isinstance(value,dict) or set(value) != {'align'} or value['align'] not in ('','left','center','right','justify'):
+        raise EditError('Choose left, centre, right, justified or default alignment.')
+    return value['align']
+
+
+def formatted_opening(node, align):
+    attrs = dict(node.attrs)
+    declarations = [entry.strip() for entry in attrs.get('style','').split(';')
+                    if entry.strip() and entry.partition(':')[0].strip().lower() != 'text-align']
+    if align: declarations.append('text-align: '+align)
+    if declarations: attrs['style'] = '; '.join(declarations)
+    else: attrs.pop('style',None)
+    return '<'+node.tag+''.join(' '+key+(f'="{escape(str(value),quote=True)}"' if value is not None else '') for key,value in attrs.items())+'>'
+
+
+def image_removal_node(image):
+    ancestor = image.parent
+    while ancestor:
+        if ancestor.tag == 'figure':
+            if sum(node.tag=='img' for node in descendants(ancestor)) == 1:
+                return ancestor
+            break
+        ancestor = ancestor.parent
+    parent = image.parent
+    if parent and parent.tag=='a' and sum(node.tag=='img' for node in descendants(parent))==1 and all(node.tag in {'img','span'} for node in descendants(parent)):
+        return parent
+    return image
+
+
+def insertion_offset(doc_id, text):
+    if doc_id.startswith('person-'):
+        article = next((node for node in Tree(text).nodes if node.tag=='article' and node.attrs.get('aria-labelledby')==doc_id[7:]),None)
+        if article is None: raise EditError('This biography is no longer available.')
+        copy = next((node for node in descendants(article) if node.tag=='div' and 'person-copy' in node.attrs.get('class','').split()),None)
+        return copy.close if copy and copy.end else article.close
+    roots = [node for node in Tree(text).nodes if node.parent is None and node.tag in FLOW_CONTAINERS and node.end]
+    return roots[-1].close if roots and not text[roots[-1].end:].strip() else len(text)
+
+
+def removal_patches(text, nodes):
+    """Remove visible content, retaining only inert link targets and identity metadata."""
+    selected=[]
+    for node in sorted({node.start:node for node in nodes}.values(),key=lambda node:(node.start,-node.end)):
+        if not any(parent.start<=node.start and node.end<=parent.end for parent in selected): selected.append(node)
+    patches=[]; identity={}
+    for node in selected:
+        identifiers=[]
+        for child in (node,*descendants(node)):
+            targets=[value for value in (child.attrs.get('id'),child.attrs.get('name') if child.tag=='a' else None) if value]
+            if not targets and child.tag=='h2':
+                targets=[re.sub(r'[^a-z0-9]+','-',plain(text[child.opening:child.close]).lower()).strip('-')]
+            for target in targets:
+                if target and target not in identifiers: identifiers.append(target)
+            if child.tag=='h2':
+                article=child.parent
+                while article and not (article.tag=='article' and 'person-profile' in article.attrs.get('class','').split()): article=article.parent
+                if article:
+                    first=next((desc for desc in descendants(article) if desc.tag=='h2'),None)
+                    if child.attrs.get('id')==article.attrs.get('aria-labelledby') or (first is child and not article.attrs.get('data-editor-title')):
+                        identity[article.start]=(article.start,article.opening,opening_tag(article,{'data-editor-title':plain(text[child.opening:child.close])}))
+        replacement=''.join(f'<span id="{escape(value,quote=True)}" data-editor-anchor="true" data-editor-tag="{node.tag}" hidden></span>' for value in identifiers)
+        if not replacement and re.fullmatch(r'h[1-6]',node.tag): replacement=f'<span data-editor-anchor="true" data-editor-tag="{node.tag}" hidden></span>'
+        if replacement and node.tag in {'li','td','th','dt','dd'}:
+            replacement=f'<{node.tag} data-editor-anchor="true" hidden>'+replacement+f'</{node.tag}>'
+        if node.tag=='summary':
+            replacement='<summary data-editor-anchor="true" hidden>'+replacement+'</summary>'
+            if node.parent and node.parent.tag=='details':
+                parent=node.parent
+                identity[parent.start]=(parent.start,parent.opening,opening_tag(parent,{'open':None}))
+        patches.append((node.start,node.end,replacement))
+    return patches+list(identity.values())
+
 
 def document(doc_id, lang):
     path, text, blocks, images = authored(doc_id,lang)
@@ -259,20 +343,21 @@ def document(doc_id, lang):
         numbering.setdefault(key,len(numbering)+1)
         return f'<span class="editor-citation" contenteditable="false" data-cite="{escape(key)}" title="{escape(sources.get(key,{}).get("title",key),quote=True)}">[{numbering[key]}]</span>'
     result_blocks = [{'id':str(n.start),'tag':n.tag,'html':CITE.sub(chip,text[n.opening:n.close]),
-                      **block_capabilities(text,n)} for n in blocks]
-    result_images = [{'id':str(n.start),'src':'/'+n.attrs['src'].lstrip('./'),'alt':n.attrs.get('alt','')} for n in images]
+                      'format':block_format(n), **block_capabilities(text,n)} for n in blocks]
+    result_images = [{'id':str(n.start),'src':'/'+n.attrs['src'].lstrip('./'),'alt':n.attrs.get('alt',''), 'canDelete':True,
+                      'deleteBlockIds':[str(block.start) for block in blocks if image_removal_node(n).start<=block.start and block.end<=image_removal_node(n).end]} for n in images]
     names = {p['id']:p['title'] for p in pages()['pages']}
     title = names.get(doc_id,doc_id)
     custom = authored_pages.page_map(ROOT).get(doc_id)
     if custom:
         title = custom[lang]['title']
     if doc_id.startswith('person-'):
-        heading = next((n for n in blocks if n.tag == 'h2'),None)
-        if heading:
-            title = plain(text[heading.opening:heading.close])
-    return {'id':doc_id,'lang':lang,'title':title,'version':hashlib.sha256(text.encode()).hexdigest(),
+        article=next((node for node in Tree(text).nodes if node.tag=='article' and node.attrs.get('aria-labelledby')==doc_id[7:]),None)
+        if article: title=profile_title(text,article)
+    editing_notice = 'You are editing this person’s collection entry. The separate detailed biography is managed outside this editor.' if doc_id.startswith('person-') and (ROOT/'content/profiles'/(doc_id[7:]+'.'+lang+'.json')).is_file() else ''
+    return {'id':doc_id,'lang':lang,'title':title,'editingNotice':editing_notice,'version':hashlib.sha256(text.encode()).hexdigest(),
             'preview':'/preview/'+('bn/' if lang == 'bn' else '')+doc_id+'.html',
-            'blocks':result_blocks,'images':result_images,
+            'blocks':result_blocks,'images':result_images, 'insertionTarget':{'id':'document-end','position':'after'},
             'order':[{'type':'image' if n.tag == 'img' else 'block','id':str(n.start)} for n in sorted(blocks+images,key=lambda n:n.start)]}
 
 def safe_link(value):
@@ -288,6 +373,7 @@ class InlineCleaner(HTMLParser):
         self.parts, self.stack = [], []
         self.chip_depth = 0
     def handle_starttag(self, tag, attrs):
+        tag = {'strike':'s','del':'s'}.get(tag,tag)
         attrs = dict(attrs)
         if self.chip_depth:
             if tag not in VOID: self.chip_depth += 1
@@ -306,11 +392,19 @@ class InlineCleaner(HTMLParser):
         cleaned = []
         for key,value in attrs.items():
             if key in ATTRS and value is not None:
+                if key == 'name' and tag != 'a': continue
                 if key == 'href': safe_link(value)
                 cleaned.append(f' {key}="{escape(value,quote=True)}"')
         self.parts.append('<'+tag+''.join(cleaned)+'>')
         if tag != 'br': self.stack.append(tag)
+        if tag == 'span':
+            decoration=' '.join(value.strip().lower() for item in attrs.get('style','').split(';') for key,separator,value in [item.partition(':')] if separator and key.strip().lower() in {'text-decoration','text-decoration-line'})
+            for marker in ('underline','line-through'):
+                if marker in decoration.split():
+                    wrapper='u' if marker=='underline' else 's'
+                    self.parts.append('<'+wrapper+'>'); self.stack.append(wrapper)
     def handle_endtag(self, tag):
+        tag = {'strike':'s','del':'s'}.get(tag,tag)
         if self.chip_depth:
             self.chip_depth -= 1
             return
@@ -341,7 +435,9 @@ def clean_block(value, original):
         raise EditError('This paragraph contains a generated field. Keep that field in place.')
     old_ids = Counter(n.attrs['id'] for n in Tree(original).nodes if 'id' in n.attrs)
     new_ids = Counter(n.attrs['id'] for n in Tree(result).nodes if 'id' in n.attrs)
-    if old_ids != new_ids:
+    old_names=Counter(n.attrs['name'] for n in Tree(original).nodes if n.tag=='a' and 'name' in n.attrs)
+    new_names=Counter(n.attrs['name'] for n in Tree(result).nodes if n.tag=='a' and 'name' in n.attrs)
+    if old_ids != new_ids or old_names != new_names:
         raise EditError('Keep existing linked text in place so other pages can still find it.')
     return result
 
@@ -362,7 +458,7 @@ def clean_inserted_block(value, known_sources):
         raise EditError('Add some text to the new paragraph before saving it.')
     return cleaned
 
-def structural_changes(payload, text, block_map):
+def structural_changes(payload, text, block_map, *, end_offset=None):
     deletions = payload.get('deleteBlocks',[])
     additions = payload.get('insertBlocks',[])
     if (not isinstance(deletions,list) or not isinstance(additions,list)
@@ -385,16 +481,19 @@ def structural_changes(payload, text, block_map):
         if (not isinstance(identity,str) or not re.fullmatch(r'new-[a-z0-9-]{1,76}',identity)
                 or identity in existing):
             raise EditError('A new paragraph identifier is invalid or already in use. Reload the page.')
-        if not isinstance(anchor_id,str) or anchor_id not in block_map or position not in ('before','after') or entry.get('tag')!='p':
-            raise EditError('Choose an existing paragraph or heading beside the new paragraph.')
-        anchor=block_map[anchor_id]
-        if not block_capabilities(text,anchor)['canInsert'+position.title()]:
+        at_end=anchor_id=='document-end' and position=='after' and end_offset is not None
+        if (not at_end and (not isinstance(anchor_id,str) or anchor_id not in block_map or position not in ('before','after'))) or entry.get('tag')!='p':
+            raise EditError('Choose a body insertion point beside an existing block or at the end of the document.')
+        anchor=None if at_end else block_map[anchor_id]
+        if anchor and not block_capabilities(text,anchor)['canInsert'+position.title()]:
             raise EditError('Add new paragraphs beside body text or headings, outside photos, lists and tables.')
         cleaned=clean_inserted_block(entry.get('html'),known_sources)
+        align=clean_format(entry['format']) if 'format' in entry else ''
         existing.add(identity)
-        markup=f'<p data-editor-block="{identity}">{cleaned}</p>'
-        insertions.append({'id':identity,'anchor':anchor,'position':position,'tag':'p','html':cleaned,
-                           'markup':markup,'offset':anchor.start if position=='before' else anchor.end})
+        style=f' style="text-align: {align}"' if align else ''
+        markup=f'<p data-editor-block="{identity}"{style}>{cleaned}</p>'
+        insertions.append({'id':identity,'anchor':anchor,'position':position,'tag':'p','html':cleaned,'format':{'align':align},
+                           'markup':markup,'offset':end_offset if at_end else anchor.start if position=='before' else anchor.end})
     return delete_nodes,insertions
 
 def normalized_patches(text, patches):
@@ -460,14 +559,24 @@ def save(payload):
         block_map={str(n.start):n for n in blocks}
         image_map={str(n.start):n for n in images}
         if changes.keys()-block_map.keys() or photo_changes.keys()-image_map.keys(): raise EditError('Reload this page before saving.')
-        delete_nodes,insertions=structural_changes(payload,text,block_map)
+        formats=payload.get('blockFormats',{})
+        if not isinstance(formats,dict) or formats.keys()-block_map.keys(): raise EditError('Reload this page before changing its formatting.')
+        delete_images=payload.get('deleteImages',[])
+        if not isinstance(delete_images,list) or any(not isinstance(key,str) or key not in image_map for key in delete_images) or len(set(delete_images))!=len(delete_images):
+            raise EditError('Reload this page before removing photographs.')
+        removed_images=[image_map[key] for key in delete_images]
+        image_regions=[image_removal_node(image) for image in removed_images]
+        delete_nodes,insertions=structural_changes(payload,text,block_map,end_offset=insertion_offset(doc_id,text))
+        delete_nodes=list({node.start:node for node in delete_nodes+[block for block in blocks if any(region.start<=block.start and block.end<=region.end for region in image_regions)]}.values())
         deleted={str(node.start) for node in delete_nodes}
         sync = translator() if (ROOT/'local-editor/translation/settings.json').exists() else None
         if sync:
             sync.capture(doc_id)
         structure_plan = None
-        if sync and (delete_nodes or insertions):
-            structure_plan=sync.plan_structure(doc_id,lang,delete_nodes,insertions,capabilities=block_capabilities)
+        if sync and (delete_nodes or insertions or removed_images):
+            structure_plan=sync.plan_structure(doc_id,lang,delete_nodes,insertions,capabilities=block_capabilities,
+                                               delete_images=removed_images, image_removal=image_removal_node,
+                                               removal_patches=removal_patches, insertion_point=lambda value:insertion_offset(doc_id,value))
         patches=[]; new_files=[]; linked_patches={}; bn_patches=[]; bn_source=None
         if sync and sync.enabled and lang=='en' and photo_changes:
             bn_source=authored(doc_id,'bn')
@@ -477,9 +586,14 @@ def save(payload):
             original=text[n.opening:n.close]
             cleaned=clean_block(value,original)
             if cleaned!=original: patches.append((n.opening,n.close,cleaned))
-        patches.extend((node.start,node.end,'') for node in delete_nodes)
+        patches.extend(removal_patches(text,delete_nodes+image_regions))
+        for key,value in formats.items():
+            if key in deleted: continue
+            n=block_map[key];align=clean_format(value)
+            if align!=block_format(n)['align']: patches.append((n.start,n.opening,formatted_opening(n,align)))
         patches.extend((entry['offset'],entry['offset'],entry['markup']) for entry in insertions)
         for key,value in photo_changes.items():
+            if key in delete_images: continue
             n=image_map[key]
             if not isinstance(value,dict): raise EditError('Invalid photograph change.')
             attrs={}
