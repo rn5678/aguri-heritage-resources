@@ -3710,8 +3710,8 @@
       "bytes": 129635
     },
     "content/bn/bibliography.html": {
-      "sha256": "7d3e945e66261e358cd7b0f11588be6dd4b2b27ef3274788cd30bc17486814a6",
-      "bytes": 237114
+      "sha256": "e836a602beb30d17cf814d02d3f0e9d751159292bcc2ad6cb3a14a3df67746b0",
+      "bytes": 237232
     },
     "content/bn/book-rajput-o-ugrakshatriya.html": {
       "sha256": "13e5f37de42846385d8664ed11a9911065dccf28db6378b11143d7c986ff2ef8",
@@ -3754,8 +3754,8 @@
       "bytes": 181938
     },
     "content/bn/origins.html": {
-      "sha256": "51b6d652cf09b49d24ba11cbeb6a01cdb8130e72ef0f68901bed811d15245edd",
-      "bytes": 84007
+      "sha256": "140149e9a57a91d9fd96dc2121b1c18440cc2588d26d0d72fc7a4b98ceb04807",
+      "bytes": 80387
     },
     "content/bn/people.html": {
       "sha256": "3e2522c5dd7c5935dc2063bb52d7c968ae18cfbe3e1c597219e108fc8055a7c1",
@@ -3842,11 +3842,11 @@
       "bytes": 95463
     },
     "content/origins.html": {
-      "sha256": "10dc91fd24c8a31d081e893c3f7710463ab2e17f3ace33c15cb985cc1fed465d",
-      "bytes": 41161
+      "sha256": "d70cfada4b8e41d9818033669ca290e4a48059f68c45fd01451d5dd8300807f3",
+      "bytes": 39757
     },
     "content/page-history.json": {
-      "sha256": "4bd36f5cfc2680b04be0da6154119a10b50fc48cc96f3cc4f006bfbc24333577",
+      "sha256": "0eebc6173e66a726fb1c06df6f6d9478ebe5e984078540ec65629c55f094b7c4",
       "bytes": 45041
     },
     "content/people.html": {
