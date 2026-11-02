@@ -12,13 +12,14 @@
 @media(max-width:600px){.document-area{padding-top:21px}.image-card{display:block}.image-stage{height:154px;min-height:0}.image-stage img{max-height:128px;max-width:100%}.image-controls{border-top:1px solid #e3e7db;padding:12px 15px}.image-description{padding:0 15px 14px}.image-card figcaption{padding:0 15px 13px}.image-status{display:inline;margin-left:8px}.document-content{padding-top:21px}}
 
 /* Publishing is reviewed here before any saved changes go live. */
-.publish-dialog{border:1px solid #d5dfcb;border-radius:13px;background:var(--paper);box-shadow:0 20px 100px #1f382344;padding:30px;max-width:530px;width:calc(100% - 32px);max-height:calc(100vh - 36px);overflow-y:auto;color:var(--ink)}
+.publish-dialog{border:1px solid #d5dfcb;border-radius:13px;background:var(--paper);box-shadow:0 20px 100px #1f382344;padding:30px;max-width:620px;width:calc(100% - 32px);max-height:calc(100vh - 36px);overflow-y:auto;color:var(--ink)}
 .publish-dialog::backdrop{background:#223b3260;backdrop-filter:blur(2px)}
 .publish-dialog h2{font:normal 28px/1.25 Georgia,serif;letter-spacing:-.4px;margin:0 0 13px}
 .publish-dialog p{font-size:13px;line-height:1.65}
 .publish-dialog .eyebrow{margin-bottom:14px;font-size:9px}
 .publish-message{margin:0;color:#58724e}
 .publish-message.error{color:var(--danger)}
+.publish-dialog .publish-status-notice{margin:12px 0 0;padding:10px 12px;border-left:3px solid #b7ad7b;background:#f5f2e6;color:#766a3d;font-size:12px}
 .publish-message.busy::before,.publication-busy::before{content:"";display:inline-block;width:11px;height:11px;border:1.5px solid #bdcdb6;border-top-color:var(--green);border-radius:50%;margin-right:8px;animation:spin 1s linear infinite;vertical-align:-1px}
 .publish-review{margin-top:20px;padding:17px 20px;border:1px solid #dce5d4;border-radius:9px;background:#f5f8ef}
 .publish-review>p:first-child{margin:0 0 15px;color:#52684a}
@@ -30,6 +31,15 @@
 .publish-dialog .publish-detail{font-size:11px;color:#819076;margin:17px 0 0}
 .publish-dialog .dialog-actions{flex-wrap:wrap;margin-top:24px}
 .publish-dialog .button{text-decoration:none}
+.publish-steps{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px 18px;padding:17px 0 20px;margin:0 0 18px;border-bottom:1px solid #dce5d4}
+.publish-steps li{display:flex;align-items:flex-start;gap:9px;color:#7b8973}
+.publish-step-number{flex:0 0 24px;height:24px;border:1px solid #d4ddcd;border-radius:50%;display:grid;place-items:center;font-size:11px;background:#f6f8f2}
+.publish-steps strong{display:block;font-size:12px;line-height:1.4;font-weight:600}.publish-steps small{display:block;font-size:10px;line-height:1.5;margin-top:2px}
+.publish-steps [data-state="current"]{color:var(--green)}.publish-steps [data-state="current"] .publish-step-number{background:var(--green);border-color:var(--green);color:#fff;box-shadow:0 0 0 3px #e9efdf}
+.publish-steps [data-state="complete"]{color:#536e48}.publish-steps [data-state="complete"] .publish-step-number{border-color:#94ad82;background:#e9f0df}
+.publish-files-panel{margin-top:13px;font-size:11px;line-height:1.6}.publish-files-panel summary{cursor:pointer;color:var(--green);font-weight:600}.publish-files-panel ul{max-height:180px;overflow:auto;margin:8px 0 0;padding-left:18px;overflow-wrap:anywhere}
+.publish-handoff{margin-top:18px;padding:0 0 4px}.publish-handoff p{margin:0 0 13px}.publish-links{display:flex;flex-wrap:wrap;gap:8px}
+.publish-dialog a:focus-visible,.publish-files-panel summary:focus-visible{outline:2px solid var(--green);outline-offset:4px}
 .publishing .document-content{opacity:.65;pointer-events:none}
 @media(max-width:1150px) and (min-width:851px){.workspace-label strong{font-size:11px}.topbar-actions{gap:8px}.topbar-actions .button{padding-left:11px;padding-right:11px}}
 @media(max-width:600px){.topbar-actions{flex-wrap:wrap;gap:7px}.topbar-actions .local-chip{flex-basis:100%;max-width:none;line-height:1.3;white-space:normal;text-align:right}.publish-dialog{padding:23px}.publish-dialog h2{font-size:25px}.publish-review{padding:14px}.publish-review dl>div{grid-template-columns:87px minmax(0,1fr);gap:9px}}

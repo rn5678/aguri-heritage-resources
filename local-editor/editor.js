@@ -1,5 +1,71 @@
 "use strict";
 
+// Pure publishing decisions are shared with the focused UI checks.
+const EditorPublishing = (() => {
+  const phases = ["idle", "preparing", "ready", "publishing", "review", "deploying", "clean", "success", "error"];
+  function githubLink(value) {
+    if (typeof value !== "string") return "";
+    try {
+      const url = new URL(value);
+      if (url.origin !== "https://github.com" || url.username || url.password || url.hash) return "";
+      if (!/^\/rn5678\/aguri-heritage-resources\/(?:compare\/[A-Za-z0-9._~:%/-]+|pull\/[1-9][0-9]*\/?|actions(?:\/runs\/[1-9][0-9]*(?:\/job\/[1-9][0-9]*)?)?\/?)$/.test(url.pathname)) return "";
+      return url.href;
+    } catch { return ""; }
+  }
+  function siteLink(value) {
+    try { return new URL(value).href === "https://aguri-heritage.in/" ? "https://aguri-heritage.in/" : ""; }
+    catch { return ""; }
+  }
+  function localBusy(phase) { return ["preparing", "publishing"].includes(phase); }
+  function remoteBusy(phase) { return ["review", "deploying"].includes(phase); }
+  function pollDelay(phase, disconnected = false) {
+    if (disconnected && (localBusy(phase) || remoteBusy(phase))) return 15000;
+    return localBusy(phase) ? 1500 : remoteBusy(phase) ? 15000 : null;
+  }
+  function sourceBlocked(state) {
+    return Boolean(state.dirty || state.translationBlocked || state.saving || state.loading || state.readingImage ||
+      state.creating || state.creatingType || state.catalogFetching || state.publishRequest || localBusy(state.phase));
+  }
+  function createRequest(fetcher, initialToken) {
+    let currentToken = initialToken;
+    let reconnecting = null;
+    const reconnectMessage = "The editor could not reconnect. Keep this tab open; your unsaved edits are still here. Reopen the editor app, then try again.";
+    async function reconnect() {
+      if (!reconnecting) reconnecting = (async () => {
+        const response = await fetcher("/", { credentials: "same-origin", cache: "no-store" });
+        if (!response.ok) throw new Error(reconnectMessage);
+        const html = await response.text();
+        const match = html.match(/<meta\s+name=["']editor-token["']\s+content=["']([A-Za-z0-9_-]{20,})["']\s*\/?\s*>/i);
+        if (!match) throw new Error(reconnectMessage);
+        currentToken = match[1];
+      })().finally(() => { reconnecting = null; });
+      try { await reconnecting; } catch { throw new Error(reconnectMessage); }
+    }
+    return async function request(url, options = {}) {
+      const headers = new Headers(options.headers || {});
+      const authenticated = headers.has("X-Editor-Token");
+      if (authenticated) headers.set("X-Editor-Token", currentToken);
+      let response = await fetcher(url, { credentials: "same-origin", ...options, headers });
+      // A rejected request has not mutated source. Renew only this explicit 403;
+      // never retry a failed network request that might already have saved/pushed.
+      if (response.status === 403 && authenticated) {
+        await reconnect();
+        headers.set("X-Editor-Token", currentToken);
+        response = await fetcher(url, { credentials: "same-origin", ...options, headers });
+        if (response.status === 403) throw new Error(reconnectMessage);
+      }
+      let data;
+      try { data = await response.json(); }
+      catch { throw new Error("The editor received an unexpected response. Keep this tab open and check that the editor app is running."); }
+      if (!data || typeof data !== "object" || Array.isArray(data)) throw new Error("The editor received an unexpected response. Keep this tab open and try again.");
+      if (!response.ok || data.ok === false) throw new Error(data.error || data.message || "The request could not be completed.");
+      return data;
+    };
+  }
+  return { phases, githubLink, siteLink, localBusy, remoteBusy, pollDelay, sourceBlocked, createRequest };
+})();
+
+// Editor application.
 (() => {
   const $ = (selector) => document.querySelector(selector);
   const ui = {
@@ -12,6 +78,10 @@
     publishTitle: $("#publish-title"), publishMessage: $("#publish-message"), publishReview: $("#publish-review"),
     publishCounts: $("#publish-counts"), publishPrepared: $("#publish-prepared"), publishDetail: $("#publish-detail"),
     publishConfirm: $("#publish-confirm"), publishRetry: $("#publish-retry"), publishLive: $("#publish-live"),
+    publishPrepare: $("#publish-prepare"), publishGithub: $("#publish-github"), publishChecks: $("#publish-checks"),
+    publishSteps: $("#publish-steps"), publishHandoff: $("#publish-handoff"), publishNextStep: $("#publish-next-step"),
+    publishStatusNotice: $("#publish-status-notice"),
+    publishFiles: $("#publish-files"), publishFilesPanel: $("#publish-files-panel"), publishBranch: $("#publish-branch"),
     translationCard: $("#translation-card"), translationEnabled: $("#translation-enabled"),
     translationStatus: $("#translation-status"), translationPublishNote: $("#translation-publish-note"),
     translationRetry: $("#translation-retry"), translationUsage: $("#translation-usage"),
@@ -38,6 +108,7 @@
     blockHistory: [], structuralUndoPending: false,
     imageChanges: new Map(), imageOriginals: new Map(), activeBlock: null, selection: null,
     publication: { phase: "idle" }, publishRequest: false, publishTimer: null, publishConnectionError: "",
+    publishFetching: false, publishSerial: 0, savedSincePreparation: false,
     translation: { enabled: true, phase: "idle", pending: 0, reviewCount: 0 }, translationLoaded: false,
     translationRequest: false, translationFetching: false, translationTimer: null, translationSerial: 0,
     translationConnectionError: "", bengaliFetching: false, bengaliReloadNeeded: null
@@ -51,7 +122,11 @@
     return [...state.changedBlocks.keys()].filter((id) => !state.deletedBlocks.has(id)).length +
       state.imageChanges.size + state.deletedBlocks.size + state.insertedBlocks.size;
   }
-  function publishingBusy() { return ["preparing", "publishing"].includes(state.publication.phase); }
+  function publishingBusy() { return EditorPublishing.localBusy(state.publication.phase); }
+  function sourceActionBlocked() {
+    return EditorPublishing.sourceBlocked({ ...state, phase: state.publication.phase,
+      dirty: dirtyCount(), translationBlocked: translationBlocksPublication() });
+  }
   function publishingLocked() { return state.publishRequest || publishingBusy() || (ui.publishDialog.open && state.publication.phase === "ready"); }
   function editingBusy() { return state.saving || state.loading || state.readingImage || state.translationRequest || state.creating || state.creatingType || state.catalogFetching || publishingLocked(); }
   function contentDialogOpen() { return ui.createDialog.open || ui.typesDialog.open; }
@@ -79,9 +154,11 @@
     const busy = editingBusy();
     ui.save.disabled = !state.doc || !count || busy;
     ui.preview.disabled = !state.doc || busy;
-    ui.publish.disabled = !state.doc || state.saving || state.loading || state.readingImage || state.creating || state.creatingType || state.catalogFetching || state.publishRequest || (translationBlocksPublication() && !publishingBusy());
-    ui.publish.title = translationPublishInstruction();
-    ui.publishConfirm.disabled = state.publishRequest || state.publication.phase !== "ready" || Boolean(state.publishConnectionError) || translationBlocksPublication();
+    // Viewing a sent update never depends on the selected page or translation work.
+    ui.publish.disabled = false;
+    ui.publish.title = "Prepare a GitHub update or view publishing progress";
+    ui.publishConfirm.disabled = sourceActionBlocked() || state.savedSincePreparation || state.publication.phase !== "ready" || Boolean(state.publishConnectionError);
+    ui.publishPrepare.disabled = sourceActionBlocked() || Boolean(state.publishConnectionError);
     ui.reset.hidden = !count;
     ui.reset.disabled = busy;
     ui.search.disabled = busy;
@@ -107,8 +184,9 @@
     ui.undoBlock.disabled = busy;
     ui.undoBlock.title = state.blockHistory.at(-1)?.label || "";
     ui.count.textContent = count ? `${count} unsaved ${count === 1 ? "change" : "changes"}` : "No unsaved changes";
-    ui.publicationStatus.textContent = count && !publishingBusy() ? "Unsaved changes" : ({ preparing: "Checking to publish…", ready: "Ready to publish", publishing: "Publishing…", success: "Published", error: "Publish needs attention" })[state.publication.phase] || "Saved locally";
-    if (!count && !publishingBusy() && translationBlocksPublication()) ui.publicationStatus.textContent = translationBusy() ? "Updating Bengali…" : "Bengali needs attention";
+    ui.publicationStatus.textContent = count && !publishingBusy() ? "Unsaved changes" : ({ preparing: "Preparing update…", ready: "Ready for GitHub", publishing: "Sending to GitHub…", review: "GitHub review", deploying: "Cloudflare publishing…", clean: "No new source changes", success: "Live on website", error: "Publishing needs attention" })[state.publication.phase] || "Saved locally";
+    if (!count && state.savedSincePreparation && ["ready", "clean", "success"].includes(state.publication.phase)) ui.publicationStatus.textContent = "New changes saved locally";
+    if (!count && state.publication.phase === "idle" && translationBlocksPublication()) ui.publicationStatus.textContent = translationBusy() ? "Updating Bengali…" : "Bengali needs attention";
     ui.translationEnabled.disabled = busy;
     ui.translationRetry.disabled = state.translationRequest || state.translationFetching || busy;
     const reviewPage = (state.translation.reviewDocuments || []).some((page) => page.id === state.doc?.id);
@@ -151,15 +229,7 @@
     updateControls();
     setStatus(dirtyCount() ? "You have unsaved changes. Save when you’re ready." : "All changes saved on this computer.");
   }
-  async function request(url, options = {}) {
-    const response = await fetch(url, { credentials: "same-origin", ...options });
-    let data;
-    try { data = await response.json(); }
-    catch { throw new Error("The editor received an unexpected response. Check that the local editor is still running."); }
-    if (!data || typeof data !== "object" || Array.isArray(data)) throw new Error("The editor received an unexpected response. Check that the local editor is still running.");
-    if (!response.ok || data.ok === false) throw new Error(data.error || data.message || "The request could not be completed.");
-    return data;
-  }
+  const request = EditorPublishing.createRequest((...args) => fetch(...args), token);
   function publishPost(url, body = {}) {
     return request(url, { method: "POST", headers: { "Content-Type": "application/json", "X-Editor-Token": token }, body: JSON.stringify(body) });
   }
@@ -209,7 +279,7 @@
     ui.translationUsageModel.hidden = !translation.model;
     ui.translationUsageModel.textContent = translation.model ? `Model: ${translation.model}. This is translation activity, not your remaining account allowance.` : "";
     updateControls();
-    if (ui.publishDialog.open && state.publication.phase === "ready") renderPublication();
+    if (ui.publishDialog.open) renderPublication();
   }
   function acceptTranslation(data) {
     if (!data || typeof data.enabled !== "boolean" || !["idle", "queued", "running", "success", "error", "review"].includes(data.phase)) throw new Error("The Bengali update status could not be read. Please check again.");
@@ -286,43 +356,129 @@
     const date = new Date(value);
     return Number.isNaN(date.getTime()) ? "Just now" : date.toLocaleString([], { dateStyle: "medium", timeStyle: "short" });
   }
+  function noteLocalSourceSave() {
+    // Keep a sent update's identity and polling when the author continues editing.
+    // A prepared, unsent snapshot must be prepared again after any source save.
+    state.savedSincePreparation = true;
+    renderPublication();
+    schedulePublicationPoll();
+  }
+  function setPublicationLink(element, value, label) {
+    const target = EditorPublishing.githubLink(value);
+    element.hidden = !target;
+    if (target) element.href = target;
+    else element.removeAttribute("href");
+    if (label) element.textContent = label;
+    return Boolean(target);
+  }
   function renderPublication() {
-    const { phase, preparation, publication } = state.publication;
+    const { phase, preparation, publication, github = {} } = state.publication;
     const busy = publishingBusy();
+    const remote = EditorPublishing.remoteBusy(phase);
     const ready = phase === "ready" && Boolean(preparation?.id);
     const success = phase === "success";
     const error = phase === "error";
-    ui.publishTitle.textContent = ({ preparing: "Preparing your website", ready: "Ready to publish", publishing: "Publishing your website", success: "Your website is published", error: "Publishing needs attention" })[phase] || "Prepare to publish";
-    ui.publishMessage.textContent = state.publishConnectionError || state.publication.message || ({ preparing: "Checking all saved pages and photos…", ready: "Your website checks passed. Review the details before publishing.", publishing: "Uploading your saved website to Cloudflare…", success: "Your saved changes are now on the public website.", error: "The website could not be published. Please check again." })[phase] || "Check your saved website before publishing.";
-    if (ready && translationBlocksPublication()) ui.publishMessage.textContent = translationPublishInstruction();
-    ui.publishMessage.className = "publish-message" + (busy ? " busy" : "") + (error || state.publishConnectionError ? " error" : "");
-    ui.publishMessage.setAttribute("role", error ? "alert" : "status");
-    ui.publishReview.hidden = !ready;
-    ui.publishConfirm.hidden = !ready;
-    ui.publishConfirm.disabled = state.publishRequest || !ready || Boolean(state.publishConnectionError);
-    ui.publishRetry.hidden = !error;
-    ui.publishRetry.disabled = state.publishRequest;
-    ui.publishLive.hidden = !success;
-    // Always use the known public destination, never a URL supplied by a response.
-    ui.publishLive.href = "https://aguri-heritage.in";
-    if (ready) {
-      const pages = Number(preparation.pages);
-      const files = Number(preparation.files);
-      ui.publishCounts.textContent = `${Number.isFinite(pages) ? pages.toLocaleString() : "All"} pages · ${Number.isFinite(files) ? files.toLocaleString() : "all"} files · English & Bengali`;
+    const closedWithoutMerge = state.publication.closedWithoutMerge === true;
+    const canPrepareAgain = state.publication.canPrepare === true || closedWithoutMerge;
+    const checkState = github.checks?.state;
+    const reviewUrl = EditorPublishing.githubLink(github.pullRequestUrl);
+    const compareUrl = EditorPublishing.githubLink(github.compareUrl);
+    const titles = {
+      idle: "Publish through GitHub", preparing: "Preparing your GitHub update", ready: "Ready to send to GitHub",
+      publishing: "Sending your source to GitHub", review: reviewUrl ? "Review your GitHub update" : "Create your GitHub review",
+      deploying: "Cloudflare is publishing", clean: "No new source changes", success: "Your update is live", error: "Publishing needs attention"
+    };
+    const messages = {
+      idle: "Save your edits and preview both languages. Then prepare all saved website changes for GitHub.",
+      preparing: "Building and checking your saved pages, then preparing the source update…",
+      ready: "The saved source passed its checks. Review what is included before sending it to GitHub.",
+      publishing: "Sending the checked source to an update branch on GitHub…",
+      review: "Your source is on GitHub. Review and merge the pull request there to start automatic publishing.",
+      deploying: "The change was merged. GitHub is running its production checks and publishing to Cloudflare…",
+      clean: "Your saved source has no new changes to send to GitHub.",
+      success: "GitHub confirmed a successful production deployment for this update.",
+      error: "This update needs attention. Read the details, then check its status before starting another update."
+    };
+    ui.publishTitle.textContent = titles[phase] || titles.idle;
+    if (success && state.savedSincePreparation) ui.publishTitle.textContent = "Earlier update is live";
+    ui.publishMessage.textContent = state.publishConnectionError || state.publication.message || messages[phase] || messages.idle;
+    if (ready && dirtyCount()) ui.publishMessage.textContent = "Save your unsaved edits, then prepare a fresh update before sending it.";
+    else if (ready && state.savedSincePreparation) ui.publishMessage.textContent = "Your saved source changed after this preparation. Prepare the latest changes before sending them to GitHub.";
+    else if (ready && translationBlocksPublication()) ui.publishMessage.textContent = translationPublishInstruction();
+    ui.publishMessage.className = "publish-message" + (busy || phase === "deploying" ? " busy" : "") + (error || state.publishConnectionError ? " error" : "");
+    ui.publishMessage.setAttribute("role", error || state.publishConnectionError ? "alert" : "status");
+    const statusNotice = typeof state.publication.statusNotice === "string" ? state.publication.statusNotice : "";
+    ui.publishStatusNotice.hidden = !statusNotice;
+    ui.publishStatusNotice.textContent = statusNotice;
+    const currentStep = ({ idle: 0, preparing: 1, ready: 1, publishing: 1, review: 2, deploying: 3, clean: 0, success: 4 })[phase] ?? (github.headSha ? 2 : 0);
+    [...ui.publishSteps.children].forEach((item, index) => {
+      item.dataset.state = index < currentStep ? "complete" : index === currentStep ? "current" : "pending";
+      if (index === currentStep) item.setAttribute("aria-current", "step");
+      else item.removeAttribute("aria-current");
+    });
+    ui.publishReview.hidden = !preparation || !["ready", "publishing", "review", "deploying", "success"].includes(phase);
+    if (preparation) {
+      const pages = Number(preparation.pages), files = Number(preparation.files);
+      ui.publishCounts.textContent = `${Number.isFinite(pages) ? pages.toLocaleString() : "All"} pages · ${Number.isFinite(files) ? files.toLocaleString() : "all"} source files · English & Bengali`;
       ui.publishPrepared.textContent = formatPublicationTime(preparation.preparedAt);
+      ui.publishBranch.textContent = preparation.branch || github.branch || "A new update branch";
+      const changed = Array.isArray(preparation.changedFiles) ? preparation.changedFiles : [];
+      ui.publishFilesPanel.hidden = !changed.length;
+      ui.publishFiles.replaceChildren();
+      for (const file of changed.slice(0, 100)) {
+        const item = document.createElement("li");
+        item.textContent = typeof file === "string" ? file : String(file?.path || "Changed source file");
+        ui.publishFiles.append(item);
+      }
+      if (changed.length > 100) {
+        const item = document.createElement("li");
+        item.textContent = `And ${(changed.length - 100).toLocaleString()} more files. Review the complete change on GitHub.`;
+        ui.publishFiles.append(item);
+      }
     }
-    ui.publishDetail.textContent = phase === "publishing" ? "You can close this panel; publishing will continue. Keep the editor app running." : phase === "preparing" ? "You can close this panel; the checks will continue. Your public website has not changed yet." : success ? `Published ${formatPublicationTime(publication?.completedAt)}. New changes can take a moment to appear.` : ready ? "Select Publish now to update the public website." : error ? "Your saved content is still on this computer. Check again when you’re ready." : "";
-    if (ready && translationBlocksPublication()) ui.publishDetail.textContent = "Close this panel to check the Bengali update status.";
-    ui.publicationStatus.classList.toggle("publication-busy", busy);
-    ui.publish.textContent = busy ? "View progress" : "Publish…";
+    ui.publishConfirm.hidden = !ready;
+    ui.publishPrepare.hidden = !["idle", "clean", "success", "error"].includes(phase) && !(ready && state.savedSincePreparation) || Boolean(state.publication.uncertain) || (error && Boolean(github.headSha) && !canPrepareAgain);
+    ui.publishPrepare.textContent = ready && state.savedSincePreparation ? "Prepare latest changes" : success ? "Prepare another update" : "Prepare GitHub update";
+    ui.publishRetry.hidden = !(remote || error || state.publishConnectionError);
+    ui.publishRetry.disabled = state.publishRequest || state.publishFetching;
+    ui.publishRetry.textContent = state.publishConnectionError ? "Reconnect and check" : "Check progress";
+    const hasReview = remote || (error && Boolean(github.headSha));
+    const reviewLabel = closedWithoutMerge ? "View closed GitHub review" : !reviewUrl ? "Create review on GitHub" : checkState === "success" ? "Review and merge on GitHub" : "Open GitHub review";
+    const hasReviewLink = setPublicationLink(ui.publishGithub, hasReview ? reviewUrl || compareUrl : "", reviewLabel);
+    const hasChecksLink = setPublicationLink(ui.publishChecks, (remote || error || success) ? github.checks?.url || github.actionsUrl : "", "View GitHub checks");
+    ui.publishHandoff.hidden = !remote && !hasReviewLink && !hasChecksLink;
+    ui.publishNextStep.textContent = success
+      ? "This update has already been deployed. Its GitHub checks remain available for reference. Prepare another update for new local changes."
+      : closedWithoutMerge ? "That pull request was closed without merging. You can prepare a new update from your corrected saved source."
+      : phase === "deploying"
+      ? "Publishing runs automatically after merging. This panel will confirm when the same update is live."
+      : !reviewUrl ? "On GitHub, choose Create pull request. Review the changes, wait for the required check to pass, then merge the pull request. You may need to sign in to GitHub."
+      : checkState === "failure" ? "A GitHub check failed. Open the review to see the failure. This source update has not been confirmed live."
+      : checkState === "success" ? "The checks passed. Review the changes on GitHub and choose Merge pull request when you are ready. Merging starts the automatic Cloudflare publication."
+      : "Review the changes on GitHub while its checks run. Merge becomes available when the required checks pass.";
+    ui.publishLive.hidden = !success || !EditorPublishing.siteLink(publication?.url);
+    ui.publishLive.href = "https://aguri-heritage.in/";
+    ui.publishDetail.textContent = ({
+      idle: dirtyCount() ? "Your current page has unsaved edits. Close this panel, save, and preview them first." : translationBlocksPublication() ? translationPublishInstruction() : "Preparation includes all saved website changes, not only the page currently open.",
+      preparing: "You can close this panel; checks continue while the editor app is running.",
+      ready: "Send to GitHub uploads this checked source for review. The public website changes only after the pull request is merged and production checks pass.",
+      publishing: "Keep the editor app running until the source send is confirmed. You can close this panel and return to View progress.",
+      review: "The public website has not been confirmed updated. New local edits stay on this Mac for a later update.",
+      deploying: "You can keep editing. New local edits are not part of this publication. Checks refresh automatically; GitHub links show the latest status.",
+      clean: "This does not report a new deployment. Close the panel to continue editing.",
+      success: `Confirmed ${formatPublicationTime(publication?.completedAt)}. New local edits need their own GitHub update.`,
+      error: "Your saved local content is still here. Checking progress does not resend or merge an update."
+    })[phase] || "";
+    ui.publicationStatus.classList.toggle("publication-busy", busy || phase === "deploying");
+    ui.publish.textContent = busy || remote || error ? "View progress" : ready ? "Continue publishing" : "Publish via GitHub";
     updateControls();
   }
   function acceptPublication(data) {
-    const phases = ["idle", "preparing", "ready", "publishing", "success", "error"];
-    if (!data || !phases.includes(data.phase)) throw new Error("The publishing status could not be read. Please try again.");
-    if (data.preparation?.siteUrl) {
-      const destination = new URL(data.preparation.siteUrl);
-      if (destination.protocol !== "https:" || destination.hostname !== "aguri-heritage.in") throw new Error("The publishing destination does not match this website.");
+    if (!data || !EditorPublishing.phases.includes(data.phase)) throw new Error("The publishing status could not be read. Please check again.");
+    if (data.preparation?.siteUrl && !EditorPublishing.siteLink(data.preparation.siteUrl)) throw new Error("The publishing destination does not match this website.");
+    if (data.publication?.url && !EditorPublishing.siteLink(data.publication.url)) throw new Error("The published destination does not match this website.");
+    for (const value of [data.github?.compareUrl, data.github?.pullRequestUrl, data.github?.actionsUrl, data.github?.checks?.url]) {
+      if (value && !EditorPublishing.githubLink(value)) throw new Error("The GitHub review link does not match this project's repository.");
     }
     state.publication = data;
     state.publishConnectionError = "";
@@ -332,67 +488,79 @@
   function schedulePublicationPoll() {
     clearTimeout(state.publishTimer);
     state.publishTimer = null;
-    if (publishingBusy()) state.publishTimer = setTimeout(refreshPublication, 1500);
+    const delay = EditorPublishing.pollDelay(state.publication.phase, Boolean(state.publishConnectionError));
+    if (delay) state.publishTimer = setTimeout(refreshPublication, delay);
   }
-  async function refreshPublication() {
+  async function refreshPublication(manual = false) {
+    if (state.publishFetching || state.publishRequest) { schedulePublicationPoll(); return; }
+    const serial = state.publishSerial;
+    state.publishFetching = true;
     try {
-      acceptPublication(await request("/api/publish/status", { headers: { "X-Editor-Token": token }, cache: "no-store" }));
-    } catch {
-      state.publishConnectionError = publishingBusy() ? "Reconnecting to check progress… Keep the editor app running." : "Publishing status is unavailable. Check that the editor app is running, then try Publish again.";
-      renderPublication();
-      schedulePublicationPoll();
-    }
+      const data = await request(manual === true ? "/api/publish/status?refresh=1" : "/api/publish/status", { headers: { "X-Editor-Token": token }, cache: "no-store" });
+      if (serial === state.publishSerial) acceptPublication(data);
+    } catch (error) {
+      if (serial === state.publishSerial) {
+        state.publishConnectionError = error.message || "Progress is unavailable. Keep this tab open and the editor app running, then reconnect.";
+        renderPublication();
+        schedulePublicationPoll();
+      }
+    } finally { state.publishFetching = false; renderPublication(); }
   }
   async function preparePublication() {
-    if (editingBusy()) return;
-    if (translationBlocksPublication()) { setStatus(translationPublishInstruction()); return; }
-    if (dirtyCount()) {
-      setStatus("Save your changes first, then choose Publish to update the public website.");
-      ui.save.focus();
+    if (sourceActionBlocked()) {
+      if (dirtyCount()) setStatus("Save and preview your changes before preparing the GitHub update.");
+      else if (translationBlocksPublication()) setStatus(translationPublishInstruction());
+      renderPublication();
       return;
     }
     state.activeBlock?.blur();
-    if (!ui.publishDialog.open) ui.publishDialog.showModal();
+    ++state.publishSerial;
     state.publishRequest = true;
-    state.publication = { phase: "preparing", message: "Checking your saved website before publishing…" };
+    clearTimeout(state.publishTimer);
+    state.publication = { phase: "preparing", message: "Checking all saved website changes for GitHub…" };
+    state.savedSincePreparation = false;
     state.publishConnectionError = "";
     renderPublication();
     try {
       acceptPublication(await publishPost("/api/publish/prepare"));
     } catch (error) {
-      const failure = { phase: "error", message: error.message || "The website could not be prepared. Please check again." };
-      state.publication = failure;
+      state.publishConnectionError = error.message || "Preparation could not be confirmed. Check progress before trying again.";
+      // Preserve the pending phase: a dropped response may have started the job.
+    } finally {
+      state.publishRequest = false;
       renderPublication();
-      // A request can disconnect after the checks have started. Recover its status.
-      await refreshPublication();
-      if (["idle", "ready", "success"].includes(state.publication.phase)) state.publication = failure;
-    } finally { state.publishRequest = false; renderPublication(); }
+      schedulePublicationPoll();
+      if (state.publishConnectionError) await refreshPublication();
+    }
   }
   async function confirmPublication() {
     const preparationId = state.publication.preparation?.id;
-    if (state.publication.phase !== "ready" || !preparationId || state.publishRequest || dirtyCount()) return;
-    if (translationBlocksPublication()) { setStatus(translationPublishInstruction()); renderPublication(); return; }
+    if (state.publication.phase !== "ready" || !preparationId || state.savedSincePreparation || sourceActionBlocked()) return;
+    ++state.publishSerial;
     state.publishRequest = true;
     clearTimeout(state.publishTimer);
-    state.publication = { ...state.publication, phase: "publishing", message: "Starting publication to aguri-heritage.in…" };
+    state.publication = { ...state.publication, phase: "publishing", message: "Sending the checked source to GitHub for review…" };
+    state.publishConnectionError = "";
     renderPublication();
     try {
       acceptPublication(await publishPost("/api/publish/confirm", { preparationId }));
     } catch (error) {
-      state.publishConnectionError = "Checking whether publication started… Keep the editor app running.";
+      state.publishConnectionError = error.message || "The source send could not be confirmed. Check progress before trying again.";
+    } finally {
+      state.publishRequest = false;
       renderPublication();
-      await refreshPublication();
-      if (state.publication.phase === "ready" || state.publication.phase === "idle") {
-        state.publication = { phase: "error", message: error.message || "Publishing could not start. Please check again." };
-      }
-    } finally { state.publishRequest = false; renderPublication(); }
+      schedulePublicationPoll();
+      if (state.publishConnectionError) await refreshPublication();
+    }
   }
   ui.publish.addEventListener("click", () => {
-    if (publishingBusy()) { ui.publishDialog.showModal(); renderPublication(); }
-    else preparePublication();
+    if (!ui.publishDialog.open) ui.publishDialog.showModal();
+    renderPublication();
+    refreshPublication(true);
   });
+  ui.publishPrepare.addEventListener("click", preparePublication);
   ui.publishConfirm.addEventListener("click", confirmPublication);
-  ui.publishRetry.addEventListener("click", preparePublication);
+  ui.publishRetry.addEventListener("click", () => refreshPublication(true));
   $("#publish-close").addEventListener("click", () => ui.publishDialog.close());
   ui.publishDialog.addEventListener("close", updateControls);
   function discardAllowed() {
@@ -546,9 +714,7 @@
     }
   }
   function resetPublicationAfterCreation() {
-    state.publication = { phase: "idle" };
-    state.publishConnectionError = "";
-    renderPublication();
+    noteLocalSourceSave();
   }
   ui.addPage.addEventListener("click", openCreateDialog);
   ui.pageTypes.addEventListener("click", openTypesDialog);
@@ -1204,9 +1370,7 @@
       });
       if (!data.document) throw new Error("Your changes were submitted, but the updated content could not be loaded. Reopen this page before editing further.");
       renderDocument(data.document);
-      state.publication = { phase: "idle" };
-      state.publishConnectionError = "";
-      renderPublication();
+      noteLocalSourceSave();
       setStatus(data.message || "Saved on this computer. The website build and checks passed.", "success");
       await refreshTranslation(true);
     } catch (error) { setStatus(error.message || "Could not save. Your edits are still here; please try again.", "error"); }

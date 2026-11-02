@@ -25,7 +25,7 @@
     <main class="workspace">
       <header class="topbar">
         <div class="workspace-label"><span>YOUR WEBSITE</span><strong>Write. Refine. Make it yours.</strong></div>
-        <div class="topbar-actions"><span id="publication-status" class="local-chip" role="status" aria-live="polite">Saved locally</span><button id="preview-button" class="button button-secondary" type="button" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6m0-6-9 9"></path><path d="M10 4H4v16h16v-6"></path></svg>Preview</button><button id="save-button" class="button button-primary" type="button" disabled>Save changes <span class="shortcut" aria-hidden="true">⌘S</span></button><button id="publish-button" class="button button-secondary" type="button" disabled>Publish…</button></div>
+        <div class="topbar-actions"><span id="publication-status" class="local-chip" role="status" aria-live="polite">Saved locally</span><button id="preview-button" class="button button-secondary" type="button" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6m0-6-9 9"></path><path d="M10 4H4v16h16v-6"></path></svg>Preview</button><button id="save-button" class="button button-primary" type="button" disabled>Save changes <span class="shortcut" aria-hidden="true">⌘S</span></button><button id="publish-button" class="button button-secondary" type="button" disabled>Publish via GitHub</button></div>
       </header>
 
       <div class="document-area">
@@ -113,23 +113,37 @@
   </dialog>
 
   <dialog id="publish-dialog" class="publish-dialog" aria-labelledby="publish-title" aria-describedby="publish-message">
-    <div class="eyebrow">AGURI HERITAGE · CLOUDFLARE</div>
-    <h2 id="publish-title">Prepare to publish</h2>
-    <p id="publish-message" class="publish-message" role="status" aria-live="polite">Checking your saved website…</p>
+    <div class="eyebrow">AGURI HERITAGE · GITHUB → CLOUDFLARE</div>
+    <h2 id="publish-title">Publish through GitHub</h2>
+    <ol id="publish-steps" class="publish-steps" aria-label="Publishing steps">
+      <li data-state="current" aria-current="step"><span class="publish-step-number" aria-hidden="true">1</span><div><strong>Save & preview</strong><small>Review your local pages.</small></div></li>
+      <li data-state="pending"><span class="publish-step-number" aria-hidden="true">2</span><div><strong>Send to GitHub</strong><small>Prepare and send checked source.</small></div></li>
+      <li data-state="pending"><span class="publish-step-number" aria-hidden="true">3</span><div><strong>Review & merge</strong><small>Approve the change on GitHub.</small></div></li>
+      <li data-state="pending"><span class="publish-step-number" aria-hidden="true">4</span><div><strong>Publish automatically</strong><small>Confirm it is live on Cloudflare.</small></div></li>
+    </ol>
+    <p id="publish-message" class="publish-message" role="status" aria-live="polite">Save and preview your edits, then prepare your GitHub update.</p>
+    <p id="publish-status-notice" class="publish-status-notice" role="status" aria-live="polite" hidden></p>
     <div id="publish-review" class="publish-review" hidden>
-      <p>Publish all saved website changes, including text and photos, in both English and Bengali.</p>
+      <p>This update includes saved website changes in both languages, including text and photos.</p>
       <dl>
         <div><dt>Public website</dt><dd><a href="https://aguri-heritage.in" target="_blank" rel="noopener noreferrer">aguri-heritage.in</a></dd></div>
         <div><dt>Included</dt><dd id="publish-counts"></dd></div>
+        <div><dt>GitHub branch</dt><dd id="publish-branch"></dd></div>
         <div><dt>Prepared</dt><dd id="publish-prepared"></dd></div>
       </dl>
-      <p class="publish-note">These saved changes will become visible to everyone who visits the website.</p>
+      <details id="publish-files-panel" class="publish-files-panel" hidden><summary>Changed source files</summary><ul id="publish-files"></ul></details>
+      <p class="publish-note">Sending source creates a GitHub update for review. Merging its pull request starts automatic publication.</p>
+    </div>
+    <div id="publish-handoff" class="publish-handoff" hidden>
+      <p id="publish-next-step"></p>
+      <div class="publish-links"><a id="publish-github" class="button button-primary" target="_blank" rel="noopener noreferrer" hidden>Open GitHub review</a><a id="publish-checks" class="button button-secondary" target="_blank" rel="noopener noreferrer" hidden>View GitHub checks</a></div>
     </div>
     <p id="publish-detail" class="publish-detail"></p>
     <div class="dialog-actions">
       <button id="publish-close" class="button button-secondary" type="button">Close</button>
-      <button id="publish-retry" class="button button-primary" type="button" hidden>Check again</button>
-      <button id="publish-confirm" class="button button-primary" type="button" hidden>Publish now</button>
+      <button id="publish-retry" class="button button-secondary" type="button" hidden>Check progress</button>
+      <button id="publish-prepare" class="button button-primary" type="button">Prepare GitHub update</button>
+      <button id="publish-confirm" class="button button-primary" type="button" hidden>Send to GitHub</button>
       <a id="publish-live" class="button button-primary" href="https://aguri-heritage.in" target="_blank" rel="noopener noreferrer" hidden>View live website</a>
     </div>
   </dialog>

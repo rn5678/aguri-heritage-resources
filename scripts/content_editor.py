@@ -70,7 +70,7 @@ def publisher():
         if PUBLISHER is None:
             # Import lazily so document tools and existing isolated tests stay independent.
             import importlib.util
-            spec = importlib.util.spec_from_file_location('aguri_editor_publish', Path(__file__).with_name('editor_publish.py'))
+            spec = importlib.util.spec_from_file_location('aguri_editor_github', Path(__file__).with_name('editor_github.py'))
             module = importlib.util.module_from_spec(spec)
             spec.loader.exec_module(module)
             PUBLISHER = module.Publisher(ROOT, LOCK)
@@ -626,6 +626,8 @@ class Handler(BaseHTTPRequestHandler):
             elif path=='/api/publish/status':
                 if not secrets.compare_digest(self.headers.get('X-Editor-Token',''),TOKEN):
                     self.reply(403,{'error':'Refresh the editor to reconnect.'})
+                elif parse_qs(parsed.query).get('refresh') == ['1']:
+                    self.reply(200,publisher().status(refresh=True))
                 else: self.reply(200,publisher().status())
             elif path=='/api/translation/status':
                 if not secrets.compare_digest(self.headers.get('X-Editor-Token',''),TOKEN):
