@@ -832,6 +832,246 @@ async function contactSubmit(request, env) {
   return json({ received: true, reference: id }, 201);
 }
 
+// Page comments are independently opt-in. Never load Google until the reader
+// chooses sign-in. ID tokens are verified locally against Google's fixed JWKS.
+const COMMENTS_TERMS = 'comments-2026-11-09';
+const COMMENT_SESSION_SECONDS = 3600;
+let commentJwks = { keys: [], expires: 0, fetched: 0, pending: null };
+function commentsConfigured(env) {
+  return env.COMMENTS_ENABLED === 'true' && !!env.CONTRIBUTIONS_DB && !!env.ASSETS
+    && typeof env.GOOGLE_CLIENT_ID === 'string' && /^[a-zA-Z0-9_-]+\.apps\.googleusercontent\.com$/.test(env.GOOGLE_CLIENT_ID)
+    && typeof env.COMMENTS_SESSION_SECRET === 'string' && env.COMMENTS_SESSION_SECRET.length >= 32
+    && typeof env.EDITOR_KEY === 'string' && env.EDITOR_KEY.length >= 32
+    && env.COMMENTS_SESSION_SECRET !== env.EDITOR_KEY;
+}
+function commentCookie(request, name) {
+  const matches = (request.headers.get('Cookie') || '').split(';').map(s => s.trim()).filter(s => s.startsWith(name + '='));
+  return matches.length === 1 ? matches[0].slice(name.length + 1) : '';
+}
+function commentSetCookie(name, value, seconds) {
+  return `${name}=${value}; Path=/; Max-Age=${seconds}; HttpOnly; Secure; SameSite=Strict`;
+}
+function commentDecode(value) {
+  if (!/^[A-Za-z0-9_-]+$/.test(value)) throw new Error('Invalid encoding');
+  return Uint8Array.from(atob(value.replace(/-/g, '+').replace(/_/g, '/')), c => c.charCodeAt(0));
+}
+async function commentGoogleKeys(kid) {
+  const now = Date.now();
+  if (commentJwks.expires > now && commentJwks.keys.some(k => k.kid === kid)) return commentJwks.keys;
+  // Unknown kids cannot force an unbounded number of outbound fetches.
+  if (!commentJwks.pending && now - commentJwks.fetched >= 60_000) {
+    commentJwks.fetched = now;
+    commentJwks.pending = (async () => {
+      const response = await fetch('https://www.googleapis.com/oauth2/v3/certs', { redirect: 'manual', signal: AbortSignal.timeout(5000) });
+      if (!response.ok) throw new Error('Google keys unavailable');
+      const parsed = JSON.parse(new TextDecoder().decode(await boundedBody(response, 40_000)));
+      if (!Array.isArray(parsed.keys) || parsed.keys.length > 20) throw new Error('Invalid Google keys');
+      const keys = parsed.keys.filter(k => k.kty === 'RSA' && k.alg === 'RS256' && k.use === 'sig' && typeof k.kid === 'string');
+      if (!keys.length) throw new Error('No Google keys');
+      const maxAge = Number((response.headers.get('Cache-Control') || '').match(/max-age=(\d+)/)?.[1] || 300);
+      commentJwks.keys = keys;
+      commentJwks.expires = Date.now() + Math.min(3600, Math.max(60, maxAge)) * 1000;
+    })().finally(() => { commentJwks.pending = null; });
+  }
+  if (commentJwks.pending) await commentJwks.pending;
+  if (commentJwks.expires <= Date.now()) throw new Error('Google keys expired');
+  return commentJwks.keys;
+}
+async function commentVerifyGoogle(token, nonce, env) {
+  try {
+    if (typeof token !== 'string' || token.length > 12_000) throw new Error();
+    const parts = token.split('.');
+    if (parts.length !== 3) throw new Error();
+    const header = JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(commentDecode(parts[0])));
+    const claims = JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(commentDecode(parts[1])));
+    if (header.alg !== 'RS256' || typeof header.kid !== 'string' || header.kid.length > 200 || header.crit) throw new Error();
+    const now = Math.floor(Date.now() / 1000);
+    if (!['https://accounts.google.com', 'accounts.google.com'].includes(claims.iss)
+        || claims.aud !== env.GOOGLE_CLIENT_ID || (claims.azp && claims.azp !== env.GOOGLE_CLIENT_ID)
+        || !Number.isInteger(claims.exp) || claims.exp <= now || claims.exp > now + 7200
+        || !Number.isInteger(claims.iat) || claims.iat > now + 60 || claims.iat < now - 7200
+        || (claims.nbf !== undefined && (!Number.isInteger(claims.nbf) || claims.nbf > now))
+        || typeof claims.sub !== 'string' || !/^[A-Za-z0-9_-]{1,255}$/.test(claims.sub)
+        || claims.nonce !== nonce) throw new Error();
+    const jwk = (await commentGoogleKeys(header.kid)).find(k => k.kid === header.kid);
+    if (!jwk) throw new Error();
+    const key = await crypto.subtle.importKey('jwk', jwk, { name: 'RSASSA-PKCS1-v1_5', hash: 'SHA-256' }, false, ['verify']);
+    if (!await crypto.subtle.verify('RSASSA-PKCS1-v1_5', key, commentDecode(parts[2]), encoder.encode(parts[0] + '.' + parts[1]))) throw new Error();
+    return claims;
+  } catch { fail(401, 'google_auth_failed', 'Google sign-in could not be verified. Please sign in again.'); }
+}
+async function commentRate(env, request, kind, maximum, seconds = 3600, user = '') {
+  const now = Math.floor(Date.now() / 1000), window = Math.floor(now / seconds);
+  const identity = await hmac(env.COMMENTS_SESSION_SECRET, user ? `user:${user}` : `ip:${request.headers.get('CF-Connecting-IP') || 'local'}`);
+  const result = await stmt(env, `INSERT INTO comment_rate_limits(bucket,count,expires_at) VALUES(?,1,?)
+    ON CONFLICT(bucket) DO UPDATE SET count=count+1 WHERE count<? RETURNING count`, `${kind}:${identity}:${window}`, (window + 1) * seconds, maximum).first();
+  if (!result) fail(429, 'rate_limited', 'Too many requests. Please try again later.');
+}
+async function commentSession(request, env, required = true, csrf = false) {
+  const token = commentCookie(request, '__Host-aguri-comments');
+  let session = null;
+  if (/^[a-f0-9]{64}$/.test(token)) session = await stmt(env, `SELECT s.token_hash,s.user_id,u.name FROM comment_sessions s
+    JOIN comment_users u ON u.id=s.user_id WHERE s.token_hash=? AND s.expires_at>?`, await hmac(env.COMMENTS_SESSION_SECRET, token), Math.floor(Date.now() / 1000)).first();
+  if (!session) { if (required) fail(401, 'login_required', 'Sign in with Google to continue.'); return null; }
+  session.csrf_token = await hmac(env.COMMENTS_SESSION_SECRET, 'csrf:' + token);
+  if (csrf && !await equal(request.headers.get('X-CSRF-Token') || '', session.csrf_token)) fail(403, 'csrf_rejected', 'Reload the page and try again.');
+  return session;
+}
+async function commentPage(value, request, env) {
+  if (typeof value !== 'string' || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value) || value.length > 100
+      || /^(review|contact|404|contribute|editor|admin)$/.test(value)) fail(400, 'invalid_page', 'Choose a public article page.');
+  const origin = new URL(request.url).origin;
+  let target = new URL('/' + (value === 'home' ? 'index' : value) + '.html', origin);
+  let response;
+  for (let hop = 0; hop < 3; hop++) {
+    response = await env.ASSETS.fetch(new Request(target, { redirect: 'manual' }));
+    if (![301,302,307,308].includes(response.status)) break;
+    const location = response.headers.get('Location');
+    if (!location || hop === 2) fail(404, 'page_not_found', 'This page could not be found.');
+    const next = new URL(location, target);
+    if (next.origin !== origin || next.search || next.hash || next.username || next.password
+        || ![target.pathname.replace(/\.html$/, ''), target.pathname.replace(/\.html$/, '') + '/', '/'].includes(next.pathname)) fail(404, 'page_not_found', 'This page could not be found.');
+    target = next;
+  }
+  if (response.status !== 200 || !(response.headers.get('Content-Type') || '').includes('text/html')) fail(404, 'page_not_found', 'This page could not be found.');
+  const html = new TextDecoder().decode(await boundedBody(response, MAX_BODY));
+  const marker = html.match(/<body\b[^>]*\sdata-page\s*=\s*(["'])(.*?)\1/i);
+  if (!marker || marker[2] !== value) fail(404, 'page_not_found', 'This page could not be found.');
+  return value;
+}
+function commentCursor(value) {
+  if (!value) return null;
+  try {
+    const result = JSON.parse(new TextDecoder().decode(commentDecode(value)));
+    if (!Array.isArray(result) || result.length !== 2 || !/^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d\.\d{3}Z$/.test(result[0]) || !UUID.test(result[1])) throw new Error();
+    return result;
+  } catch { fail(400, 'invalid_cursor', 'Reload the comments.'); }
+}
+function commentListResult(found) {
+  const comments = found.slice(0, 20), last = comments.at(-1);
+  return { comments, next_cursor: found.length > 20 ? btoa(JSON.stringify([last.created_at, last.id])).replace(/=/g, '').replace(/\+/g, '-').replace(/\//g, '_') : null };
+}
+async function commentsApi(request, env) {
+  const url = new URL(request.url), path = url.pathname, method = request.method;
+  if (path === '/api/comments/config' && method === 'GET') return json({ available: commentsConfigured(env), max_length: 2000, terms_version: COMMENTS_TERMS,
+    ...(commentsConfigured(env) ? { google_client_id: env.GOOGLE_CLIENT_ID } : {}) });
+  if (!commentsConfigured(env)) fail(503, 'service_unavailable', 'Comments are not available yet.');
+  if (url.protocol !== 'https:') fail(403, 'https_required', 'Comments require HTTPS.');
+  if (path === '/api/comments/auth/nonce' && method === 'GET') {
+    await commentRate(env, request, 'nonce', 30);
+    const nonce = hex(crypto.getRandomValues(new Uint8Array(32))), expires = Math.floor(Date.now() / 1000) + 300;
+    const challenge = `${nonce}.${expires}`;
+    return json({ nonce }, 200, { 'Set-Cookie': commentSetCookie('__Host-aguri-comments-login', challenge + '.' + await hmac(env.COMMENTS_SESSION_SECRET, challenge), 300) });
+  }
+  if (path === '/api/comments/auth/google' && method === 'POST') {
+    await commentRate(env, request, 'login', 20);
+    const data = await jsonBody(request, 16_000), nonce = field(data, 'nonce', 64, true);
+    const cookie = commentCookie(request, '__Host-aguri-comments-login'), parts = cookie.split('.'), now = Math.floor(Date.now() / 1000);
+    if (parts.length !== 3 || parts[0] !== nonce || !/^[a-f0-9]{64}$/.test(nonce) || !/^\d{10}$/.test(parts[1])
+        || Number(parts[1]) < now || Number(parts[1]) > now + 300 || !await equal(parts[2], await hmac(env.COMMENTS_SESSION_SECRET, parts.slice(0,2).join('.')))) fail(401, 'login_expired', 'Start Google sign-in again.');
+    const claims = await commentVerifyGoogle(data.credential, nonce, env);
+    const userId = await digest('aguri-comments:google:' + claims.sub);
+    const name = typeof claims.name === 'string' ? claims.name.normalize('NFC').replace(/[\u0000-\u001f\u007f]/g, '').trim().slice(0, 100) || 'Reader' : 'Reader';
+    const token = hex(crypto.getRandomValues(new Uint8Array(32))), tokenHash = await hmac(env.COMMENTS_SESSION_SECRET, token);
+    // nonce claim is single-use; the UNIQUE insert and session creation are atomic.
+    try {
+      await env.CONTRIBUTIONS_DB.batch([
+        stmt(env, 'INSERT INTO comment_login_nonces(nonce_hash,expires_at) VALUES(?,?)', await digest(nonce), now + 7200),
+        stmt(env, 'INSERT INTO comment_users(id,name,created_at) VALUES(?,?,?) ON CONFLICT(id) DO UPDATE SET name=excluded.name', userId, name, new Date().toISOString()),
+        stmt(env, 'INSERT INTO comment_sessions(token_hash,user_id,expires_at) VALUES(?,?,?)', tokenHash, userId, now + COMMENT_SESSION_SECONDS),
+        stmt(env, 'DELETE FROM comment_sessions WHERE expires_at<=?', now),
+        stmt(env, 'DELETE FROM comment_login_nonces WHERE expires_at<=?', now),
+        stmt(env, 'DELETE FROM comment_rate_limits WHERE expires_at<=?', now),
+      ]);
+    } catch (error) { if (/UNIQUE.*comment_login_nonces/i.test(String(error))) fail(401, 'login_replayed', 'Start Google sign-in again.'); throw error; }
+    return json({ user: { id: userId, name }, csrf_token: await hmac(env.COMMENTS_SESSION_SECRET, 'csrf:' + token) }, 200,
+      { 'Set-Cookie': commentSetCookie('__Host-aguri-comments', token, COMMENT_SESSION_SECONDS) });
+  }
+  if (path === '/api/comments/me' && method === 'GET') {
+    const session = await commentSession(request, env, false);
+    return json(session ? { user: { id: session.user_id, name: session.name }, csrf_token: session.csrf_token } : { user: null });
+  }
+  if (path === '/api/comments/auth/logout' && method === 'POST') {
+    const session = await commentSession(request, env, true, true);
+    await stmt(env, 'DELETE FROM comment_sessions WHERE token_hash=?', session.token_hash).run();
+    return json({ signed_out: true }, 200, { 'Set-Cookie': commentSetCookie('__Host-aguri-comments', '', 0) });
+  }
+  if (path === '/api/comments/review' || path.startsWith('/api/comments/review/')) {
+    await editor(request, env);
+    if (path === '/api/comments/review' && method === 'GET') {
+      const status = url.searchParams.get('status') || 'pending';
+      if (!['pending','approved','rejected','hidden','deleted'].includes(status)) fail(400, 'invalid_status', 'Choose a comment status.');
+      const cursor = commentCursor(url.searchParams.get('cursor'));
+      const found = rows(await stmt(env, `SELECT id,page,name,body,status,version,created_at,updated_at,
+        (SELECT count(*) FROM comment_reports r WHERE r.comment_id=comments.id) AS report_count
+        FROM comments WHERE status=? ${cursor ? 'AND (created_at<? OR (created_at=? AND id<?))' : ''} ORDER BY created_at DESC,id DESC LIMIT 21`, status, ...(cursor ? [cursor[0],cursor[0],cursor[1]] : [])).all());
+      for (const item of found.slice(0, 20)) item.reports = rows(await stmt(env,
+        'SELECT reason,created_at FROM comment_reports WHERE comment_id=? ORDER BY created_at DESC LIMIT 20', item.id).all());
+      return json(commentListResult(found));
+    }
+    const match = path.match(/^\/api\/comments\/review\/([a-f0-9-]{36})$/i);
+    if (match && UUID.test(match[1]) && method === 'PATCH') {
+      const data = await jsonBody(request, 6000), note = field(data, 'note', 1000);
+      if (!['approved','rejected','hidden'].includes(data.status)) fail(400, 'invalid_status', 'Choose approved, rejected or hidden.');
+      if (!Number.isSafeInteger(data.version) || data.version < 1) fail(400, 'invalid_version', 'Reload the moderation queue.');
+      const results = await env.CONTRIBUTIONS_DB.batch([
+        stmt(env, "UPDATE comments SET status=?,moderation_note=?,updated_at=?,version=version+1 WHERE id=? AND version=? AND status<>'deleted' RETURNING id,status,version", data.status,note,new Date().toISOString(),match[1],data.version),
+      ]);
+      const row = rows(results[0])[0];
+      if (!row) fail(409, 'moderation_conflict', 'This comment changed. Reload the moderation queue.');
+      return json(row);
+    }
+    fail(404, 'not_found', 'This service route could not be found.');
+  }
+  if (path === '/api/comments' && method === 'GET' || path === '/api/comments/mine' && method === 'GET') {
+    await commentRate(env, request, 'read', 240);
+    const page = await commentPage(url.searchParams.get('page'), request, env), cursor = commentCursor(url.searchParams.get('cursor'));
+    const mine = path.endsWith('/mine'), session = mine ? await commentSession(request, env) : null;
+    const found = rows(await stmt(env, `SELECT id,page,name,body,created_at${mine ? ',status' : ''} FROM comments
+      WHERE page=? AND ${mine ? "user_id=? AND status<>'deleted'" : "status='approved'"}
+      ${cursor ? 'AND (created_at<? OR (created_at=? AND id<?))' : ''} ORDER BY created_at DESC,id DESC LIMIT 21`, page,
+      ...(mine ? [session.user_id] : []), ...(cursor ? [cursor[0],cursor[0],cursor[1]] : [])).all());
+    return json(commentListResult(found));
+  }
+  if (path === '/api/comments' && method === 'POST') {
+    const session = await commentSession(request, env, true, true), data = await jsonBody(request, 12_000);
+    const page = await commentPage(data.page, request, env), body = field(data, 'body', 2000, true), clientId = field(data, 'client_id', 36, true);
+    if (!UUID.test(clientId) || data.consent !== true || data.terms_version !== COMMENTS_TERMS) fail(400, 'consent_required', 'Accept the current comment publication terms.');
+    const payloadHash = await digest(JSON.stringify([page,body,COMMENTS_TERMS]));
+    const existing = await stmt(env, 'SELECT id,status,payload_hash FROM comments WHERE user_id=? AND client_id=?', session.user_id,clientId).first();
+    if (existing) {
+      if (existing.payload_hash !== payloadHash) fail(409, 'submission_conflict', 'Use a new reference for different text.');
+      return json({ id:existing.id,status:existing.status });
+    }
+    await commentRate(env, request, 'post-ip', 20);
+    await commentRate(env, request, 'post-user', 5, 3600, session.user_id);
+    const id = crypto.randomUUID(), now = new Date().toISOString();
+    await stmt(env, `INSERT OR IGNORE INTO comments(id,user_id,client_id,payload_hash,page,name,body,terms_version,consented_at,created_at,updated_at)
+      VALUES(?,?,?,?,?,?,?,?,?,?,?)`, id,session.user_id,clientId,payloadHash,page,session.name,body,COMMENTS_TERMS,now,now,now).run();
+    const saved = await stmt(env, 'SELECT id,status,payload_hash FROM comments WHERE user_id=? AND client_id=?', session.user_id,clientId).first();
+    if (!saved || saved.payload_hash !== payloadHash) fail(409, 'submission_conflict', 'Use a new reference for different text.');
+    return json({ id:saved.id,status:saved.status }, saved.id === id ? 201 : 200);
+  }
+  const match = path.match(/^\/api\/comments\/([a-f0-9-]{36})(\/report)?$/i);
+  if (match && UUID.test(match[1])) {
+    const session = await commentSession(request, env, true, true);
+    if (!match[2] && method === 'DELETE') {
+      const row = await stmt(env, "UPDATE comments SET body='',name='',status='deleted',moderation_note='',version=version+1,updated_at=? WHERE id=? AND user_id=? RETURNING id,status", new Date().toISOString(),match[1],session.user_id).first();
+      if (!row) fail(404, 'comment_not_found', 'This comment could not be found.');
+      return json(row);
+    }
+    if (match[2] && method === 'POST') {
+      await commentRate(env, request, 'report', 10,3600,session.user_id);
+      const data = await jsonBody(request, 3000), reason = field(data,'reason',500,true);
+      const row = await stmt(env, "SELECT id FROM comments WHERE id=? AND status='approved'", match[1]).first();
+      if (!row) fail(404, 'comment_not_found', 'This comment could not be found.');
+      await stmt(env, 'INSERT OR IGNORE INTO comment_reports(comment_id,user_id,reason,created_at) VALUES(?,?,?,?)',match[1],session.user_id,reason,new Date().toISOString()).run();
+      return json({ reported: true });
+    }
+  }
+  fail(404, 'not_found', 'This service route could not be found.');
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url), path = url.pathname;
@@ -847,6 +1087,7 @@ export default {
     try {
       if (path.startsWith('/api/documents/')) return await journalDocument(request, path);
       validateOrigin(request);
+      if (path === '/api/comments' || path.startsWith('/api/comments/')) return await commentsApi(request, env);
       if (path === '/api/page-views') return await pageViews(request, env);
       if (path === '/api/contact/config' && request.method === 'GET') {
         const available = contactConfigured(env, request);

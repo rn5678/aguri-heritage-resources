@@ -253,6 +253,15 @@ def render_page(key,label,title,desc,frag,lang,sources,page_labels,history,edito
   body=render_culture(body,lang,ARTWORKS)
  if key=='people':
   body=render_people(body,lang)
+ # Add discussions after special page renderers replace the main template.
+ if key not in ('404','contact','contribute','review','editor','admin'):
+  comment_version=hashlib.sha256((ROOT/'assets/comments.js').read_bytes()).hexdigest()[:12]
+  body=body.replace('</head>',f'<link rel="stylesheet" href="{assets}comments.css"><script src="{assets}comments.js?v={comment_version}" defer></script></head>')
+  body=body.replace('</main>','<section class="page-comments" data-comments hidden aria-labelledby="comments-heading"></section></main>',1)
+ if key=='review':
+  review_version=hashlib.sha256((ROOT/'assets/comments-review.js').read_bytes()).hexdigest()[:12]
+  body=body.replace('</head>',f'<link rel="stylesheet" href="{assets}comments.css"><script src="{assets}comments-review.js?v={review_version}" defer></script></head>')
+  body=body.replace('</main>','<section class="page-comments" data-comments-review hidden aria-labelledby="comments-review-heading"></section></main>',1)
  if lang=='bn':
   body=re.sub(r'((?:href|src|data)=")assets/',r'\1../assets/',body)
  body=open_file_links(body)
