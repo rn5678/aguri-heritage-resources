@@ -5,3 +5,12 @@ html[lang=bn] .contribution-type strong,html[lang=bn] .contribution-types legend
 @media(max-width:540px){.contribution-steps{display:grid;gap:12px;margin:24px 0}.contribution-two-fields{grid-template-columns:minmax(0,1fr);gap:0}.contribution-two-fields>.contribution-field{margin:18px 0 0}.contribution-submit{flex-direction:column;align-items:stretch}.contribution-submit button{justify-content:center}.contribution-type{padding:13px}.contribution-field input:not([type=file]),.contribution-field textarea,.contribution-reply textarea{font-size:16px}.contribution-aside ul{display:block}.contribution-private-link{padding:18px}.contribution-private-link .actions{flex-direction:column;align-items:stretch}.contribution-private-link .button{justify-content:center}.contribution-receipt-details>div{grid-template-columns:minmax(0,1fr);gap:5px}.contribution-form-panel>h2,.contribution-receipt>h2{font-size:31px}.contribution-notice{padding:15px 17px}}
 @media(prefers-reduced-motion:reduce){.contribution-type{transition:none}}
 @media print{.contribution-page form,.contribution-aside,.contribution-steps,.contribution-notice,.contribution-private-link .actions,.contribution-reply,#new-contribution{display:none}.contribution-layout{display:block}.contribution-private-link{background:white;border:1px solid #aaa}.contribution-private-link input{border:0}}
+
+/* Volunteer invitation: follows the existing contribution-page palette and spacing. */
+.contribution-volunteers{max-width:900px;margin:30px 0 42px;padding:28px;border:1px solid var(--line);background:var(--surface)}
+.contribution-volunteers h2{font-size:32px;margin:10px 0 18px}
+.contribution-volunteers p,.contribution-volunteers li{font-size:15px;line-height:1.85}
+.contribution-volunteers ul{padding-left:22px}.contribution-volunteers li{margin:12px 0}
+.contribution-volunteers .actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin:24px 0}
+html[lang=bn] .contribution-volunteers p,html[lang=bn] .contribution-volunteers li{font-size:16px}
+@media(max-width:540px){.contribution-volunteers{padding:20px}.contribution-volunteers h2{font-size:28px}.contribution-volunteers .actions{align-items:stretch;flex-direction:column}}
