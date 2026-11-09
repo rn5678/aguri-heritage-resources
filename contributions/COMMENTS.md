@@ -142,8 +142,11 @@ version explicitly. Existing hidden/deleted records must not be republished.
 mock of Google's fixed JWKS response; it exercises the real token verifier, not
 an authentication bypass. `scripts/comments_browser_checks.cjs` is an optional
 Playwright/Chromium suite whose Google and API traffic is fully mocked. It is
-not production provider validation. In the development runtime used for this
-branch, Chromium could not launch because socket creation was denied, so that
-browser suite has not been executed there. Run it in a capable local environment
-before release, as well as the real Google sign-in checks above. No production
-Google accounts, cookies, comments or Cloudflare configuration were changed.
+not production provider validation. The cloud development runtime could not launch Chromium because socket
+creation was denied. The suite subsequently passed on the authorized Mac in
+Chrome against commit `7a5cf7032e6c79409da826dfb124b3c8555be536`, covering both
+languages, immediate publication, consent, mocked nonce login, XSS text safety,
+delete/report, outage draft retention, logout and disabled UI. All Google/API
+responses in that browser run were local mocks. Real Google sign-in checks
+remain a release gate. No production Google accounts, comments or Cloudflare
+configuration were changed.

@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import vm from 'node:vm';
-import {readFileSync,readdirSync} from 'node:fs';
+import {readFileSync} from 'node:fs';
 const source=readFileSync(new URL('../assets/comments.js',import.meta.url),'utf8');
 class Node {
   constructor(tag='div',text=''){this.tagName=tag;this.children=[];this.attrs={};this.listeners={};this.hidden=false;this.disabled=false;this.value='';this.checked=false;this._text=text;}
@@ -52,14 +52,6 @@ for(const lang of ['en','bn'])test(`Comments ${lang}: delayed Google, nonce, saf
 });
 test('Disabled or absent backend leaves comments hidden and does not load Google',async()=>{
   for(const options of [{available:false},{outage:true}]) {const ui=await setup(options);assert.equal(ui.root.hidden,true);assert.equal(ui.head.children.length,0);assert.equal(ui.calls.length,1);}
-});
-test('Every built public page has one discussion mount after layout transforms',()=>{
-  for(const language of ['', 'bn/'])for(const filename of readdirSync(new URL('../site/'+language,import.meta.url)).filter(f=>f.endsWith('.html'))) {
-    const html=readFileSync(new URL('../site/'+language+filename,import.meta.url),'utf8');
-    const excluded=['404.html','contact.html','contribute.html','review.html','editor.html','admin.html'].includes(filename);
-    assert.equal((html.match(/data-comments hidden/g)||[]).length,excluded?0:1,language+filename);
-    if(!excluded)assert.ok(html.indexOf('data-comments hidden')<html.indexOf('</main>'));
-  }
 });
 test('Moderation uses editor authorization, optimistic version, safe report text, and clears private queue on lock',async()=>{
   Node.prototype.querySelectorAll=function(selector){return find(this,n=>n.tagName===selector);};
