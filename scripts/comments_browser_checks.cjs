@@ -10,7 +10,7 @@ const root = path.resolve(__dirname, '..');
     for (const lang of ['en','bn']) {
       const context = await browser.newContext({viewport:{width:390,height:844}}), page = await context.newPage();
       let enabled=true, outage=false, signedIn=false, googleRequests=0, posted=[], deleted=false;
-      const own = () => posted.map((p,i)=>({id:'own-'+i,page:p.page,name:'Test Reader',body:p.body,created_at:'2026-11-09T10:00:00Z',status:'pending'}));
+      const own = () => posted.map((p,i)=>({id:'own-'+i,page:p.page,name:'Test Reader',body:p.body,created_at:'2026-11-09T10:00:00Z',status:'approved'}));
       await context.route('**/*',async route=>{
         const url=new URL(route.request().url()), request=route.request();
         if(url.hostname==='accounts.google.com') {
@@ -20,14 +20,14 @@ const root = path.resolve(__dirname, '..');
         if(url.pathname.startsWith('/api/comments')) {
           if(outage)return route.fulfill({status:503,body:'{}'});
           const p=url.pathname.slice('/api/comments'.length);let result={};
-          if(p==='/config')result={available:enabled,google_client_id:'test-client',terms_version:'comments-2026-11-09',max_length:2000};
+          if(p==='/config')result={available:enabled,google_client_id:'test-client',terms_version:'comments-2026-11-09-direct-v1',max_length:2000};
           else if(p==='/me')result=signedIn?{user:{id:'reader',name:'Test Reader'},csrf_token:'test-csrf'}:{user:null};
           else if(p==='/auth/nonce')result={nonce:'nonce-test'};
           else if(p==='/auth/google'){assert.deepEqual(request.postDataJSON(),{credential:'test-only-credential',nonce:'nonce-test'});signedIn=true;result={user:{id:'reader',name:'Test Reader'},csrf_token:'test-csrf'};}
           else if(p==='/auth/logout'){assert.equal(request.headers()['x-csrf-token'],'test-csrf');signedIn=false;}
           else if(p==='/mine')result={comments:deleted?[]:own()};
-          else if(p===''&&request.method()==='GET'){assert.equal(url.searchParams.get('page'),'index');result={comments:[{id:'public-1',name:'<img src=x onerror=alert(1)>',body:'<script>alert(1)</script>',created_at:'2026-11-09T10:00:00Z'}],next_cursor:null};}
-          else if(p===''&&request.method()==='POST'){const body=request.postDataJSON();assert.equal(request.headers()['x-csrf-token'],'test-csrf');assert.equal(body.consent,true);assert.equal(body.terms_version,'comments-2026-11-09');assert.equal(body.page,'index');assert.match(body.client_id,/^[a-f0-9-]{36}$/);posted.push(body);result={id:'own-0',status:'pending'};}
+          else if(p===''&&request.method()==='GET'){assert.equal(url.searchParams.get('page'),'index');result={comments:[{id:'public-1',name:'<img src=x onerror=alert(1)>',body:'<script>alert(1)</script>',created_at:'2026-11-09T10:00:00Z'},...(deleted?[]:own())],next_cursor:null};}
+          else if(p===''&&request.method()==='POST'){const body=request.postDataJSON();assert.equal(request.headers()['x-csrf-token'],'test-csrf');assert.equal(body.consent,true);assert.equal(body.terms_version,'comments-2026-11-09-direct-v1');assert.equal(body.page,'index');assert.match(body.client_id,/^[a-f0-9-]{36}$/);posted.push(body);result={id:'own-0',status:'approved'};}
           else if(request.method()==='DELETE')deleted=true;
           else if(p.endsWith('/report'))assert.equal(request.postDataJSON().reason,'Test report');
           else throw new Error('Unexpected API '+p);
@@ -52,6 +52,7 @@ const root = path.resolve(__dirname, '..');
       await comments.locator('input[type=checkbox]').check();
       await comments.locator('button[type=submit]').click();
       await page.waitForFunction(()=>document.querySelector('[data-comments] textarea').value==='');
+      await page.waitForFunction(()=>Array.from(document.querySelectorAll('[data-comments] .comment-body')).filter(p=>p.textContent==='A source-based comment').length===2);
       assert.equal(posted.length,1);assert.equal(await comments.locator('textarea').getAttribute('maxlength'),'2000');
       await page.waitForFunction(()=>document.querySelector('[data-comments]').textContent.includes('A source-based comment'));
       page.once('dialog',dialog=>dialog.accept('Test report'));

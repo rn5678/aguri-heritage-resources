@@ -224,6 +224,6 @@ receiving inbox, sender and delivery provider.
 A separate, disabled-by-default comments feature is being prepared for public
 HTML pages. It does not change anonymous private contribution submissions or
 editor receipt handling. See [COMMENTS.md](COMMENTS.md) for scope, setup gates,
-privacy, moderation and verification requirements. Do not enable it merely by
+privacy, post-publication removal and verification requirements. Do not enable it merely by
 publishing this branch; Google configuration and the additive database migration
 require separate review.

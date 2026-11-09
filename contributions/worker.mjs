@@ -834,7 +834,7 @@ async function contactSubmit(request, env) {
 
 // Page comments are independently opt-in. Never load Google until the reader
 // chooses sign-in. ID tokens are verified locally against Google's fixed JWKS.
-const COMMENTS_TERMS = 'comments-2026-11-09';
+const COMMENTS_TERMS = 'comments-2026-11-09-direct-v1';
 const COMMENT_SESSION_SECONDS = 3600;
 let commentJwks = { keys: [], expires: 0, fetched: 0, pending: null };
 function commentsConfigured(env) {
@@ -1046,8 +1046,8 @@ async function commentsApi(request, env) {
     await commentRate(env, request, 'post-ip', 20);
     await commentRate(env, request, 'post-user', 5, 3600, session.user_id);
     const id = crypto.randomUUID(), now = new Date().toISOString();
-    await stmt(env, `INSERT OR IGNORE INTO comments(id,user_id,client_id,payload_hash,page,name,body,terms_version,consented_at,created_at,updated_at)
-      VALUES(?,?,?,?,?,?,?,?,?,?,?)`, id,session.user_id,clientId,payloadHash,page,session.name,body,COMMENTS_TERMS,now,now,now).run();
+    await stmt(env, `INSERT OR IGNORE INTO comments(id,user_id,client_id,payload_hash,page,name,body,terms_version,consented_at,created_at,updated_at,status)
+      VALUES(?,?,?,?,?,?,?,?,?,?,?,'approved')`, id,session.user_id,clientId,payloadHash,page,session.name,body,COMMENTS_TERMS,now,now,now).run();
     const saved = await stmt(env, 'SELECT id,status,payload_hash FROM comments WHERE user_id=? AND client_id=?', session.user_id,clientId).first();
     if (!saved || saved.payload_hash !== payloadHash) fail(409, 'submission_conflict', 'Use a new reference for different text.');
     return json({ id:saved.id,status:saved.status }, saved.id === id ? 201 : 200);

@@ -1,4 +1,4 @@
-# Google-authenticated page comments — development candidate
+# Google-authenticated page comments — immediate-publication candidate
 
 This feature is **not enabled or deployed by this branch**. It extends the existing
 Cloudflare Pages Worker and D1 database; it does not require Firebase, a new cloud
@@ -7,10 +7,12 @@ stores and moderates their comments. Signing in is not a guarantee against spam.
 
 ## Product scope
 
-- Anyone can read approved comments. Google sign-in is required to post, report,
-  view one's pending comments, or delete one's own comments.
-- New comments are plain text, at most 2,000 characters, and pending until an
-  editor approves them. Rejected/hidden/pending comments are not publicly listed.
+- Anyone can read published comments. Google sign-in is required to post, report,
+  view one's comments, or delete one's own comments.
+- New comments are plain text, at most 2,000 characters, and are published
+  immediately after authenticated submission. There is no pre-publication review.
+  Administrators may remove inappropriate comments after publication; hidden or
+  deleted comments are not publicly listed.
 - The public display name comes from the signed-in Google account. Never expose
   account email, Google subject identifier, session tokens or private moderation
   notes in public responses. Inform users before they agree to publish.
@@ -25,7 +27,7 @@ stores and moderates their comments. Signing in is not a guarantee against spam.
 ## Deployment prerequisites — owner review required
 
 1. Review the comment publication/privacy wording and assign an editor to the
-   moderation queue. Decide retention and handling of reports/deletion requests.
+   report/removal queue. Decide retention and handling of reports/deletion requests.
    Do not claim the existing contribution terms automatically cover comments.
 2. In the Google Auth Platform, create or select a **web** OAuth client for this
    website with the owner's approval. Configure branding, support address,
@@ -70,7 +72,7 @@ script, because it asserts builds leave tracked source unchanged.
 Before enabling for readers, verify with real authorized Google accounts on the
 canonical domain: Chrome and Safari desktop/mobile, popup cancellation, blocked
 third-party cookies/FedCM behavior, expired session, logout, foreign-origin and
-CSRF rejection, pending versus public visibility, moderation, author deletion,
+CSRF rejection, immediate public visibility and administrator removal, moderation, author deletion,
 reporting, throttling, and bilingual shared discussion. Local/mock identity tests
 are not evidence that Google's production consent configuration works.
 
@@ -108,8 +110,8 @@ server-only. Disabling the flag is a feature kill switch, not data deletion.
 - `POST /api/comments/auth/google`: verify the Google credential and challenge;
   establish a one-hour session. No refresh/access token or mailbox access is needed.
 - `GET /api/comments/me`, `POST /api/comments/auth/logout`: current session/logout.
-- `GET /api/comments?page=KEY`: paginated approved comments.
-- `GET /api/comments/mine?page=KEY`: the signed-in author's comments, including pending items.
+- `GET /api/comments?page=KEY`: paginated published comments.
+- `GET /api/comments/mine?page=KEY`: the signed-in author's comments, including administratively hidden items.
 - `POST /api/comments`: page, plain-text body, stable retry UUID, explicit consent,
   and the current terms version. Reusing a retry ID with changed content fails.
 - `DELETE /api/comments/ID`: author-only deletion.
@@ -130,6 +132,11 @@ require the current comment `version`; stale decisions return a conflict rather
 than overwriting another editor's decision. Review rows include private reports.
 
 ## Development verification boundaries
+
+The immediate-publication terms version is `comments-2026-11-09-direct-v1`.
+Earlier consent that promised approval before publication must not be reused for
+immediate publication. New direct-publication submissions must accept the new
+version explicitly. Existing hidden/deleted records must not be republished.
 
 `node --test scripts/test_comments.mjs` uses generated RSA signatures and a local
 mock of Google's fixed JWKS response; it exercises the real token verifier, not

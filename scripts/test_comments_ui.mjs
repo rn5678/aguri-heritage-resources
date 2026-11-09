@@ -19,14 +19,14 @@ async function setup({lang='en',available=true,outage=false}={}) {
   const fetch=async(path,options={})=>{
     calls.push({path,options});if(fail)return {ok:false,status:503};
     let data={};
-    if(path.endsWith('/config'))data={available,google_client_id:'client',terms_version:'comments-2026-11-09'};
+    if(path.endsWith('/config'))data={available,google_client_id:'client',terms_version:'comments-2026-11-09-direct-v1'};
     else if(path.endsWith('/me'))data={user:null};
     else if(path.endsWith('/nonce'))data={nonce:'nonce'};
     else if(path.endsWith('/google')){signedIn=true;data={user:{id:'user',name:'Reader'},csrf_token:'csrf'};}
     else if(path.includes('/mine') && path.includes('cursor=older'))data={comments:[{id:'older',name:'Reader',body:'Older comment',status:'approved',created_at:'2026-11-08'}],next_cursor:null};
-    else if(path.includes('/mine'))data={next_cursor:posted.length?'older':null,comments:posted.map((c,i)=>({...c,id:'own'+i,name:'Reader',status:'pending',created_at:'2026-11-09'}))};
-    else if(path==='/api/comments'&&options.method==='POST'){assert.ok(signedIn);posted.push(JSON.parse(options.body));data={id:'own0',status:'pending'};}
-    else if(path.startsWith('/api/comments?page='))data={comments:[{id:'public',name:'<img src=x>',body:'<script>bad()</script>',created_at:'2026-11-09'}],next_cursor:null};
+    else if(path.includes('/mine'))data={next_cursor:posted.length?'older':null,comments:posted.map((c,i)=>({...c,id:'own'+i,name:'Reader',status:'approved',created_at:'2026-11-09'}))};
+    else if(path==='/api/comments'&&options.method==='POST'){assert.ok(signedIn);posted.push(JSON.parse(options.body));data={id:'own0',status:'approved'};}
+    else if(path.startsWith('/api/comments?page='))data={comments:[{id:'public',name:'<img src=x>',body:'<script>bad()</script>',created_at:'2026-11-09'},...posted.map((c,i)=>({...c,id:'own'+i,name:'Reader',created_at:'2026-11-09'}))],next_cursor:null};
     return {ok:true,status:200,json:async()=>data};
   };
   vm.runInNewContext(source,{document,window,fetch,setTimeout,clearTimeout,AbortController,Date,crypto:{randomUUID:()=> '12345678-1234-1234-1234-123456789abc'}});
@@ -46,7 +46,7 @@ for(const lang of ['en','bn'])test(`Comments ${lang}: delayed Google, nonce, saf
   assert.equal(form.hidden,false);input.value='Reader comment';checkbox.checked=true;const pending=form.fire('submit');assert.equal(input.disabled,true);assert.equal(checkbox.disabled,true);await pending;
   const loadOwn=ui.find(n=>n.tagName==='button'&&(n.textContent==='Load more of your comments'||n.textContent==='আপনার আরও মন্তব্য দেখুন'))[0];assert.equal(loadOwn.hidden,false);await loadOwn.fire('click');assert.ok(ui.root.textContent.includes('Older comment'));assert.equal(loadOwn.hidden,true);
   assert.equal(input.disabled,false);assert.equal(checkbox.disabled,false);
-  assert.equal(ui.posted[0].consent,true);assert.equal(ui.posted[0].terms_version,'comments-2026-11-09');assert.equal(ui.posted[0].page,'history');assert.equal(input.value,'');
+  assert.equal(ui.posted[0].consent,true);assert.equal(ui.posted[0].terms_version,'comments-2026-11-09-direct-v1');assert.equal(ui.posted[0].page,'history');assert.equal(input.value,'');assert.equal(ui.find(n=>n.tagName==='p'&&n.textContent==='Reader comment').length,2,'Posted comment is immediately shown in both public and own lists');
   const post=ui.calls.find(c=>c.path==='/api/comments'&&c.options.method==='POST');assert.equal(post.options.headers['X-CSRF-Token'],'csrf');
   input.value='Preserve draft';ui.fail();await form.fire('submit');assert.equal(input.value,'Preserve draft');assert.equal(form.attrs['aria-busy'],undefined);
 });
@@ -75,11 +75,20 @@ test('Moderation uses editor authorization, optimistic version, safe report text
   };
   vm.runInNewContext(readFileSync(new URL('../assets/comments-review.js',import.meta.url),'utf8'),{document:doc,window:{confirm:()=>true,addEventListener(){}},fetch});await settle();
   const form=find(root,n=>n.tagName==='form')[0],input=find(root,n=>n.tagName==='input')[0];input.value='test-editor';await form.fire('submit');
-  assert.equal(input.value,'');assert.ok(root.textContent.includes('<img src=x>'));assert.equal(find(root,n=>n.tagName==='img').length,0);
+  assert.equal(input.value,'');assert.ok(calls.some(c=>c.path.includes('status=approved')));assert.ok(root.textContent.includes('<img src=x>'));assert.equal(find(root,n=>n.tagName==='img').length,0);
   await find(root,n=>n.tagName==='button'&&n.textContent==='Load more')[0].fire('click');
   assert.equal(queueLoads,2);
-  await find(root,n=>n.tagName==='button'&&n.textContent==='Approve')[0].fire('click');
+  await find(root,n=>n.tagName==='button'&&n.textContent==='Hide')[0].fire('click');
   assert.equal(queueLoads,3,'Moderation of an earlier page row refreshes after pagination');
   const patch=calls.find(c=>c.options.method==='PATCH');assert.equal(JSON.parse(patch.options.body).version,3);assert.equal(patch.options.headers.Authorization,'Bearer test-editor');
   await find(root,n=>n.tagName==='button'&&n.textContent==='Lock comments')[0].fire('click');assert.equal(form.hidden,false);assert.equal(root.textContent.includes('<script>no()</script>'),false);
+});
+test('Direct publication disclosures replace approval promises in both editions',()=>{
+  assert.ok(source.includes('will be published immediately'));
+  assert.ok(source.includes("'Post comment', 'মন্তব্য প্রকাশ করুন'"));
+  assert.ok(source.includes("'Your comment has been published.','আপনার মন্তব্য প্রকাশিত হয়েছে।'"));
+  assert.equal(/after editorial approval|awaiting editorial approval|Submit for review/.test(source),false);
+  const management=readFileSync(new URL('../assets/comments-review.js',import.meta.url),'utf8');
+  assert.ok(management.includes("filter.value='approved'"));
+  assert.ok(management.includes('hide or remove inappropriate comments'));
 });

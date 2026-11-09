@@ -4,7 +4,7 @@ import worker from '../contributions/worker.mjs';
 import { readFileSync } from 'node:fs';
 import { LocalD1 } from '../contributions/local-db.mjs';
 const origin = 'https://aguri-heritage.in';
-const terms = 'comments-2026-11-09';
+const terms = 'comments-2026-11-09-direct-v1';
 const keys = await crypto.subtle.generateKey({name:'RSASSA-PKCS1-v1_5',modulusLength:2048,publicExponent:new Uint8Array([1,0,1]),hash:'SHA-256'},true,['sign','verify']);
 const jwk = {...await crypto.subtle.exportKey('jwk',keys.publicKey),kid:'test-key',alg:'RS256',use:'sig'};
 function env() { return {COMMENTS_ENABLED:'true',GOOGLE_CLIENT_ID:'test.apps.googleusercontent.com',COMMENTS_SESSION_SECRET:'independent-comment-session-secret-12345',EDITOR_KEY:'existing-editor-secret-123456789012345',CONTRIBUTIONS_DB:new LocalD1(),ASSETS:{fetch:async req=>new Response(`<html><body data-page="${new URL(req.url).pathname.replace(/^\//,'').replace(/\.html$/,'')}"></body></html>`,{headers:{'Content-Type':'text/html'}})}}; }
@@ -52,7 +52,7 @@ test('Google claims, signature, nonce, login replay, session flags and logout',a
  assert.equal((await call(e,'/auth/logout','POST',{},auth)).response.status,200);
  assert.equal((await call(e,'/me','GET',undefined,auth)).data.user,null);
 });
-test('premoderation, plain text, consent, CSRF, ownership, idempotency, reports and deletion',async t=>{
+test('immediate publication, plain text, consent, CSRF, ownership, idempotency, reports and deletion',async t=>{
  mockKeys(t);const e=env();t.after(()=>e.CONTRIBUTIONS_DB.close());const auth=await login(e), other=await login(e,'other');
  assert.equal((await call(e,'','POST',post())).response.status,401);
  assert.equal((await call(e,'','POST',post(),{...auth,'X-CSRF-Token':''})).response.status,403);
@@ -60,8 +60,8 @@ test('premoderation, plain text, consent, CSRF, ownership, idempotency, reports 
  assert.equal((await call(e,'','POST',{...post(),consent:false},auth)).response.status,400);
  assert.equal((await call(e,'','POST',{...post(),terms_version:'old'},auth)).response.status,400);
  const payload=post('<script>alert("x")</script> & plain text'), created=await call(e,'','POST',payload,auth);
- assert.equal(created.response.status,201);assert.equal(created.data.status,'pending');
- assert.deepEqual((await call(e,'?page=history')).data.comments,[]);
+ assert.equal(created.response.status,201);assert.equal(created.data.status,'approved');
+ assert.equal((await call(e,'?page=history')).data.comments[0].body,payload.body);
  assert.equal((await call(e,'/mine?page=history','GET',undefined,auth)).data.comments[0].body,payload.body);
  assert.equal((await call(e,'','POST',payload,auth)).data.id,created.data.id);
  assert.equal((await call(e,'','POST',{...payload,body:'changed'},auth)).response.status,409);
@@ -92,7 +92,7 @@ test('page identity, body limits, rate limits, pagination and expired sessions',
  const base=await e.CONTRIBUTIONS_DB.prepare('SELECT * FROM comments LIMIT 1').first();
  for(let i=0;i<26;i++) await e.CONTRIBUTIONS_DB.prepare(`INSERT INTO comments(id,user_id,client_id,payload_hash,page,name,body,status,terms_version,consented_at,created_at,updated_at) VALUES(?,?,?,?,?,?,?,'approved',?,?,?,?)`).bind(crypto.randomUUID(),base.user_id,crypto.randomUUID(),'hash','history','Reader','Approved '+i,terms,base.consented_at,base.created_at,base.updated_at).run();
  const first=await call(e,'?page=history');assert.equal(first.data.comments.length,20);assert.ok(first.data.next_cursor);
- const second=await call(e,'?page=history&cursor='+first.data.next_cursor);assert.equal(second.data.comments.length,6);assert.equal(new Set([...first.data.comments,...second.data.comments].map(x=>x.id)).size,26);
+ const second=await call(e,'?page=history&cursor='+first.data.next_cursor);assert.equal(second.data.comments.length,11);assert.equal(new Set([...first.data.comments,...second.data.comments].map(x=>x.id)).size,31);
  assert.equal((await call(e,'?page=history&cursor=bad')).response.status,400);
  await e.CONTRIBUTIONS_DB.prepare('UPDATE comment_sessions SET expires_at=0').run();assert.equal((await call(e,'/me','GET',undefined,auth)).data.user,null);
 });
@@ -130,4 +130,15 @@ test('same-status moderation note edits are audited',async t=>{
  const history=(await e.CONTRIBUTIONS_DB.prepare('SELECT previous_status,status,note FROM comment_moderation_history WHERE comment_id=? ORDER BY rowid').bind(created.data.id).all()).results;
  assert.equal(history.length,2);assert.equal(history[0].note,'First review');assert.equal(history[1].note,'Clarified review');
  assert.equal(history[1].previous_status,'approved');assert.equal(history[1].status,'approved');
+});
+
+test('new public submissions do not change existing pending records',async t=>{
+ mockKeys(t);const e=env();t.after(()=>e.CONTRIBUTIONS_DB.close());const auth=await login(e);
+ const first=await call(e,'','POST',post('Existing held record'),auth);
+ await e.CONTRIBUTIONS_DB.prepare("UPDATE comments SET status='pending' WHERE id=?").bind(first.data.id).run();
+ const fresh=await call(e,'','POST',post('Immediately public record'),auth);
+ assert.equal(fresh.data.status,'approved');
+ const publicRows=(await call(e,'?page=history')).data.comments;
+ assert.deepEqual(publicRows.map(row=>row.id),[fresh.data.id]);
+ assert.equal((await e.CONTRIBUTIONS_DB.prepare('SELECT status FROM comments WHERE id=?').bind(first.data.id).first()).status,'pending');
 });

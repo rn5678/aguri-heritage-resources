@@ -6,12 +6,13 @@
   let key = '', cursor = null, generation = 0;
   const el = (tag,text,attrs={}) => { const node=document.createElement(tag); node.textContent=text; Object.entries(attrs).forEach(([k,v])=>node.setAttribute(k,v)); return node; };
   const login=el('form',''), password=el('input','',{type:'password',id:'comments-editor-key',required:'',autocomplete:'off'});
-  login.append(el('label',t('Editor key for comment moderation','মন্তব্য পর্যালোচনার সম্পাদক চাবি'),{for:'comments-editor-key'}),password,el('button',t('Unlock comments','মন্তব্য খুলুন'),{type:'submit',class:'button'}));
+  login.append(el('label',t('Editor key for comment management','মন্তব্য পর্যালোচনার সম্পাদক চাবি'),{for:'comments-editor-key'}),password,el('button',t('Unlock comments','মন্তব্য খুলুন'),{type:'submit',class:'button'}));
   const panel=el('div',''), filter=el('select','',{'aria-label':t('Comment status','মন্তব্যের অবস্থা')});
-  [['pending','Awaiting review','পর্যালোচনার অপেক্ষায়'],['approved','Published','প্রকাশিত'],['rejected','Rejected','গ্রহণ করা হয়নি'],['hidden','Hidden','লুকানো হয়েছে']].forEach(([value,en,bengali])=>filter.append(el('option',t(en,bengali),{value})));
+  [['approved','Published','প্রকাশিত'],['hidden','Hidden','লুকানো হয়েছে'],['rejected','Removed','সরানো হয়েছে'],['pending','Unpublished legacy comments','পুরনো অপ্রকাশিত মন্তব্য']].forEach(([value,en,bengali])=>filter.append(el('option',t(en,bengali),{value})));
+  filter.value='approved';
   const lock=el('button',t('Lock comments','মন্তব্য তালাবদ্ধ করুন'),{type:'button',class:'button secondary'}), list=el('div',''), more=el('button',t('Load more','আরও দেখুন'),{type:'button',class:'button secondary'}), status=el('p','',{role:'status','aria-live':'polite'});
   panel.append(filter,lock,list,more); panel.hidden=true; more.hidden=true;
-  root.append(el('h2',t('Moderate page comments','পাতার মন্তব্য পর্যালোচনা'),{id:'comments-review-heading'}),el('p',t('Only approve comments suitable for public display. Pending comments are private. This sign-in is separate from the contribution desk.','কেবল সর্বজনীন প্রকাশের উপযোগী মন্তব্য অনুমোদন করুন। অপেক্ষমান মন্তব্য ব্যক্তিগত। এই সাইন ইন সহযোগিতা ডেস্ক থেকে পৃথক।')),login,panel,status);
+  root.append(el('h2',t('Manage page comments','পাতার মন্তব্য পর্যালোচনা'),{id:'comments-review-heading'}),el('p',t('Comments are published immediately. Check reports and hide or remove inappropriate comments. This sign-in is separate from the contribution desk.','মন্তব্য সঙ্গে সঙ্গে প্রকাশিত হয়। অভিযোগ দেখুন এবং অনুপযুক্ত মন্তব্য লুকান বা সরিয়ে দিন। এই সাইন ইন সহযোগিতা ডেস্ক থেকে পৃথক।')),login,panel,status);
   function reset() { generation++; key=''; password.value=''; list.replaceChildren(); panel.hidden=true; login.hidden=false; status.textContent=''; }
   async function api(path,options={}) {
     const response=await fetch('/api/comments/review'+path,{...options,credentials:'same-origin',cache:'no-store',headers:{Authorization:'Bearer '+key,'Content-Type':'application/json'}});
@@ -33,7 +34,7 @@
           item.append(el('h3',t('Reports','অভিযোগ')));
           comment.reports.forEach(report=>item.append(el('p',report.reason,{class:'comment-body'})));
         }
-        for(const [action,en,bengali] of [['approved','Approve','অনুমোদন'],['rejected','Reject','প্রত্যাখ্যান'],['hidden','Hide','লুকান']]) {
+        for(const [action,en,bengali] of [['approved','Restore','পুনঃপ্রকাশ করুন'],['rejected','Remove','সরান'],['hidden','Hide','লুকান']]) {
           const control=el('button',t(en,bengali),{type:'button',class:'button secondary'});
           control.addEventListener('click',async()=>{
             if(!window.confirm(t('Apply this moderation decision?','এই সিদ্ধান্ত প্রয়োগ করবেন?')))return;

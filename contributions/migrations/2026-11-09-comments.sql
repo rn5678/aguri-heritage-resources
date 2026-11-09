@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS comments (
   page TEXT NOT NULL,
   name TEXT NOT NULL,
   body TEXT NOT NULL CHECK(length(body)<=2000),
-  status TEXT NOT NULL DEFAULT 'pending' CHECK(status IN ('pending','approved','rejected','hidden','deleted')),
+  status TEXT NOT NULL DEFAULT 'approved' CHECK(status IN ('pending','approved','rejected','hidden','deleted')),
   version INTEGER NOT NULL DEFAULT 1,
   terms_version TEXT NOT NULL,
   consented_at TEXT NOT NULL,

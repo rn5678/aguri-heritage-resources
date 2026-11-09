@@ -19,14 +19,14 @@
   const input = el('textarea', '', {id: 'comment-text', maxlength: '2000', required: '', rows: '4'});
   const agreement = el('input', '', {type: 'checkbox', required: ''});
   const consentLabel = el('label', '', {class: 'comment-consent'});
-  consentLabel.append(agreement, document.createTextNode(t('I agree that my Google display name and comment may be published on this page after editorial approval. Do not include private information.', 'আমি সম্মত যে সম্পাদকের অনুমোদনের পরে আমার Google নাম ও মন্তব্য এই পাতায় প্রকাশিত হতে পারে। ব্যক্তিগত তথ্য দেবেন না।')));
-  const submit = el('button', t('Submit for review', 'পর্যালোচনার জন্য জমা দিন'), {type:'submit', class:'button'});
+  consentLabel.append(agreement, document.createTextNode(t('I agree that my Google display name and comment will be published immediately on this page. Do not include private information.', 'আমি সম্মত যে আমার Google নাম ও মন্তব্য সঙ্গে সঙ্গে এই পাতায় প্রকাশিত হবে। ব্যক্তিগত তথ্য দেবেন না।')));
+  const submit = el('button', t('Post comment', 'মন্তব্য প্রকাশ করুন'), {type:'submit', class:'button'});
   form.append(el('label', t('Your comment (up to 2,000 characters)', 'আপনার মন্তব্য (সর্বোচ্চ ২,০০০ অক্ষর)'), {for:'comment-text'}), input, consentLabel, submit);
   const more = button(t('Load more comments', 'আরও মন্তব্য দেখুন'), () => loadPublic(true).catch(showError));
   more.hidden = true;
   const moreMine = button(t('Load more of your comments', 'আপনার আরও মন্তব্য দেখুন'), () => loadMine(true).catch(showError));
   moreMine.hidden = true;
-  root.append(el('h2', t('Comments', 'মন্তব্য'), {id:'comments-heading'}), el('p', t('Join the discussion in English or Bengali. Comments appear only after editorial approval. Please be respectful and cite sources where possible.', 'ইংরেজি বা বাংলায় আলোচনায় যোগ দিন। সম্পাদকের অনুমোদনের পরেই মন্তব্য প্রকাশিত হয়। শালীন ভাষা ব্যবহার করুন এবং সম্ভব হলে তথ্যসূত্র দিন।')), list, more, account, mine, moreMine, form, status);
+  root.append(el('h2', t('Comments', 'মন্তব্য'), {id:'comments-heading'}), el('p', t('Join the discussion in English or Bengali. Comments are published immediately. Please be respectful and cite sources where possible.', 'ইংরেজি বা বাংলায় আলোচনায় যোগ দিন। মন্তব্য সঙ্গে সঙ্গে প্রকাশিত হয়। শালীন ভাষা ব্যবহার করুন এবং সম্ভব হলে তথ্যসূত্র দিন।')), list, more, account, mine, moreMine, form, status);
   function showError(error) {
     status.textContent = error.status === 401 ? t('Your session has expired. Please sign in again. Your draft is still here.', 'আপনার সেশনের মেয়াদ শেষ। আবার সাইন ইন করুন। আপনার খসড়া এখানেই আছে।') : error.status === 429 ? t('Too many requests. Please wait a few minutes and try again.', 'অনেক অনুরোধ হয়েছে। কয়েক মিনিট পরে আবার চেষ্টা করুন।') : t('Comments are temporarily unavailable. Please try again later. Your draft has not been cleared.', 'মন্তব্য পরিষেবা এখন পাওয়া যাচ্ছে না। পরে চেষ্টা করুন। আপনার খসড়া মুছে যায়নি।');
     if (error.status === 401) { session = {user:null}; renderAccount(); mine.replaceChildren(); }
@@ -46,7 +46,7 @@
     const date = new Date(comment.created_at);
     if (!Number.isNaN(date.getTime())) article.append(el('time', date.toLocaleDateString(bn ? 'bn-IN':'en-IN'), {datetime:date.toISOString()}));
     if (own) {
-      const labels = {pending:t('Awaiting review','পর্যালোচনার অপেক্ষায়'), approved:t('Published','প্রকাশিত'), rejected:t('Not approved','অনুমোদিত হয়নি'), hidden:t('Hidden','লুকানো হয়েছে')};
+      const labels = {pending:t('Not published','প্রকাশিত নয়'), approved:t('Published','প্রকাশিত'), rejected:t('Removed','সরানো হয়েছে'), hidden:t('Hidden','লুকানো হয়েছে')};
       article.append(el('p', labels[comment.status] || t('Not published','প্রকাশিত নয়')));
       article.append(button(t('Delete my comment','আমার মন্তব্য মুছুন'), async event => {
         if (!window.confirm(t('Delete this comment?','এই মন্তব্য মুছবেন?'))) return;
@@ -135,8 +135,8 @@
     try {
       await api('',{method:'POST',body:JSON.stringify({page,body,client_id:draftId,consent:agreement.checked,terms_version:config.terms_version})});
       input.value = ''; agreement.checked = false; draftId = null; draftBody = null;
-      status.textContent = t('Thank you. Your comment is awaiting editorial approval and is not public yet.','ধন্যবাদ। আপনার মন্তব্য সম্পাদকের অনুমোদনের অপেক্ষায় আছে, এখনও প্রকাশিত হয়নি।');
-      await loadMine();
+      status.textContent = t('Your comment has been published.','আপনার মন্তব্য প্রকাশিত হয়েছে।');
+      await refresh();
     } catch(error) { showError(error); }
     finally { busy = false; submit.disabled = false; input.disabled = false; agreement.disabled = false; form.removeAttribute('aria-busy'); }
   });
