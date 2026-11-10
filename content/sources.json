@@ -1995,7 +1995,7 @@
     "kind": "secondary",
     "label": "School and sport reporting",
     "detail": "Identifies goalkeeper Sandip Nandy’s village as Belenda, Manteswar, and describes the football training initiative at Rajendra Memorial Institution, with pupils from Belenda and nearby villages and comments from headteacher Subhashis Patra.",
-    "status": "Citation retained from the supplied manuscript; the original page and public AMP version could not be independently retrieved on 11 October 2026 (HTTP 403). The village and school details remain attributed to this report. No caste identity is inferred from the player’s surname.",
+    "status": "Original report retrieved and read on 10 November 2026 for the Sandip Nandy biography. Confirms Belenda and the school-organised training initiative; the programme is not attributed to Nandy.",
     "url": "https://www.anandabazar.com/sports/school-start-to-make-footballers-1.533061"
   },
   "food-nandy-2014": {
@@ -2266,5 +2266,69 @@
     "linkLabel": "Open source",
     "kind": "primary",
     "url": "https://www.telegraphindia.com/india/lunch-adda-with-castro/cid/614932"
+  },
+  "sandip-isl": {
+    "title": "Indian Super League, A peerless goalkeeper travels down memory lane (4 September 2014)",
+    "kind": "secondary",
+    "label": "Football career reporting and interview",
+    "detail": "Source for the Sandip Nandy biography; dates, awards and reported recollections are attributed in the profile.",
+    "status": "Read for the reviewed biography in November 2026. Career evidence, not a source for family history.",
+    "url": "https://www.indiansuperleague.com/features/a-peerless-goalkeeper-travels-down-memory-lane"
+  },
+  "sandip-asean": {
+    "title": "The Times of India, East Bengal are ASEAN Cup champions (26 July 2003)",
+    "kind": "secondary",
+    "label": "Football career reporting and interview",
+    "detail": "Source for the Sandip Nandy biography; dates, awards and reported recollections are attributed in the profile.",
+    "status": "Read for the reviewed biography in November 2026. Career evidence, not a source for family history.",
+    "url": "https://timesofindia.indiatimes.com/east-bengal-are-asean-cup-champions/articleshow/96861.cms"
+  },
+  "sandip-nfl": {
+    "title": "PTI / Rediff, National Football League awards (27 May 2007)",
+    "kind": "secondary",
+    "label": "Football career reporting and interview",
+    "detail": "Source for the Sandip Nandy biography; dates, awards and reported recollections are attributed in the profile.",
+    "status": "Read for the reviewed biography in November 2026. Career evidence, not a source for family history.",
+    "url": "https://www.rediff.com/sports/report/nfl/20070527.htm"
+  },
+  "sandip-ileague": {
+    "title": "AIFF, Ranti Martins voted best player of I-League 2012–13",
+    "kind": "secondary",
+    "label": "Football career reporting and interview",
+    "detail": "Source for the Sandip Nandy biography; dates, awards and reported recollections are attributed in the profile.",
+    "status": "Read for the reviewed biography in November 2026. Career evidence, not a source for family history.",
+    "url": "https://www.the-aiff.com/article/ranti-martins-voted-best-player-of-i-league-2012-13"
+  },
+  "sandip-return": {
+    "title": "PTI / Business Standard, Sandip Nandy joins Mohun Bagan (5 June 2013)",
+    "kind": "secondary",
+    "label": "Football career reporting and interview",
+    "detail": "Source for the Sandip Nandy biography; dates, awards and reported recollections are attributed in the profile.",
+    "status": "Read for the reviewed biography in November 2026. Career evidence, not a source for family history.",
+    "url": "https://www.business-standard.com/article/pti-stories/sandip-nandy-joins-mohun-bagan-113060500928_1.html"
+  },
+  "sandip-team": {
+    "title": "AIFF, Team atmosphere has changed a lot: Sandip Nandy (4 February 2013)",
+    "kind": "secondary",
+    "label": "Football career reporting and interview",
+    "detail": "Source for the Sandip Nandy biography; dates, awards and reported recollections are attributed in the profile.",
+    "status": "Read for the reviewed biography in November 2026. Career evidence, not a source for family history.",
+    "url": "https://www.the-aiff.com/article/team-atmosphere-has-changed-a-lot-sandip-nandy"
+  },
+  "sandip-coach": {
+    "title": "AIFF, Gurpreet is one of top three goalkeepers in Asia: Sandip Nandy (10 October 2019)",
+    "kind": "secondary",
+    "label": "Football career reporting and interview",
+    "detail": "Source for the Sandip Nandy biography; dates, awards and reported recollections are attributed in the profile.",
+    "status": "Read for the reviewed biography in November 2026. Career evidence, not a source for family history.",
+    "url": "https://www.the-aiff.com/article/gurpreet-is-one-of-top-three-goalkeepers-in-asia-sandip-nandy"
+  },
+  "sandip-burdwan": {
+    "title": "MyKhel, Sandip Nandy: Leander Paes is an inspiration (5 September 2017)",
+    "kind": "secondary",
+    "label": "Football career reporting and interview",
+    "detail": "Source for the Sandip Nandy biography; dates, awards and reported recollections are attributed in the profile.",
+    "status": "Read for the reviewed biography in November 2026. Career evidence, not a source for family history.",
+    "url": "https://www.mykhel.com/football/sandip-nandy-leander-paes-is-an-inspiration-068544.html"
   }
 }

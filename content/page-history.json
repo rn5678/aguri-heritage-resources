@@ -109,8 +109,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "14b6ee53949c0d176545a5ebc947799e9e58c0e97b6967f1d1abe1b2463d94e0",
-      "updated": "2026-11-02"
+      "fingerprint": "e0f62a3ef13929ace8d7c8bdc8431c1a7691c8786ba82b8216035f825f94b433",
+      "updated": "2026-11-10"
     },
     "bn/book-rajput-o-ugrakshatriya": {
       "baseline": {
@@ -179,8 +179,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "8fa5f53aa952e2a0db2a39593da855cc2cc735d7c551d3c62a7b754471657015",
-      "updated": "2026-10-11"
+      "fingerprint": "2e675ae69ade8e46d9e937dc1084ea8d42e9fbe54e9e59db47fb6f873302f846",
+      "updated": "2026-11-10"
     },
     "bn/geography": {
       "baseline": {
@@ -263,8 +263,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "3183d1e97263c362470dde134dc1b147b0c20f727ec17eb708799fd69919dec9",
-      "updated": "2026-11-02"
+      "fingerprint": "1cf4b6c356480439cb3f6002bb158d3b3031f23669138825c1b16cc5c9a0c763",
+      "updated": "2026-11-10"
     },
     "bn/person-ajit-kumar-panja": {
       "baseline": {
@@ -475,6 +475,20 @@
       "date_basis": "source-mtime-baseline",
       "fingerprint": "782acfbc41064a1d77940f8d8f7674fde2c0e3f8e2041cf94428907d14f06200",
       "updated": "2026-10-09"
+    },
+    "bn/person-sandip-nandy": {
+      "baseline": {
+        "date": "2026-11-10",
+        "sources": [
+          {
+            "modified": "2026-11-10T17:00:54.695707+05:30",
+            "path": "content/bn/people.html"
+          }
+        ]
+      },
+      "date_basis": "source-mtime-baseline",
+      "fingerprint": "c0f414afac7cac4c6e72eec53883e900b27ac661dcc70ba542e523e74918c2de",
+      "updated": "2026-11-10"
     },
     "bn/person-satya-kinkar-sahana": {
       "baseline": {
@@ -857,8 +871,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "38c45a9a3f0e166458a8bfef8347b19dd79ca713e78e26223df55f0f8949dd64",
-      "updated": "2026-11-02"
+      "fingerprint": "65163900ab1f23fe9f04e2d2037dfada4c8bdfcce1e830df4f3c5ffc02f4c864",
+      "updated": "2026-11-10"
     },
     "en/book-rajput-o-ugrakshatriya": {
       "baseline": {
@@ -927,8 +941,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "5c55064c3f7f56d673d26a0203186d6fc16d5b147dd4bcad7464803464482ea0",
-      "updated": "2026-10-11"
+      "fingerprint": "26cc4c0a30f031ca8333c1634182e92ab029cca7837bbf896b71ec74e1a4c5cc",
+      "updated": "2026-11-10"
     },
     "en/geography": {
       "baseline": {
@@ -1011,8 +1025,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "bf3e3c2390da4624d89fb0f7a0796e1c5a62147d33d79a7240b582b3e8cecf7a",
-      "updated": "2026-11-02"
+      "fingerprint": "59382a9fac04883beccae39a96ffe830281790de4ffc5d88dae17e9bd9e10b08",
+      "updated": "2026-11-10"
     },
     "en/person-ajit-kumar-panja": {
       "baseline": {
@@ -1223,6 +1237,20 @@
       "date_basis": "source-mtime-baseline",
       "fingerprint": "71df481369d78547abfa578b7dca074441f53492ce78c44b91321ab3b6b9a84b",
       "updated": "2026-10-09"
+    },
+    "en/person-sandip-nandy": {
+      "baseline": {
+        "date": "2026-11-10",
+        "sources": [
+          {
+            "modified": "2026-11-10T17:00:54.693684+05:30",
+            "path": "content/people.html"
+          }
+        ]
+      },
+      "date_basis": "source-mtime-baseline",
+      "fingerprint": "ced2cd0ab2c31d52668c9140e947603ee3f3136400c93d74b091d900b0fb198f",
+      "updated": "2026-11-10"
     },
     "en/person-satya-kinkar-sahana": {
       "baseline": {
