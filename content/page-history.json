@@ -249,8 +249,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "3183d1e97263c362470dde134dc1b147b0c20f727ec17eb708799fd69919dec9",
-      "updated": "2026-11-02"
+      "fingerprint": "66de8a60a32c614db38e6aff573961ad638aad22849f06c5328c23ad0d29f126",
+      "updated": "2026-11-10"
     },
     "bn/person-ajit-kumar-panja": {
       "baseline": {
@@ -262,9 +262,9 @@
           }
         ]
       },
-      "date_basis": "source-mtime-baseline",
-      "fingerprint": "0d4ac06103850cf2866d0fa57ebfac559b13f05f6854fc3ec5657792e1edd8f4",
-      "updated": "2026-10-09"
+      "date_basis": "editorial-content-change",
+      "fingerprint": "69c21b58f11f636ed3613f85a0efdb7440f598f524197afa413c668919a02f52",
+      "updated": "2026-11-10"
     },
     "bn/person-benoy-choudhury": {
       "baseline": {
@@ -277,8 +277,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "63a5794122c9e182b94a154fbcd9396d883ae5633380bcb43a7b9831c5541169",
-      "updated": "2026-10-13"
+      "fingerprint": "0a788ec97d45c65a648070540a685b28565d5ae93f6f42cce1a90d5bc53ccb24",
+      "updated": "2026-11-10"
     },
     "bn/person-benoy-krishna-konar": {
       "baseline": {
@@ -290,9 +290,9 @@
           }
         ]
       },
-      "date_basis": "source-mtime-baseline",
-      "fingerprint": "d13e767157871475d04b70e71ff5a5b0a7e16f3ac9853e894be2a6672c401bd9",
-      "updated": "2026-10-09"
+      "date_basis": "editorial-content-change",
+      "fingerprint": "aa614e3a67ba24b72a874a54c5dbd67e9f614f96ba93ea8e21bf9a028fd29eb4",
+      "updated": "2026-11-10"
     },
     "bn/person-dasarathi-tah": {
       "baseline": {
@@ -304,9 +304,9 @@
           }
         ]
       },
-      "date_basis": "source-mtime-baseline",
-      "fingerprint": "a7547ea048850ef010781362506e19924894c17ce138fe54a889f0415d986442",
-      "updated": "2026-10-09"
+      "date_basis": "editorial-content-change",
+      "fingerprint": "9c84db5ce297442a30c721a31f9e8188838be20e10592cbff93d3b86178a1483",
+      "updated": "2026-11-10"
     },
     "bn/person-dhanapati-panja": {
       "baseline": {
@@ -333,8 +333,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "25fe1c53669ccbb37320ba39095950eb458e9aefde5c2ef915d2c0cd85b8aa5c",
-      "updated": "2026-10-22"
+      "fingerprint": "31617af2de31a8ac44ad5ad0ccfb30f486ce06de7d8ae1a0a0d7f02a931b2ddc",
+      "updated": "2026-11-10"
     },
     "bn/person-hare-krishna-konar": {
       "baseline": {
@@ -347,8 +347,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "9ebc345a93424c88e900f8a4677b4376ec58185d1eefb2607c6fc8a9cf7c131e",
-      "updated": "2026-10-13"
+      "fingerprint": "d5340bf04a0521a7fbfdb26f596f8a60111ff043a6ba80d31f00cd82050b08ab",
+      "updated": "2026-11-10"
     },
     "bn/person-haricharan-bandhu": {
       "baseline": {
@@ -375,8 +375,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "d3958f28ce8a2b6f04030e8ef35b94f7b0a26fc7f7465661268ec39c31e07a85",
-      "updated": "2026-10-30"
+      "fingerprint": "adfcd89b02ce6856dbc530580cd4ad9e7c421f6eaf2ee9bdea9bc2548e0b9ae1",
+      "updated": "2026-11-10"
     },
     "bn/person-k-d-paul": {
       "baseline": {
@@ -388,9 +388,9 @@
           }
         ]
       },
-      "date_basis": "source-mtime-baseline",
-      "fingerprint": "010ce52c3767dce21e76db1d2efcb0223e4f2139f4860474d5e198167f9bcf10",
-      "updated": "2026-10-30"
+      "date_basis": "editorial-content-change",
+      "fingerprint": "a75bee448d2635a03701bd4de98b3f125b3f88039c82b17520b5d2d7c543cc04",
+      "updated": "2026-11-10"
     },
     "bn/person-manohar-ray": {
       "baseline": {
@@ -403,8 +403,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "04a51aa674bad8332740b579cd7c1947e50e2887c8d5d05e9b5363b2eff3a38c",
-      "updated": "2026-10-13"
+      "fingerprint": "40c2d7d2f8613eb4ba6811b69ae761290d0ba9e1737f0dfdd3cd4b57e338099c",
+      "updated": "2026-11-10"
     },
     "bn/person-nikhilananda-sar": {
       "baseline": {
@@ -417,8 +417,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "5ce04f9a4ea214b19a01201c4c115c516ffb9d3a359ae5687bd1722d28e61982",
-      "updated": "2026-10-13"
+      "fingerprint": "4870226362c7db8b166ef841abfd985770d633264b338ae3f5bc9b4102661d8e",
+      "updated": "2026-11-10"
     },
     "bn/person-pratap-chandra-ray": {
       "baseline": {
@@ -431,8 +431,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "709f6d33d59ef1b1abf0e12228bc5df7ee9649d9f8287740c796a0d8e64b38ea",
-      "updated": "2026-10-21"
+      "fingerprint": "3af30dc79279dab6953850684aa9719b4832445d868e05823ccd6890b4cb95fe",
+      "updated": "2026-11-10"
     },
     "bn/person-ramapada-chowdhury": {
       "baseline": {
@@ -445,8 +445,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "37efd314aefab0865be4cb3532a2c4aee991a610349eee63be2aae4fd1e20008",
-      "updated": "2026-10-30"
+      "fingerprint": "86f3459ca7b2ede0452b4841f9b4cba3db4ad907dfda4c28d3ab791798eacb6e",
+      "updated": "2026-11-10"
     },
     "bn/person-ranjit-kumar-panja": {
       "baseline": {
@@ -458,9 +458,9 @@
           }
         ]
       },
-      "date_basis": "source-mtime-baseline",
-      "fingerprint": "782acfbc41064a1d77940f8d8f7674fde2c0e3f8e2041cf94428907d14f06200",
-      "updated": "2026-10-09"
+      "date_basis": "editorial-content-change",
+      "fingerprint": "236b97efca56e7dfb17b557331adcece5e86a0a55e586be9d19aced9e7fb5d56",
+      "updated": "2026-11-10"
     },
     "bn/person-satya-kinkar-sahana": {
       "baseline": {
@@ -473,8 +473,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "eaca471245fafa4f8098506e6a8f1d37d5117d20c675a242dcf924bd25a69536",
-      "updated": "2026-10-21"
+      "fingerprint": "4a752ec903c0f5fc0fdb15e6d892a5d86d559754f777cc2a4200045f255d6c8b",
+      "updated": "2026-11-10"
     },
     "bn/person-shakti-samanta": {
       "baseline": {
@@ -487,8 +487,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "659129ecbad07072bf02f6302d8a192cb6d238dafb31d18dfbc9225afc6e9578",
-      "updated": "2026-10-11"
+      "fingerprint": "492757515b568572c297d2784ac59d13cc53ccc4eb3066a2b7380c48b76ffe1d",
+      "updated": "2026-11-10"
     },
     "bn/person-shib-shankar-chowdhury": {
       "baseline": {
@@ -500,9 +500,9 @@
           }
         ]
       },
-      "date_basis": "source-mtime-baseline",
-      "fingerprint": "da0f295480c9b1ea8a4ac989ca3bc7f28c39af4c4342c26f61ae65a7f7c4e840",
-      "updated": "2026-10-23"
+      "date_basis": "editorial-content-change",
+      "fingerprint": "b548b975e61fa32d6311c2df204721b1dec8e5d4fd1695b21af6fb5e5155db3a",
+      "updated": "2026-11-10"
     },
     "bn/person-tuhin-kumar-roy": {
       "baseline": {
@@ -514,9 +514,9 @@
           }
         ]
       },
-      "date_basis": "source-mtime-baseline",
-      "fingerprint": "ae1849c11c4975c728ed2542803a7b558a156002f407aba5ccc339b2a52fb69c",
-      "updated": "2026-11-02"
+      "date_basis": "editorial-content-change",
+      "fingerprint": "069cf3dd93cae0662dbcd0d402ab63ac35e9321808b2323be6381d648209f7ca",
+      "updated": "2026-11-10"
     },
     "bn/research": {
       "baseline": {
@@ -983,8 +983,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "bf3e3c2390da4624d89fb0f7a0796e1c5a62147d33d79a7240b582b3e8cecf7a",
-      "updated": "2026-11-02"
+      "fingerprint": "29bcafef63538ffa27b49a1f5087f0956e59f5dc2cf573963df5a2e7e6816064",
+      "updated": "2026-11-10"
     },
     "en/person-ajit-kumar-panja": {
       "baseline": {
@@ -996,9 +996,9 @@
           }
         ]
       },
-      "date_basis": "source-mtime-baseline",
-      "fingerprint": "8548f1f4a894b8bca13ba9533e1f19662f5a57c55cbd701b9e25c66deeba7d38",
-      "updated": "2026-10-09"
+      "date_basis": "editorial-content-change",
+      "fingerprint": "e35dc36190229b2f34bda7064a70fcea5c5d430620fdf7a55075b4d0fecf45d5",
+      "updated": "2026-11-10"
     },
     "en/person-benoy-choudhury": {
       "baseline": {
@@ -1011,8 +1011,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "fe2a79ad93fb687d2ef770abb3592c165578b9268f3a74cf5cdb7d0f451d3368",
-      "updated": "2026-10-11"
+      "fingerprint": "e8ab4cd0d43d356686fa67423c4f3806518b4ba4a36a0b1b92eb8beb880e16e2",
+      "updated": "2026-11-10"
     },
     "en/person-benoy-krishna-konar": {
       "baseline": {
@@ -1024,9 +1024,9 @@
           }
         ]
       },
-      "date_basis": "source-mtime-baseline",
-      "fingerprint": "02070ad142acc4f22e0b46f891be95078f8402730bc22ab8c72a69bf2018e8ef",
-      "updated": "2026-10-09"
+      "date_basis": "editorial-content-change",
+      "fingerprint": "702f3be492b9bc980aeebdb42a83e6d179e27777ab7ad46dada0a748673c5039",
+      "updated": "2026-11-10"
     },
     "en/person-dasarathi-tah": {
       "baseline": {
@@ -1038,9 +1038,9 @@
           }
         ]
       },
-      "date_basis": "source-mtime-baseline",
-      "fingerprint": "b1f3f65bb7b5d97e7d31b9a4c7e1d257b133a0ef433ff0d4c515b28baaa487df",
-      "updated": "2026-10-09"
+      "date_basis": "editorial-content-change",
+      "fingerprint": "ff5da44710552a4076c1ed7c66123d96310bfd513e063070f1e74a4970a5ab16",
+      "updated": "2026-11-10"
     },
     "en/person-dhanapati-panja": {
       "baseline": {
@@ -1067,8 +1067,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "377702372c50c331b6d7b6fa9d798f97ce4a28f2f9d9e68c54eaec93e8d02522",
-      "updated": "2026-10-22"
+      "fingerprint": "158d4195f385aacb04bfd591b9fcc4073bed960e3239e807c8e86ed5f727e8fc",
+      "updated": "2026-11-10"
     },
     "en/person-hare-krishna-konar": {
       "baseline": {
@@ -1081,8 +1081,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "c3dba8e390e7a3665bc447245ea1d016b4852047255dfb4ca32ceab90d8bc13b",
-      "updated": "2026-10-13"
+      "fingerprint": "6254b74b99af99ad0d85dc53f251a5777d7e407b2e760b36ff3f587308b8f31f",
+      "updated": "2026-11-10"
     },
     "en/person-haricharan-bandhu": {
       "baseline": {
@@ -1109,8 +1109,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "b437e45b3eaab6e610857b7e1a0bed52c37853baf249853ecab1f6be6b93248e",
-      "updated": "2026-10-30"
+      "fingerprint": "560283770ca8ab093fe33849e900f9a6c24276cd4bf58640119919490737133f",
+      "updated": "2026-11-10"
     },
     "en/person-k-d-paul": {
       "baseline": {
@@ -1123,8 +1123,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "8d6f35ddf01792b41b0a78e38cea359b80e3abd3a7ccf447b003719715a04190",
-      "updated": "2026-10-30"
+      "fingerprint": "363003d41eb2326746f61d7aa0486b77f919f1656fb14ad00da3676165fb6298",
+      "updated": "2026-11-10"
     },
     "en/person-manohar-ray": {
       "baseline": {
@@ -1137,8 +1137,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "5d20cdae62c5082387aef5924bcd81e685f18b48314edc414f39ff97ca261963",
-      "updated": "2026-10-13"
+      "fingerprint": "66330183a11b85b025e8e525effd16c98d207fe5d0a9a85fe0dfe07476a4b10e",
+      "updated": "2026-11-10"
     },
     "en/person-nikhilananda-sar": {
       "baseline": {
@@ -1150,9 +1150,9 @@
           }
         ]
       },
-      "date_basis": "source-mtime-baseline",
-      "fingerprint": "c8da3b9289831cc89bbaa04da6a82a52d69e06710f91317aeb09138276f40ae4",
-      "updated": "2026-10-09"
+      "date_basis": "editorial-content-change",
+      "fingerprint": "a5db48e8b0ca1bf1fdf915d9b75ac1d5a26d3bc3348caf22c8f69230f61fdb00",
+      "updated": "2026-11-10"
     },
     "en/person-pratap-chandra-ray": {
       "baseline": {
@@ -1165,8 +1165,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "089109433ed680a18c88a04df2378e11548a6ffbae08e2ac9fe2dc5eb75d5555",
-      "updated": "2026-10-21"
+      "fingerprint": "1397dd739635db188ffa5bce6eb986faa3ecc2e849978deaf577d8843282319e",
+      "updated": "2026-11-10"
     },
     "en/person-ramapada-chowdhury": {
       "baseline": {
@@ -1179,8 +1179,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "0d4a52ff3a553a29122c4c19cbcbad47ea178542923a50881194a181ac96a788",
-      "updated": "2026-10-30"
+      "fingerprint": "bd80f768feb6ce87582c388fa5eaed47ad12897eb423127fa6fe7e6327043497",
+      "updated": "2026-11-10"
     },
     "en/person-ranjit-kumar-panja": {
       "baseline": {
@@ -1192,9 +1192,9 @@
           }
         ]
       },
-      "date_basis": "source-mtime-baseline",
-      "fingerprint": "71df481369d78547abfa578b7dca074441f53492ce78c44b91321ab3b6b9a84b",
-      "updated": "2026-10-09"
+      "date_basis": "editorial-content-change",
+      "fingerprint": "3ab9c6d03d241090faa544c460db3c2299c10194cd494dee9853550580c4f719",
+      "updated": "2026-11-10"
     },
     "en/person-satya-kinkar-sahana": {
       "baseline": {
@@ -1207,8 +1207,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "193926cb763a3facd6175619c86455795fa25e4f96b91293d69af64e78fb10f8",
-      "updated": "2026-10-21"
+      "fingerprint": "98fb3935fce05412fca9ad1d48ebae3709ca1092ce119142824a712209d21ffd",
+      "updated": "2026-11-10"
     },
     "en/person-shakti-samanta": {
       "baseline": {
@@ -1221,8 +1221,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "14f7cd8a4fdc7ca778f685594f6be213aeed8f3e91bb545c5a3f4e09f0fb5c83",
-      "updated": "2026-10-11"
+      "fingerprint": "655fe5de6d5ce80aae737ad1152b766eaa7fddb7464095011dfd89459e05d8e1",
+      "updated": "2026-11-10"
     },
     "en/person-shib-shankar-chowdhury": {
       "baseline": {
@@ -1234,9 +1234,9 @@
           }
         ]
       },
-      "date_basis": "source-mtime-baseline",
-      "fingerprint": "a89cf5328fc1288528eebe95e232e6fa55c75ecb57806d7675599fa66204a532",
-      "updated": "2026-10-23"
+      "date_basis": "editorial-content-change",
+      "fingerprint": "4d7a1db52654619d59922e93559bfb262d5be6573a0539eb8c2ddbc8702af118",
+      "updated": "2026-11-10"
     },
     "en/person-tuhin-kumar-roy": {
       "baseline": {
@@ -1248,9 +1248,9 @@
           }
         ]
       },
-      "date_basis": "source-mtime-baseline",
-      "fingerprint": "bb8b24232b85fcfe799e297f4f34d23b671fbb62703cd968ddc612d0d5e0a2b8",
-      "updated": "2026-11-02"
+      "date_basis": "editorial-content-change",
+      "fingerprint": "a53c61b66035e954ad61e39baa19d77672b147ad082fc7eca2f534b252b4767b",
+      "updated": "2026-11-10"
     },
     "en/research": {
       "baseline": {
