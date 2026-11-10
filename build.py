@@ -40,6 +40,7 @@ PAGES = [
  ('translations','Translations','Bengali voices, in English','An English book translation, selected journal articles, book prefaces and a contemporary review, with their Bengali sources.'),
  ('bibliography','Resources','Resources for exploring Aguri heritage','Books, scholarship, biographies, periodicals and translated source material supporting the community’s story.'),
  ('research','Research topics','Research topics','Questions for studying Aguri heritage, migration, land, marriage and inequality through archives, oral history and fieldwork.'),
+ ('faq','FAQ','Aguri & Ugra Kshatriya: frequently asked questions','Short answers about Aguri identity, history, social position, places, surnames and research, with links to explore further.'),
  ('contact','Contact Us','Contact Us','Send a private message to Aguri Heritage about the website or project.'),
  ('contribute','Contribute','Add a piece of the story','Share a memory, photograph or document, or help us correct the record. Bengali and English contributions are welcome.'),
  ('review','Editor review','The contribution desk','Review community contributions, request more information and record editorial decisions.'),
@@ -47,7 +48,7 @@ PAGES = [
  ('rights','Copyright & reuse','Copyright & reuse','A community project with reserved rights: how to read, share, quote and request permission to reuse material.'),
  ('contributor-terms','Contributor terms','Your contribution, your rights','The permissions you give Aguri Heritage, the rights you keep, and how we review and care for your contribution.'),
  ('book-rajput-o-ugrakshatriya','Historical book','Rajput O Ugrakshatriya','Haricharan Bandhu’s historical book, second edition, 1940: read the English translation and the Bengali original.')]
-NAV_KEYS=['index','history','culture','geography','people','surnames','about','bibliography']
+NAV_KEYS=['index','history','culture','geography','people','surnames','about','bibliography','faq']
 RESOURCE_KEYS={'bibliography','archives','translations','book-rajput-o-ugrakshatriya','research'}
 SOURCES = json.loads((ROOT/'content/sources.json').read_text())
 ARTWORKS = load_catalog()
@@ -157,7 +158,7 @@ def render_page(key,label,title,desc,frag,lang,sources,page_labels,history,edito
  heading_title=f'<h1 hidden data-editor-generated="true">{escape(title)}</h1>' if title_hidden else f'<h1>{escape(title)}</h1>'
  heading_description='' if description_hidden else f'<p class="dek">{escape(desc)}</p>'
  heading_copy=f'<p class="eyebrow"><a href="index.html">{t("The heritage project")}</a><span aria-hidden="true"> / </span>{crumb_label}</p>{heading_title}{heading_description}{updated_markup}'
- crumbs='' if key=='index' else f'<div class="page-heading">{heading_copy}</div>' if (editor_page and key not in ARTWORKS) or key in ('contact','contribute','review','rights','contributor-terms') or key in TEXT_ONLY_ARTICLE_KEYS else page_heading(key,heading_copy,lang,ARTWORKS)
+ crumbs='' if key=='index' else f'<div class="page-heading">{heading_copy}</div>' if (editor_page and key not in ARTWORKS) or key in ('contact','contribute','review','rights','contributor-terms','faq') or key in TEXT_ONLY_ARTICLE_KEYS else page_heading(key,heading_copy,lang,ARTWORKS)
  if is_resource:
   current='translations' if is_translation else 'bibliography' if key.startswith('book-') else key
   crumbs+=f'<nav class="resource-nav" aria-label="{t("Resource sections")}">'+''.join(f'<a href="{k}.html"'+(' aria-current="page"' if k==current else '')+f'>{t(text)}</a>' for k,text in [('bibliography','Books & references'),('research','Research topics'),('translations','English translations'),('archives','Periodical archive')])+'</nav>'

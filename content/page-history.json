@@ -154,6 +154,20 @@
       "fingerprint": "5c848bae7802b5e1bfbe0c0e2d6943df8b772e99fa6f0c411fad11adc2be3e1d",
       "updated": "2026-10-28"
     },
+    "bn/faq": {
+      "baseline": {
+        "date": "2026-11-10",
+        "sources": [
+          {
+            "modified": "2026-11-10T16:35:40.616798+05:30",
+            "path": "content/bn/faq.html"
+          }
+        ]
+      },
+      "date_basis": "source-mtime-baseline",
+      "fingerprint": "0992c50fabe570cf2ee364e52920ad41d4e5e34f02576a445d521bfa47c47348",
+      "updated": "2026-11-10"
+    },
     "bn/food-and-village-life": {
       "baseline": {
         "date": "2026-10-11",
@@ -887,6 +901,20 @@
       "date_basis": "editorial-content-change",
       "fingerprint": "c7b92ed70d1d68cfbd40ba6d072a6f25d0115453e37c7cc4064583d62c4da85f",
       "updated": "2026-10-21"
+    },
+    "en/faq": {
+      "baseline": {
+        "date": "2026-11-10",
+        "sources": [
+          {
+            "modified": "2026-11-10T16:35:40.616489+05:30",
+            "path": "content/faq.html"
+          }
+        ]
+      },
+      "date_basis": "source-mtime-baseline",
+      "fingerprint": "9bf1bf551404614c66054879ef712572f012f9be368a3af9114242f15eba3448",
+      "updated": "2026-11-10"
     },
     "en/food-and-village-life": {
       "baseline": {
