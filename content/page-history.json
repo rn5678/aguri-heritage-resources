@@ -164,8 +164,8 @@
           }
         ]
       },
-      "date_basis": "source-mtime-baseline",
-      "fingerprint": "0992c50fabe570cf2ee364e52920ad41d4e5e34f02576a445d521bfa47c47348",
+      "date_basis": "editorial-content-change",
+      "fingerprint": "955a6164a4939fd55589f557551ead674bc62774b4a5ae3ea77b0976845a3587",
       "updated": "2026-11-10"
     },
     "bn/food-and-village-life": {
@@ -926,8 +926,8 @@
           }
         ]
       },
-      "date_basis": "source-mtime-baseline",
-      "fingerprint": "9bf1bf551404614c66054879ef712572f012f9be368a3af9114242f15eba3448",
+      "date_basis": "editorial-content-change",
+      "fingerprint": "e027b8e6a425a997b1d458946ca80a8bed5fc700e561162805cb6f86206df268",
       "updated": "2026-11-10"
     },
     "en/food-and-village-life": {
