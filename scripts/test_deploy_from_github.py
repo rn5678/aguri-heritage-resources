@@ -43,7 +43,8 @@ class DeployFromGitHubTests(unittest.TestCase):
             'CLOUDFLARE_API_TOKEN': 'test-token-never-log', 'PATH': '/usr/bin',
         }
         self.publisher = deploy.Deployment(self.root, self.environment)
-        self.records = [project_record(), [], deployment_record(), project_record(deployment_record())]
+        self.publisher.verify_live_health = Mock()
+        self.records = [project_record(), [], deployment_record(), project_record(deployment_record()), project_record(deployment_record())]
         self.publisher.remote = Mock(side_effect=lambda *args: self.records.pop(0))
         self.validate = patch.object(self.publisher, 'validate_package', return_value='package-sha')
         self.validate.start(); self.addCleanup(self.validate.stop)
@@ -59,6 +60,22 @@ class DeployFromGitHubTests(unittest.TestCase):
         output.write_text(json.dumps({'type': 'pages-deploy', 'pages_project': deploy.PROJECT,
                                       'deployment_id': IDENTIFIER}) + '\n')
         return subprocess.CompletedProcess(command, 0, 'private output', '')
+
+    def test_unhealthy_upload_cannot_write_success_receipt_or_roll_back(self):
+        self.publisher.verify_live_health.side_effect = deploy.DeployError('readiness failed')
+        with self.assertRaises(deploy.DeployError):
+            self.publisher.run()
+        receipt = json.loads(self.publisher.receipt_path.read_text())
+        self.assertNotEqual(receipt['status'], 'success')
+        self.assertEqual(len(self.commands), 1)
+        self.publisher.verify_live_health.assert_called_once()
+
+    def test_canonical_change_during_health_check_is_not_blessed(self):
+        self.records[-1] = project_record({'id': OTHER})
+        with self.assertRaisesRegex(deploy.DeployError, 'changed during readiness'):
+            self.publisher.run()
+        self.assertNotEqual(json.loads(self.publisher.receipt_path.read_text())['status'], 'success')
+        self.assertEqual(len(self.commands), 1)
 
     def test_invalid_context_or_secret_stops_before_remote_access(self):
         for key, value in [('GITHUB_REF', 'refs/heads/feature/test'), ('GITHUB_SHA', 'bad'),
@@ -92,7 +109,7 @@ class DeployFromGitHubTests(unittest.TestCase):
         self.assertEqual(self.commands, [])
 
     def test_changed_configuration_is_not_success(self):
-        self.records[-1]['deployment_configs']['production']['env_vars']['NEW'] = {'value': 'new'}
+        self.records[-2]['deployment_configs']['production']['env_vars']['NEW'] = {'value': 'new'}
         with self.assertRaisesRegex(deploy.DeployError, 'settings changed'):
             self.publisher.run()
         self.assertEqual(json.loads(self.publisher.receipt_path.read_text())['status'], 'pending')
@@ -108,7 +125,7 @@ class DeployFromGitHubTests(unittest.TestCase):
             self.publisher.run()
 
     def test_another_canonical_deployment_is_not_success(self):
-        self.records[-1]['canonical_deployment']['id'] = OTHER
+        self.records[-2]['canonical_deployment']['id'] = OTHER
         with self.assertRaisesRegex(deploy.DeployError, 'different live production'):
             self.publisher.run()
 
@@ -118,7 +135,7 @@ class DeployFromGitHubTests(unittest.TestCase):
             self.publisher.run()
 
     def test_already_live_commit_is_verified_without_upload(self):
-        self.records = [project_record(deployment_record()), deployment_record(), project_record(deployment_record())]
+        self.records = [project_record(deployment_record()), deployment_record(), project_record(deployment_record()), project_record(deployment_record())]
         result = self.publisher.run()
         self.assertEqual(result['deployment_id'], IDENTIFIER)
         self.assertEqual(self.commands, [])
@@ -126,7 +143,7 @@ class DeployFromGitHubTests(unittest.TestCase):
     def test_lost_tool_output_reconciles_new_exact_commit(self):
         self.runner.stop()
         with patch.object(deploy.subprocess, 'run', return_value=subprocess.CompletedProcess([], 1, '', 'secret failure')):
-            self.records = [project_record(), [], [deployment_record()], deployment_record(), project_record(deployment_record())]
+            self.records = [project_record(), [], [deployment_record()], deployment_record(), project_record(deployment_record()), project_record(deployment_record())]
             self.assertEqual(self.publisher.run()['status'], 'success')
 
     def test_unconfirmed_upload_exits_without_duplicate(self):

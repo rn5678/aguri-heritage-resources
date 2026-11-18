@@ -154,6 +154,38 @@ class Deployment:
             raise DeployError('Wrangler reported multiple deployments; check Cloudflare before retrying.')
         return next(iter(identifiers), None)
 
+    def verify_live_health(self):
+        # Read-only public config endpoints: no credentials, submissions or DB reads.
+        # Bounded retries tolerate propagation/transient failures, never upload again
+        # or roll back. A successful upload alone is not application health.
+        allowed = {'storage', 'security', 'hostname', 'verification', 'delivery'}
+        failures = {}
+        for attempt in range(3):
+            failures = {}
+            for name, path in (('contributions', '/api/config'), ('contact', '/api/contact/config')):
+                url = SITE.rstrip('/') + path
+                request = Request(url, headers={'Accept': 'application/json', 'Cache-Control': 'no-cache'})
+                try:
+                    with urlopen(request, timeout=10) as response:
+                        body = response.read(16385)
+                        if response.status != 200 or response.geturl() != url or len(body) > 16384:
+                            failures[name] = 'unavailable'
+                            continue
+                        payload = json.loads(body)
+                        if payload.get('available') is not True:
+                            category = payload.get('readiness')
+                            failures[name] = category if isinstance(category, str) and category in allowed else 'unavailable'
+                except (HTTPError, URLError, TimeoutError, ValueError, OSError, AttributeError, TypeError):
+                    failures[name] = 'unavailable'
+            if not failures:
+                return
+            if attempt < 2:
+                time.sleep(5)
+        error = DeployError('Production uploaded, but public contribution/contact readiness failed. '
+                            'Keep the deployment in place and repair configuration forward; do not retry publication blindly.')
+        error.readiness = failures
+        raise error
+
     def verify(self, identifier, expected_config, package_hash, deadline):
         if not DEPLOYMENT_ID.fullmatch(identifier):
             raise DeployError('Cloudflare returned an invalid deployment reference.')
@@ -173,6 +205,18 @@ class Deployment:
                     raise DeployError('Production settings changed during deployment; inspect Cloudflare before retrying.')
                 if (project.get('canonical_deployment') or {}).get('id') != identifier:
                     raise DeployError('The upload completed, but Cloudflare reports a different live production deployment.')
+                try:
+                    self.verify_live_health()
+                except DeployError as error:
+                    failures = getattr(error, 'readiness', {})
+                    self.write_receipt({'status': 'unhealthy', 'commit': self.sha,
+                                        'deployment_id': identifier, 'readiness': failures})
+                    summary = ', '.join(f'{name}={category}' for name, category in failures.items())
+                    raise DeployError(f'Deployment {identifier}: {error} Readiness: {summary or "unavailable"}.') from None
+                # A manual action may have changed production during health retries.
+                project, config_hash = self.project()
+                if config_hash != expected_config or (project.get('canonical_deployment') or {}).get('id') != identifier:
+                    raise DeployError('Production changed during readiness verification; no healthy receipt was written.')
                 receipt = {
                     'status': 'success', 'repository': REPOSITORY, 'commit': self.sha,
                     'deployment_id': identifier, 'url': SITE, 'package_sha256': package_hash,

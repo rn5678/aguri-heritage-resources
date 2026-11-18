@@ -36,7 +36,8 @@ test('contact is unavailable without every production binding, rejects dummy key
  mockNetwork(t); const env=makeEnv();t.after(()=>env.CONTRIBUTIONS_DB.close());
  for(const key of ['CONTRIBUTIONS_DB','EDITOR_KEY','CONTACT_HOSTNAMES','CONTACT_TURNSTILE_SITE_KEY','CONTACT_TURNSTILE_SECRET_KEY','CONTACT_DELIVERY_PROVIDER','CONTACT_RESEND_API_KEY','CONTACT_TO_EMAIL','CONTACT_FROM_EMAIL']){
   const missing={...env,[key]:undefined};const config=await call(missing,null,{method:'GET',path:'/api/contact/config'});
-  assert.deepEqual(config.data,{available:false},key);assert.equal((await call(missing,payload())).response.status,503,key);
+  const readiness = key === 'CONTRIBUTIONS_DB' ? 'storage' : key === 'EDITOR_KEY' ? 'security' : key === 'CONTACT_HOSTNAMES' ? 'hostname' : key.startsWith('CONTACT_TURNSTILE_') ? 'verification' : 'delivery';
+  assert.deepEqual(config.data,{available:false,readiness},key);assert.equal((await call(missing,payload())).response.status,503,key);
  }
  for(const key of ['CONTACT_TURNSTILE_SITE_KEY','CONTACT_TURNSTILE_SECRET_KEY']){
   const config=await call({...env,[key]:'1x00000000000000000000AA'},null,{method:'GET',path:'/api/contact/config'});assert.equal(config.data.available,false);
