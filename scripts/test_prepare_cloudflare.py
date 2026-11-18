@@ -63,6 +63,19 @@ class PortablePackaging(unittest.TestCase):
         self.assertFalse(result['remote_release_verified'])
         self.assertTrue(all(not entry['local_file_verified'] for entry in result['journal_assets']))
 
+    def test_retired_patrika_article_redirects_preserve_language_and_journals(self):
+        self.run_prepare('--remote-journals', '--skip-archive')
+        redirects = (self.root / 'hosting/cloudflare/site/_redirects').read_text()
+        for language in ('', 'bn/'):
+            for extension in ('', '.html'):
+                self.assertIn(
+                    f'/{language}ugra-kshatriya-patrika{extension} /{language}history 301\n',
+                    redirects,
+                )
+        self.assertNotIn('ugra-kshatriya-patrika-subscriber-photographs.pdf', redirects)
+        for path in prepare.JOURNALS:
+            self.assertIn(f'/{path} {self.release}/{Path(path).name} 302\n', redirects)
+
     def test_default_mode_still_requires_originals_and_creates_archive(self):
         with self.assertRaises(FileNotFoundError):
             self.run_prepare()

@@ -137,6 +137,12 @@ def main(argv=None):
         for person in ('haricharan-bandhu', 'dhanapati-panja')
         for extension in ('', '.html')
     }
+    # Retire only the editorial article, not the original journal or PDF assets.
+    retired_redirects.update({
+        f'/{language}ugra-kshatriya-patrika{extension}': f'/{language}history'
+        for language in ('', 'bn/')
+        for extension in ('', '.html')
+    })
     retired_redirects['/assets/people/haricharan-bandhu-signed-foreword.jpg'] = '/people'
     (stage / '_redirects').write_text(
         ''.join(f'{src} {dst} 301\n' for src, dst in retired_redirects.items())
