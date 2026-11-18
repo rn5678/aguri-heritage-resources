@@ -94,3 +94,7 @@ After migration, avoid direct uploads from the old editor or dashboard for ordin
 - 18 November 2026: A second same-content production redeployment was requested after the owner saved a longer replacement editor credential; website content and submissions remain unchanged.
 
 - 18 November 2026: The owner requested another same-content production redeployment after confirming the Production credential save time; no website content, configuration or submissions are changed by this operational note.
+
+### Forms recovery checkpoint (19 November 2026 IST)
+
+The site owner updated the Production editor secret and requested one fresh forward deployment. Preserve the Curzon photo and the live readiness checks from PR #17. Keep secret values out of the repository, verify both public forms against the canonical domain, and do not cancel or roll back automatically.
