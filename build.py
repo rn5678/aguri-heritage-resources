@@ -267,11 +267,18 @@ def section_page_links(key,lang,editor_pages):
  links=''.join(f'<li><a class="text-link" href="{entry["id"]}.html">{escape(entry[lang]["title"])}</a><p>{escape(entry[lang]["description"])}</p></li>' for entry in children)
  return f'<section class="prose editor-page-directory" aria-labelledby="editor-added-pages"><h2 id="editor-added-pages">{heading}</h2><ul>{links}</ul></section>'
 
+def remove_retired_article_outputs(output):
+ """Remove only retired editorial pages, retaining original journals and assets."""
+ for language in ('', 'bn'):
+  (output/language/'ugra-kshatriya-patrika.html').unlink(missing_ok=True)
+
+
 def build():
  history=PageHistory(ROOT)
  editor_pages=editor_page_map(ROOT)
  custom_descriptors={lang:editor_descriptors(ROOT,lang) for lang in ('en','bn')}
  OUT.mkdir(exist_ok=True);(OUT/'bn').mkdir(exist_ok=True)
+ remove_retired_article_outputs(OUT)
  translation_fragments,translation_descriptors=render_translations()
  bn_fragments,bn_descriptors=render_bengali_readings()
  en_profiles,en_profile_descriptors=profiles('en')

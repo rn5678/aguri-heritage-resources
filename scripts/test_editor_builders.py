@@ -16,6 +16,25 @@ import portrait_headers
 import profile_pages
 
 
+class RetiredArticleBuild(unittest.TestCase):
+    def test_rebuild_removes_only_retired_bilingual_article_outputs(self):
+        with TemporaryDirectory() as temporary:
+            output = Path(temporary)
+            retired = ['ugra-kshatriya-patrika.html', 'bn/ugra-kshatriya-patrika.html']
+            preserved = ['archives.html', 'bn/archives.html',
+                         'aguri-working-lives-colonial-india.html',
+                         'assets/documents/ugra-kshatriya-patrika-subscriber-photographs.pdf',
+                         'assets/ugra-kshatriya-patrika.webp']
+            for name in retired + preserved:
+                path = output/name
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes(b'unchanged')
+            build.remove_retired_article_outputs(output)
+            build.remove_retired_article_outputs(output)
+            self.assertTrue(all(not (output/name).exists() for name in retired))
+            self.assertTrue(all((output/name).read_bytes() == b'unchanged' for name in preserved))
+
+
 class EditedProfileBuild(unittest.TestCase):
     def setUp(self):
         self.temp = TemporaryDirectory()

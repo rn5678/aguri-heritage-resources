@@ -28,6 +28,20 @@
       "fingerprint": "e23700af0afdc22b4888788c35dbebf91d3090f5213ffa4eecb3dae5d1eaf603",
       "updated": "2026-10-30"
     },
+    "bn/aguri-working-lives-colonial-india": {
+      "baseline": {
+        "date": "2026-11-18",
+        "sources": [
+          {
+            "modified": "2026-11-18T09:57:19.656442+05:30",
+            "path": "content/bn/aguri-working-lives-colonial-india.html"
+          }
+        ]
+      },
+      "date_basis": "editorial-content-change",
+      "fingerprint": "56082607b195ca4a248d090e9390b385d0e5bfe08e8bd02fdffb58a777fe307d",
+      "updated": "2026-11-18"
+    },
     "bn/aguris-freedom-struggle": {
       "baseline": {
         "date": "2026-10-23",
@@ -207,8 +221,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "fa243efc19d10ea2eca4b66074e33094af2bc06cdadd9d44c440ea2328b2787f",
-      "updated": "2026-11-02"
+      "fingerprint": "d044fd5aad409de969321c60483758e460c8881bb22f8c2821511965b48a5ee4",
+      "updated": "2026-11-18"
     },
     "bn/index": {
       "baseline": {
@@ -221,8 +235,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "55c219a20083ad59b9ef797747146026b4ecf18e7c31ff7d2ce20ae3380b90e9",
-      "updated": "2026-11-02"
+      "fingerprint": "fe4aa71402f8d7411dc8c6a49ecfc960d902d70b510ebc752188d99fe2c650a3",
+      "updated": "2026-11-18"
     },
     "bn/military-settlers-bengal": {
       "baseline": {
@@ -263,8 +277,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "1cf4b6c356480439cb3f6002bb158d3b3031f23669138825c1b16cc5c9a0c763",
-      "updated": "2026-11-10"
+      "fingerprint": "e5a1aa82127b9f0e595171947a3196f36b34aa594e682d7d44539b5658c3fdfe",
+      "updated": "2026-11-18"
     },
     "bn/person-ajit-kumar-panja": {
       "baseline": {
@@ -790,6 +804,20 @@
       "fingerprint": "555fee36a75f523cedc7b8a0e05d397c12b0edc266ae5fd51d9ee5b99fb45460",
       "updated": "2026-10-30"
     },
+    "en/aguri-working-lives-colonial-india": {
+      "baseline": {
+        "date": "2026-11-18",
+        "sources": [
+          {
+            "modified": "2026-11-18T09:57:19.648546+05:30",
+            "path": "content/aguri-working-lives-colonial-india.html"
+          }
+        ]
+      },
+      "date_basis": "source-mtime-baseline",
+      "fingerprint": "9f6fd6d13eadec3e5bf8658f1bd807ddc81d261be33969c0610ac9c9a70f6eda",
+      "updated": "2026-11-18"
+    },
     "en/aguris-freedom-struggle": {
       "baseline": {
         "date": "2026-10-23",
@@ -969,8 +997,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "5f411b3121bdd6093fb8ca7a9cb79844d6f7d400128ff00a01530384c0e42c7f",
-      "updated": "2026-11-02"
+      "fingerprint": "db1b999960354b3cb4c1e5b6fc17d2c0b4aec032734f38db3fd2fc0ac336bf99",
+      "updated": "2026-11-18"
     },
     "en/index": {
       "baseline": {
@@ -983,8 +1011,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "4339b53f2b817df890ebb4a883416985c6448f32289c6380fefff54da74f16e2",
-      "updated": "2026-11-02"
+      "fingerprint": "2f7471e7860d152058f055df374d492c2d5ff6f4355d0f64176b6ab58aa5ce4e",
+      "updated": "2026-11-18"
     },
     "en/military-settlers-bengal": {
       "baseline": {
@@ -1025,8 +1053,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "59382a9fac04883beccae39a96ffe830281790de4ffc5d88dae17e9bd9e10b08",
-      "updated": "2026-11-10"
+      "fingerprint": "704b7563ced9020e3fcfe8cc835d46411398da308dc04b13bcd6a8c71d48eb70",
+      "updated": "2026-11-18"
     },
     "en/person-ajit-kumar-panja": {
       "baseline": {

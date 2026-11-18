@@ -9,7 +9,6 @@ from pathlib import Path
 from asset_paths import is_local_asset
 from urllib.parse import urlsplit
 import re
-import json
 
 ROOT = Path(__file__).resolve().parent
 IMAGES = {'origins': {'file': 'assets/page-artworks/origins-armoured.webp',
@@ -66,10 +65,8 @@ IMAGES['military-settlers-bengal'] = {'file': 'assets/military-settlers/carousel
 
 IMAGES['aguris-freedom-struggle'] = {'file': 'assets/aguri-freedom-struggle/cover.webp', 'width': 1536, 'height': 1024, 'alt_en': 'Aguris in the freedom struggle and its impact on Aguri society through the 1950s, illustrated with marchers, a political assembly, cultivated fields and a lending ledger.', 'alt_bn': 'পঞ্চাশের দশক পর্যন্ত স্বাধীনতা সংগ্রামে আগুরীদের ভূমিকা ও আগুরী সমাজে তার প্রভাব: মিছিল, রাজনৈতিক সমাবেশ, কৃষিজমি ও ঋণদানের খাতার প্রতীকী চিত্র।', 'caption_en': 'Contemporary illustration · Burdwan and Bengal through the 1950s.', 'caption_bn': 'আধুনিক অলংকরণ · পঞ্চাশের দশক পর্যন্ত বর্ধমান ও বাংলা।', 'image_fit': 'contain'}
 
-# Reuse the published article artwork and its bilingual disclosure.
-IMAGES['ugra-kshatriya-patrika'] = {**json.loads((ROOT / 'assets/page-artworks/catalog.json').read_text())['ugra-kshatriya-patrika'], 'image_fit': 'contain'}
-for language in ('en', 'bn'):
- IMAGES['ugra-kshatriya-patrika']['caption_' + language] = IMAGES['ugra-kshatriya-patrika']['title_' + language] + ' · ' + IMAGES['ugra-kshatriya-patrika']['caption_' + language]
+# Documentary photograph for the working-lives story in History's carousel.
+IMAGES['aguri-working-lives-colonial-india'] = {'file': 'assets/history/old-court-house-street-calcutta.jpg', 'width': 2266, 'height': 1579, 'alt_en': 'Old Court House Street in Calcutta.', 'alt_bn': 'কলকাতার ওল্ড কোর্ট হাউস স্ট্রিট।', 'caption_en': 'Old Court House Street, Calcutta. Bourne & Shepherd; reproduced in Thacker’s Guide to Calcutta (1906). Public domain, via Wikimedia Commons.', 'caption_bn': 'কলকাতার ওল্ড কোর্ট হাউস স্ট্রিট। আলোকচিত্র: বোর্ন অ্যান্ড শেফার্ড; Thacker’s Guide to Calcutta (১৯০৬)-এ পুনর্মুদ্রিত। পাবলিক ডোমেইন, উইকিমিডিয়া কমন্স।', 'image_fit': 'contain'}
 
 LABELS = {
  'en': {'carousel':'carousel','slide':'slide','pause':'Pause rotation','resume':'Resume rotation',
