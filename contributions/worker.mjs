@@ -34,6 +34,21 @@ function configured(env) {
   return !!env.CONTRIBUTIONS_DB && typeof env.EDITOR_KEY === 'string' && env.EDITOR_KEY.length >= 32
     && !!env.TURNSTILE_SECRET_KEY === !!env.TURNSTILE_SITE_KEY;
 }
+// Coarse public readiness categories only. Never expose binding names, values,
+// lengths, fingerprints or provider responses; these checks perform no I/O.
+function readinessCategory(env, request = null) {
+  if (!env.CONTRIBUTIONS_DB) return 'storage';
+  if (typeof env.EDITOR_KEY !== 'string' || env.EDITOR_KEY.length < 32) return 'security';
+  if (!request) return 'verification'; // optional contribution verification pair
+  const url = new URL(request.url);
+  const hosts = typeof env.CONTACT_HOSTNAMES === 'string' ? env.CONTACT_HOSTNAMES.split(',').map(s => s.trim()) : [];
+  if (url.protocol !== 'https:' || ['localhost', '127.0.0.1'].includes(url.hostname)
+      || !hosts.length || !hosts.every(h => /^[a-z0-9]+(?:[.-][a-z0-9]+)*\.[a-z]{2,63}$/.test(h))
+      || !hosts.includes(url.hostname)) return 'hostname';
+  const realKey = value => typeof value === 'string' && value.length >= 20 && !/^[123]x0{10}/.test(value) && !/\s/.test(value);
+  if (!realKey(env.CONTACT_TURNSTILE_SITE_KEY) || !realKey(env.CONTACT_TURNSTILE_SECRET_KEY)) return 'verification';
+  return 'delivery';
+}
 function stmt(env, sql, ...args) { const s = env.CONTRIBUTIONS_DB.prepare(sql); return args.length ? s.bind(...args) : s; }
 function rows(result) { return result.results || []; }
 function hex(bytes) { return [...new Uint8Array(bytes)].map(b => b.toString(16).padStart(2, '0')).join(''); }
@@ -850,11 +865,15 @@ export default {
       if (path === '/api/page-views') return await pageViews(request, env);
       if (path === '/api/contact/config' && request.method === 'GET') {
         const available = contactConfigured(env, request);
-        return json({ available, ...(available ? { turnstile_site_key: env.CONTACT_TURNSTILE_SITE_KEY } : {}) });
+        return json({ available, ...(available ? { turnstile_site_key: env.CONTACT_TURNSTILE_SITE_KEY } : { readiness: readinessCategory(env, request) }) });
       }
       if (path === '/api/contact' && request.method === 'POST') return await contactSubmit(request, env);
-      if (path === '/api/config' && request.method === 'GET') return json({ available: configured(env), uploads: { max_files: MAX_FILES, max_file_bytes: MAX_FILE },
-        ...(env.TURNSTILE_SECRET_KEY && env.TURNSTILE_SITE_KEY ? { turnstile_site_key: env.TURNSTILE_SITE_KEY } : {}) });
+      if (path === '/api/config' && request.method === 'GET') {
+        const available = configured(env);
+        return json({ available, uploads: { max_files: MAX_FILES, max_file_bytes: MAX_FILE },
+          ...(env.TURNSTILE_SECRET_KEY && env.TURNSTILE_SITE_KEY ? { turnstile_site_key: env.TURNSTILE_SITE_KEY } : {}),
+          ...(!available ? { readiness: readinessCategory(env) } : {}) });
+      }
       if (path.startsWith('/api/push/')) {
         if (path === '/api/push/config' && request.method === 'GET')
           return json({ available: pushConfigured(env), ...(pushConfigured(env) ? { public_key: env.VAPID_PUBLIC_KEY } : {}) });
