@@ -361,26 +361,30 @@
     "caption_bn": "নথি, স্মৃতি ও নতুন গবেষণা · সমকালীন কল্পচিত্র"
   },
   "food-and-village-life": {
-    "file": "assets/page-artworks/geography.webp",
-    "width": 1536,
-    "height": 1024,
-    "title_en": "Where the Rivers Meet the Fields",
-    "title_bn": "নদী ও মাঠের মিলন",
-    "alt_en": "An elevated view follows a Bengal river from red-earth groves into a patchwork of fertile fields.",
-    "alt_bn": "উঁচু থেকে দেখা বাংলার নদী লালমাটির বনানী ছেড়ে উর্বর খেতের মাঝে বয়ে চলেছে।",
-    "creation": "Contemporary illustration"
+    "file": "assets/documentary-photos/ranaghat-paddy-2020.jpg",
+    "width": 1280,
+    "height": 960,
+    "title_en": "Paddy at Ranaghat",
+    "title_bn": "রানাঘাটের ধানখেত",
+    "alt_en": "Low-angle photograph of rice plants against the sky at Ranaghat, West Bengal.",
+    "alt_bn": "পশ্চিমবঙ্গের রানাঘাটে আকাশের পটভূমিতে নিচু থেকে তোলা ধানগাছের আলোকচিত্র।",
+    "creation": "Documentary photograph",
+    "caption_en": "Apurv013, 21 April 2020. CC0. Regional farming context at Ranaghat, not a depiction of an identified Aguri community.",
+    "caption_bn": "Apurv013, ২১ এপ্রিল ২০২০। CC0। রানাঘাটের আঞ্চলিক কৃষিজীবনের প্রেক্ষাপট; কোনো চিহ্নিত আগুরী সম্প্রদায়ের দৃশ্য নয়।",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Oryza_Sativa,_Paddy_Harvest_(%E0%A6%A7%E0%A6%BE%E0%A6%A8%E0%A6%9A%E0%A6%BE%E0%A6%B7)_in_West_Bengal.jpg"
   },
   "water-landscape": {
-    "file": "assets/page-artworks/geography.webp",
-    "width": 1536,
-    "height": 1024,
-    "title_en": "Where the Rivers Meet the Fields",
-    "title_bn": "নদী ও মাঠের মিলন",
-    "alt_en": "An elevated view follows a Bengal river from red-earth groves into a patchwork of fertile fields.",
-    "alt_bn": "উঁচু থেকে দেখা বাংলার নদী লালমাটির বনানী ছেড়ে উর্বর খেতের মাঝে বয়ে চলেছে।",
-    "creation": "Contemporary illustration",
-    "caption_en": "A contemporary illustration of Bengal’s rivers and fields; not a historical reconstruction or geographic map.",
-    "caption_bn": "বাংলার নদী ও খেতের সমকালীন কল্পচিত্র; ঐতিহাসিক পুনর্নির্মাণ বা ভৌগোলিক মানচিত্র নয়।"
+    "file": "assets/documentary-photos/damodar-burnpur-2008.jpg",
+    "width": 1600,
+    "height": 1200,
+    "title_en": "Damodar River at Burnpur",
+    "title_bn": "বার্নপুরে দামোদর নদ",
+    "alt_en": "Photograph of the Damodar River, sandy bank and a small boat at Burnpur.",
+    "alt_bn": "বার্নপুরে দামোদর নদ, বালুময় পাড় ও ছোট নৌকার আলোকচিত্র।",
+    "creation": "Documentary photograph",
+    "caption_en": "P.K.Niyogi, 14 March 2008. Public domain worldwide. A modern photograph of the river landscape.",
+    "caption_bn": "পি. কে. নিয়োগী (P.K.Niyogi), ১৪ মার্চ ২০০৮। বিশ্বব্যাপী পাবলিক ডোমেইন। নদীভূমির আধুনিক আলোকচিত্র।",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Damodar_River_1.jpg"
   },
   "military-settlers-bengal": {
     "file": "assets/military-settlers/header.webp",
