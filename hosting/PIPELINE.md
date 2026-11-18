@@ -90,3 +90,5 @@ For an urgent recovery, use Cloudflare's [rollback](https://developers.cloudflar
 After migration, avoid direct uploads from the old editor or dashboard for ordinary releases: they bypass GitHub history and can be overwritten by the next automatic release.
 
 - 18 November 2026: A same-content production redeployment was requested to apply an owner-updated production editor configuration; this operational note does not change website content or submissions.
+
+- 18 November 2026: A second same-content production redeployment was requested after the owner saved a longer replacement editor credential; website content and submissions remain unchanged.
