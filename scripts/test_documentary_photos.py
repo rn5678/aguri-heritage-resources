@@ -1,4 +1,4 @@
-"""Guard the scoped documentary-photo release and protected homepage artwork."""
+"""Guard documentary photos and the authorized real Curzon Gate homepage replacement."""
 import hashlib
 import json
 from pathlib import Path
@@ -32,12 +32,17 @@ class DocumentaryPhotoTests(unittest.TestCase):
             self.assertIn('2011.499', culture)
             self.assertIn('CC0', culture)
 
-    def test_protected_homepage_artwork(self):
+    def test_curzon_homepage_and_preserved_original_asset(self):
         expected = '3a3b1aee8ec9f5ec6018a4337d12fbe75ff8f7164983dc192d150ca790df7708'
         self.assertEqual(hashlib.sha256((ROOT / 'assets/burdwan-river-of-memory.webp').read_bytes()).hexdigest(), expected)
         for prefix in ('', 'bn/'):
             home = (ROOT / 'content' / (prefix + 'index.html')).read_text()
-            self.assertIn('assets/burdwan-river-of-memory.webp', home)
+            self.assertNotIn('assets/burdwan-river-of-memory.webp', home)
+            self.assertIn('assets/curzon-gate-bardhaman.jpg', home)
+            self.assertIn('width="800" height="600"', home)
+            self.assertIn('style="aspect-ratio:4/3"', home)
+            self.assertIn('Mondal.koustav', home)
+            self.assertIn('https://commons.wikimedia.org/wiki/File:Curzon_Gate.jpg', home)
             self.assertNotIn('assets/documentary-photos/', home)
 
 if __name__ == '__main__':
