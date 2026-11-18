@@ -165,8 +165,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "5c848bae7802b5e1bfbe0c0e2d6943df8b772e99fa6f0c411fad11adc2be3e1d",
-      "updated": "2026-10-28"
+      "fingerprint": "b792be05c31b5aa5b7c07d69927a7b9b25775b1b272cf356bbfd5fa334a2efcc",
+      "updated": "2026-11-18"
     },
     "bn/faq": {
       "baseline": {
@@ -193,8 +193,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "2e675ae69ade8e46d9e937dc1084ea8d42e9fbe54e9e59db47fb6f873302f846",
-      "updated": "2026-11-10"
+      "fingerprint": "c78ddda0620623a2726f7d9b1137521bcaf9d2301683d12be082ad5e3809c727",
+      "updated": "2026-11-18"
     },
     "bn/geography": {
       "baseline": {
@@ -773,8 +773,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "08dc4922b914ac713e90e930525fb1ca101b6e8d8baeaf23a0991cadc1fadc15",
-      "updated": "2026-10-11"
+      "fingerprint": "32cc64a30f46ce2f16f047ba96a5d915e03a9d9a566af71ce49c8c03282ec83b",
+      "updated": "2026-11-18"
     },
     "en/about": {
       "baseline": {
@@ -941,8 +941,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "c7b92ed70d1d68cfbd40ba6d072a6f25d0115453e37c7cc4064583d62c4da85f",
-      "updated": "2026-10-21"
+      "fingerprint": "0fb2b71e1611deb2d1145b18d8a6fd80477af10418236383ad51aca88618e448",
+      "updated": "2026-11-18"
     },
     "en/faq": {
       "baseline": {
@@ -969,8 +969,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "26cc4c0a30f031ca8333c1634182e92ab029cca7837bbf896b71ec74e1a4c5cc",
-      "updated": "2026-11-10"
+      "fingerprint": "b74dfb37247183d2c881e3d426eabc336504873b2c236bd4f5d0518b209e394d",
+      "updated": "2026-11-18"
     },
     "en/geography": {
       "baseline": {
@@ -1521,8 +1521,8 @@
         ]
       },
       "date_basis": "editorial-content-change",
-      "fingerprint": "08d0932f2b08e9ea2235d15bf0d53f141979d9f609023fd644f995acb0534f57",
-      "updated": "2026-10-11"
+      "fingerprint": "9267758bf9bde3ca11d5e3320a88010b82c7e7e8bea841e8fb817927fcbfa217",
+      "updated": "2026-11-18"
     }
   },
   "policy": "Editorial update dates, not original publication dates. Initial dates use the latest modification time of the listed authored sources in Asia/Kolkata. Later editorial changes use the date detected by a build; unchanged content and shared template or style changes retain the date.",

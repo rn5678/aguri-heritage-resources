@@ -71,7 +71,7 @@ def metadata(key, title, description, lang, updated=None, parent=None):
  if key not in ENGLISH_ONLY_KEYS:
   tags.append(f'<meta property="og:locale:alternate" content="{"en_IN" if lang=="bn" else "bn_IN"}">')
  # Link previews use the page's own topic artwork where a preview image exists.
- preferred_image_key = 'geography' if key in ('food-and-village-life','water-landscape') else 'culture' if key == 'aguris-today' else key
+ preferred_image_key = 'culture' if key == 'aguris-today' else key
  image_key = preferred_image_key if (SOCIAL/f'{preferred_image_key}.jpg').is_file() else 'index'
  card = 'summary'
  if key not in TEXT_ONLY_ARTICLE_KEYS and key not in NO_SOCIAL_IMAGE_PROFILE_KEYS and (SOCIAL/f'{image_key}.jpg').is_file():
