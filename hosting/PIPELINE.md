@@ -88,3 +88,5 @@ The existing local IndexNow receipt cache is not copied into CI. Search discover
 For an urgent recovery, use Cloudflare's [rollback](https://developers.cloudflare.com/pages/configuration/rollbacks/) to select a known-good production deployment. Then revert the faulty commit through a GitHub pull request, so the next automatic deployment retains the correction. A deployment that failed before upload leaves production untouched. If upload succeeded but verification failed, inspect Cloudflare and the GitHub run before retrying.
 
 After migration, avoid direct uploads from the old editor or dashboard for ordinary releases: they bypass GitHub history and can be overwritten by the next automatic release.
+
+- 18 November 2026: A same-content production redeployment was requested to apply an owner-updated production editor configuration; this operational note does not change website content or submissions.
