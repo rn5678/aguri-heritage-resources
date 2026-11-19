@@ -100,3 +100,5 @@ After migration, avoid direct uploads from the old editor or dashboard for ordin
 The site owner updated the Production editor secret and requested one fresh forward deployment. Preserve the Curzon photo and the live readiness checks from PR #17. Keep secret values out of the repository, verify both public forms against the canonical domain, and do not cancel or roll back automatically.
 
 - 19 November 2026, 10:19 IST: At the site owner's request, rerun the production release after they saved a replacement editor secret. Keep the deployed website, including the bilingual carousel and Places update, unchanged; verify public form readiness without accessing the secret value.
+
+- 19 November 2026, 10:32 IST: At the owner's request, redeploy the unchanged site after they restored the Contact Us Turnstile site key in Production. Verify both forms against the canonical domain without recording credentials.
