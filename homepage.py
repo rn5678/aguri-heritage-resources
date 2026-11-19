@@ -7,6 +7,7 @@ build.py; this module changes only the homepage presentation.
 from pathlib import Path
 import hashlib
 import re
+from home_article_carousel import render as render_article_carousel
 
 ROOT = Path(__file__).resolve().parent
 
@@ -25,17 +26,20 @@ CHROME = {
     ),
 }
 
-def render_homepage(body, fragment, page_tools, correction, page_views, updated_markup, lang):
+def render_homepage(body, fragment, page_tools, correction, page_views, updated_markup, lang, article_descriptors):
     """Retain the shared services while applying the dedicated homepage shell."""
+    fragment = fragment.replace('<!-- home-article-carousel -->', render_article_carousel(lang, article_descriptors).replace('src="assets/', 'src="../assets/') if lang == 'bn' else render_article_carousel(lang, article_descriptors))
     assets = '../assets/' if lang == 'bn' else 'assets/'
     head = re.search(r'<head>(.*?)</head>', body, re.S).group(1)
     sheets = []
-    for name in ('homepage-public-history.css', 'homepage-carousel.css', 'homepage-services.css'):
+    for name in ('homepage-public-history.css', 'homepage-carousel.css', 'homepage-services.css', 'homepage-hero-carousel.css'):
         version = hashlib.sha256((ROOT / 'assets' / name).read_bytes()).hexdigest()[:12]
         sheets.append(f'<link rel="stylesheet" href="{assets}{name}?v={version}">')
     head = head.replace(f'<link rel="stylesheet" href="{assets}style.css">', ''.join(sheets))
     version = hashlib.sha256((ROOT / 'assets/homepage-carousel.js').read_bytes()).hexdigest()[:12]
     head += f'<script src="{assets}homepage-carousel.js?v={version}" defer></script>'
+    version = hashlib.sha256((ROOT / 'assets/homepage-hero-carousel.js').read_bytes()).hexdigest()[:12]
+    head += f'<script src="{assets}homepage-hero-carousel.js?v={version}" defer></script>'
     notification = re.search(r'<section class="notify".*?</section>', body, re.S).group(0)
     dialog = re.search(r'<dialog id="search-dialog".*?</dialog>', body, re.S).group(0)
     header, footer = CHROME[lang]
