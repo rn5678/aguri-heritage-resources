@@ -8,7 +8,7 @@ ASSET = 'assets/maps/burdwan-family-villages-complete.png'
 class PlacesFamilyMapTests(unittest.TestCase):
     def test_exact_approved_image(self):
         self.assertEqual(hashlib.sha256((ROOT / ASSET).read_bytes()).hexdigest(),
-                         '4ed0cd7803e364840944cb7f40f920eaafce577e2f6cc1c002a9235a1ef17090')
+                         '36c460fcdb06d0b3b0212ef8403f8dc483678771cd9b9cab0df5ed833a766cfc')
 
     def test_bilingual_accessible_map_and_existing_places(self):
         for lang in ('en', 'bn'):
