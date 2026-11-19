@@ -20,7 +20,8 @@ class PlacesFamilyMapTests(unittest.TestCase):
             self.assertIn('loading="lazy"', page)
             self.assertEqual(page.count(f'href="{ASSET}"'), 2)
             self.assertIn('https://www.openstreetmap.org/copyright', page)
-            for anchor in ('reading-old-place-names', 'places-to-explore', 'water-landscape'):
+            self.assertNotIn('reading-old-place-names', page)
+            for anchor in ('places-to-explore', 'water-landscape'):
                 self.assertIn(f'id="{anchor}"', page)
 
 if __name__ == '__main__':

@@ -38,11 +38,8 @@ class DocumentaryPhotoTests(unittest.TestCase):
         for prefix in ('', 'bn/'):
             home = (ROOT / 'content' / (prefix + 'index.html')).read_text()
             self.assertNotIn('assets/burdwan-river-of-memory.webp', home)
-            self.assertIn('assets/curzon-gate-bardhaman.jpg', home)
-            self.assertIn('width="800" height="600"', home)
-            self.assertIn('style="aspect-ratio:4/3"', home)
-            self.assertIn('Mondal.koustav', home)
-            self.assertIn('https://commons.wikimedia.org/wiki/File:Curzon_Gate.jpg', home)
+            self.assertIn('<!-- home-article-carousel -->', home)
+            self.assertTrue((ROOT / 'assets/curzon-gate-bardhaman.jpg').is_file())
             self.assertNotIn('assets/documentary-photos/', home)
 
 if __name__ == '__main__':
