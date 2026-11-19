@@ -3,7 +3,7 @@ import sys
 import unittest
 from html.parser import HTMLParser
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
-from home_article_carousel import articles,render,teasers,ROOT
+from home_article_carousel import articles,render,render_spotlight,spotlight_article,article_link,teasers,ROOT
 from build import PAGES
 class CarouselTests(unittest.TestCase):
  def test_all_editorial_articles_and_profiles_in_both_editions(self):
@@ -16,8 +16,10 @@ class CarouselTests(unittest.TestCase):
     self.assertTrue(title);self.assertTrue((ROOT/image).is_file())
    out=render(lang,PAGES)
    self.assertEqual(out.count('data-home-article-slide'),len(en))
-   self.assertEqual(out.count(' hidden'),len(en)) # 28 slides, controls
+   self.assertEqual(out.count(' hidden'),len(en)-2) # all except three cards, plus controls
    self.assertNotIn('story-text',out)
+   for restored in ('story-grid home-article-track','class="story-body"','class="story-link"','carousel-controls home-article-controls'):
+    self.assertIn(restored,out)
    for control in ('data-home-prev','data-home-next','data-home-pause'):self.assertIn(control,out)
  def test_one_carousel_and_unrelated_content_preserved(self):
   for lang in ('en','bn'):
@@ -50,10 +52,23 @@ class CarouselTests(unittest.TestCase):
    self.assertEqual(teasers('bn',PAGES)['future-story'],'একটি নতুন গল্প')
   css=(ROOT/'assets/homepage-hero-carousel.css').read_text()
   for rule in ('white-space:nowrap','text-overflow:ellipsis','font-size:13px'):self.assertIn(rule,css)
- def test_controls_overlay_and_original_frame_ratio(self):
+ def test_fixed_spotlight_uses_publication_not_recent_edit(self):
+  rows=articles('en',PAGES)
+  self.assertEqual(spotlight_article(rows)[0],'aguri-working-lives-colonial-india')
+  for lang in ('en','bn'):
+   hero=render_spotlight(lang,PAGES)
+   self.assertEqual(hero.count('data-home-spotlight'),1)
+   self.assertNotIn('data-home-article-carousel',hero)
+   self.assertNotIn('<button',hero)
+  sample=[('old','Old','x'),('new','New','y')]
+  history={'en/old':{'baseline':{'date':'2025-01-01'},'updated':'2027-01-01'},'en/new':{'baseline':{'date':'2026-01-01'}}}
+  self.assertEqual(spotlight_article(sample,history,{'article_id':None})[0],'new')
+  self.assertEqual(spotlight_article(sample,history,{'article_id':'old'})[0],'old')
+  with self.assertRaises(ValueError):spotlight_article(sample,history,{'article_id':'invalid'})
+ def test_english_only_reading_targets_are_explicit_in_bengali(self):
+  self.assertEqual(article_link('translation-electricity','bn'),('../translation-electricity.html',' hreflang="en"'))
+ def test_responsive_cards_and_original_spotlight_frame_ratio(self):
   css=(ROOT/'assets/homepage-hero-carousel.css').read_text()
-  self.assertIn('aspect-ratio:4/3',css)
-  self.assertIn('@media(hover:none)',css)
-  self.assertIn(':focus-within',css)
-  self.assertIn('position:absolute',css)
+  for rule in ('aspect-ratio:4/3','repeat(3,minmax(0,1fr))','max-width:899px','max-width:599px',':focus-within'):
+   self.assertIn(rule,css)
 if __name__=='__main__':unittest.main()

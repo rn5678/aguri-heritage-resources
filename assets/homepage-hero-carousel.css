@@ -1,14 +1,22 @@
-.home-article-carousel{position:relative;aspect-ratio:4/3;width:100%;isolation:isolate;overflow:hidden;border-radius:2px;background:#263b30}
-.home-article-slide{position:absolute;inset:0;display:block;color:white!important;text-decoration:none}
-.home-article-slide[hidden]{display:none!important}
-.hero-art .home-article-slide img{width:100%;height:100%;aspect-ratio:auto;object-fit:contain;background:#f4f1e9}
-.home-article-title{position:absolute;inset:auto 0 0;padding:50px 24px 20px;background:linear-gradient(transparent,rgba(0,0,0,.85));font-family:var(--serif);font-size:clamp(19px,2.1vw,29px);line-height:1.22;text-shadow:0 1px 2px #000}
-.home-article-controls{position:absolute;inset:0;pointer-events:none}
-.home-article-controls button{position:absolute;top:45%;width:44px;height:44px;border:1px solid rgba(255,255,255,.6);border-radius:50%;background:rgba(0,0,0,.5);color:#fff;opacity:.35;pointer-events:auto;font-size:28px;line-height:1;cursor:pointer}
-.home-article-controls [data-home-prev]{left:10px}.home-article-controls [data-home-next]{right:10px}.home-article-controls [data-home-pause]{top:10px;right:10px;font-size:18px}
-.home-article-carousel:hover button,.home-article-carousel:focus-within button{opacity:1;background:rgba(0,0,0,.7)}
-.home-article-carousel a:focus-visible,.home-article-carousel button:focus-visible{outline:3px solid white;outline-offset:-4px}
-@media(hover:none){.home-article-controls button{opacity:.9}}
-@media(max-width:600px){.home-article-title{font-size:22px;padding:45px 18px 16px}}
+.home-spotlight{position:relative;aspect-ratio:4/3;width:100%;isolation:isolate;overflow:hidden;border-radius:2px;background:#263b30}
+.home-spotlight-link{position:absolute;inset:0;display:block;color:white!important;text-decoration:none}
+.hero-art .home-spotlight-link img{width:100%;height:100%;aspect-ratio:auto;object-fit:contain;background:#f4f1e9}
+.spotlight-label{position:absolute;top:18px;left:18px;background:#263b30;color:white;padding:9px 12px;font-size:11px;letter-spacing:.08em;line-height:1.4}
+.home-article-title{position:absolute;inset:auto 0 0;padding:50px 24px 20px;background:linear-gradient(transparent,rgba(0,0,0,.9));font-family:var(--serif);font-size:clamp(19px,2.1vw,29px);line-height:1.22;text-shadow:0 1px 2px #000}
 
-.home-article-teaser{display:block;margin-top:7px;font-family:var(--sans);font-size:13px;font-weight:400;line-height:1.5;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:0}
+/* Historical three-story design: typography, image panels, footer rules and
+   square controls come directly from homepage-public-history/carousel.css. */
+.home-article-slide[hidden]{display:none!important}
+.home-article-slide{color:var(--ink);text-decoration:none}
+.home-article-slide .story-body{padding-top:18px}
+.home-article-slide .story-link{padding-top:22px;gap:14px}
+.home-article-slide .story-link .arrow{flex-shrink:0}
+.home-article-teaser{display:block;margin-top:7px;font-family:var(--sans);font-size:13px;font-weight:400;line-height:1.5;color:inherit;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:0;min-width:0}
+.story-link .home-article-teaser{margin:0}
+.home-article-controls[hidden]{display:none}
+.home-article-carousel a:focus-visible,.home-article-carousel button:focus-visible{outline:3px solid #8b442b;outline-offset:3px}
+.home-article-carousel:focus-within .carousel-toggle{border-color:#8b442b}
+.home-spotlight-link:focus-visible{outline:3px solid white;outline-offset:-5px}
+@media(min-width:900px){.home-article-track{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:600px) and (max-width:899px){.home-article-track{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:599px){.home-article-track{grid-template-columns:minmax(0,1fr)}.home-article-title{font-size:22px;padding:45px 18px 16px}.spotlight-label{top:12px;left:12px}}
