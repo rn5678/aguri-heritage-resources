@@ -7,7 +7,7 @@ build.py; this module changes only the homepage presentation.
 from pathlib import Path
 import hashlib
 import re
-from home_article_carousel import render as render_article_carousel
+from home_article_carousel import render as render_article_carousel, render_spotlight
 
 ROOT = Path(__file__).resolve().parent
 
@@ -29,6 +29,10 @@ CHROME = {
 def render_homepage(body, fragment, page_tools, correction, page_views, updated_markup, lang, article_descriptors):
     """Retain the shared services while applying the dedicated homepage shell."""
     fragment = fragment.replace('<!-- home-article-carousel -->', render_article_carousel(lang, article_descriptors).replace('src="assets/', 'src="../assets/') if lang == 'bn' else render_article_carousel(lang, article_descriptors))
+    spotlight = render_spotlight(lang, article_descriptors)
+    if lang == 'bn':
+        spotlight = spotlight.replace('src="assets/', 'src="../assets/')
+    fragment = fragment.replace('<!-- home-spotlight -->', spotlight)
     assets = '../assets/' if lang == 'bn' else 'assets/'
     head = re.search(r'<head>(.*?)</head>', body, re.S).group(1)
     sheets = []
