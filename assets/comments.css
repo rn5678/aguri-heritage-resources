@@ -1,0 +1,15 @@
+.page-comments {margin:3rem auto 1rem; padding:1.5rem; border-top:2px solid #b4bdb4; max-width:52rem; text-align:left; overflow-wrap:anywhere;}
+.page-comments [hidden] {display:none !important;}
+.page-comments h2 {margin-top:0;}
+.page-comments form {display:grid; gap:.8rem; margin-top:1.5rem;}
+.page-comments textarea {width:100%; box-sizing:border-box; min-height:7rem; padding:.75rem; font:inherit; border:1px solid #737d74; border-radius:4px; background:#fff; color:#20352b;}
+.page-comments button {margin:.4rem .5rem .4rem 0; cursor:pointer;}
+.page-comments button:disabled {opacity:.6; cursor:wait;}
+.page-comments .comment-consent {display:flex; align-items:flex-start; gap:.7rem; font-size:.95rem;}
+.page-comments input[type=checkbox] {flex:none; width:1.2rem; height:1.2rem; margin-top:.2rem;}
+.comment-item {padding:1rem 0; border-bottom:1px solid #d3d9d3;}
+.comment-body {white-space:pre-wrap;}
+.comment-item time {font-size:.85rem;}
+.page-comments :focus-visible {outline:3px solid #99692c; outline-offset:3px;}
+@media(max-width:600px) {.page-comments {padding:1rem; margin:2rem 0 1rem;}}
+@media print {.page-comments {display:none !important;}}

@@ -20,9 +20,11 @@ INDEPENDENT_BENGALI_PROFILES=set(profile_overrides(ROOT.parent,lang='bn'))
 TODAY=datetime.now(ZoneInfo('Asia/Kolkata')).date()
 class Doc(HTMLParser):
  def __init__(self,text):
-  super().__init__();self.ids=set();self.refs=[];self.errors=[];self.h1=0;self.lang=None;self.language_options=[];self.canonicals=[];self.alternates={};self.meta={};self.schemas=[];self.schema_text=None;self.in_head=False;self.title_text=None;self.titles=[];self.feed(text)
+  super().__init__();self.ids=set();self.refs=[];self.errors=[];self.h1=0;self.lang=None;self.language_options=[];self.canonicals=[];self.alternates={};self.meta={};self.schemas=[];self.schema_text=None;self.in_head=False;self.title_text=None;self.titles=[];self.in_main=False;self.comment_mounts=[];self.feed(text)
  def handle_starttag(self,tag,attrs):
   a=dict(attrs)
+  if tag=='main':self.in_main=True
+  if 'data-comments' in a:self.comment_mounts.append((self.in_main,'hidden' in a))
   if tag=='head':self.in_head=True
   if tag=='title' and self.in_head:self.title_text=''
   if tag=='h1':self.h1+=1
@@ -46,6 +48,7 @@ class Doc(HTMLParser):
   if self.title_text is not None:self.title_text+=text
   if self.schema_text is not None:self.schema_text+=text
  def handle_endtag(self,tag):
+  if tag=='main':self.in_main=False
   if tag=='title' and self.title_text is not None:
    self.titles.append(' '.join(self.title_text.split()));self.title_text=None
   if tag=='head':self.in_head=False
@@ -81,6 +84,10 @@ for key,entry in editor_page_map(ROOT.parent).items():
   if page in docs and entry['section']+'.html' not in docs[page].refs:errors.append(f'{lang}: editor page {key} has no link to its section')
 for p,d in docs.items():
  errors.extend(f'{p.name}: {e}' for e in d.errors)
+ # Check mounts only after build: Node source tests run before site/ exists in CI.
+ expected_mounts=0 if p.stem in ('404','contact','contribute','review','editor','admin') else 1
+ if len(d.comment_mounts)!=expected_mounts:errors.append(f'{p}: expected {expected_mounts} comment mount(s), found {len(d.comment_mounts)}')
+ if any(not in_main or not hidden for in_main,hidden in d.comment_mounts):errors.append(f'{p}: comment mount must be inside main and initially hidden')
  if len(d.titles)!=1 or not d.titles[0]:errors.append(f'{p}: expected exactly one nonempty head title')
  if d.h1!=1:errors.append(f'{p.name}: expected one H1, found {d.h1}')
  for ref in d.refs:
